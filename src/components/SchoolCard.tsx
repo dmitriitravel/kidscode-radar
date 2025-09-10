@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { School } from '@/types/school';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { StarRating } from '@/components/ui/star-rating';
-import { Clock, Users, Award, Globe, CheckCircle, GitCompare } from 'lucide-react';
+import { Clock, Users, Award, CheckCircle, GitCompare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useComparison } from '@/contexts/ComparisonContext';
+import { SchoolDetailModal } from '@/components/SchoolDetailModal';
 
 interface SchoolCardProps {
   school: School;
@@ -15,6 +16,7 @@ interface SchoolCardProps {
 
 export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => {
   const { addToComparison, removeFromComparison, isInComparison } = useComparison();
+  const [showModal, setShowModal] = useState(false);
   const inComparison = isInComparison(school.id);
 
   const handleCompareClick = () => {
@@ -22,6 +24,14 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
       removeFromComparison(school.id);
     } else {
       addToComparison(school);
+    }
+  };
+
+  const handleDetailsClick = () => {
+    if (school.name === 'Skysmart Pro') {
+      window.open('https://programming.skysmart.ru/', '_blank');
+    } else {
+      setShowModal(true);
     }
   };
   return (
@@ -110,17 +120,8 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
         </div>
 
         <div className="flex gap-2 pt-2">
-          <Button variant="default" size="sm" className="flex-1">
+          <Button variant="default" size="sm" className="flex-1" onClick={handleDetailsClick}>
             Подробнее
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="flex items-center gap-1"
-            onClick={() => window.open(school.website, '_blank')}
-          >
-            <Globe className="h-3 w-3" />
-            Сайт
           </Button>
           <Button 
             variant={inComparison ? "secondary" : "outline"} 
@@ -129,10 +130,16 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
             onClick={handleCompareClick}
           >
             <GitCompare className="h-3 w-3" />
-            {inComparison ? '✓' : '+'}
+            {inComparison ? 'Добавлено' : 'Добавить к сравнению'}
           </Button>
         </div>
       </CardContent>
+      
+      <SchoolDetailModal 
+        school={school}
+        open={showModal}
+        onOpenChange={setShowModal}
+      />
     </Card>
   );
 };
