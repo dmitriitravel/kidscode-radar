@@ -9,7 +9,6 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Search, Filter, TrendingUp, Users, Award, Star, X } from 'lucide-react';
 import { useSchoolFilters } from '@/hooks/useSchoolFilters';
-
 const Index = () => {
   const {
     searchQuery,
@@ -21,9 +20,7 @@ const Index = () => {
     hasActiveFilters,
     resultsCount
   } = useSchoolFilters(schools);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4">
@@ -31,43 +28,26 @@ const Index = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Лучшие онлайн-школы программирования для детей
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Независимые рейтинги, честные отзывы и подробные сравнения школ программирования в России
-            </p>
+            <p className="text-xl md:text-2xl mb-8 opacity-90">Независимый рейтинг с честными отзывами и подробным сравнением школ программирования для детей и подростков</p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input 
-                  placeholder="Поиск школы программирования..." 
-                  className="pl-10 bg-background/10 border-background/20 text-primary-foreground placeholder:text-primary-foreground/70"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
+                <Input placeholder="Поиск школы программирования..." className="pl-10 bg-background/10 border-background/20 text-primary-foreground placeholder:text-primary-foreground/70" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
               </div>
               <div className="flex gap-2">
-                <Button 
-                  variant="secondary" 
-                  size="lg" 
-                  className="gap-2"
-                  onClick={() => {
-                    const resultsSection = document.querySelector('main');
-                    resultsSection?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
+                <Button variant="secondary" size="lg" className="gap-2" onClick={() => {
+                const resultsSection = document.querySelector('main');
+                resultsSection?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}>
                   <Search className="h-4 w-4" />
                   Поиск
                 </Button>
-                {hasActiveFilters && (
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="gap-2 bg-background/10 border-background/20 text-primary-foreground hover:bg-background/20"
-                    onClick={clearFilters}
-                  >
+                {hasActiveFilters && <Button variant="outline" size="lg" className="gap-2 bg-background/10 border-background/20 text-primary-foreground hover:bg-background/20" onClick={clearFilters}>
                     <X className="h-4 w-4" />
                     Очистить
-                  </Button>
-                )}
+                  </Button>}
               </div>
             </div>
           </div>
@@ -82,7 +62,7 @@ const Index = () => {
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
                 <TrendingUp className="h-6 w-6" />
               </div>
-              <div className="text-2xl font-bold text-foreground">10+</div>
+              <div className="text-2xl font-bold text-foreground">10</div>
               <div className="text-sm text-muted-foreground">Школ в рейтинге</div>
             </div>
             <div className="text-center">
@@ -90,7 +70,7 @@ const Index = () => {
                 <Users className="h-6 w-6" />
               </div>
               <div className="text-2xl font-bold text-foreground">75,000+</div>
-              <div className="text-sm text-muted-foreground">Учеников обучается</div>
+              <div className="text-sm text-muted-foreground">Учеников </div>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
@@ -121,65 +101,32 @@ const Index = () => {
                 <div className="bg-card p-6 rounded-lg border border-border shadow-card">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-semibold text-card-foreground">Быстрые фильтры</h3>
-                    {hasActiveFilters && (
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        onClick={clearFilters}
-                        className="h-8 px-2 lg:px-3"
-                      >
+                    {hasActiveFilters && <Button variant="ghost" size="sm" onClick={clearFilters} className="h-8 px-2 lg:px-3">
                         <X className="h-3 w-3 mr-1" />
                         Очистить
-                      </Button>
-                    )}
+                      </Button>}
                   </div>
                   <div className="space-y-3">
                     <div className="flex flex-wrap gap-2">
-                      {['6-10 лет', '11-14 лет', '15+ лет'].map((ageGroup) => (
-                        <Badge 
-                          key={ageGroup}
-                          variant={activeFilters.ageGroups.includes(ageGroup) ? "default" : "outline"}
-                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                          onClick={() => toggleFilter('ageGroups', ageGroup)}
-                        >
+                      {['6-10 лет', '11-14 лет', '15+ лет'].map(ageGroup => <Badge key={ageGroup} variant={activeFilters.ageGroups.includes(ageGroup) ? "default" : "outline"} className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" onClick={() => toggleFilter('ageGroups', ageGroup)}>
                           {ageGroup}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {['Scratch', 'Python', 'JavaScript'].map((language) => (
-                        <Badge 
-                          key={language}
-                          variant={activeFilters.languages.includes(language) ? "default" : "outline"}
-                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                          onClick={() => toggleFilter('languages', language)}
-                        >
+                      {['Scratch', 'Python', 'JavaScript'].map(language => <Badge key={language} variant={activeFilters.languages.includes(language) ? "default" : "outline"} className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" onClick={() => toggleFilter('languages', language)}>
                           {language}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {['До 5000₽', 'Пробный урок'].map((feature) => (
-                        <Badge 
-                          key={feature}
-                          variant={
-                            (feature === 'До 5000₽' && activeFilters.priceRange.includes(feature)) ||
-                            (feature === 'Пробный урок' && activeFilters.features.includes(feature))
-                              ? "default" 
-                              : "outline"
-                          }
-                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                          onClick={() => {
-                            if (feature === 'До 5000₽') {
-                              toggleFilter('priceRange', feature);
-                            } else {
-                              toggleFilter('features', feature);
-                            }
-                          }}
-                        >
+                      {['До 5000₽', 'Пробный урок'].map(feature => <Badge key={feature} variant={feature === 'До 5000₽' && activeFilters.priceRange.includes(feature) || feature === 'Пробный урок' && activeFilters.features.includes(feature) ? "default" : "outline"} className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" onClick={() => {
+                      if (feature === 'До 5000₽') {
+                        toggleFilter('priceRange', feature);
+                      } else {
+                        toggleFilter('features', feature);
+                      }
+                    }}>
                           {feature}
-                        </Badge>
-                      ))}
+                        </Badge>)}
                     </div>
                   </div>
                 </div>
@@ -194,32 +141,21 @@ const Index = () => {
                     </h2>
                   </div>
                   <p className="text-muted-foreground">
-                    {hasActiveFilters 
-                      ? 'Результаты поиска и фильтрации школ программирования'
-                      : 'Рейтинг составлен на основе отзывов родителей, качества обучения, результатов учеников и других важных критериев.'
-                    }
+                    {hasActiveFilters ? 'Результаты поиска и фильтрации школ программирования' : 'Рейтинг составлен на основе отзывов родителей, качества обучения, результатов учеников и других важных критериев.'}
                   </p>
                 </div>
 
                 <div className="space-y-6">
-                  {filteredSchools.length > 0 ? (
-                    filteredSchools.map((school) => (
-                      <SchoolCard key={school.id} school={school} />
-                    ))
-                  ) : (
-                    <div className="text-center py-12">
+                  {filteredSchools.length > 0 ? filteredSchools.map(school => <SchoolCard key={school.id} school={school} />) : <div className="text-center py-12">
                       <div className="text-muted-foreground mb-4">
                         <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
                         <h3 className="text-lg font-medium mb-2">Ничего не найдено</h3>
                         <p>Попробуйте изменить критерии поиска или очистить фильтры</p>
                       </div>
-                      {hasActiveFilters && (
-                        <Button variant="outline" onClick={clearFilters}>
+                      {hasActiveFilters && <Button variant="outline" onClick={clearFilters}>
                           Очистить все фильтры
-                        </Button>
-                      )}
-                    </div>
-                  )}
+                        </Button>}
+                    </div>}
                 </div>
 
               </main>
@@ -233,8 +169,6 @@ const Index = () => {
       <FAQ />
       
       <ComparisonBar />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
