@@ -11,7 +11,7 @@ export const schools: School[] = [
     courses: ['Roblox', 'Minecraft', 'Python', 'Scratch', 'Unity', 'JavaScript', 'Web-разработка'],
     format: 'online',
     price: {
-      min: 4000,
+      min: 5175,
       max: 8000,
       currency: '₽',
       period: 'month'

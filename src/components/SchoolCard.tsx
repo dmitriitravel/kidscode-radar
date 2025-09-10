@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { StarRating } from '@/components/ui/star-rating';
-import { Clock, Users, Award, CheckCircle, GitCompare } from 'lucide-react';
+import { Clock, Users, Award, CheckCircle, GitCompare, Banknote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useComparison } from '@/contexts/ComparisonContext';
 import { SchoolDetailModal } from '@/components/SchoolDetailModal';
@@ -71,9 +71,9 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
             <span className="text-muted-foreground">{school.ageRange}</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <Clock className="h-4 w-4 text-primary" />
+            <Banknote className="h-4 w-4 text-primary" />
             <span className="text-muted-foreground">
-              {school.price.min.toLocaleString('ru')} - {school.price.max.toLocaleString('ru')} {school.price.currency}
+              {school.price.min.toLocaleString('ru')} - {school.price.max.toLocaleString('ru')} {school.price.currency} в месяц
             </span>
           </div>
           {school.trialAvailable && (
