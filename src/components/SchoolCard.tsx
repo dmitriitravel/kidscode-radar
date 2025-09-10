@@ -28,9 +28,7 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
   };
 
   const handleDetailsClick = () => {
-    if (school.name === 'Skysmart Pro') {
-      window.open('https://programming.skysmart.ru/', '_blank');
-    } else {
+    if (school.name !== 'Skysmart Pro') {
       setShowModal(true);
     }
   };
@@ -120,9 +118,20 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
         </div>
 
         <div className="flex gap-2 pt-2">
-          <Button variant="default" size="sm" className="flex-1" onClick={handleDetailsClick}>
-            Подробнее
-          </Button>
+          {school.name === 'Skysmart Pro' ? (
+            <a 
+              href="https://programmirovanie.skysmart.ru/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3"
+            >
+              Подробнее
+            </a>
+          ) : (
+            <Button variant="default" size="sm" className="flex-1" onClick={handleDetailsClick}>
+              Подробнее
+            </Button>
+          )}
           <Button 
             variant={inComparison ? "secondary" : "outline"} 
             size="sm" 
