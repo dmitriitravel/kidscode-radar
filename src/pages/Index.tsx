@@ -22,8 +22,8 @@ const Index = () => {
   } = useSchoolFilters(schools);
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-primary-foreground py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-hero text-primary-foreground py-16 lg:py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Лучшие онлайн-школы программирования для детей
@@ -55,8 +55,8 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-secondary/30">
-        <div className="container mx-auto px-4">
+      <section className="py-8 lg:py-12 bg-secondary/30">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
@@ -91,13 +91,12 @@ const Index = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-8">
-              
-              {/* Sidebar Filters */}
-              <aside className="lg:w-80 space-y-6">
+      <section className="py-8 lg:py-12">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+            
+            {/* Sidebar Filters */}
+            <aside className="lg:w-80 xl:w-96 space-y-6">
                 <div className="bg-card p-6 rounded-lg border border-border shadow-card">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="font-semibold text-card-foreground">Быстрые фильтры</h3>
@@ -193,7 +192,6 @@ const Index = () => {
 
               </main>
             </div>
-          </div>
         </div>
       </section>
 

@@ -47,8 +47,8 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({ schools }) => 
 
   return (
     <>
-      <div className="overflow-x-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-w-full">
+      <div className="space-y-6 md:space-y-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {schools.map((school) => (
             <Card key={school.id} className="relative hover:shadow-lg transition-shadow">
               {school.rating === highestRating && (
