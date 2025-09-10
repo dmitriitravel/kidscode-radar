@@ -54,17 +54,23 @@ export const useSchoolFilters = (schools: School[]) => {
     if (activeFilters.ageGroups.length > 0) {
       filtered = filtered.filter(school => {
         return activeFilters.ageGroups.some(ageGroup => {
+          // Parse school age range (e.g., "8-17 лет" -> min: 8, max: 17)
+          const ageRangeMatch = school.ageRange.match(/(\d+)-(\d+)/);
+          if (!ageRangeMatch) return false;
+          
+          const schoolMinAge = parseInt(ageRangeMatch[1]);
+          const schoolMaxAge = parseInt(ageRangeMatch[2]);
+          
           switch (ageGroup) {
             case '6-10 лет':
-              return school.ageRange.includes('6') || school.ageRange.includes('7') || 
-                     school.ageRange.includes('8') || school.ageRange.includes('9') || 
-                     school.ageRange.includes('10') || school.ageRange.includes('5');
+              // Check if school age range overlaps with 6-10
+              return schoolMinAge <= 10 && schoolMaxAge >= 6;
             case '11-14 лет':
-              return school.ageRange.includes('11') || school.ageRange.includes('12') || 
-                     school.ageRange.includes('13') || school.ageRange.includes('14');
+              // Check if school age range overlaps with 11-14
+              return schoolMinAge <= 14 && schoolMaxAge >= 11;
             case '15+ лет':
-              return school.ageRange.includes('15') || school.ageRange.includes('16') || 
-                     school.ageRange.includes('17') || school.ageRange.includes('18');
+              // Check if school age range includes 15+
+              return schoolMaxAge >= 15;
             default:
               return false;
           }
