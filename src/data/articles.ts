@@ -472,7 +472,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '3',
+    id: '4',
     title: 'Как мотивировать ребенка заниматься программированием',
     slug: 'motivatsiya-rebenka',
     content: 'Содержание статьи будет добавлено позже...',
@@ -485,7 +485,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '4',
+    id: '5',
     title: 'Основы алгоритмического мышления для детей',
     slug: 'algoritmicheskoe-myshlenie',
     content: 'Содержание статьи будет добавлено позже...',
@@ -498,7 +498,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '5',
+    id: '6',
     title: 'Игровые движки для детей: создаем первую игру',
     slug: 'igrovye-dvizhki-dlya-detey',
     content: 'Содержание статьи будет добавлено позже...',
@@ -511,7 +511,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '6',
+    id: '7',
     title: 'Профессии будущего: куда ведет программирование',
     slug: 'professii-budushchego',
     content: 'Содержание статьи будет добавлено позже...',
@@ -524,7 +524,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '7',
+    id: '8',
     title: 'Онлайн vs офлайн: какой формат обучения выбрать',
     slug: 'onlayn-vs-oflayn',
     content: 'Содержание статьи будет добавлено позже...',
@@ -537,7 +537,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '8',
+    id: '9',
     title: 'Ошибки родителей при выборе курсов программирования',
     slug: 'oshibki-roditeley',
     content: 'Содержание статьи будет добавлено позже...',
@@ -550,7 +550,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '9',
+    id: '10',
     title: 'Веб-разработка для детей: HTML, CSS и JavaScript',
     slug: 'veb-razrabotka-dlya-detey',
     content: 'Содержание статьи будет добавлено позже...',
@@ -563,7 +563,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '10',
+    id: '11',
     title: 'Как оценить прогресс ребенка в программировании',
     slug: 'otsenka-progressa',
     content: 'Содержание статьи будет добавлено позже...',
@@ -576,7 +576,7 @@ export const articles: Article[] = [
     featured: true,
   },
   {
-    id: '11',
+    id: '12',
     title: 'Робототехника и программирование: связь и различия',
     slug: 'robototekhnika-i-programmirovanie',
     content: 'Содержание статьи будет добавлено позже...',
@@ -589,7 +589,7 @@ export const articles: Article[] = [
     featured: false,
   },
   {
-    id: '12',
+    id: '13',
     title: 'Математика в программировании: что нужно знать',
     slug: 'matematika-v-programmirovanii',
     content: 'Содержание статьи будет добавлено позже...',
@@ -602,7 +602,7 @@ export const articles: Article[] = [
     featured: false,
   },
   {
-    id: '13',
+    id: '14',
     title: 'Создание мобильных приложений для детей',
     slug: 'mobilnye-prilozheniya-dlya-detey',
     content: 'Содержание статьи будет добавлено позже...',
@@ -615,7 +615,7 @@ export const articles: Article[] = [
     featured: false,
   },
   {
-    id: '14',
+    id: '15',
     title: 'IT-олимпиады и конкурсы для юных программистов',
     slug: 'it-olimpiady-i-konkursy',
     content: 'Содержание статьи будет добавлено позже...',
