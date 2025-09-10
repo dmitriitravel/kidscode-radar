@@ -1,5 +1,6 @@
 import React from 'react';
 import { SchoolCard } from '@/components/SchoolCard';
+import { ComparisonBar } from '@/components/ComparisonBar';
 import { schools } from '@/data/schools';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -145,6 +146,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <ComparisonBar />
     </div>
   );
 };

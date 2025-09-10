@@ -4,8 +4,9 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { StarRating } from '@/components/ui/star-rating';
-import { Clock, Users, Award, Globe, CheckCircle } from 'lucide-react';
+import { Clock, Users, Award, Globe, CheckCircle, GitCompare } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useComparison } from '@/contexts/ComparisonContext';
 
 interface SchoolCardProps {
   school: School;
@@ -13,6 +14,16 @@ interface SchoolCardProps {
 }
 
 export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => {
+  const { addToComparison, removeFromComparison, isInComparison } = useComparison();
+  const inComparison = isInComparison(school.id);
+
+  const handleCompareClick = () => {
+    if (inComparison) {
+      removeFromComparison(school.id);
+    } else {
+      addToComparison(school);
+    }
+  };
   return (
     <Card className={cn(
       'bg-gradient-card shadow-card hover:shadow-hover transition-all duration-300 border-border/50',
@@ -102,9 +113,23 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
           <Button variant="default" size="sm" className="flex-1">
             Подробнее
           </Button>
-          <Button variant="outline" size="sm" className="flex items-center gap-1">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="flex items-center gap-1"
+            onClick={() => window.open(school.website, '_blank')}
+          >
             <Globe className="h-3 w-3" />
             Сайт
+          </Button>
+          <Button 
+            variant={inComparison ? "secondary" : "outline"} 
+            size="sm" 
+            className="flex items-center gap-1"
+            onClick={handleCompareClick}
+          >
+            <GitCompare className="h-3 w-3" />
+            {inComparison ? '✓' : '+'}
           </Button>
         </div>
       </CardContent>
