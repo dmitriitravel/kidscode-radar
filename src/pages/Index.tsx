@@ -32,7 +32,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input placeholder="Поиск школы программирования..." className="pl-10 bg-background/10 border-background/20 text-primary-foreground placeholder:text-primary-foreground/70" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
+                <Input placeholder="Введите название школы или язык программирования" className="pl-10 h-11 bg-background/10 border-background/20 text-primary-foreground placeholder:text-primary-foreground/70" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
               </div>
               <div className="flex gap-2">
                 <Button variant="secondary" size="lg" className="gap-2" onClick={() => {
