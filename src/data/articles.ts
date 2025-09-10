@@ -640,4 +640,298 @@ export const articles: Article[] = [
     readTime: 6,
     featured: false,
   },
+  {
+    id: '18',
+    title: 'Топ-15 языков программирования 2025: самые популярные',
+    slug: 'top-15-yazykov-programmirovaniya-2025-samye-populyarnye',
+    content: `<div class="space-y-8">
+    <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">Для кого эта статья:</h3>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Российские школьники, интересующиеся программированием</li>
+            <li>Старшеклассники, выбирающие направление IT-образования</li>
+            <li>Новички в программировании, ищущие первый язык</li>
+            <li>Родители школьников, планирующие обучение детей программированию</li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Ключевые выводы статьи:</h3>
+        <ul class="space-y-2 list-disc list-inside text-foreground">
+            <li>Python лидирует в 2024 году благодаря буму искусственного интеллекта и машинного обучения</li>
+            <li>JavaScript остается незаменимым для веб-разработки, а TypeScript активно его дополняет</li>
+            <li>Для новичков лучший выбор: Python (универсальность), JavaScript (веб), C# (игры)</li>
+            <li>Зарплаты программистов в России: от 120,000 руб для новичков до 350,000 руб для экспертов</li>
+        </ul>
+    </div>
+
+    <p class="text-lg leading-relaxed">Выбор языка программирования становится все более важным решением для школьников и их родителей в 2024 году. С ростом популярности IT-профессий многие семьи рассматривают <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">курсы программирования для детей онлайн</a>, где можно получить структурированную программу обучения, персональные консультации опытных преподавателей и практические навыки работы с самыми востребованными языками программирования.</p>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Методология составления рейтинга: как мы определяли популярность</h2>
+        
+        <h3 class="text-xl font-semibold mb-4">Источники данных и их вес в итоговой оценке</h3>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Источник данных</th>
+                        <th class="text-left p-4 font-semibold">Вес в оценке</th>
+                        <th class="text-left p-4 font-semibold">Что измеряет</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">TIOBE Index</td>
+                        <td class="p-4">25%</td>
+                        <td class="p-4">Поисковые запросы и упоминания в интернете</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">GitHub Octoverse</td>
+                        <td class="p-4">20%</td>
+                        <td class="p-4">Активность разработчиков и количество проектов</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Stack Overflow Survey</td>
+                        <td class="p-4">20%</td>
+                        <td class="p-4">Опросы профессионального сообщества</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">PyPL Index</td>
+                        <td class="p-4">15%</td>
+                        <td class="p-4">Популярность обучающих материалов</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Анализ вакансий HH/LinkedIn</td>
+                        <td class="p-4">10%</td>
+                        <td class="p-4">Спрос на рынке труда в России</td>
+                    </tr>
+                    <tr class="bg-muted/50">
+                        <td class="p-4">RedMonk Rankings</td>
+                        <td class="p-4">10%</td>
+                        <td class="p-4">Корреляция использования и обсуждения</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-secondary/50 border-l-4 border-primary rounded-r-lg p-6 mt-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Авторитетные источники данных:</h4>
+            <p class="leading-relaxed">Наш анализ основан на данных <a href="https://github.blog/news-insights/octoverse/octoverse-2024/" class="text-primary font-semibold hover:underline transition-colors" target="_blank">GitHub Octoverse 2024</a>, который показывает, что Python стал самым популярным языком на GitHub, и исследованиях <a href="https://www.dice.com/career-advice/10-most-popular-programming-languages-on-github" class="text-primary font-semibold hover:underline transition-colors" target="_blank">Dice Career Advice</a> о трендах в программировании.</p>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "92% разработчиков используют или экспериментируют с инструментами ИИ-кодирования, поэтому мы ожидаем, что разработчики открытого исходного кода будут двигать следующую волну инноваций ИИ на GitHub" — GitHub Octoverse 2024
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Топ-15 языков программирования с детальным анализом</h2>
+
+        <div class="space-y-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-3 mb-4">1. Python (23.28% по TIOBE, рост +9.32%)</h3>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                        <p class="mb-2"><strong>Где используется:</strong> ИИ, машинное обучение, Data Science, веб-разработка, автоматизация</p>
+                        <p class="mb-2"><strong>Основные отрасли:</strong> Финтех, медицина, исследования, стартапы</p>
+                        <p class="mb-2"><strong>Средняя зарплата:</strong> 150,000-250,000 руб/месяц</p>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Пример вакансии:</strong> Data Scientist в Яндексе</p>
+                        <p><strong>Тренд:</strong> <span class="text-green-600 font-semibold">Стабильный рост благодаря буму ИИ</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-3 mb-4">2. C++ (10.29% по TIOBE, рост +0.33%)</h3>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                        <p class="mb-2"><strong>Где используется:</strong> Системное программирование, игры, высокопроизводительные приложения</p>
+                        <p class="mb-2"><strong>Основные отрасли:</strong> Геймдев, финансы, embedded-системы</p>
+                        <p class="mb-2"><strong>Средняя зарплата:</strong> 180,000-300,000 руб/месяц</p>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Пример вакансии:</strong> Senior C++ Developer в Gazprom Neft</p>
+                        <p><strong>Тренд:</strong> <span class="text-green-600 font-semibold">Возвращение в топ благодаря производительности</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-3 mb-4">3. Java</h3>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                        <p class="mb-2"><strong>Где используется:</strong> Enterprise-приложения, Android, веб-сервисы</p>
+                        <p class="mb-2"><strong>Основные отрасли:</strong> Банки, телеком, крупные корпорации</p>
+                        <p class="mb-2"><strong>Средняя зарплата:</strong> 160,000-280,000 руб/месяц</p>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Пример вакансии:</strong> Java Backend Developer в Сбербанке</p>
+                        <p><strong>Тренд:</strong> <span class="text-yellow-600 font-semibold">Стабильная популярность в корпоративном секторе</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-3 mb-4">4. JavaScript (4.20% по TIOBE, рост +1.43%)</h3>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                        <p class="mb-2"><strong>Где используется:</strong> Фронтенд, Node.js бэкенд, мобильные приложения</p>
+                        <p class="mb-2"><strong>Основные отрасли:</strong> Веб-разработка, стартапы, e-commerce</p>
+                        <p class="mb-2"><strong>Средняя зарплата:</strong> 120,000-220,000 руб/месяц</p>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Пример вакансии:</strong> Frontend React Developer в Ozon</p>
+                        <p><strong>Тренд:</strong> <span class="text-green-600 font-semibold">Рост благодаря развитию фронтенд-фреймворков</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-xl font-semibold text-primary border-b-2 border-primary pb-3 mb-4">5. TypeScript</h3>
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                        <p class="mb-2"><strong>Где используется:</strong> Крупные веб-приложения, корпоративный фронтенд</p>
+                        <p class="mb-2"><strong>Основные отрасли:</strong> Большие IT-компании, финтех, SaaS</p>
+                        <p class="mb-2"><strong>Средняя зарплата:</strong> 140,000-240,000 руб/месяц</p>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Пример вакансии:</strong> Senior Frontend Developer в ВТБ</p>
+                        <p><strong>Тренд:</strong> <span class="text-green-600 font-semibold">Активный рост как альтернатива JavaScript</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "Python стал самым используемым языком на GitHub, поскольку глобальная активность с открытым исходным кодом продолжает распространяться за пределы традиционной разработки программного обеспечения" — GitHub Octoverse 2024
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Рейтинг по специализациям: какой язык выбрать для своей области</h2>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Веб-разработка</h3>
+                <p class="mb-2"><strong>Фронтенд:</strong> JavaScript, TypeScript, Python (Django/Flask)</p>
+                <p class="mb-2"><strong>Бэкенд:</strong> JavaScript (Node.js), Python, Java, PHP, C#, Go</p>
+                <p><strong>Рекомендация для новичков:</strong> Начните с JavaScript</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Мобильная разработка</h3>
+                <p class="mb-2"><strong>iOS:</strong> Swift, Objective-C</p>
+                <p class="mb-2"><strong>Android:</strong> Kotlin, Java</p>
+                <p class="mb-2"><strong>Кроссплатформенная:</strong> JavaScript (React Native), Dart (Flutter)</p>
+                <p><strong>Рекомендация:</strong> Kotlin для Android, Swift для iOS</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Data Science и машинное обучение</h3>
+                <p class="mb-2"><strong>Анализ данных:</strong> Python, R, SQL</p>
+                <p class="mb-2"><strong>Машинное обучение:</strong> Python, R</p>
+                <p class="mb-2"><strong>Big Data:</strong> Java, Scala, Python</p>
+                <p><strong>Рекомендация:</strong> Python как универсальное решение</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Системное программирование</h3>
+                <p class="mb-2"><strong>Операционные системы:</strong> C, C++, Rust</p>
+                <p class="mb-2"><strong>Embedded-системы:</strong> C, C++, Rust</p>
+                <p class="mb-2"><strong>Высокопроизводительные приложения:</strong> C++, Rust, Go</p>
+                <p><strong>Рекомендация:</strong> Изучайте C++, переходите на Rust</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Выбор первого языка для новичков: пошаговое руководство</h2>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+            <div class="space-y-6">
+                <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-3 text-green-800 dark:text-green-200">✅ Шаг 1: Определите свою цель</h3>
+                    <ul class="space-y-2 list-disc list-inside text-green-700 dark:text-green-300">
+                        <li><strong>Веб-разработка → JavaScript</strong></li>
+                        <li><strong>Анализ данных → Python</strong></li>
+                        <li><strong>Мобильные приложения → Swift/Kotlin</strong></li>
+                        <li><strong>Игры → C#</strong></li>
+                        <li><strong>Универсальное решение → Python</strong></li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-3 text-green-800 dark:text-green-200">✅ Шаг 2: Оцените время на изучение</h3>
+                    <ul class="space-y-2 list-disc list-inside text-green-700 dark:text-green-300">
+                        <li><strong>3-6 месяцев:</strong> Python, JavaScript</li>
+                        <li><strong>6-12 месяцев:</strong> Java, C#</li>
+                        <li><strong>12+ месяцев:</strong> C++, Rust</li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold mb-3 text-green-800 dark:text-green-200">✅ Шаг 3: Проверьте рынок в вашем городе</h3>
+                    <ul class="space-y-2 list-disc list-inside text-green-700 dark:text-green-300">
+                        <li>Откройте HeadHunter/LinkedIn</li>
+                        <li>Найдите количество вакансий по каждому языку</li>
+                        <li>Сравните уровень зарплат</li>
+                        <li>Выберите топ-3 наиболее востребованных</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "Выбор первого языка программирования — это как выбор первого иностранного языка. Важнее не какой именно язык вы выберете, а то, насколько глубоко вы его изучите и сколько практики получите" — Опытный разработчик
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">FAQ</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-muted/50 rounded-lg p-4 border-l-4 border-l-primary">
+                <h4 class="font-semibold text-primary mb-2">Какой язык программирования лучше изучать первым в 2024 году?</h4>
+                <p class="text-sm">Для новичков лучший выбор — Python благодаря простому синтаксису и универсальности. Если цель — веб-разработка, начните с JavaScript. Для игр подойдет C# с Unity.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-l-4 border-l-primary">
+                <h4 class="font-semibold text-primary mb-2">Сколько времени нужно изучать язык программирования?</h4>
+                <p class="text-sm">Базовые навыки можно получить за 3-6 месяцев при ежедневной практике. Для уверенного владения потребуется 12-18 месяцев. Профессиональный уровень достигается через 2-3 года работы.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-l-4 border-l-primary">
+                <h4 class="font-semibold text-primary mb-2">Какие языки программирования самые высокооплачиваемые?</h4>
+                <p class="text-sm">В России наиболее высокие зарплаты у специалистов по Rust (200-350k руб), Go (180-320k руб), C++ (180-300k руб) и Python в области ИИ (150-250k руб).</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-l-4 border-l-primary">
+                <h4 class="font-semibold text-primary mb-2">Стоит ли изучать несколько языков программирования одновременно?</h4>
+                <p class="text-sm">Нет, лучше сосредоточиться на одном языке и изучить его глубоко. После получения уверенных навыков можно добавлять второй язык. Новичкам изучение нескольких языков одновременно только мешает.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-l-4 border-l-primary">
+                <h4 class="font-semibold text-primary mb-2">Какой язык программирования будет актуален через 5-10 лет?</h4>
+                <p class="text-sm">Python будет расти благодаря ИИ, JavaScript останется основой веба, Java сохранит позиции в enterprise. Rust может заменить C++ в системном программировании. TypeScript будет развиваться параллельно с JavaScript.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-l-4 border-l-primary">
+                <h4 class="font-semibold text-primary mb-2">Можно ли стать программистом без высшего образования?</h4>
+                <p class="text-sm">Да, в IT важнее практические навыки, чем диплом. Многие успешные программисты самоучки. Главное — постоянная практика, изучение новых технологий и создание портфолио проектов.</p>
+            </div>
+        </div>
+    </div>
+</div>`,
+    excerpt: 'Узнайте о топ-15 самых популярных языках программирования 2025 года. Сравнение, рейтинг и преимущества каждого языка для новичков и профессионалов.',
+    author: 'Дмитрий Козлов',
+    publishDate: '2025-07-18',
+    category: categories[1],
+    tags: ['языки программирования', 'рейтинг', 'Python', 'JavaScript', 'C++'],
+    readTime: 18,
+    featured: true,
+  },
 ];
