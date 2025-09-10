@@ -220,13 +220,6 @@ const Index = () => {
                   )}
                 </div>
 
-                {!hasActiveFilters && filteredSchools.length === schools.length && (
-                  <div className="mt-12 text-center">
-                    <Button variant="outline" size="lg">
-                      Показать все школы
-                    </Button>
-                  </div>
-                )}
               </main>
             </div>
           </div>
