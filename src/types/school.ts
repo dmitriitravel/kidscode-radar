@@ -35,3 +35,10 @@ export interface Review {
   date: string;
   verified: boolean;
 }
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category?: string;
+}
