@@ -7,7 +7,7 @@ export const schools: School[] = [
     description: 'Ведущая онлайн-школа программирования для детей от Skysmart. Обучение на реальных проектах с персональными наставниками-практиками. Навыки и знания для будущей IT-карьеры.',
     rating: 4.9,
     reviewCount: 628,
-    ageRange: '8-17 лет',
+    ageRange: '7+ лет',
     courses: ['Roblox', 'Minecraft', 'Python', 'Scratch', 'Unity', 'JavaScript', 'Web-разработка'],
     format: 'online',
     price: {
