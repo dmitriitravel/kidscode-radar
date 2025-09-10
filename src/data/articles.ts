@@ -13,10 +13,10 @@ export const articles: Article[] = [
     id: '1',
     title: 'Визуально-блочное программирование для детей: учимся создавать игры',
     slug: 'vizualno-blochnoe-programmirovanie-dlya-detey',
-    content: `<div class="visual-block-programming-article">
-    <div class="visual-programming-target-audience">
-        <h3>👥 Для кого эта статья:</h3>
-        <ul>
+    content: `<div class="space-y-8">
+    <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">👥 Для кого эта статья:</h3>
+        <ul class="space-y-2 list-disc list-inside">
             <li>Родители российских школьников, заинтересованные в развитии цифровых навыков детей</li>
             <li>Младшие школьники (7–11 лет), желающие создавать простые проекты в визуально-блочной среде</li>
             <li>Подростки (12–16 лет), стремящиеся к освоению основ программирования и переходу к текстовым языкам</li>
@@ -24,9 +24,9 @@ export const articles: Article[] = [
         </ul>
     </div>
 
-    <div class="visual-programming-key-takeaways">
-        <h3>🎯 Ключевые выводы из статьи:</h3>
-        <ul>
+    <div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">🎯 Ключевые выводы из статьи:</h3>
+        <ul class="space-y-2 list-disc list-inside text-foreground">
             <li>Визуально-блочное программирование позволяет создать первую программу за 5 минут без изучения сложного синтаксиса</li>
             <li>Scratch — лучшая платформа для начинающих, позволяющая создать полноценную игру за 30 минут</li>
             <li>Переход к текстовым языкам программирования становится естественным после освоения блочных сред</li>
@@ -34,11 +34,148 @@ export const articles: Article[] = [
         </ul>
     </div>
 
-    <p>Визуально-блочное программирование открывает двери в мир IT-технологий для детей любого возраста. Если вы хотите дать своему ребёнку качественное образование в этой области, рекомендуем изучить специализированные курсы <a href="https://programmirovanie-dlya-detej-online.ru/" class="visual-programming-special-link">программирования для детей</a>, где опытные преподаватели помогут освоить не только основы блочного программирования, но и плавно перейти к более сложным языкам.</p>
+    <p class="text-lg leading-relaxed">Визуально-блочное программирование открывает двери в мир IT-технологий для детей любого возраста. Если вы хотите дать своему ребёнку качественное образование в этой области, рекомендуем изучить специализированные курсы <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">программирования для детей</a>, где опытные преподаватели помогут освоить не только основы блочного программирования, но и плавно перейти к более сложным языкам.</p>
 
-    <h2>Что такое визуально-блочное программирование: создаём первую программу за 5 минут</h2>
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Что такое визуально-блочное программирование: создаём первую программу за 5 минут</h2>
+        <p class="mb-6">Визуально-блочное программирование — это метод создания программ с помощью графических блоков вместо написания текстового кода. Каждый блок представляет определённую команду или действие, которые можно перетаскивать и соединять как детали конструктора.</p>
+        
+        <div class="bg-secondary/50 border-l-4 border-primary rounded-r-lg p-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">🚀 Создаём первую программу "Движущийся кот" в Scratch:</h4>
+            <ol class="space-y-2 list-decimal list-inside">
+                <li>Откройте браузер и перейдите на сайт scratch.mit.edu</li>
+                <li>Нажмите кнопку "Создать" (зелёная кнопка в правом верхнем углу)</li>
+                <li>В разделе "События" найдите блок "когда щёлкнут по зелёному флажку"</li>
+                <li>Перетащите его в рабочую область</li>
+                <li>В разделе "Движение" найдите блок "идти 10 шагов"</li>
+                <li>Присоедините его под первый блок</li>
+                <li>Нажмите зелёный флажок над сценой — кот начнёт движение!</li>
+            </ol>
+        </div>
+        
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "Визуально-блочное программирование убирает барьер синтаксиса и позволяет детям сосредоточиться на логике и алгоритмическом мышлении" — исследование MIT Media Lab
+        </blockquote>
+    </div>
 
-    <p>Визуально-блочное программирование — это метод создания программ с помощью графических блоков вместо написания текстового кода. Каждый блок представляет определённую команду или действие, которые можно перетаскивать и соединять как детали конструктора.</p>
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Сравнительная таблица сред блочного программирования</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Платформа</th>
+                        <th class="text-left p-4 font-semibold">Возраст</th>
+                        <th class="text-left p-4 font-semibold">Основная цель</th>
+                        <th class="text-left p-4 font-semibold">Стоимость</th>
+                        <th class="text-left p-4 font-semibold">Рейтинг</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4"><strong>Scratch</strong></td>
+                        <td class="p-4">8-16 лет</td>
+                        <td class="p-4">Игры, анимация, истории</td>
+                        <td class="p-4">Бесплатно</td>
+                        <td class="p-4">⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4"><strong>Scratch Junior</strong></td>
+                        <td class="p-4">5-7 лет</td>
+                        <td class="p-4">Простые анимации</td>
+                        <td class="p-4">Бесплатно</td>
+                        <td class="p-4">⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4"><strong>Blockly Games</strong></td>
+                        <td class="p-4">8-18 лет</td>
+                        <td class="p-4">Изучение алгоритмов</td>
+                        <td class="p-4">Бесплатно</td>
+                        <td class="p-4">⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4"><strong>App Inventor</strong></td>
+                        <td class="p-4">12+ лет</td>
+                        <td class="p-4">Мобильные приложения</td>
+                        <td class="p-4">Бесплатно</td>
+                        <td class="p-4">⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4"><strong>mBlock</strong></td>
+                        <td class="p-4">6-16 лет</td>
+                        <td class="p-4">Робототехника, IoT</td>
+                        <td class="p-4">Частично платно</td>
+                        <td class="p-4">⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr class="bg-muted/50">
+                        <td class="p-4"><strong>Minecraft Education</strong></td>
+                        <td class="p-4">6-18 лет</td>
+                        <td class="p-4">Программирование в игре</td>
+                        <td class="p-4">Платно</td>
+                        <td class="p-4">⭐⭐⭐⭐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Готовые проекты для копирования и изменения</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-card border border-border rounded-lg p-4">
+                <h4 class="text-lg font-semibold text-primary mb-2">🐠 Проект 1: Аквариум с рыбками</h4>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Время создания:</strong> 15 минут</p>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Навыки:</strong> Движение, случайные числа, клонирование</p>
+                <p class="text-sm"><strong>Модификации:</strong> Добавить акулу-хищника, систему кормления, подводные растения</p>
+            </div>
+            
+            <div class="bg-card border border-border rounded-lg p-4">
+                <h4 class="text-lg font-semibold text-primary mb-2">💫 Проект 2: Звёздное небо</h4>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Время создания:</strong> 10 минут</p>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Навыки:</strong> Циклы, графические эффекты, координаты</p>
+                <p class="text-sm"><strong>Модификации:</strong> Созвездия, падающие звёзды, смена дня и ночи</p>
+            </div>
+            
+            <div class="bg-card border border-border rounded-lg p-4">
+                <h4 class="text-lg font-semibold text-primary mb-2">🎵 Проект 3: Музыкальное пианино</h4>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Время создания:</strong> 20 минут</p>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Навыки:</strong> События, звуки, интерактивность</p>
+                <p class="text-sm"><strong>Модификации:</strong> Запись мелодий, разные инструменты, визуализация нот</p>
+            </div>
+            
+            <div class="bg-card border border-border rounded-lg p-4">
+                <h4 class="text-lg font-semibold text-primary mb-2">🚗 Проект 4: Гоночная игра</h4>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Время создания:</strong> 25 минут</p>
+                <p class="text-sm text-muted-foreground mb-2"><strong>Навыки:</strong> Управление клавишами, физика, счётчик времени</p>
+                <p class="text-sm"><strong>Модификации:</strong> Препятствия, несколько машин, система рекордов</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">FAQ: ответы на популярные вопросы</h2>
+        <div class="space-y-4">
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">💻 С какого возраста можно начинать блочное программирование?</h4>
+                <p class="text-sm">Дети могут начинать с 5-6 лет с простых сред типа Scratch Junior. Основной Scratch подходит с 8 лет. Главное — интерес ребёнка, а не возраст.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">⚡ Какие системные требования нужны для работы?</h4>
+                <p class="text-sm">Scratch работает в любом современном браузере. Минимум: 2 ГБ RAM, интернет для онлайн-версии.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">🎯 Какая реальная польза от блочного программирования?</h4>
+                <p class="text-sm">Развивает логическое мышление, креативность, умение решать задачи. Готовит к изучению настоящих языков программирования и IT-профессиям.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">🚀 Что изучать после освоения Scratch?</h4>
+                <p class="text-sm">Переходите к Python, JavaScript или другим текстовым языкам. Также можно изучать App Inventor для создания мобильных приложений или Unity для 3D-игр.</p>
+            </div>
+        </div>
+    </div>
 </div>`,
     excerpt: 'Узнайте основы визуально-блочного программирования для детей: простые примеры, советы и пошаговые инструкции для создания первых игр и приложений.',
     author: 'Дмитрий Козлов',
