@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { StarRating } from '@/components/ui/star-rating';
-import { Clock, Users, Award, CheckCircle, GitCompare, Banknote } from 'lucide-react';
+import { Calendar, Users, Award, CheckCircle, GitCompare, Banknote, GraduationCap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useComparison } from '@/contexts/ComparisonContext';
 import { SchoolDetailModal } from '@/components/SchoolDetailModal';
@@ -76,18 +76,16 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
               от {school.price.min.toLocaleString('ru')} {school.price.currency} в месяц
             </span>
           </div>
-          {school.trialAvailable && (
+          {school.studentCount && (
             <div className="flex items-center gap-2 text-sm">
-              <CheckCircle className="h-4 w-4 text-success" />
-              <span className="text-muted-foreground">Пробный урок</span>
+              <GraduationCap className="h-4 w-4 text-success" />
+              <span className="text-muted-foreground">{school.studentCount.toLocaleString('ru')}+ учеников</span>
             </div>
           )}
-          {school.certificates && (
-            <div className="flex items-center gap-2 text-sm">
-              <Award className="h-4 w-4 text-accent" />
-              <span className="text-muted-foreground">Сертификаты</span>
-            </div>
-          )}
+          <div className="flex items-center gap-2 text-sm">
+            <Calendar className="h-4 w-4 text-accent" />
+            <span className="text-muted-foreground">с {school.establishedYear} года</span>
+          </div>
         </div>
 
         <div className="space-y-2">
