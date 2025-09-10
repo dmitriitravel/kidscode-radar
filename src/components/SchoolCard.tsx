@@ -73,7 +73,7 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
           <div className="flex items-center gap-2 text-sm">
             <Banknote className="h-4 w-4 text-primary" />
             <span className="text-muted-foreground">
-              {school.price.min.toLocaleString('ru')} - {school.price.max.toLocaleString('ru')} {school.price.currency} в месяц
+              от {school.price.min.toLocaleString('ru')} {school.price.currency} в месяц
             </span>
           </div>
           {school.trialAvailable && (
