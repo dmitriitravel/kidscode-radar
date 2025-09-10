@@ -42,10 +42,31 @@ const Index = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
-              <Button variant="secondary" size="lg" className="gap-2">
-                <Filter className="h-4 w-4" />
-                Фильтры
-              </Button>
+              <div className="flex gap-2">
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="gap-2"
+                  onClick={() => {
+                    const resultsSection = document.querySelector('main');
+                    resultsSection?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <Search className="h-4 w-4" />
+                  Поиск
+                </Button>
+                {hasActiveFilters && (
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="gap-2 bg-background/10 border-background/20 text-primary-foreground hover:bg-background/20"
+                    onClick={clearFilters}
+                  >
+                    <X className="h-4 w-4" />
+                    Очистить
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
         </div>
