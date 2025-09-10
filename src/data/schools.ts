@@ -3,6 +3,29 @@ import { School, Review } from '@/types/school';
 export const schools: School[] = [
   {
     id: '1',
+    name: 'Skysmart Pro',
+    description: 'Персональные уроки программирования от ведущей образовательной платформы. Индивидуальный подход и подготовка к олимпиадам.',
+    rating: 4.9,
+    reviewCount: 628,
+    ageRange: '8-17 лет',
+    courses: ['Python', 'JavaScript', 'Java', 'Web-разработка', 'Создание игр', 'Основы программирования'],
+    format: 'online',
+    price: {
+      min: 4000,
+      max: 8000,
+      currency: '₽',
+      period: 'month'
+    },
+    specialFeatures: ['Персональные репетиторы', 'Подготовка к олимпиадам', 'Гибкое расписание', 'Профориентация'],
+    website: 'https://skysmart.ru/programming',
+    establishedYear: 2019,
+    studentCount: 18000,
+    trialAvailable: true,
+    certificates: true,
+    rank: 1
+  },
+  {
+    id: '2',
     name: 'Кодабра',
     description: 'Ведущая онлайн-школа программирования для детей в России. Обучение проходит в игровой форме с индивидуальным подходом к каждому ученику.',
     rating: 4.8,
@@ -22,10 +45,10 @@ export const schools: School[] = [
     studentCount: 15000,
     trialAvailable: true,
     certificates: true,
-    rank: 1
+    rank: 2
   },
   {
-    id: '2',
+    id: '3',
     name: 'Алгоритмика',
     description: 'Международная школа программирования для детей с собственной онлайн-платформой и геймифицированным подходом к обучению.',
     rating: 4.7,
@@ -45,10 +68,10 @@ export const schools: School[] = [
     studentCount: 25000,
     trialAvailable: true,
     certificates: true,
-    rank: 2
+    rank: 3
   },
   {
-    id: '3',
+    id: '4',
     name: 'Progkids',
     description: 'Онлайн-школа программирования с фокусом на практические навыки и создание реальных проектов.',
     rating: 4.6,
@@ -68,10 +91,10 @@ export const schools: School[] = [
     studentCount: 8000,
     trialAvailable: true,
     certificates: true,
-    rank: 3
+    rank: 4
   },
   {
-    id: '4',
+    id: '5',
     name: 'GeekSchool',
     description: 'Детское направление GeekBrains с профессиональными преподавателями и современными методиками обучения.',
     rating: 4.5,
@@ -91,10 +114,10 @@ export const schools: School[] = [
     studentCount: 12000,
     trialAvailable: true,
     certificates: true,
-    rank: 4
+    rank: 5
   },
   {
-    id: '5',
+    id: '6',
     name: 'Codemika',
     description: 'Персонализированное обучение программированию с адаптивной системой и индивидуальными треками развития.',
     rating: 4.4,
@@ -114,10 +137,10 @@ export const schools: School[] = [
     studentCount: 5000,
     trialAvailable: true,
     certificates: true,
-    rank: 5
+    rank: 6
   },
   {
-    id: '6',
+    id: '7',
     name: 'ITGenio',
     description: 'Школа IT для детей с широким спектром направлений от программирования до кибербезопасности.',
     rating: 4.3,
@@ -137,7 +160,76 @@ export const schools: School[] = [
     studentCount: 10000,
     trialAvailable: true,
     certificates: true,
-    rank: 6
+    rank: 7
+  },
+  {
+    id: '8',
+    name: 'Пиксель',
+    description: 'Международная онлайн-школа программирования и дизайна для детей с более чем 100 преподавателями.',
+    rating: 4.2,
+    reviewCount: 412,
+    ageRange: '5-17 лет',
+    courses: ['Scratch', 'Python', 'Java', 'Unity', 'Roblox', 'Веб-дизайн', 'Графический дизайн'],
+    format: 'hybrid',
+    price: {
+      min: 3000,
+      max: 6000,
+      currency: '₽',
+      period: 'month'
+    },
+    specialFeatures: ['Индивидуальные и групповые занятия', 'Летние интенсивы', 'Международная сертификация', 'Дизайн и программирование'],
+    website: 'https://clubpixel.ru',
+    establishedYear: 2017,
+    studentCount: 14000,
+    trialAvailable: true,
+    certificates: true,
+    rank: 8
+  },
+  {
+    id: '9',
+    name: 'XYZ School Kids',
+    description: 'Детское направление школы креативных профессий с фокусом на дизайн и основы программирования.',
+    rating: 4.1,
+    reviewCount: 178,
+    ageRange: '10-16 лет',
+    courses: ['Веб-дизайн', 'Motion-дизайн', '3D-графика', 'Основы программирования', 'UI/UX дизайн'],
+    format: 'online',
+    price: {
+      min: 3000,
+      max: 5500,
+      currency: '₽',
+      period: 'month'
+    },
+    specialFeatures: ['Креативный подход', 'Портфолио', 'Наставничество', 'Работа с реальными проектами'],
+    website: 'https://xyzschool.ru/kids',
+    establishedYear: 2020,
+    studentCount: 3500,
+    trialAvailable: true,
+    certificates: true,
+    rank: 9
+  },
+  {
+    id: '10',
+    name: 'Кодди',
+    description: 'Школа программирования для детей с упором на практическое применение навыков и командную работу.',
+    rating: 4.0,
+    reviewCount: 234,
+    ageRange: '6-16 лет',
+    courses: ['Scratch', 'Python', 'JavaScript', 'Minecraft', 'App Development', 'Робототехника'],
+    format: 'hybrid',
+    price: {
+      min: 2800,
+      max: 5800,
+      currency: '₽',
+      period: 'month'
+    },
+    specialFeatures: ['Командные проекты', 'Практическое применение', 'Робототехника', 'Доступные цены'],
+    website: 'https://coddyschool.com',
+    establishedYear: 2016,
+    studentCount: 6500,
+    trialAvailable: true,
+    certificates: true,
+    rank: 10
   }
 ];
 
@@ -145,6 +237,30 @@ export const reviews: Review[] = [
   {
     id: '1',
     schoolId: '1',
+    authorName: 'Анна В.',
+    rating: 5,
+    title: 'Лучший персональный подход',
+    content: 'Занимаемся в Skysmart Pro уже 8 месяцев. Преподаватель находит подход к ребенку, объясняет доступно. Сын готовится к олимпиаде по программированию.',
+    pros: ['Персональные репетиторы', 'Подготовка к олимпиадам', 'Гибкое расписание'],
+    cons: ['Высокая стоимость'],
+    date: '2024-02-10',
+    verified: true
+  },
+  {
+    id: '2',
+    schoolId: '1',
+    authorName: 'Дмитрий Р.',
+    rating: 5,
+    title: 'Отличные результаты',
+    content: 'Дочка за полгода освоила Python и создала свою первую игру. Преподаватели очень квалифицированные, всегда поддерживают и мотивируют.',
+    pros: ['Высокое качество обучения', 'Профориентация', 'Индивидуальный план'],
+    cons: ['Мало групповых активностей'],
+    date: '2024-01-25',
+    verified: true
+  },
+  {
+    id: '3',
+    schoolId: '2',
     authorName: 'Мария К.',
     rating: 5,
     title: 'Отличная школа для начинающих',
@@ -155,8 +271,8 @@ export const reviews: Review[] = [
     verified: true
   },
   {
-    id: '2',
-    schoolId: '1',
+    id: '4',
+    schoolId: '2',
     authorName: 'Алексей П.',
     rating: 4,
     title: 'Хорошие результаты',
@@ -167,8 +283,8 @@ export const reviews: Review[] = [
     verified: true
   },
   {
-    id: '3',
-    schoolId: '2',
+    id: '5',
+    schoolId: '3',
     authorName: 'Елена С.',
     rating: 5,
     title: 'Лучшая онлайн-школа',
@@ -176,6 +292,42 @@ export const reviews: Review[] = [
     pros: ['Удобная платформа', 'Геймификация', 'Групповые проекты'],
     cons: ['Нет индивидуальных занятий'],
     date: '2024-01-28',
+    verified: true
+  },
+  {
+    id: '6',
+    schoolId: '8',
+    authorName: 'Ольга М.',
+    rating: 4,
+    title: 'Хорошая школа для творческих детей',
+    content: 'Дочка изучает и программирование, и дизайн в Пикселе. Очень нравится разнообразие курсов и международная программа.',
+    pros: ['Широкий выбор курсов', 'Международная сертификация', 'Творческий подход'],
+    cons: ['Иногда сложно выбрать направление'],
+    date: '2024-02-05',
+    verified: true
+  },
+  {
+    id: '7',
+    schoolId: '9',
+    authorName: 'Игорь Т.',
+    rating: 4,
+    title: 'Отличная подготовка к будущей профессии',
+    content: 'Сын занимается веб-дизайном в XYZ School Kids. Очень современный подход, работает с реальными проектами.',
+    pros: ['Современные технологии', 'Реальные проекты', 'Портфолио'],
+    cons: ['Подходит не всем возрастам'],
+    date: '2024-01-18',
+    verified: true
+  },
+  {
+    id: '8',
+    schoolId: '10',
+    authorName: 'Наталья Л.',
+    rating: 4,
+    title: 'Доступная школа с хорошим качеством',
+    content: 'Приятно удивлены качеством обучения за такую цену. Сын изучает Scratch и робототехнику, очень увлечен.',
+    pros: ['Доступные цены', 'Робототехника', 'Командная работа'],
+    cons: ['Меньше индивидуального внимания'],
+    date: '2024-02-12',
     verified: true
   }
 ];
