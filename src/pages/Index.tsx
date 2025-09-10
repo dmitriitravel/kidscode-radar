@@ -106,27 +106,60 @@ const Index = () => {
                         Очистить
                       </Button>}
                   </div>
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap gap-2">
-                      {['6-10 лет', '11-14 лет', '15+ лет'].map(ageGroup => <Badge key={ageGroup} variant={activeFilters.ageGroups.includes(ageGroup) ? "default" : "outline"} className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" onClick={() => toggleFilter('ageGroups', ageGroup)}>
-                          {ageGroup}
-                        </Badge>)}
+                  <div className="space-y-4">
+                    {/* Возрасты */}
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-foreground">Возраст ребенка</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'].map(age => (
+                          <Badge 
+                            key={age} 
+                            variant={activeFilters.ages.includes(age) ? "default" : "outline"} 
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" 
+                            onClick={() => toggleFilter('ages', age)}
+                          >
+                            {age} лет
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {['Scratch', 'Python', 'JavaScript'].map(language => <Badge key={language} variant={activeFilters.languages.includes(language) ? "default" : "outline"} className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" onClick={() => toggleFilter('languages', language)}>
-                          {language}
-                        </Badge>)}
+                    
+                    {/* Языки программирования */}
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-foreground">Языки программирования</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['Scratch', 'Python', 'JavaScript', 'Java', 'Unity', 'Roblox', 'Minecraft', 'C++', 'Web-разработка', 'Мобильная разработка', 'Kotlin', 'Веб-дизайн', 'Робототехника'].map(language => (
+                          <Badge 
+                            key={language} 
+                            variant={activeFilters.languages.includes(language) ? "default" : "outline"} 
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" 
+                            onClick={() => toggleFilter('languages', language)}
+                          >
+                            {language}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {['До 5000₽', 'Пробный урок'].map(feature => <Badge key={feature} variant={feature === 'До 5000₽' && activeFilters.priceRange.includes(feature) || feature === 'Пробный урок' && activeFilters.features.includes(feature) ? "default" : "outline"} className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" onClick={() => {
-                      if (feature === 'До 5000₽') {
-                        toggleFilter('priceRange', feature);
-                      } else {
-                        toggleFilter('features', feature);
-                      }
-                    }}>
-                          {feature}
-                        </Badge>)}
+                    
+                    {/* Форматы обучения */}
+                    <div>
+                      <h4 className="text-sm font-medium mb-2 text-foreground">Формат обучения</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          { key: 'online', label: 'Онлайн' },
+                          { key: 'offline', label: 'Офлайн' },
+                          { key: 'hybrid', label: 'Гибрид' }
+                        ].map(format => (
+                          <Badge 
+                            key={format.key} 
+                            variant={activeFilters.formats.includes(format.key) ? "default" : "outline"} 
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" 
+                            onClick={() => toggleFilter('formats', format.key)}
+                          >
+                            {format.label}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

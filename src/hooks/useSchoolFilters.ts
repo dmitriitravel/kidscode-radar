@@ -2,19 +2,17 @@ import { useState, useMemo, useCallback } from 'react';
 import { School } from '@/types/school';
 
 export interface FilterState {
-  ageGroups: string[];
+  ages: string[];
   languages: string[];
-  priceRange: string[];
-  features: string[];
+  formats: string[];
 }
 
 export const useSchoolFilters = (schools: School[]) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilters, setActiveFilters] = useState<FilterState>({
-    ageGroups: [],
+    ages: [],
     languages: [],
-    priceRange: [],
-    features: []
+    formats: []
   });
 
   const toggleFilter = useCallback((category: keyof FilterState, value: string) => {
@@ -28,10 +26,9 @@ export const useSchoolFilters = (schools: School[]) => {
 
   const clearFilters = useCallback(() => {
     setActiveFilters({
-      ageGroups: [],
+      ages: [],
       languages: [],
-      priceRange: [],
-      features: []
+      formats: []
     });
     setSearchQuery('');
   }, []);
@@ -50,30 +47,19 @@ export const useSchoolFilters = (schools: School[]) => {
       );
     }
 
-    // Age group filter
-    if (activeFilters.ageGroups.length > 0) {
+    // Age filter
+    if (activeFilters.ages.length > 0) {
       filtered = filtered.filter(school => {
-        return activeFilters.ageGroups.some(ageGroup => {
+        return activeFilters.ages.some(age => {
           // Parse school age range (e.g., "8-17 лет" -> min: 8, max: 17)
-          const ageRangeMatch = school.ageRange.match(/(\d+)-(\d+)/);
+          const ageRangeMatch = school.ageRange.match(/(\d+)[-+]?(\d+)?/);
           if (!ageRangeMatch) return false;
           
           const schoolMinAge = parseInt(ageRangeMatch[1]);
-          const schoolMaxAge = parseInt(ageRangeMatch[2]);
+          const schoolMaxAge = ageRangeMatch[2] ? parseInt(ageRangeMatch[2]) : 18;
           
-          switch (ageGroup) {
-            case '6-10 лет':
-              // Check if school age range overlaps with 6-10
-              return schoolMinAge <= 10 && schoolMaxAge >= 6;
-            case '11-14 лет':
-              // Check if school age range overlaps with 11-14
-              return schoolMinAge <= 14 && schoolMaxAge >= 11;
-            case '15+ лет':
-              // Check if school age range includes 15+
-              return schoolMaxAge >= 15;
-            default:
-              return false;
-          }
+          const targetAge = parseInt(age);
+          return schoolMinAge <= targetAge && schoolMaxAge >= targetAge;
         });
       });
     }
@@ -87,28 +73,11 @@ export const useSchoolFilters = (schools: School[]) => {
       );
     }
 
-    // Price filter
-    if (activeFilters.priceRange.length > 0) {
-      filtered = filtered.filter(school => {
-        return activeFilters.priceRange.some(range => {
-          if (range === 'До 5000₽') {
-            return school.price.min <= 5000;
-          }
-          return false;
-        });
-      });
-    }
-
-    // Features filter
-    if (activeFilters.features.length > 0) {
-      filtered = filtered.filter(school => {
-        return activeFilters.features.some(feature => {
-          if (feature === 'Пробный урок') {
-            return school.trialAvailable;
-          }
-          return false;
-        });
-      });
+    // Format filter
+    if (activeFilters.formats.length > 0) {
+      filtered = filtered.filter(school =>
+        activeFilters.formats.includes(school.format)
+      );
     }
 
     return filtered;
