@@ -103,16 +103,17 @@ const Article: React.FC = () => {
                   {article.excerpt}
                 </p>
                 
-                <div className="whitespace-pre-wrap">
-                  {article.content}
+                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: article.content }}>
                 </div>
                 
-                {/* Placeholder content */}
-                <div className="bg-muted/30 rounded-lg p-6 mt-8">
-                  <p className="text-center text-muted-foreground">
-                    📝 Контент статьи будет добавлен в ближайшее время
-                  </p>
-                </div>
+                {/* Only show placeholder for placeholder content */}
+                {article.content === 'Содержание статьи будет добавлено позже...' && (
+                  <div className="bg-muted/30 rounded-lg p-6 mt-8">
+                    <p className="text-center text-muted-foreground">
+                      📝 Контент статьи будет добавлен в ближайшее время
+                    </p>
+                  </div>
+                )}
               </div>
             </article>
           </div>
