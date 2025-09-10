@@ -93,16 +93,11 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
         <div className="space-y-2">
           <h4 className="font-semibold text-sm text-card-foreground">Курсы:</h4>
           <div className="flex flex-wrap gap-1">
-            {['Roblox', 'Minecraft', 'Python', 'Scratch', 'Unity', 'JavaScript', 'Web-разработка'].slice(0, 4).map((course, index) => (
+            {school.courses.map((course, index) => (
               <Badge key={index} variant="outline" className="text-xs">
                 {course}
               </Badge>
             ))}
-            {['Roblox', 'Minecraft', 'Python', 'Scratch', 'Unity', 'JavaScript', 'Web-разработка'].length > 4 && (
-              <Badge variant="outline" className="text-xs">
-                +{['Roblox', 'Minecraft', 'Python', 'Scratch', 'Unity', 'JavaScript', 'Web-разработка'].length - 4}
-              </Badge>
-            )}
           </div>
         </div>
 

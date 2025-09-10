@@ -8,7 +8,7 @@ export const schools: School[] = [
     rating: 4.9,
     reviewCount: 628,
     ageRange: '8-17 лет',
-    courses: ['Python', 'JavaScript', 'Java', 'Web-разработка', 'Создание игр', 'Основы программирования'],
+    courses: ['Roblox', 'Minecraft', 'Python', 'Scratch', 'Unity', 'JavaScript', 'Web-разработка'],
     format: 'online',
     price: {
       min: 4000,
@@ -31,7 +31,7 @@ export const schools: School[] = [
     rating: 4.8,
     reviewCount: 342,
     ageRange: '6-17 лет',
-    courses: ['Scratch', 'Python', 'JavaScript', 'Roblox', 'Unity', 'Web-разработка'],
+    courses: ['Scratch', 'Python', 'JavaScript', 'Roblox', 'Unity', 'Web-разработка', 'Мобильная разработка'],
     format: 'online',
     price: {
       min: 3500,
@@ -54,7 +54,7 @@ export const schools: School[] = [
     rating: 4.7,
     reviewCount: 528,
     ageRange: '5-17 лет',
-    courses: ['Scratch Junior', 'Scratch', 'Python', 'JavaScript', 'Мобильная разработка', 'Веб-дизайн'],
+    courses: ['Scratch Junior', 'Scratch', 'Python', 'JavaScript', 'Мобильная разработка', 'Веб-дизайн', 'Математика'],
     format: 'hybrid',
     price: {
       min: 4000,
@@ -77,7 +77,7 @@ export const schools: School[] = [
     rating: 4.6,
     reviewCount: 287,
     ageRange: '7-16 лет',
-    courses: ['Scratch', 'Python', 'Minecraft', 'Roblox', 'JavaScript', 'Game Development'],
+    courses: ['Scratch', 'Python', 'Minecraft', 'Roblox', 'JavaScript', 'Game Development', 'Unity'],
     format: 'online',
     price: {
       min: 3000,
@@ -100,7 +100,7 @@ export const schools: School[] = [
     rating: 4.5,
     reviewCount: 445,
     ageRange: '8-17 лет',
-    courses: ['Python', 'Java', 'C++', 'Web-разработка', 'Мобильная разработка', 'Базы данных'],
+    courses: ['Python', 'Java', 'C++', 'Web-разработка', 'Мобильная разработка', 'Базы данных', 'Искусственный интеллект'],
     format: 'online',
     price: {
       min: 4500,
@@ -123,7 +123,7 @@ export const schools: School[] = [
     rating: 4.4,
     reviewCount: 193,
     ageRange: '6-16 лет',
-    courses: ['Scratch', 'Python', 'JavaScript', 'App Development', 'AI/ML основы'],
+    courses: ['Scratch', 'Python', 'JavaScript', 'App Development', 'AI/ML основы', 'Web-разработка'],
     format: 'online',
     price: {
       min: 3200,
@@ -146,7 +146,7 @@ export const schools: School[] = [
     rating: 4.3,
     reviewCount: 356,
     ageRange: '7-17 лет',
-    courses: ['Scratch', 'Python', 'Java', 'Кибербезопасность', 'Блокчейн', '3D-моделирование'],
+    courses: ['Scratch', 'Python', 'Java', 'Кибербезопасность', 'Блокчейн', '3D-моделирование', 'Робототехника'],
     format: 'hybrid',
     price: {
       min: 3800,
@@ -169,7 +169,7 @@ export const schools: School[] = [
     rating: 4.2,
     reviewCount: 412,
     ageRange: '5-17 лет',
-    courses: ['Scratch', 'Python', 'Java', 'Unity', 'Roblox', 'Веб-дизайн', 'Графический дизайн'],
+    courses: ['Scratch', 'Python', 'Java', 'Unity', 'Roblox', 'Веб-дизайн', 'Графический дизайн', '3D-моделирование'],
     format: 'hybrid',
     price: {
       min: 3000,
@@ -192,7 +192,7 @@ export const schools: School[] = [
     rating: 4.1,
     reviewCount: 178,
     ageRange: '10-16 лет',
-    courses: ['Веб-дизайн', 'Motion-дизайн', '3D-графика', 'Основы программирования', 'UI/UX дизайн'],
+    courses: ['Веб-дизайн', 'Motion-дизайн', '3D-графика', 'Основы программирования', 'UI/UX дизайн', 'Геймдизайн'],
     format: 'online',
     price: {
       min: 3000,
@@ -215,7 +215,7 @@ export const schools: School[] = [
     rating: 4.0,
     reviewCount: 234,
     ageRange: '6-16 лет',
-    courses: ['Scratch', 'Python', 'JavaScript', 'Minecraft', 'App Development', 'Робототехника'],
+    courses: ['Scratch', 'Python', 'JavaScript', 'Minecraft', 'App Development', 'Робототехника', 'Kotlin'],
     format: 'hybrid',
     price: {
       min: 2800,
