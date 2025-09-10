@@ -5,9 +5,21 @@ import { schools } from '@/data/schools';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Search, Filter, TrendingUp, Users, Award, Star } from 'lucide-react';
+import { Search, Filter, TrendingUp, Users, Award, Star, X } from 'lucide-react';
+import { useSchoolFilters } from '@/hooks/useSchoolFilters';
 
 const Index = () => {
+  const {
+    searchQuery,
+    setSearchQuery,
+    activeFilters,
+    toggleFilter,
+    clearFilters,
+    filteredSchools,
+    hasActiveFilters,
+    resultsCount
+  } = useSchoolFilters(schools);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -26,6 +38,8 @@ const Index = () => {
                 <Input 
                   placeholder="Поиск школы программирования..." 
                   className="pl-10 bg-background/10 border-background/20 text-primary-foreground placeholder:text-primary-foreground/70"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
               <Button variant="secondary" size="lg" className="gap-2">
@@ -82,37 +96,67 @@ const Index = () => {
               {/* Sidebar Filters */}
               <aside className="lg:w-80 space-y-6">
                 <div className="bg-card p-6 rounded-lg border border-border shadow-card">
-                  <h3 className="font-semibold mb-4 text-card-foreground">Быстрые фильтры</h3>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold text-card-foreground">Быстрые фильтры</h3>
+                    {hasActiveFilters && (
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={clearFilters}
+                        className="h-8 px-2 lg:px-3"
+                      >
+                        <X className="h-3 w-3 mr-1" />
+                        Очистить
+                      </Button>
+                    )}
+                  </div>
                   <div className="space-y-3">
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        6-10 лет
-                      </Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        11-14 лет
-                      </Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        15+ лет
-                      </Badge>
+                      {['6-10 лет', '11-14 лет', '15+ лет'].map((ageGroup) => (
+                        <Badge 
+                          key={ageGroup}
+                          variant={activeFilters.ageGroups.includes(ageGroup) ? "default" : "outline"}
+                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                          onClick={() => toggleFilter('ageGroups', ageGroup)}
+                        >
+                          {ageGroup}
+                        </Badge>
+                      ))}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        Scratch
-                      </Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        Python
-                      </Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        JavaScript
-                      </Badge>
+                      {['Scratch', 'Python', 'JavaScript'].map((language) => (
+                        <Badge 
+                          key={language}
+                          variant={activeFilters.languages.includes(language) ? "default" : "outline"}
+                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                          onClick={() => toggleFilter('languages', language)}
+                        >
+                          {language}
+                        </Badge>
+                      ))}
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        До 5000₽
-                      </Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                        Пробный урок
-                      </Badge>
+                      {['До 5000₽', 'Пробный урок'].map((feature) => (
+                        <Badge 
+                          key={feature}
+                          variant={
+                            (feature === 'До 5000₽' && activeFilters.priceRange.includes(feature)) ||
+                            (feature === 'Пробный урок' && activeFilters.features.includes(feature))
+                              ? "default" 
+                              : "outline"
+                          }
+                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                          onClick={() => {
+                            if (feature === 'До 5000₽') {
+                              toggleFilter('priceRange', feature);
+                            } else {
+                              toggleFilter('features', feature);
+                            }
+                          }}
+                        >
+                          {feature}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -121,26 +165,47 @@ const Index = () => {
               {/* Main Rankings */}
               <main className="flex-1">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-4 text-foreground">
-                    ТОП-10 школ программирования 2024
-                  </h2>
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-3xl font-bold text-foreground">
+                      {hasActiveFilters ? `Найдено школ: ${resultsCount}` : 'ТОП-10 школ программирования 2024'}
+                    </h2>
+                  </div>
                   <p className="text-muted-foreground">
-                    Рейтинг составлен на основе отзывов родителей, качества обучения, 
-                    результатов учеников и других важных критериев.
+                    {hasActiveFilters 
+                      ? 'Результаты поиска и фильтрации школ программирования'
+                      : 'Рейтинг составлен на основе отзывов родителей, качества обучения, результатов учеников и других важных критериев.'
+                    }
                   </p>
                 </div>
 
                 <div className="space-y-6">
-                  {schools.map((school) => (
-                    <SchoolCard key={school.id} school={school} />
-                  ))}
+                  {filteredSchools.length > 0 ? (
+                    filteredSchools.map((school) => (
+                      <SchoolCard key={school.id} school={school} />
+                    ))
+                  ) : (
+                    <div className="text-center py-12">
+                      <div className="text-muted-foreground mb-4">
+                        <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                        <h3 className="text-lg font-medium mb-2">Ничего не найдено</h3>
+                        <p>Попробуйте изменить критерии поиска или очистить фильтры</p>
+                      </div>
+                      {hasActiveFilters && (
+                        <Button variant="outline" onClick={clearFilters}>
+                          Очистить все фильтры
+                        </Button>
+                      )}
+                    </div>
+                  )}
                 </div>
 
-                <div className="mt-12 text-center">
-                  <Button variant="outline" size="lg">
-                    Показать все школы
-                  </Button>
-                </div>
+                {!hasActiveFilters && filteredSchools.length === schools.length && (
+                  <div className="mt-12 text-center">
+                    <Button variant="outline" size="lg">
+                      Показать все школы
+                    </Button>
+                  </div>
+                )}
               </main>
             </div>
           </div>
