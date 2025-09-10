@@ -137,7 +137,7 @@ const Index = () => {
                 <div className="mb-8">
                   <div className="flex items-center justify-between mb-4">
                     <h2 className="text-3xl font-bold text-foreground">
-                      {hasActiveFilters ? `Найдено школ: ${resultsCount}` : 'ТОП-10 школ программирования 2024'}
+                      {hasActiveFilters ? `Найдено школ: ${resultsCount}` : 'Топ-10 школ программирования в 2025 году'}
                     </h2>
                   </div>
                   <p className="text-muted-foreground">
