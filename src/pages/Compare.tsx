@@ -11,7 +11,7 @@ const Compare: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-6 lg:py-8 max-w-7xl">
+      <div className="container mx-auto px-4 py-6 lg:py-8 max-w-6xl">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 lg:mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-1">
             <Button 
