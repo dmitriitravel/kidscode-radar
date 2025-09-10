@@ -7,7 +7,7 @@ import { schools } from '@/data/schools';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Search, Filter, GraduationCap, Users, Award, Star, X } from 'lucide-react';
+import { Search, Filter, GraduationCap, Users, Code, Star, X } from 'lucide-react';
 import { useSchoolFilters } from '@/hooks/useSchoolFilters';
 const Index = () => {
   const {
@@ -81,7 +81,7 @@ const Index = () => {
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
-                <Award className="h-6 w-6" />
+                <Code className="h-6 w-6" />
               </div>
               <div className="text-2xl font-bold text-foreground">50+</div>
               <div className="text-sm text-muted-foreground">Языков программирования</div>
