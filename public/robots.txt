@@ -1,18 +1,14 @@
-User-agent: *
+User-agent: Googlebot
 Allow: /
 
-Sitemap: https://programmirovanie-dlya-detej-online.ru/sitemap.xml
+User-agent: Bingbot
+Allow: /
 
-# Block access to development and admin paths
-Disallow: /api/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /src/
+User-agent: Twitterbot
+Allow: /
 
-# Allow important SEO pages
-Allow: /articles/
-Allow: /compare
-Allow: /about
-Allow: /privacy-policy
-Allow: /terms-of-service
-Allow: /rating-methodology
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /

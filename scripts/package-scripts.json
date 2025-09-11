@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "build:ssg": "node scripts/build-ssg.js",
-    "generate:pages": "node scripts/generatePages.js"
-  }
-}

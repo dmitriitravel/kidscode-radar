@@ -22,16 +22,16 @@ const TermsOfService: React.FC = () => {
     "@type": "WebPage",
     "name": "Правила пользования сервисом",
     "description": "Правила пользования платформой рейтинга онлайн-школ программирования для детей",
-    "url": `${typeof window !== 'undefined' ? window.location.origin : 'https://programmirovanie-dlya-detej-online.ru'}/terms-of-service`
+    "url": `${window.location.origin}/terms-of-service`
   };
 
   return (
     <>
       <SEOHead
-        title="Правила пользования сервисом | Условия использования платформы"
-        description="Правила и условия использования нашей платформы рейтинга школ программирования для детей. Права и обязанности пользователей."
-        keywords="правила пользования, условия использования, пользовательское соглашение, права пользователей"
-        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : 'https://programmirovanie-dlya-detej-online.ru'}/terms-of-service`}
+        title="Правила пользования сервисом | Рейтинг школ программирования"
+        description="Правила пользования нашей платформой рейтинга онлайн-школ программирования для детей. Условия использования и ответственность пользователей."
+        keywords="правила пользования, условия использования, пользовательское соглашение, ответственность"
+        canonicalUrl={`${window.location.origin}/terms-of-service`}
         ogTitle="Правила пользования сервисом | Рейтинг школ программирования"
         ogDescription="Условия использования платформы рейтинга онлайн-школ программирования для детей."
         structuredData={structuredData}
