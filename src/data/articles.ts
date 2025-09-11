@@ -1858,7 +1858,7 @@ while True:
     <div>
         <h2 class="text-2xl font-bold mb-4">Лучшие ресурсы и инструменты для продолжения обучения</h2>
 
-        <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 mb-6">
+        <div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
             <h3 class="text-lg font-semibold text-blue-700 mb-4">Международные образовательные ресурсы</h3>
             <p class="mb-4">Для расширения знаний рекомендуем изучить материалы от ведущих мировых образовательных платформ:</p>
             <ul class="space-y-2 list-disc list-inside">
