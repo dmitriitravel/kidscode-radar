@@ -32,6 +32,8 @@ const PrivacyPolicy: React.FC = () => {
         description="Политика конфиденциальности нашей платформы. Узнайте, как мы собираем, используем и защищаем ваши персональные данные."
         keywords="политика конфиденциальности, защита персональных данных, GDPR, безопасность данных"
         canonicalUrl={`${window.location.origin}/privacy-policy`}
+        ogTitle="Политика конфиденциальности | Рейтинг школ программирования"
+        ogDescription="Узнайте, как мы защищаем ваши персональные данные на платформе рейтинга школ программирования для детей."
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

@@ -6,13 +6,32 @@ import { ComparisonTable } from '@/components/ComparisonTable';
 import InternalNavigation from '@/components/InternalNavigation';
 import Footer from '@/components/Footer';
 import { ArrowLeft, GitCompare } from 'lucide-react';
+import { SEOHead } from '@/components/SEOHead';
 
 const Compare: React.FC = () => {
   const { selectedSchools, clearComparison } = useComparison();
   const navigate = useNavigate();
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Сравнение онлайн-школ программирования для детей",
+    "description": "Детальное сравнение характеристик, цен и программ обучения различных онлайн-школ программирования для детей и подростков.",
+    "url": `${window.location.origin}/compare`
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Сравнение школ программирования для детей | Подробный анализ"
+        description="Детальное сравнение характеристик, цен и программ обучения различных онлайн-школ программирования для детей и подростков."
+        keywords="сравнение школ программирования, сравнить курсы программирования, выбор школы программирования, анализ школ"
+        canonicalUrl={`${window.location.origin}/compare`}
+        ogTitle="Сравнение школ программирования для детей | Подробный анализ"
+        ogDescription="Детальное сравнение онлайн-школ программирования: цены, программы, преподаватели, отзывы."
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background">
       <InternalNavigation />
       <div className="container mx-auto px-4 py-6 lg:py-8 max-w-6xl">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 lg:mb-8">
@@ -62,7 +81,8 @@ const Compare: React.FC = () => {
         )}
       </div>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

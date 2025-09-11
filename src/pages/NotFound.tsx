@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import InternalNavigation from '@/components/InternalNavigation';
 import Footer from '@/components/Footer';
+import { SEOHead } from '@/components/SEOHead';
 
 const NotFound = () => {
   const location = useLocation();
@@ -10,8 +11,25 @@ const NotFound = () => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
   }, [location.pathname]);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Страница не найдена | 404 ошибка",
+    "description": "Запрашиваемая страница не найдена. Вернитесь на главную страницу рейтинга онлайн-школ программирования для детей.",
+    "url": window.location.href
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title="Страница не найдена | 404 ошибка"
+        description="Запрашиваемая страница не найдена. Вернитесь на главную страницу рейтинга онлайн-школ программирования для детей."
+        canonicalUrl={`${window.location.origin}/404`}
+        ogTitle="Страница не найдена | 404 ошибка"
+        ogDescription="Запрашиваемая страница не найдена на нашем сайте."
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background">
       <InternalNavigation />
       <div className="flex flex-1 items-center justify-center">
         <div className="text-center">
@@ -23,7 +41,8 @@ const NotFound = () => {
         </div>
       </div>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

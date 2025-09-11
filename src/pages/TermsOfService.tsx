@@ -32,6 +32,8 @@ const TermsOfService: React.FC = () => {
         description="Правила пользования нашей платформой рейтинга онлайн-школ программирования для детей. Условия использования и ответственность пользователей."
         keywords="правила пользования, условия использования, пользовательское соглашение, ответственность"
         canonicalUrl={`${window.location.origin}/terms-of-service`}
+        ogTitle="Правила пользования сервисом | Рейтинг школ программирования"
+        ogDescription="Условия использования платформы рейтинга онлайн-школ программирования для детей."
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
