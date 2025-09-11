@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Calendar, Clock, User, ArrowLeft, ChevronRight } from 'lucide-react';
 import { useArticles } from '@/hooks/useArticles';
+import { SEOHead } from '@/components/SEOHead';
 import NotFound from './NotFound';
 
 const Article: React.FC = () => {
@@ -27,8 +28,53 @@ const Article: React.FC = () => {
 
   const relatedArticles = getRelatedArticles(article);
 
+  // Generate SEO data
+  const articleTitle = `${article.title} | Программирование для детей`;
+  const articleDescription = article.excerpt;
+  const articleKeywords = `${article.tags.join(', ')}, программирование для детей, ${article.category.name}`;
+  const canonicalUrl = `${window.location.origin}/articles/${article.slug}`;
+
+  // Structured data for article
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": article.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "School Rating Platform",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lovable.dev/opengraph-image-p98pqg.png"
+      }
+    },
+    "datePublished": article.publishDate,
+    "dateModified": article.publishDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "articleSection": article.category.name,
+    "keywords": article.tags.join(', ')
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <SEOHead
+        title={articleTitle}
+        description={articleDescription}
+        keywords={articleKeywords}
+        canonicalUrl={canonicalUrl}
+        ogTitle={articleTitle}
+        ogDescription={articleDescription}
+        ogType="article"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-6 lg:py-8 max-w-6xl">
         {/* Breadcrumbs */}
         <Breadcrumb className="mb-6">
@@ -164,6 +210,7 @@ const Article: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
