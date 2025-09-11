@@ -36,7 +36,7 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({ schools }) => 
 
   const handleDetailsClick = (school: School) => {
     if (school.name === 'Skysmart Pro') {
-      window.open('https://programmirovanie.skysmart.ru/', '_blank');
+      window.open('#', '_blank');
     } else {
       setSelectedSchool(school);
       setShowModal(true);
