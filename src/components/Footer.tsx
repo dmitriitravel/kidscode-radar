@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                 Правила пользования
               </Link>
               <a 
-                href="mailto:support@schoolrating.ru" 
+                href="mailto:support@programmirovanie-dlya-detej-online.ru" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Обратная связь
@@ -82,9 +82,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-base font-semibold text-foreground">Контакты</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>📧 support@schoolrating.ru</p>
-              <p>📞 +7 (800) 123-45-67</p>
-              <p>🕒 Пн-Пт: 9:00-18:00 МСК</p>
+              <p>📧 support@programmirovanie-dlya-detej-online.ru</p>
             </div>
           </div>
         </div>
