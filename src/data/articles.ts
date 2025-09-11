@@ -3902,7 +3902,7 @@ const ORIGINAL_SCORE = 95;  // нельзя изменить</code></pre>
 Выведите эту информацию в красивом формате.</code></pre>
     </div>
 
-    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 dark:bg-green-950/20 dark:border-green-800">
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
         <div class="text-green-700 font-semibold mb-3 dark:text-green-400">Пошаговое решение:</div>
         <pre class="text-sm font-mono"><code># Шаг 1: Создаем переменные
 name = "Мария"
@@ -3927,7 +3927,7 @@ print(f"Средняя оценка: {average_grade}")</code></pre>
 Используйте переменные для длины, ширины и результата.</code></pre>
     </div>
 
-    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 dark:bg-green-950/20 dark:border-green-800">
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
         <div class="text-green-700 font-semibold mb-3 dark:text-green-400">Решение:</div>
         <pre class="text-sm font-mono"><code># Исходные данные
 length = 12  # длина в метрах
@@ -3944,7 +3944,7 @@ print(f"Периметр: {perimeter} м")</code></pre>
     </div>
 
     <h3 class="text-xl font-semibold mb-4">Задача 5: Мини-проект "Простой калькулятор с переменными"</h3>
-    <div class="bg-green-50 border border-green-200 rounded-lg p-4 dark:bg-green-950/20 dark:border-green-800">
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
         <div class="text-green-700 font-semibold mb-3 dark:text-green-400">Полное решение:</div>
         <pre class="text-sm font-mono"><code># Простой калькулятор с переменными
 print("=== КАЛЬКУЛЯТОР ===")
