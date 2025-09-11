@@ -1970,15 +1970,343 @@ while True:
   },
   {
     id: '7',
-    title: 'Профессии будущего: куда ведет программирование',
-    slug: 'professii-budushchego',
-    content: 'Содержание статьи будет добавлено позже...',
-    excerpt: 'Рассматриваем современные IT-профессии и перспективы карьерного роста для тех, кто начинает изучать программирование сегодня.',
-    author: 'Ольга Васильева',
-    publishDate: '2025-07-30',
-    category: categories[3],
-    tags: ['карьера', 'профессии', 'будущее'],
-    readTime: 7,
+    title: 'Курсы программирования для старшеклассников – онлайн обучение',
+    slug: 'kursy-programmirovaniya-dlya-starsheklassnikov',
+    content: `<div class="space-y-8">
+    <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">Для кого эта статья</h3>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Старшеклассники, готовящиеся к ЕГЭ и поступлению в IT-вузы</li>
+            <li>Родители старшеклассников, выбирающие курсы для развития ребёнка</li>
+            <li>Учителя информатики и репетиторы, рекомендующие внешние образовательные программы</li>
+            <li>Подростки, ищущие программирование как хобби или дополнительный навык</li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-500 rounded-r-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-blue-800">Ключевые выводы из статьи</h3>
+        <ul class="space-y-2 list-disc list-inside text-blue-700">
+            <li>Бесплатные государственные программы дают качественное образование наравне с платными курсами</li>
+            <li>Python — оптимальный выбор для новичков и подготовки к ЕГЭ по информатике</li>
+            <li>Онлайн-формат позволяет совмещать обучение программированию с школьной программой</li>
+            <li>Раннее начало изучения программирования дает дополнительные баллы при поступлении в вузы</li>
+        </ul>
+    </div>
+
+    <p class="text-lg leading-relaxed">Выбор качественных курсов программирования для старшеклассников — важное решение, которое может определить будущую карьеру подростка. Современное <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">обучение программированию для детей</a> предлагает множество возможностей для развития технических навыков, получения дополнительных баллов к ЕГЭ и подготовки к поступлению в престижные IT-вузы.</p>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Как выбрать курсы программирования для старшеклассника: пошаговый план</h2>
+
+        <ol class="space-y-6 list-none">
+            <li class="relative pl-12 pb-4 border-b border-gray-100">
+                <div class="absolute left-0 top-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</div>
+                <strong>Определите цели обучения:</strong> Подготовка к ЕГЭ по информатике, поступление в технический вуз, освоение будущей профессии или изучение программирования как хобби
+            </li>
+            <li class="relative pl-12 pb-4 border-b border-gray-100">
+                <div class="absolute left-0 top-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</div>
+                <strong>Оцените текущий уровень знаний:</strong> Проведите тест на базовые знания математики и логики (5-10 минут), проверьте знание английского языка на уровне технических терминов
+            </li>
+            <li class="relative pl-12 pb-4 border-b border-gray-100">
+                <div class="absolute left-0 top-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</div>
+                <strong>Выберите оптимальный формат:</strong> Онлайн-курсы для гибкого графика, офлайн-занятия для живого общения, смешанный формат для максимальной эффективности
+            </li>
+            <li class="relative pl-12">
+                <div class="absolute left-0 top-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</div>
+                <strong>Рассчитайте бюджет и временные ресурсы:</strong> Учтите стоимость курса, необходимое оборудование и время на выполнение домашних заданий
+            </li>
+        </ol>
+
+        <div class="overflow-x-auto mt-6">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Формат</th>
+                        <th class="text-left p-4 font-semibold">Стоимость</th>
+                        <th class="text-left p-4 font-semibold">Время в неделю</th>
+                        <th class="text-left p-4 font-semibold">Преимущества</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Онлайн-курсы</td>
+                        <td class="p-4">5 000 - 25 000 руб.</td>
+                        <td class="p-4">3-5 часов</td>
+                        <td class="p-4">Гибкий график, доступность</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Офлайн-школы</td>
+                        <td class="p-4">15 000 - 40 000 руб.</td>
+                        <td class="p-4">4-6 часов</td>
+                        <td class="p-4">Живое общение, контроль</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Индивидуальные</td>
+                        <td class="p-4">20 000 - 50 000 руб.</td>
+                        <td class="p-4">2-4 часа</td>
+                        <td class="p-4">Персональный подход</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">ТОП-15 лучших курсов программирования для старшеклассников в 2025 году</h2>
+
+        <h3 class="text-xl font-semibold mb-4 text-blue-700">Бесплатные государственные программы</h3>
+
+        <p class="mb-4"><strong>Проект «Код будущего» от Минцифры</strong> — федеральная программа бесплатного обучения программированию для школьников 8-11 классов. Заявки подаются через Госуслуги с 15 августа по 15 сентября. Требования: российское гражданство, обучение в школе, мотивационное письмо.</p>
+
+        <p class="mb-6"><strong>Яндекс Лицей</strong> — двухгодичная программа изучения Python для учеников 8-10 классов. Отбор проходит в два этапа: онлайн-тестирование и очное собеседование. Занятия проводятся в 200+ городах России.</p>
+
+        <h3 class="text-xl font-semibold mb-4 text-blue-700">Топовые платные школы</h3>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Школа</th>
+                        <th class="text-left p-4 font-semibold">Цена (руб.)</th>
+                        <th class="text-left p-4 font-semibold">Длительность</th>
+                        <th class="text-left p-4 font-semibold">Языки программирования</th>
+                        <th class="text-left p-4 font-semibold">Возраст</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Pixel</td>
+                        <td class="p-4">7 200 - 12 000</td>
+                        <td class="p-4">9 месяцев</td>
+                        <td class="p-4">Python, JavaScript, C++</td>
+                        <td class="p-4">12-17 лет</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Айтигенио</td>
+                        <td class="p-4">6 000 - 15 000</td>
+                        <td class="p-4">6-12 месяцев</td>
+                        <td class="p-4">Python, Java, C#</td>
+                        <td class="p-4">10-17 лет</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4">GeekSchool</td>
+                        <td class="p-4">10 000 - 25 000</td>
+                        <td class="p-4">12 месяцев</td>
+                        <td class="p-4">Python, JavaScript</td>
+                        <td class="p-4">14-17 лет</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">CODDY</td>
+                        <td class="p-4">8 000 - 20 000</td>
+                        <td class="p-4">8-10 месяцев</td>
+                        <td class="p-4">Python, JavaScript, Java</td>
+                        <td class="p-4">11-17 лет</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Фоксфорд</td>
+                        <td class="p-4">5 000 - 18 000</td>
+                        <td class="p-4">9 месяцев</td>
+                        <td class="p-4">Python, C++</td>
+                        <td class="p-4">13-17 лет</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <blockquote class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6 italic">
+            <p class="text-yellow-800 text-lg">"Программирование — это не только техническая специальность, но и новый способ мышления, который помогает решать задачи в любой сфере жизни" — Митио Каку, физик-теоретик</p>
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Какой язык программирования выбрать старшекласснику</h2>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Python</h4>
+                <p>Идеальный выбор для новичков благодаря простому синтаксису и широкому применению. Используется в ЕГЭ по информатике, машинном обучении и веб-разработке. Время освоения базовых навыков: 2-3 месяца.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">JavaScript</h4>
+                <p>Язык для создания интерактивных веб-сайтов. Позволяет быстро увидеть результаты работы, что мотивирует начинающих программистов. Востребован в веб-разработке и мобильных приложениях.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Java</h4>
+                <p>Строго типизированный язык для серьезной разработки. Подходит для создания Android-приложений и корпоративных систем. Требует больше времени на изучение, но дает фундаментальные знания.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">C++</h4>
+                <p>Выбор для олимпиадного программирования и системной разработки. Сложен для новичков, но развивает понимание принципов работы компьютера на низком уровне.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Форматы обучения: что выбрать старшекласснику</h2>
+
+        <div class="grid gap-6 md:grid-cols-3">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Онлайн-курсы</h3>
+                <p class="mb-3"><strong>Плюсы:</strong> гибкий график, доступная цена, обучение из дома</p>
+                <p class="mb-3"><strong>Минусы:</strong> требует самодисциплины, ограниченное живое общение</p>
+                <p><strong>Лучшие платформы:</strong> Stepik, GeekBrains, Нетология, Skillbox</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Офлайн-школы</h3>
+                <p class="mb-3"><strong>Плюсы:</strong> живое общение, контроль преподавателя, групповые проекты</p>
+                <p class="mb-3"><strong>Минусы:</strong> привязка к расписанию, дорога до места занятий</p>
+                <p><strong>Как найти:</strong> через поиск "курсы программирования [ваш город]", отзывы на 2ГИС</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-4">Индивидуальные занятия</h3>
+                <p class="mb-3">Нужны при серьезных проблемах с математикой, подготовке к олимпиадам или специфических целях обучения.</p>
+                <p><strong>Стоимость:</strong> 1500-3000 рублей за занятие</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Стоимость курсов и как сэкономить</h2>
+
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-200 rounded-lg p-6 text-center mb-6">
+            <h4 class="text-lg font-semibold text-orange-800 mb-4">Ценовые категории курсов программирования</h4>
+            <p class="text-orange-700 mb-2"><strong>Бюджетные:</strong> 3 000 - 8 000 руб. (базовые онлайн-курсы)</p>
+            <p class="text-orange-700 mb-2"><strong>Средняя категория:</strong> 8 000 - 20 000 руб. (групповые занятия)</p>
+            <p class="text-orange-700"><strong>Премиум:</strong> 20 000 - 50 000 руб. (индивидуальное обучение)</p>
+        </div>
+
+        <h3 class="text-lg font-semibold mb-3">Способы сэкономить:</h3>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Участие в бесплатных государственных программах</li>
+            <li>Раннее бронирование со скидкой до 30%</li>
+            <li>Семейные скидки при обучении нескольких детей</li>
+            <li>Акции в период летних каникул</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Как совместить курсы программирования с школой</h2>
+
+        <p class="mb-4">Оптимальная нагрузка для старшеклассника — 3-4 часа программирования в неделю. Рекомендуемое расписание: 2 занятия по 1,5 часа в будние дни после школы или 1 длинное занятие в выходные.</p>
+
+        <p class="mb-6">Курсы программирования помогают в подготовке к ЕГЭ по информатике, где можно получить до 100 баллов. Участие в олимпиадах по программированию дает дополнительные баллы при поступлении в технические вузы.</p>
+
+        <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+            <h4 class="text-lg font-semibold text-green-800 mb-4">Международный опыт обучения программированию</h4>
+            <p class="text-green-700">Согласно исследованиям <a href="https://www.nextgenbootcamp.com" target="_blank" class="text-green-600 hover:underline font-medium">NextGen Bootcamp</a>, старшеклассники, изучающие программирование, показывают лучшие результаты в математике и логическом мышлении. Программа <a href="https://codeinplace.stanford.edu" target="_blank" class="text-green-600 hover:underline font-medium">Code in Place от Stanford</a> демонстрирует эффективность онлайн-обучения Python для школьников по всему миру.</p>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Истории успеха: от новичка до IT-специалиста</h2>
+
+        <div class="grid gap-6 md:grid-cols-3">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Кейс 1: Анна, 17 лет</h4>
+                <p>Начала изучать Python в 10 классе. Через год участвовала в олимпиаде по информатике, получила дополнительные баллы и поступила в МФТИ на бюджет.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Кейс 2: Дмитрий, 16 лет</h4>
+                <p>Освоил JavaScript и начал создавать сайты на заказ. Первый заработок составил 15 000 рублей за лендинг для местного бизнеса.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Кейс 3: Мария, 15 лет</h4>
+                <p>Победила в региональной олимпиаде по программированию на C++, что обеспечило ей место в профильном IT-классе и стипендию.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Проверочный чек-лист перед записью на курсы</h2>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <ul class="space-y-3 list-none">
+                <li class="flex items-center">
+                    <span class="text-blue-500 mr-3 text-lg">☐</span>
+                    Четко определены цели обучения (ЕГЭ, вуз, хобби)
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-500 mr-3 text-lg">☐</span>
+                    Проверена репутация школы и отзывы учеников
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-500 mr-3 text-lg">☐</span>
+                    Уточнена возможность возврата средств при неудовлетворенности
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-500 mr-3 text-lg">☐</span>
+                    Есть компьютер с необходимыми техническими характеристиками
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-500 mr-3 text-lg">☐</span>
+                    Составлен реалистичный график занятий
+                </li>
+                <li class="flex items-center">
+                    <span class="text-blue-500 mr-3 text-lg">☐</span>
+                    Пройден пробный урок или консультация
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+        "Программирование — это не просто работа, это способ решения проблем и воплощения идей в реальность" — Марк Цукерберг
+    </blockquote>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-blue-600 border-b-2 border-blue-100 pb-2">Частые вопросы и ответы</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-muted/50 rounded-lg p-4 border-b border-gray-200">
+                <h4 class="font-semibold text-blue-600 mb-2">В каком возрасте лучше начинать изучать программирование?</h4>
+                <p class="text-sm">Оптимальный возраст для серьезного изучения программирования — 12-14 лет, когда развито абстрактное мышление. Но начинать можно и раньше с визуальных языков программирования.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-b border-gray-200">
+                <h4 class="font-semibold text-blue-600 mb-2">Сколько времени займет обучение до первого результата?</h4>
+                <p class="text-sm">Первые простые программы можно написать уже через 2-3 недели обучения. Для создания полноценных проектов потребуется 3-6 месяцев регулярных занятий.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-b border-gray-200">
+                <h4 class="font-semibold text-blue-600 mb-2">Нужна ли хорошая математика для программирования?</h4>
+                <p class="text-sm">Для веб-разработки и создания приложений достаточно школьного уровня математики. Глубокие знания математики требуются для машинного обучения и игровой разработки.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-b border-gray-200">
+                <h4 class="font-semibold text-blue-600 mb-2">Что делать, если курс не подошел?</h4>
+                <p class="text-sm">Большинство школ предлагают пробные уроки и возврат средств в течение первых 1-2 недель. Важно заранее уточнить условия возврата.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-b border-gray-200">
+                <h4 class="font-semibold text-blue-600 mb-2">Как проверить качество школы программирования?</h4>
+                <p class="text-sm">Изучите отзывы выпускников, портфолио учеников, квалификацию преподавателей. Обратите внимание на трудоустройство выпускников и партнерства с IT-компаниями.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4 border-b border-gray-200">
+                <h4 class="font-semibold text-blue-600 mb-2">Можно ли изучать программирование самостоятельно?</h4>
+                <p class="text-sm">Самообучение возможно, но требует высокой мотивации и самодисциплины. Структурированные курсы с наставником более эффективны для большинства школьников.</p>
+            </div>
+
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-blue-600 mb-2">Какое оборудование нужно для обучения?</h4>
+                <p class="text-sm">Достаточно любого компьютера или ноутбука с 4 ГБ оперативной памяти, стабильным интернетом и возможностью установки программ для разработки.</p>
+            </div>
+        </div>
+    </div>
+</div>`,
+    excerpt: 'Запишитесь на курсы программирования для старшеклассников и освоите Python, JavaScript и другие языки для подготовки к вузу и успешной IT-карьере.',
+    author: 'Дмитрий Козлов',
+    publishDate: '2025-09-11',
+    category: categories[4],
+    tags: ['курсы', 'старшеклассники', 'онлайн обучение', 'Python', 'JavaScript'],
+    readTime: 28,
     featured: true,
   },
   {
