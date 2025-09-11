@@ -2726,15 +2726,573 @@ while True:
   },
   {
     id: '9',
-    title: 'Ошибки родителей при выборе курсов программирования',
-    slug: 'oshibki-roditeley',
-    content: 'Содержание статьи будет добавлено позже...',
-    excerpt: 'Разбираем типичные ошибки, которые допускают родители при выборе курсов, и даем рекомендации как их избежать.',
-    author: 'Ирина Федорова',
-    publishDate: '2025-07-20',
-    category: categories[2],
-    tags: ['ошибки', 'выбор', 'курсы'],
-    readTime: 8,
+    title: 'Scratch для детей: основы программирования',
+    slug: 'scratch-dlya-detey-osnovy-programmirovaniya',
+    content: `<div class="space-y-8">
+
+<div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+    <h3 class="text-xl font-semibold mb-4">👥 Для кого эта статья:</h3>
+    <ul class="space-y-2 list-disc list-inside">
+        <li>Родители учеников начальной школы, желающие познакомить детей с программированием</li>
+        <li>Ученики начальной и средней школы, интересующиеся созданием игр и анимации</li>
+        <li>Учителя и педагоги, ищущие практические материалы для уроков информатики</li>
+        <li>Наставники кружков программирования и детских IT-центров</li>
+    </ul>
+</div>
+
+<div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+    <h3 class="text-xl font-semibold mb-4 text-foreground">🎯 Ключевые выводы из статьи:</h3>
+    <ul class="space-y-2 list-disc list-inside text-foreground">
+        <li>Scratch можно освоить за несколько занятий - первый проект создается за 30 минут</li>
+        <li>Программирование на Scratch развивает логическое мышление и творческие способности детей</li>
+        <li>Готовые шаблоны и пошаговые инструкции позволяют быстро добиться результата</li>
+        <li>Месячный план занятий поможет структурированно изучить основы визуального программирования</li>
+    </ul>
+</div>
+
+<p class="text-lg leading-relaxed">Scratch — это идеальная платформа для введения детей в мир программирования через создание интерактивных проектов, игр и анимаций. Благодаря визуальному интерфейсу и блочной системе программирования, дети могут сосредоточиться на логике и творчестве, не отвлекаясь на сложный синтаксис. Современное <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">обучение детей программированию онлайн</a> открывает новые возможности для изучения основ IT с комфортом домашней обстановки и профессиональной поддержкой опытных преподавателей.</p>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Как скачать и настроить Scratch для ребенка за 5 минут</h2>
+    
+    <div class="bg-muted/50 border border-border rounded-lg p-5 mb-6">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Скачивание и установка на компьютер</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Перейдите на официальный сайт scratch.mit.edu</li>
+            <li>Нажмите кнопку "Скачать" в верхнем меню</li>
+            <li>Выберите версию для вашей операционной системы (Windows, macOS, Linux)</li>
+            <li>Запустите загруженный файл и следуйте инструкциям установщика</li>
+            <li>Дождитесь завершения установки (обычно 2-3 минуты)</li>
+        </ol>
+    </div>
+
+    <div class="bg-muted/50 border border-border rounded-lg p-5 mb-6">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Онлайн-версия: регистрация и первый запуск</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Откройте браузер и перейдите на scratch.mit.edu</li>
+            <li>Нажмите "Создать" для работы без регистрации или "Присоединиться" для создания аккаунта</li>
+            <li>Если регистрируетесь: укажите имя пользователя, пароль и email родителя</li>
+            <li>Подтвердите email (проверьте папку спам)</li>
+            <li>Нажмите "Создать" для начала работы с проектом</li>
+        </ol>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Переключение интерфейса на русский язык</h3>
+    <p class="mb-4">Для комфортной работы русскоязычных детей:</p>
+    <ul class="space-y-2 list-disc list-inside">
+        <li>Нажмите на глобус в левом нижнем углу экрана</li>
+        <li>Выберите "Русский" из выпадающего списка языков</li>
+        <li>Интерфейс автоматически переключится на русский язык</li>
+        <li>Все блоки программирования также будут отображаться по-русски</li>
+    </ul>
+
+    <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+        Scratch был создан в MIT специально для детей от 8 до 16 лет, чтобы сделать программирование доступным и увлекательным через визуальные блоки вместо сложного кода.
+    </blockquote>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Изучаем интерфейс Scratch вместе с ребенком</h2>
+    
+    <h3 class="text-xl font-semibold mb-4">Обзор рабочего пространства</h3>
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Область</th>
+                    <th class="text-left p-4 font-semibold">Назначение</th>
+                    <th class="text-left p-4 font-semibold">Что здесь происходит</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border">
+                    <td class="p-4"><strong>Сцена</strong></td>
+                    <td class="p-4">Область выполнения</td>
+                    <td class="p-4">Здесь происходит действие: движутся персонажи, проигрываются звуки</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border">
+                    <td class="p-4"><strong>Панель спрайтов</strong></td>
+                    <td class="p-4">Управление персонажами</td>
+                    <td class="p-4">Выбор, создание и настройка персонажей и объектов</td>
+                </tr>
+                <tr class="border-b border-border">
+                    <td class="p-4"><strong>Палитра блоков</strong></td>
+                    <td class="p-4">Инструменты программирования</td>
+                    <td class="p-4">Все доступные команды, разделенные по категориям</td>
+                </tr>
+                <tr class="bg-muted/50">
+                    <td class="p-4"><strong>Область кода</strong></td>
+                    <td class="p-4">Конструирование программы</td>
+                    <td class="p-4">Сюда перетаскиваются и соединяются блоки команд</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Основные группы блоков кода</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🔵 Движение</div>
+            <p class="text-sm">Блоки для перемещения спрайтов: "идти", "повернуться", "скользить"</p>
+        </div>
+        
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🟣 Внешний вид</div>
+            <p class="text-sm">Команды для изменения внешности: "сказать", "сменить костюм", "изменить размер"</p>
+        </div>
+        
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🟢 События</div>
+            <p class="text-sm">Блоки-триггеры: "при нажатии зеленого флажка", "при нажатии клавиши"</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🟠 Управление</div>
+            <p class="text-sm">Циклы и условия: "повторить", "если", "ждать"</p>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Первые действия: заставляем кота сказать "Привет!"</h3>
+    <div class="bg-muted/50 border border-border rounded-lg p-5">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Пошаговая инструкция для первой программы</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Выберите зеленый блок "когда нажат флажок" из категории "События"</li>
+            <li>Перетащите его в область кода</li>
+            <li>Найдите фиолетовый блок "сказать Привет! в течение 2 секунд" в категории "Внешний вид"</li>
+            <li>Присоедините его под блок с флажком</li>
+            <li>Нажмите зеленый флажок над сценой</li>
+            <li>Кот скажет "Привет!" — ваша первая программа готова!</li>
+        </ol>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Создаем первый проект за 30 минут: движущийся персонаж</h2>
+    
+    <div class="bg-muted/50 border border-border rounded-lg p-5 mb-6">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Выбор и настройка спрайта</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Нажмите на иконку "Выбрать спрайт" (кот в кружке) в правом нижнем углу</li>
+            <li>Выберите персонажа из библиотеки (например, "Avery Walking")</li>
+            <li>При необходимости удалите кота, нажав на корзину рядом с ним</li>
+            <li>Настройте начальный размер спрайта блоком "задать размер 100%"</li>
+            <li>Установите начальную позицию блоком "перейти в x:0 y:0"</li>
+        </ol>
+    </div>
+
+    <div class="bg-muted/50 border border-border rounded-lg p-5 mb-6">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Программирование движения с помощью стрелок</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Создайте блок "когда клавиша стрелка вверх нажата"</li>
+            <li>Присоедините "изменить y на 10" (движение вверх)</li>
+            <li>Повторите для остальных стрелок: вниз (-10), влево (-10 по x), вправо (+10 по x)</li>
+            <li>Добавьте поворот: для влево/вправо используйте "повернуть в направлении -90/90"</li>
+            <li>Протестируйте управление стрелками клавиатуры</li>
+        </ol>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Добавление фона</h3>
+    <p class="mb-4">Для создания атмосферы проекта:</p>
+    <ul class="space-y-2 list-disc list-inside">
+        <li>Нажмите "Выбрать фон" в правом нижнем углу (иконка пейзажа)</li>
+        <li>Выберите подходящий фон из категорий: "На улице", "В помещении", "Подводный мир"</li>
+        <li>Фон автоматически применится к сцене</li>
+        <li>При желании можно создать собственный фон в редакторе</li>
+    </ul>
+
+    <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+        Исследования показывают, что дети, изучающие программирование на Scratch, лучше развивают навыки планирования, логического мышления и решения проблем.
+    </blockquote>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Простая игра "Поймай мяч": готовый проект для практики</h2>
+    
+    <h3 class="text-xl font-semibold mb-4">Постановка задачи и планирование игры</h3>
+    <p class="mb-4"><strong>Цель игры:</strong> Управляя персонажем, ловить падающие мячи и набирать очки.</p>
+    
+    <p class="mb-4"><strong>Механики игры:</strong></p>
+    <ul class="space-y-2 list-disc list-inside mb-6">
+        <li>Игрок движется влево-вправо по нижней части экрана</li>
+        <li>Мячи падают сверху в случайных местах</li>
+        <li>При касании мяча игроком начисляется 1 очко</li>
+        <li>Счет отображается на экране</li>
+    </ul>
+
+    <div class="bg-muted/50 border border-border rounded-lg p-5 mb-6">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Создание спрайтов и программирование управления</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Добавьте спрайт "Paddles" для игрока</li>
+            <li>Создайте код управления стрелками (только влево-вправо)</li>
+            <li>Ограничьте движение игрока нижней частью экрана</li>
+            <li>Добавьте спрайт "Ball" для мяча</li>
+            <li>Запрограммируйте падение мяча сверху вниз</li>
+            <li>Создайте переменную "Счет" для подсчета очков</li>
+        </ol>
+    </div>
+
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Спрайт</th>
+                    <th class="text-left p-4 font-semibold">Основные блоки</th>
+                    <th class="text-left p-4 font-semibold">Функция</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border">
+                    <td class="p-4">Игрок</td>
+                    <td class="p-4">когда клавиша нажата + изменить x</td>
+                    <td class="p-4">Движение по горизонтали</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border">
+                    <td class="p-4">Мяч</td>
+                    <td class="p-4">вечно + изменить y на -5</td>
+                    <td class="p-4">Постоянное падение вниз</td>
+                </tr>
+                <tr class="border-b border-border">
+                    <td class="p-4">Мяч</td>
+                    <td class="p-4">если касается игрока</td>
+                    <td class="p-4">Обнаружение столкновения</td>
+                </tr>
+                <tr class="bg-muted/50">
+                    <td class="p-4">Мяч</td>
+                    <td class="p-4">изменить счет на 1</td>
+                    <td class="p-4">Начисление очков</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Добавление звуковых эффектов</h3>
+    <p class="mb-4">Для большей интерактивности игры:</p>
+    <ul class="space-y-2 list-disc list-inside">
+        <li>В категории "Звук" выберите "играть звук поп"</li>
+        <li>Добавьте этот блок после начисления очков</li>
+        <li>Можете загрузить собственные звуки через "Загрузить звук"</li>
+        <li>Используйте разные звуки для разных событий игры</li>
+    </ul>
+</div>
+
+<div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+    <h4 class="text-lg font-semibold text-primary mb-4">🌐 Полезные международные ресурсы по Scratch</h4>
+    <p class="mb-4">Для углубленного изучения программирования на Scratch рекомендуем ознакомиться с материалами ведущих образовательных платформ:</p>
+    <ul class="space-y-2 list-disc list-inside">
+        <li><strong>MIT Scratch Foundation</strong> - официальные руководства и проекты от создателей Scratch</li>
+        <li><strong>Tynker Educational Platform</strong> - подробное руководство для начинающих с практическими примерами</li>
+        <li><strong>CodeYoung Learning Hub</strong> - всё о Scratch программировании для детей с возрастными рекомендациями</li>
+    </ul>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Готовые идеи проектов для детей разного возраста</h2>
+    
+    <h3 class="text-xl font-semibold mb-4">6-7 лет: анимированные открытки, простые истории</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🎂 Поздравительная открытка</div>
+            <p class="text-sm text-muted-foreground mb-2"><strong>Сложность:</strong> Начальная | <strong>Время:</strong> 20-30 минут</p>
+            <p class="text-sm">Персонаж говорит поздравления, меняет костюмы, звучит музыка. Используются блоки "сказать", "сменить костюм", "играть звук".</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🐱 История про кота</div>
+            <p class="text-sm text-muted-foreground mb-2"><strong>Сложность:</strong> Начальная | <strong>Время:</strong> 40 минут</p>
+            <p class="text-sm">Интерактивная история с несколькими сценами. Кот путешествует, встречает друзей, рассказывает о приключениях.</p>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">8-9 лет: викторины, интерактивные презентации</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🧠 Викторина по математике</div>
+            <p class="text-sm text-muted-foreground mb-2"><strong>Сложность:</strong> Средняя | <strong>Время:</strong> 1-1.5 часа</p>
+            <p class="text-sm">Программа задает вопросы, принимает ответы, подсчитывает правильные ответы. Использует переменные и условные блоки.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🌍 Презентация о планетах</div>
+            <p class="text-sm text-muted-foreground mb-2"><strong>Сложность:</strong> Средняя | <strong>Время:</strong> 1-2 часа</p>
+            <p class="text-sm">Интерактивная презентация с кликабельными планетами, фактами, анимациями и звуками космоса.</p>
+        </div>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">10+ лет: платформеры, квесты, музыкальные проекты</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🏃 Платформер-прыгалка</div>
+            <p class="text-sm text-muted-foreground mb-2"><strong>Сложность:</strong> Высокая | <strong>Время:</strong> 3-5 часов</p>
+            <p class="text-sm">Игра с прыжками, препятствиями, несколькими уровнями. Физика гравитации, система жизней, прогресс игры.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-4">
+            <div class="text-lg font-semibold text-primary mb-2">🎵 Музыкальный инструмент</div>
+            <p class="text-sm text-muted-foreground mb-2"><strong>Сложность:</strong> Высокая | <strong>Время:</strong> 2-3 часа</p>
+            <p class="text-sm">Виртуальное пианино или барабанная установка. Клавиши воспроизводят звуки, можно записывать мелодии.</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Практические советы для родителей и учителей</h2>
+    
+    <h3 class="text-xl font-semibold mb-4">Как мотивировать ребенка и поддерживать интерес</h3>
+    <ul class="space-y-2 list-disc list-inside mb-6">
+        <li><strong>Начинайте с интересов ребенка:</strong> Любит динозавров? Создайте игру про них!</li>
+        <li><strong>Отмечайте каждый успех:</strong> Даже простая анимация — это достижение</li>
+        <li><strong>Позвольте экспериментировать:</strong> Пусть ребенок изменяет цвета, звуки, персонажей</li>
+        <li><strong>Создавайте проекты вместе:</strong> Совместная работа укрепляет интерес</li>
+        <li><strong>Делитесь результатами:</strong> Покажите проекты родственникам, друзьям</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold mb-4">Оптимальный график занятий</h3>
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Возраст</th>
+                    <th class="text-left p-4 font-semibold">Длительность занятия</th>
+                    <th class="text-left p-4 font-semibold">Частота</th>
+                    <th class="text-left p-4 font-semibold">Рекомендации</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border">
+                    <td class="p-4">6-7 лет</td>
+                    <td class="p-4">20-30 минут</td>
+                    <td class="p-4">2-3 раза в неделю</td>
+                    <td class="p-4">Больше игры, меньше теории</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border">
+                    <td class="p-4">8-9 лет</td>
+                    <td class="p-4">30-45 минут</td>
+                    <td class="p-4">2-3 раза в неделю</td>
+                    <td class="p-4">Баланс обучения и творчества</td>
+                </tr>
+                <tr class="border-b border-border">
+                    <td class="p-4">10+ лет</td>
+                    <td class="p-4">45-60 минут</td>
+                    <td class="p-4">3-4 раза в неделю</td>
+                    <td class="p-4">Сложные проекты, самостоятельность</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Что делать, если ребенок не понимает или скучает</h3>
+    <div class="bg-muted/50 border border-border rounded-lg p-5">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Признаки потери интереса и решения</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li><strong>Отвлекается, не слушает</strong> — Сделайте перерыв, смените тему на более интересную</li>
+            <li><strong>Говорит "не получается"</strong> — Разбейте задачу на более мелкие шаги</li>
+            <li><strong>Хочет делать только одно и то же</strong> — Позвольте, но постепенно добавляйте новые элементы</li>
+            <li><strong>Сравнивает себя с другими</strong> — Подчеркните уникальность его проектов</li>
+            <li><strong>Быстро устает</strong> — Сократите время занятий, добавьте физической активности</li>
+        </ol>
+    </div>
+
+    <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+        Главное правило обучения детей программированию: проект должен быть интересен ребенку больше, чем процесс его создания сложен.
+    </blockquote>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">План занятий на первый месяц</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Неделя 1: Знакомство с интерфейсом и первый проект</h3>
+            <p class="mb-2"><strong>Занятие 1:</strong> Установка Scratch, обзор интерфейса, первая команда "сказать Привет!"</p>
+            <p class="mb-2"><strong>Занятие 2:</strong> Движение персонажа, смена костюмов, добавление звуков</p>
+            <p class="mb-4"><strong>Занятие 3:</strong> Создание простой анимации с циклом "повторить"</p>
+
+            <h3 class="text-xl font-semibold mb-4">Неделя 2: Анимация и звуки</h3>
+            <p class="mb-2"><strong>Занятие 4:</strong> Рисование собственного спрайта в редакторе</p>
+            <p class="mb-2"><strong>Занятие 5:</strong> Работа с фонами, создание сцен</p>
+            <p class="mb-4"><strong>Занятие 6:</strong> Синхронизация движения со звуком</p>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Неделя 3: Создание простой игры</h3>
+            <p class="mb-2"><strong>Занятие 7:</strong> Управление персонажем с клавиатуры</p>
+            <p class="mb-2"><strong>Занятие 8:</strong> Обнаружение столкновений, система очков</p>
+            <p class="mb-4"><strong>Занятие 9:</strong> Добавление препятствий и усложнение игры</p>
+
+            <h3 class="text-xl font-semibold mb-4">Неделя 4: Собственный творческий проект</h3>
+            <p class="mb-2"><strong>Занятие 10:</strong> Планирование собственного проекта</p>
+            <p class="mb-2"><strong>Занятие 11:</strong> Создание основной механики</p>
+            <p class="mb-4"><strong>Занятие 12:</strong> Финальные штрихи, тестирование, презентация</p>
+        </div>
+    </div>
+
+    <div class="bg-muted/50 border border-border rounded-lg p-5 mt-6">
+        <h4 class="text-lg font-semibold text-muted-foreground mb-3">Домашние задания для закрепления</h4>
+        <ol class="space-y-3 list-decimal list-inside">
+            <li>Создать анимацию на тему "Мой день"</li>
+            <li>Нарисовать и анимировать собственного персонажа</li>
+            <li>Сделать интерактивную открытку для друга</li>
+            <li>Придумать и реализовать простую игру-кликер</li>
+        </ol>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Полезные ресурсы и материалы</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Лучшие YouTube-каналы с видеоуроками</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li><strong>"Scratch для детей"</strong> — пошаговые уроки на русском языке</li>
+                <li><strong>"Программирование детям"</strong> — игры и анимации в Scratch</li>
+                <li><strong>"Компьютерная Академия ШАГ"</strong> — профессиональные видеокурсы</li>
+                <li><strong>"Фоксфорд"</strong> — образовательные проекты для школьников</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-4 mt-6">Онлайн-сообщества и форумы для детей</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li><strong>Scratch-сообщество</strong> — официальный форум scratch.mit.edu</li>
+                <li><strong>"Юные программисты"</strong> — российское сообщество в VK</li>
+                <li><strong>Детские IT-форумы</strong> — обсуждения проектов и помощь новичкам</li>
+                <li><strong>Телеграм-каналы</strong> — новости и советы по детскому программированию</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Книги и печатные материалы</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li>"Scratch для детей" — Клейборн Клайв</li>
+                <li>"Программирование для детей" — Кэрол Вордерман</li>
+                <li>"Scratch 3.0. Самоучитель" — Голиков Денис</li>
+                <li>"Создаем игры со Scratch" — практические проекты</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-4 mt-6">Бесплатные курсы и платформы</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li><strong>Час Кода</strong> — всероссийская акция с материалами по Scratch</li>
+                <li><strong>Code.org</strong> — международная платформа обучения программированию</li>
+                <li><strong>Алгоритмика</strong> — курсы программирования для детей</li>
+                <li><strong>Кодвардс</strong> — интерактивные уроки и задания</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Что изучать после освоения основ Scratch</h2>
+    
+    <h3 class="text-xl font-semibold mb-4">Переход к более сложным проектам в Scratch</h3>
+    <p class="mb-4">После освоения базовых навыков можно приступать к созданию:</p>
+    <ul class="space-y-2 list-disc list-inside mb-6">
+        <li><strong>Многоуровневые игры</strong> с сохранением прогресса</li>
+        <li><strong>Мультиплеер игры</strong> для нескольких игроков</li>
+        <li><strong>Образовательные приложения</strong> — тренажеры по математике, языкам</li>
+        <li><strong>Интерактивные истории</strong> с ветвящимся сюжетом</li>
+        <li><strong>Симуляторы</strong> — виртуальные питомцы, экосистемы</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold mb-4">Следующие языки программирования для детей</h3>
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Язык</th>
+                    <th class="text-left p-4 font-semibold">Возраст</th>
+                    <th class="text-left p-4 font-semibold">Особенности</th>
+                    <th class="text-left p-4 font-semibold">Что можно создавать</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border">
+                    <td class="p-4"><strong>Python</strong></td>
+                    <td class="p-4">10+ лет</td>
+                    <td class="p-4">Простой синтаксис, много библиотек</td>
+                    <td class="p-4">Игры, веб-сайты, боты, анализ данных</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border">
+                    <td class="p-4"><strong>JavaScript</strong></td>
+                    <td class="p-4">12+ лет</td>
+                    <td class="p-4">Язык веб-разработки</td>
+                    <td class="p-4">Интерактивные сайты, браузерные игры</td>
+                </tr>
+                <tr class="border-b border-border">
+                    <td class="p-4"><strong>C#</strong></td>
+                    <td class="p-4">13+ лет</td>
+                    <td class="p-4">Мощный язык от Microsoft</td>
+                    <td class="p-4">Игры на Unity, Windows приложения</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Робототехника и физические проекты</h3>
+    <p class="mb-4">Scratch можно использовать для управления реальными устройствами:</p>
+    <ul class="space-y-2 list-disc list-inside mb-6">
+        <li><strong>Micro:bit</strong> — программируемая плата для создания гаджетов</li>
+        <li><strong>Arduino</strong> — платформа для электронных проектов</li>
+        <li><strong>LEGO WeDo</strong> — робототехнические наборы с поддержкой Scratch</li>
+        <li><strong>PicoBoard</strong> — датчики для взаимодействия с физическим миром</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold mb-4">Участие в конкурсах и олимпиадах</h3>
+    <p class="mb-4">Мотивирующие мероприятия для юных программистов:</p>
+    <ul class="space-y-2 list-disc list-inside">
+        <li><strong>Всероссийская олимпиада школьников по информатике</strong></li>
+        <li><strong>Конкурс "Scratch-олимпиада"</strong> — специально для проектов на Scratch</li>
+        <li><strong>"Кодвардс Олимпиада"</strong> — онлайн-состязания</li>
+        <li><strong>Региональные IT-фестивали</strong> — презентации проектов</li>
+    </ul>
+</div>
+
+<div class="bg-muted/50 border border-border rounded-lg p-6">
+    <h2 class="text-2xl font-bold mb-4">FAQ - Часто задаваемые вопросы</h2>
+    
+    <div class="space-y-4">
+        <div class="border-b border-border pb-4">
+            <div class="font-semibold text-primary mb-2">С какого возраста можно начинать изучать Scratch?</div>
+            <div class="text-muted-foreground">Scratch рекомендован для детей от 8 лет, но при поддержке родителей можно начинать с 6-7 лет. Важно адаптировать сложность заданий под возраст ребенка.</div>
+        </div>
+
+        <div class="border-b border-border pb-4">
+            <div class="font-semibold text-primary mb-2">Нужно ли устанавливать Scratch или можно работать онлайн?</div>
+            <div class="text-muted-foreground">Обе опции доступны. Онлайн-версия удобна для быстрого старта, офлайн-версия не требует интернета и работает быстрее на слабых компьютерах.</div>
+        </div>
+
+        <div class="border-b border-border pb-4">
+            <div class="font-semibold text-primary mb-2">Как долго нужно изучать Scratch перед переходом к "настоящему" программированию?</div>
+            <div class="text-muted-foreground">Обычно 6-12 месяцев достаточно для освоения основных концепций. Переходить к текстовым языкам лучше после того, как ребенок уверенно создает сложные проекты в Scratch.</div>
+        </div>
+
+        <div class="border-b border-border pb-4">
+            <div class="font-semibold text-primary mb-2">Можно ли зарабатывать, создавая проекты в Scratch?</div>
+            <div class="text-muted-foreground">Scratch предназначен для образования, прямой монетизации нет. Однако навыки, полученные в Scratch, помогают в дальнейшем изучении коммерческих языков программирования.</div>
+        </div>
+
+        <div class="border-b border-border pb-4">
+            <div class="font-semibold text-primary mb-2">Что делать, если ребенок быстро теряет интерес к программированию?</div>
+            <div class="text-muted-foreground">Попробуйте связать программирование с хобби ребенка: любит рисовать — создавайте художественные проекты, интересуется спортом — программируйте спортивные игры. Также важно не принуждать и делать перерывы.</div>
+        </div>
+
+        <div class="border-b border-border pb-4">
+            <div class="font-semibold text-primary mb-2">Безопасен ли Scratch для детей? Есть ли модерация контента?</div>
+            <div class="text-muted-foreground">Да, платформа Scratch имеет строгую модерацию. Все проекты проверяются на соответствие правилам сообщества. Родители могут контролировать активность ребенка через настройки аккаунта.</div>
+        </div>
+
+        <div class="pb-4">
+            <div class="font-semibold text-primary mb-2">Можно ли использовать Scratch для школьных проектов?</div>
+            <div class="text-muted-foreground">Безусловно! Scratch отлично подходит для создания интерактивных презентаций, образовательных игр, демонстрации физических или математических концепций. Многие учителя поощряют использование Scratch в учебных проектах.</div>
+        </div>
+    </div>
+</div>
+
+</div>`,
+    excerpt: 'Узнайте, как обучить детей основам программирования на Scratch: творческие игры, визуальное кодирование и простые проекты. Идеально для начинающих.',
+    author: 'Дмитрий Козлов',
+    publishDate: '2025-09-11',
+    category: categories[0],
+    tags: ['Scratch', 'программирование', 'дети', 'визуальное программирование', 'основы'],
+    readTime: 20,
     featured: true,
   },
   {
