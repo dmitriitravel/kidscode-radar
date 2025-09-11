@@ -413,10 +413,7 @@ const TermsOfService: React.FC = () => {
                       По вопросам соблюдения правил и работы сервиса:
                     </p>
                     <div className="space-y-2 text-muted-foreground">
-                      <p>📧 Email: support@schoolrating.ru</p>
-                      <p>📞 Телефон: +7 (800) 123-45-67</p>
-                      <p>📍 Адрес: г. Москва, ул. Примерная, д. 123</p>
-                      <p>🕒 Время работы: Пн-Пт с 9:00 до 18:00 (МСК)</p>
+                      <p>📧 Email: support@programmirovanie-dlya-detej-online.ru</p>
                     </div>
                   </CardContent>
                 </Card>
