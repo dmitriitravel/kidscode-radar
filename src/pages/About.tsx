@@ -25,7 +25,7 @@ const About: React.FC = () => {
       "@type": "Organization",
       "name": "School Rating Platform",
       "description": "Независимая платформа для сравнения и выбора лучших онлайн-школ программирования для детей в России",
-      "url": window.location.origin,
+      "url": typeof window !== 'undefined' ? window.location.origin : 'https://programmirovanie-dlya-detej-online.ru',
       "foundingDate": "2024",
       "areaServed": "Russia",
       "serviceType": "Educational Rating Platform"
@@ -35,10 +35,10 @@ const About: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="О проекте | Рейтинг онлайн-школ программирования для детей"
-        description="Узнайте больше о нашей независимой платформе для сравнения онлайн-школ программирования для детей. Наша миссия, принципы работы и команда экспертов."
+        title="О проекте | Независимая платформа рейтинга школ программирования"
+        description="Независимая платформа для выбора лучших онлайн-школ программирования для детей. Наша миссия, принципы работы и команда экспертов."
         keywords="о проекте, рейтинг школ программирования, независимая оценка, команда экспертов, миссия"
-        canonicalUrl={`${window.location.origin}/about`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : 'https://programmirovanie-dlya-detej-online.ru'}/about`}
         ogTitle="О нашем проекте | Независимый рейтинг школ программирования"
         ogDescription="Узнайте о миссии и принципах работы нашей платформы для сравнения онлайн-школ программирования для детей."
         structuredData={structuredData}
