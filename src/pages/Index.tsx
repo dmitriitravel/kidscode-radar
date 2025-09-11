@@ -4,6 +4,7 @@ import { ComparisonBar } from '@/components/ComparisonBar';
 import { Reviews } from '@/components/Reviews';
 import { FAQ } from '@/components/FAQ';
 import { Articles } from '@/components/Articles';
+import Footer from '@/components/Footer';
 import { schools } from '@/data/schools';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
