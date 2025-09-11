@@ -203,6 +203,9 @@ const Index = () => {
       <Articles />
       
       <ComparisonBar />
-    </div>;
+      
+      <Footer />
+    </div>
 };
+
 export default Index;

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useComparison } from '@/contexts/ComparisonContext';
-import { ComparisonTable } from '@/components/ComparisonTable';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, GitCompare } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ComparisonTable } from '@/components/ComparisonTable';
+import Footer from '@/components/Footer';
+import { ArrowLeft, GitCompare } from 'lucide-react';
 
 const Compare: React.FC = () => {
   const { selectedSchools, clearComparison } = useComparison();
@@ -58,6 +59,7 @@ const Compare: React.FC = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
