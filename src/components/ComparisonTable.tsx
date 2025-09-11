@@ -88,9 +88,9 @@ export const ComparisonTable: React.FC<ComparisonTableProps> = ({ schools }) => 
                       {school.price.min === bestPrice && (
                         <Crown className="h-4 w-4 text-yellow-500" />
                       )}
-                      <span className="text-lg">
-                        {school.price.min.toLocaleString('ru')} - {school.price.max.toLocaleString('ru')} {school.price.currency}
-                      </span>
+                       <span className="text-lg">
+                         от {school.price.min.toLocaleString('ru')} {school.price.currency}
+                       </span>
                     </div>
                   </div>
                   <div className="text-xs text-muted-foreground">в месяц</div>

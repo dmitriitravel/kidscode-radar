@@ -12,7 +12,6 @@ export const schools: School[] = [
     format: 'online',
     price: {
       min: 5175,
-      max: 8625,
       currency: '₽',
       period: 'month'
     },
@@ -34,8 +33,7 @@ export const schools: School[] = [
     courses: ['Scratch', 'Python', 'JavaScript', 'Roblox', 'Unity', 'Web-разработка', 'Мобильная разработка'],
     format: 'online',
     price: {
-      min: 28900,
-      max: 30000,
+      min: 9912,
       currency: '₽',
       period: 'month'
     },
@@ -57,8 +55,7 @@ export const schools: School[] = [
     courses: ['Scratch Junior', 'Scratch', 'Python', 'JavaScript', 'Мобильная разработка', 'Веб-дизайн', 'Математика'],
     format: 'hybrid',
     price: {
-      min: 9912,
-      max: 8000,
+      min: 8000,
       currency: '₽',
       period: 'month'
     },
@@ -80,8 +77,7 @@ export const schools: School[] = [
     courses: ['Scratch', 'Python', 'Minecraft', 'Roblox', 'JavaScript', 'Game Development', 'Unity'],
     format: 'online',
     price: {
-      min: 15000,
-      max: 6500,
+      min: 6500,
       currency: '₽',
       period: 'month'
     },
@@ -103,8 +99,7 @@ export const schools: School[] = [
     courses: ['Python', 'Java', 'C++', 'Web-разработка', 'Мобильная разработка', 'Базы данных', 'Искусственный интеллект'],
     format: 'online',
     price: {
-      min: 22000,
-      max: 9000,
+      min: 9000,
       currency: '₽',
       period: 'month'
     },
@@ -127,7 +122,6 @@ export const schools: School[] = [
     format: 'online',
     price: {
       min: 6400,
-      max: 6800,
       currency: '₽',
       period: 'month'
     },
@@ -150,7 +144,6 @@ export const schools: School[] = [
     format: 'hybrid',
     price: {
       min: 6320,
-      max: 7500,
       currency: '₽',
       period: 'month'
     },
@@ -172,8 +165,7 @@ export const schools: School[] = [
     courses: ['Scratch', 'Python', 'Java', 'Unity', 'Roblox', 'Веб-дизайн', 'Графический дизайн', '3D-моделирование'],
     format: 'hybrid',
     price: {
-      min: 9600,
-      max: 6000,
+      min: 6000,
       currency: '₽',
       period: 'month'
     },
@@ -195,8 +187,7 @@ export const schools: School[] = [
     courses: ['Веб-дизайн', 'Motion-дизайн', '3D-графика', 'Основы программирования', 'UI/UX дизайн', 'Геймдизайн'],
     format: 'online',
     price: {
-      min: 13475,
-      max: 5500,
+      min: 5500,
       currency: '₽',
       period: 'month'
     },
@@ -218,8 +209,7 @@ export const schools: School[] = [
     courses: ['Scratch', 'Python', 'JavaScript', 'Minecraft', 'App Development', 'Робототехника', 'Kotlin'],
     format: 'hybrid',
     price: {
-      min: 6800,
-      max: 5800,
+      min: 5800,
       currency: '₽',
       period: 'month'
     },

@@ -59,7 +59,7 @@ export const SchoolDetailModal: React.FC<SchoolDetailModalProps> = ({
               <Clock className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium">Стоимость:</span>
               <span className="text-sm text-muted-foreground">
-                {school.price.min.toLocaleString('ru')} - {school.price.max.toLocaleString('ru')} {school.price.currency}
+                от {school.price.min.toLocaleString('ru')} {school.price.currency}
               </span>
             </div>
             <div className="flex items-center gap-2">

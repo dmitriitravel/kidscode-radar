@@ -10,7 +10,6 @@ export interface School {
   format: 'online' | 'offline' | 'hybrid';
   price: {
     min: number;
-    max: number;
     currency: string;
     period: 'month' | 'course' | 'lesson';
   };
