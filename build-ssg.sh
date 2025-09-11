@@ -7,11 +7,19 @@ echo "🚀 Starting Static Site Generation (SSG) build..."
 echo "🧹 Cleaning previous build..."
 rm -rf dist
 
-# Step 2: Build the React application
+# Step 2: Generate static pages with meta tags BEFORE build
+echo "📄 Generating static pages with proper meta tags..."
+node scripts/generatePages.js
+
+# Step 3: Build the React application (will overwrite generated files)
 echo "📦 Building React application..."
 npm run build
 
-# Step 3: Generate sitemap and robots.txt
+# Step 4: Regenerate pages to overwrite Vite's output
+echo "📄 Re-generating static pages with proper meta tags..."
+node scripts/generatePages.js
+
+# Step 3: Generate SEO files (sitemap, robots.txt)
 echo "📄 Generating SEO files..."
 node scripts/generateStaticFiles.js
 
