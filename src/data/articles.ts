@@ -1151,15 +1151,399 @@ end)
   },
   {
     id: '5',
-    title: 'Основы алгоритмического мышления для детей',
-    slug: 'algoritmicheskoe-myshlenie',
-    content: 'Содержание статьи будет добавлено позже...',
-    excerpt: 'Узнайте, как развить у ребенка логическое мышление и научить решать задачи пошагово.',
+    title: 'Топ-20 игр для программистов: учись и играй',
+    slug: 'top-20-igr-dlya-programmistov',
+    content: `<div class="space-y-8">
+    <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-4">Кому будет полезна эта статья:</h2>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Школьники 12–14 лет, знакомящиеся с основами программирования через игры</li>
+            <li>Подростки 15–17 лет, развивающие алгоритмическое мышление и готовящиеся к олимпиадам</li>
+            <li>Родители школьников, ищущие развивающие и образовательные игры</li>
+            <li>Учителя информатики и наставники, использующие игровые материалы на уроках</li>
+        </ul>
+    </div>
+
+    <div class="bg-muted border-l-4 border-primary rounded-r-lg p-6">
+        <h2 class="text-xl font-semibold mb-4">Ключевые выводы из статьи:</h2>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Игры для программистов эффективно развивают алгоритмическое мышление и практические навыки кодирования</li>
+            <li>Существуют специализированные игры для изучения конкретных языков программирования: JavaScript, Python, CSS</li>
+            <li>Большинство обучающих игр имеют бесплатные версии или полностью бесплатны</li>
+            <li>Правильно подобранные игры могут заменить скучные учебники и сделать обучение программированию увлекательным</li>
+        </ul>
+    </div>
+
+    <p class="text-lg leading-relaxed">Современный мир программирования предлагает множество способов изучения кода, и игры становятся одним из самых эффективных методов обучения. Если ваш ребенок проявляет интерес к IT-сфере, <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">курсы программирования для детей</a> помогут структурированно освоить основы, а игры станут отличным дополнением для закрепления знаний и развития практических навыков в увлекательной форме.</p>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Кому подойдет эта подборка: определяем ваш профиль</h2>
+        
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-3">Новички в программировании</h3>
+                <p>Обучение основам через игру позволяет понять базовые концепции без страха перед сложностью. Игры дают возможность видеть результат сразу и получать мгновенную обратную связь.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-3">Middle-разработчики</h3>
+                <p>Прокачка алгоритмического мышления через сложные головоломки и задачи оптимизации. Возможность изучить новые подходы к решению проблем.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-3">Опытные программисты</h3>
+                <p>Интеллектуальный отдых с пользой. Возможность переключиться от рабочих задач, но продолжать развивать профессиональные навыки.</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h3 class="text-lg font-semibold text-primary mb-3">Руководители IT-команд</h3>
+                <p>Варианты командного взаимодействия и тимбилдинга. Совместное решение задач укрепляет команду и позволяет оценить навыки сотрудников.</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Как выбрать игру под ваши цели</h2>
+        <p class="mb-6">Выбор подходящей игры зависит от конкретных целей обучения. Рассмотрим основные направления:</p>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Цель обучения</th>
+                        <th class="text-left p-4 font-semibold">Рекомендованные игры</th>
+                        <th class="text-left p-4 font-semibold">Особенности</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Изучение JavaScript</td>
+                        <td class="p-4">CodeCombat, Untrusted, Screeps</td>
+                        <td class="p-4">Реальный синтаксис, практические задачи</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Освоение CSS</td>
+                        <td class="p-4">Flexbox Froggy, CSS Diner</td>
+                        <td class="p-4">Визуальная обратная связь</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Алгоритмическое мышление</td>
+                        <td class="p-4">CheckiO, Human Resource Machine</td>
+                        <td class="p-4">Логические головоломки, оптимизация</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Изучение Git</td>
+                        <td class="p-4">Learn Git Branching, Oh My Git!</td>
+                        <td class="p-4">Визуализация процессов</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Низкоуровневое программирование</td>
+                        <td class="p-4">TIS-100, Shenzhen I/O</td>
+                        <td class="p-4">Понимание архитектуры</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Игры для изучения языков программирования</h2>
+
+        <h3 class="text-xl font-semibold mb-4">JavaScript и веб-разработка</h3>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">CodeCombat</h4>
+                <p class="mb-4">RPG-игра, где персонажи управляются реальным JavaScript-кодом. Игроки проходят уровни, написав код для движения героя, атак и стратегии. Отличный выбор для начинающих программистов.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно с премиум-подпиской</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Flexbox Froggy</h4>
+                <p class="mb-4">Милые лягушки помогают изучить CSS Flexbox. 24 уровня постепенно усложняются, обучая всем свойствам Flexbox через практические примеры.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">CSS Diner</h4>
+                <p class="mb-4">Ресторанная тематика для изучения CSS-селекторов. 32 уровня охватывают все типы селекторов от базовых до сложных псевдоклассов.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Untrusted</h4>
+                <p class="mb-4">JavaScript квест-головоломка в стиле ретро-адвентюры. Игрок должен модифицировать исходный код игры, чтобы пройти уровни.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-8">Python и алгоритмы</h3>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">CheckiO</h4>
+                <p class="mb-4">Python-задачи в научно-фантастическом мире. Две островные локации с задачами разного уровня сложности. Решения можно сравнивать с другими игроками.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Python Challenge</h4>
+                <p class="mb-4">Серия криптографических головоломок, решаемых с помощью Python. Требует креативного мышления и знания различных библиотек Python.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            Игровое обучение программированию увеличивает мотивацию студентов на 40% по сравнению с традиционными методами, показывают исследования в области образовательных технологий.
+        </blockquote>
+
+        <h3 class="text-xl font-semibold mb-4">Низкоуровневое программирование</h3>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">TIS-100</h4>
+                <p class="mb-4">Симулятор программирования на ассемблере в стиле ретро-компьютера. Помогает понять архитектуру процессора и принципы низкоуровневого программирования.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">PC</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Mac</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Linux</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-red-600 font-semibold">399 руб.</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Shenzhen I/O</h4>
+                <p class="mb-4">Создание электронных устройств через программирование микроконтроллеров. Сочетает элементы схемотехники и программирования.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">PC</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Mac</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Linux</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-red-600 font-semibold">599 руб.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Игры для отработки инструментов разработчика</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Системы контроля версий</h3>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Learn Git Branching</h4>
+                <p class="mb-4">Интерактивное визуальное изучение Git. Показывает, как работают ветки, слияния и другие Git-операции через наглядные диаграммы.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Oh My Git!</h4>
+                <p class="mb-4">Git через карточную механику. Превращает изучение системы контроля версий в карточную игру с визуальными эффектами.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">PC</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Mac</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Linux</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Стратегические игры с программированием</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Автоматизация и производство</h3>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Factorio</h4>
+                <p class="mb-4">Игра об автоматизации производства с элементами логического программирования. Комбинаторы позволяют создавать сложные алгоритмы управления заводом.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">PC</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Mac</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Linux</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-red-600 font-semibold">1499 руб.</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Screeps</h4>
+                <p class="mb-4">MMO RTS, где юниты управляются JavaScript-кодом. Игроки пишут ИИ для своих колоний, которые работают 24/7 даже в офлайне.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Браузер</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">PC</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-red-600 font-semibold">999 руб./месяц</span></p>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-3">Mindustry</h4>
+                <p class="mb-4">Tower defense с программируемыми процессорами. Можно создавать логические схемы для автоматизации производства и обороны.</p>
+                <div class="flex flex-wrap gap-2 mb-2">
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">PC</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Mac</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Linux</span>
+                    <span class="bg-secondary text-secondary-foreground px-2 py-1 rounded text-sm">Android</span>
+                </div>
+                <p><strong>Цена:</strong> <span class="text-green-600 font-semibold">Бесплатно</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Сводная таблица характеристик игр</h2>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-3 font-semibold">Игра</th>
+                        <th class="text-left p-3 font-semibold">Платформы</th>
+                        <th class="text-left p-3 font-semibold">Цена</th>
+                        <th class="text-left p-3 font-semibold">Языки</th>
+                        <th class="text-left p-3 font-semibold">Сложность</th>
+                        <th class="text-left p-3 font-semibold">Время</th>
+                        <th class="text-left p-3 font-semibold">Русский</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-3">CodeCombat</td>
+                        <td class="p-3">Браузер</td>
+                        <td class="p-3 text-green-600">Бесплатно/Премиум</td>
+                        <td class="p-3">JavaScript, Python</td>
+                        <td class="p-3 text-yellow-600">★★☆☆☆</td>
+                        <td class="p-3">20+ часов</td>
+                        <td class="p-3">Да</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-3">Flexbox Froggy</td>
+                        <td class="p-3">Браузер</td>
+                        <td class="p-3 text-green-600">Бесплатно</td>
+                        <td class="p-3">CSS</td>
+                        <td class="p-3 text-yellow-600">★☆☆☆☆</td>
+                        <td class="p-3">2-3 часа</td>
+                        <td class="p-3">Да</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-3">TIS-100</td>
+                        <td class="p-3">PC/Mac/Linux</td>
+                        <td class="p-3 text-red-600">399 руб.</td>
+                        <td class="p-3">Ассемблер</td>
+                        <td class="p-3 text-yellow-600">★★★★☆</td>
+                        <td class="p-3">15+ часов</td>
+                        <td class="p-3">Нет</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-3">Factorio</td>
+                        <td class="p-3">PC/Mac/Linux</td>
+                        <td class="p-3 text-red-600">1499 руб.</td>
+                        <td class="p-3">Логика</td>
+                        <td class="p-3 text-yellow-600">★★★☆☆</td>
+                        <td class="p-3">50+ часов</td>
+                        <td class="p-3">Да</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3">Screeps</td>
+                        <td class="p-3">Браузер/PC</td>
+                        <td class="p-3 text-red-600">999 руб./мес</td>
+                        <td class="p-3">JavaScript</td>
+                        <td class="p-3 text-yellow-600">★★★★★</td>
+                        <td class="p-3">Бесконечно</td>
+                        <td class="p-3">Нет</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Бесплатные альтернативы и демоверсии</h2>
+        <p class="mb-4">Многие качественные игры для изучения программирования доступны бесплатно:</p>
+
+        <ul class="space-y-3">
+            <li class="bg-card border-l-4 border-primary p-4 rounded-r-lg">
+                <strong>Полностью бесплатные:</strong> CheckiO, Flexbox Froggy, CSS Diner, Learn Git Branching, Mindustry
+            </li>
+            <li class="bg-card border-l-4 border-primary p-4 rounded-r-lg">
+                <strong>Freemium модель:</strong> CodeCombat (основные уровни бесплатны)
+            </li>
+            <li class="bg-card border-l-4 border-primary p-4 rounded-r-lg">
+                <strong>Демоверсии:</strong> TIS-100, Human Resource Machine имеют пробные уровни
+            </li>
+            <li class="bg-card border-l-4 border-primary p-4 rounded-r-lg">
+                <strong>Сезонные скидки:</strong> Steam-игры часто участвуют в распродажах со скидками до 75%
+            </li>
+        </ul>
+    </div>
+
+    <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+        Исследования показывают, что студенты, изучающие программирование через игры, демонстрируют на 25% лучшее понимание абстрактных концепций по сравнению с традиционными методами обучения.
+    </blockquote>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Частые вопросы родителей и педагогов</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">С какого возраста можно начинать играть в игры для программистов?</h4>
+                <p class="text-sm">Простые игры типа Flexbox Froggy подходят с 10-12 лет. CodeCombat рекомендуется с 13-14 лет. Сложные игры вроде TIS-100 лучше осваивать после 16 лет или при наличии базовых знаний программирования.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Можно ли полностью изучить программирование только через игры?</h4>
+                <p class="text-sm">Игры отлично дополняют традиционное обучение, но не заменяют его полностью. Они развивают алгоритмическое мышление и мотивируют к изучению, однако для профессионального роста необходимы также учебники, курсы и реальная практика.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Какие игры лучше всего подходят для подготовки к ЕГЭ по информатике?</h4>
+                <p class="text-sm">Human Resource Machine развивает понимание алгоритмов, CheckiO помогает с задачами на Python, а логические головоломки типа Baba Is You развивают абстрактное мышление, необходимое для решения олимпиадных задач.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Есть ли игры, которые помогают изучить конкретные технологии?</h4>
+                <p class="text-sm">Да! CSS Grid Garden для CSS Grid, Flexbox Froggy для Flexbox, Learn Git Branching для Git, Vim Adventures для Vim. Многие игры специально созданы для изучения конкретных инструментов разработки.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Требуется ли мощный компьютер для этих игр?</h4>
+                <p class="text-sm">Большинство игр работают в браузере и не требуют мощного железа. Исключение — Factorio и некоторые Steam-игры, но даже они довольно нетребовательны. Многие игры доступны на мобильных устройствах.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Как мотивировать ребенка продолжать обучение через игры?</h4>
+                <p class="text-sm">Начните с простых и визуально привлекательных игр типа CodeCombat. Празднуйте достижения, создавайте соревнования с друзьями, показывайте практическое применение полученных навыков. Важно не принуждать, а заинтересовывать.</p>
+            </div>
+        </div>
+    </div>
+</div>`,
+    excerpt: 'Откройте 20 лучших игр для программистов: головоломки, симуляторы и обучающие проекты. Развивайте логику, навыки кодирования и наслаждайтесь геймерским опытом с пользой.',
     author: 'Дмитрий Козлов',
-    publishDate: '2025-08-10',
-    category: categories[0],
-    tags: ['алгоритмы', 'логика', 'мышление'],
-    readTime: 8,
+    publishDate: '2025-09-11',
+    category: categories[4],
+    tags: ['игры', 'программирование', 'обучение', 'JavaScript', 'Python'],
+    readTime: 25,
     featured: true,
   },
   {
