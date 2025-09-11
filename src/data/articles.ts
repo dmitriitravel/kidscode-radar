@@ -741,15 +741,412 @@ export const articles: Article[] = [
   },
   {
     id: '4',
-    title: 'Python или Scratch: какой язык выбрать для ребенка',
-    slug: 'python-vs-scratch',
-    content: 'Содержание статьи будет добавлено позже...',
-    excerpt: 'Сравниваем популярные языки программирования для детей и помогаем выбрать подходящий для вашего ребенка.',
-    author: 'Михаил Петров',
-    publishDate: '2025-08-20',
-    category: categories[1],
-    tags: ['Python', 'Scratch', 'выбор'],
-    readTime: 5,
+    title: 'Программирование в Roblox для детей: уроки и игры',
+    slug: 'programmirovanie-v-roblox-dlya-detej',
+    content: `<div class="space-y-8">
+    <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">👥 Для кого эта статья</h3>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Родители российских школьников, заинтересованные в изучении программирования детьми через Roblox</li>
+            <li>Российские школьники и подростки, желающие научиться программировать в Roblox</li>
+            <li>Учителя и педагоги, внедряющие игровые платформы для обучения программированию</li>
+            <li>Желающие пройти обучение программированию в Roblox на онлайн-курсах и в IT-кружках</li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">🎯 Ключевые выводы из статьи</h3>
+        <ul class="space-y-2 list-disc list-inside text-foreground">
+            <li>Первую игру в Roblox можно создать за 30 минут, начав с простого движущегося объекта</li>
+            <li>Безопасность ребенка обеспечивается настройкой приватного сервера и родительского контроля</li>
+            <li>Язык Lua изучается через игровые проекты возрастающей сложности - от кликера до гоночной игры</li>
+            <li>Структурированный план обучения позволяет освоить основы за месяц занятий по 45 минут</li>
+        </ul>
+    </div>
+
+    <p class="text-lg leading-relaxed">Roblox стал настоящим прорывом в обучении программированию для детей, превращая сложные концепции кодирования в увлекательную игру. Эта платформа позволяет юным разработчикам создавать собственные миры и делиться ими с миллионами игроков по всему миру. Если вы хотите дать вашему ребенку системное образование в этой области, обратите внимание на специализированные <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">онлайн курсы программирования</a>, где опытные преподаватели помогут структурированно изучить не только Roblox, но и основы программирования в целом.</p>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Быстрый старт: первая игра за 30 минут</h2>
+
+        <div class="bg-card border border-border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Шаг 1: Скачивание и установка Roblox Studio</h4>
+            <ol class="space-y-2 list-decimal list-inside">
+                <li>Перейдите на официальный сайт <strong>create.roblox.com</strong></li>
+                <li>Нажмите кнопку "Create New Experience"</li>
+                <li>Система автоматически предложит скачать Roblox Studio</li>
+                <li>Установите программу, следуя стандартному мастеру установки</li>
+                <li>Запустите Studio и войдите в свой аккаунт Roblox</li>
+            </ol>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Шаг 2: Создание первого проекта</h4>
+            <p class="mb-4">Выберите шаблон "Baseplate" - это чистый проект для экспериментов. Вставьте объект Part (кубик):</p>
+            <ol class="space-y-2 list-decimal list-inside">
+                <li>В меню Home нажмите "Part" → "Block"</li>
+                <li>Кубик появится в игровом мире</li>
+                <li>В окне Properties измените цвет, выбрав параметр "Color"</li>
+            </ol>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6 mb-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Шаг 3: Первый скрипт на Lua</h4>
+            <p class="mb-4">Заставим кубик подпрыгивать каждые 2 секунды:</p>
+            <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto mb-4">
+local part = script.Parent
+while true do
+    part.Position = part.Position + Vector3.new(0, 5, 0)
+    wait(1)
+    part.Position = part.Position - Vector3.new(0, 5, 0)
+    wait(1)
+end
+            </div>
+            <p>Вставьте этот код в объект Script, который нужно добавить к вашему кубику через меню "Insert Object".</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Шаг 4: Тестирование игры</h4>
+            <p>Нажмите кнопку "Play" в верхней панели Studio. Ваш кубик должен начать подпрыгивать! Для остановки нажмите "Stop".</p>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Настройка безопасности и родительского контроля</h2>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden mb-6">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Настройка</th>
+                        <th class="text-left p-4 font-semibold">Рекомендуемое значение</th>
+                        <th class="text-left p-4 font-semibold">Где найти</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Приватность аккаунта</td>
+                        <td class="p-4">Только друзья</td>
+                        <td class="p-4">Settings → Privacy</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Чат</td>
+                        <td class="p-4">Отключить или только друзья</td>
+                        <td class="p-4">Settings → Privacy → Communication</td>
+                    </tr>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Покупки Robux</td>
+                        <td class="p-4">Требовать PIN</td>
+                        <td class="p-4">Settings → Billing</td>
+                    </tr>
+                    <tr class="bg-muted/50">
+                        <td class="p-4">Возрастные ограничения</td>
+                        <td class="p-4">13+ контент заблокирован</td>
+                        <td class="p-4">Settings → Parental Controls</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Создание приватного сервера</h4>
+            <p class="mb-4">Приватный сервер позволяет ребенку играть только с приглашенными друзьями:</p>
+            <ol class="space-y-2 list-decimal list-inside">
+                <li>В Studio выберите "File" → "Publish to Roblox"</li>
+                <li>Установите игру как "Private" (только для вас)</li>
+                <li>Позже можно изменить на "Friends Only" для игры с одноклассниками</li>
+            </ol>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            Безопасность ребенка в интернете начинается с правильных настроек приватности. Roblox предоставляет все необходимые инструменты для создания защищенной игровой среды.
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Основы языка Lua для детей</h2>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Переменные - коробочки для данных</h4>
+                <p class="mb-4">Переменные в Lua - это как коробочки, в которые мы складываем информацию:</p>
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+-- Создаем переменные
+local playerName = "Максим"
+local score = 100
+local isWinner = true
+
+print("Игрок: " .. playerName)
+print("Очки: " .. score)
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Условия if-then</h4>
+                <p class="mb-4">Создадим систему "если игрок коснулся объекта - добавить очки":</p>
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+local part = script.Parent
+local score = 0
+
+function onTouch(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player then
+        score = score + 10
+        print(player.Name .. " получил 10 очков! Всего: " .. score)
+    end
+end
+
+part.Touched:Connect(onTouch)
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Циклы для повторения</h4>
+                <p class="mb-4">Заставим несколько объектов выполнять одно действие:</p>
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+-- Создаем 5 кубиков в ряд
+for i = 1, 5 do
+    local newPart = Instance.new("Part")
+    newPart.Position = Vector3.new(i * 5, 5, 0)
+    newPart.BrickColor = BrickColor.Random()
+    newPart.Parent = workspace
+end
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Пошаговые проекты по сложности</h2>
+
+        <div class="grid gap-6">
+            <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold text-primary mb-2">Проект 1: Простой кликер</h3>
+                <div class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">60-90 минут</div>
+                
+                <h4 class="font-semibold mb-2">Создание интерфейса:</h4>
+                <ol class="space-y-1 list-decimal list-inside mb-4">
+                    <li>Вставьте ScreenGui в StarterPlayer → StarterPlayerGui</li>
+                    <li>Добавьте TextButton (кнопка для кликов)</li>
+                    <li>Добавьте TextLabel (счетчик очков)</li>
+                </ol>
+
+                <h4 class="font-semibold mb-2">Программирование системы кликов:</h4>
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+-- LocalScript в ScreenGui
+local button = script.Parent.TextButton
+local scoreLabel = script.Parent.TextLabel
+local score = 0
+
+button.MouseButton1Click:Connect(function()
+    score = score + 1
+    scoreLabel.Text = "Очки: " .. score
+    
+    -- Анимация кнопки
+    button.Size = UDim2.new(0, 190, 0, 90)
+    wait(0.1)
+    button.Size = UDim2.new(0, 200, 0, 100)
+end)
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold text-primary mb-2">Проект 2: Игра на сбор предметов</h3>
+                <div class="inline-block bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium mb-4">120-180 минут</div>
+                
+                <h4 class="font-semibold mb-2">Создание монеток для сбора:</h4>
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+-- Скрипт для создания монет
+local coin = script.Parent
+
+-- Вращение монеты
+spawn(function()
+    while coin.Parent do
+        coin.CFrame = coin.CFrame * CFrame.Angles(0, math.rad(5), 0)
+        wait(0.1)
+    end
+end)
+
+-- Сбор при касании
+coin.Touched:Connect(function(hit)
+    local humanoid = hit.Parent:FindFirstChild("Humanoid")
+    if humanoid then
+        -- Звук сбора
+        local sound = Instance.new("Sound")
+        sound.SoundId = "rbxasset://sounds/electronicpingshort.wav"
+        sound.Parent = coin
+        sound:Play()
+        
+        -- Удаление монеты
+        coin:Destroy()
+        
+        print("Монета собрана!")
+    end
+end)
+                </div>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h3 class="text-xl font-semibold text-primary mb-2">Проект 3: Простая гоночная игра</h3>
+                <div class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mb-4">240-300 минут</div>
+                
+                <h4 class="font-semibold mb-2">Создание управляемой машинки:</h4>
+                <div class="bg-slate-900 text-slate-200 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+-- LocalScript для управления машиной
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+local speed = 50
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    
+    if input.KeyCode == Enum.KeyCode.W then
+        -- Движение вперед
+        local bodyVelocity = Instance.new("BodyVelocity")
+        bodyVelocity.MaxForce = Vector3.new(4000, 0, 4000)
+        bodyVelocity.Velocity = humanoidRootPart.CFrame.LookVector * speed
+        bodyVelocity.Parent = humanoidRootPart
+    end
+end)
+                </div>
+            </div>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            Лучший способ изучить программирование - это создавать проекты от простого к сложному. Каждый новый проект добавляет новые навыки к уже изученным основам.
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Система уроков и планирование занятий</h2>
+
+        <h3 class="text-xl font-semibold mb-4">План на первую неделю (3 занятия по 45 минут)</h3>
+
+        <div class="overflow-x-auto mb-6">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">День</th>
+                        <th class="text-left p-4 font-semibold">Тема урока</th>
+                        <th class="text-left p-4 font-semibold">Практическое задание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Урок 1</td>
+                        <td class="p-4">Знакомство с Roblox Studio</td>
+                        <td class="p-4">Создать цветную башню из кубиков</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Урок 2</td>
+                        <td class="p-4">Первый скрипт и переменные</td>
+                        <td class="p-4">Сделать кубик, меняющий цвет при касании</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Урок 3</td>
+                        <td class="p-4">Условия и функции</td>
+                        <td class="p-4">Создать простую систему счета очков</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4">План на первый месяц</h3>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Неделя 1: Основы Studio и Lua</h4>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li>Интерфейс Roblox Studio</li>
+                    <li>Создание и изменение объектов</li>
+                    <li>Первые скрипты на Lua</li>
+                    <li>Переменные и простые вычисления</li>
+                </ul>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Неделя 2: Интерактивность</h4>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li>События Touched и ClickDetector</li>
+                    <li>Условия if-then-else</li>
+                    <li>Создание простого кликера</li>
+                    <li>Работа с игроками</li>
+                </ul>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Неделя 3: Интерфейс и анимации</h4>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li>Создание GUI элементов</li>
+                    <li>Кнопки и текстовые поля</li>
+                    <li>TweenService для анимаций</li>
+                    <li>Звуковые эффекты</li>
+                </ul>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Неделя 4: Итоговый проект</h4>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li>Планирование большой игры</li>
+                    <li>Объединение всех изученных элементов</li>
+                    <li>Тестирование и отладка</li>
+                    <li>Публикация игры</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Частые вопросы родителей и педагогов</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Сколько времени ребенок должен проводить за программированием в Roblox?</h4>
+                <p class="text-sm">Рекомендуется начинать с 30-45 минут 2-3 раза в неделю для детей 8-12 лет. Подростки могут заниматься до 1-1.5 часов за сеанс. Важно делать перерывы каждые 30 минут и следить, чтобы программирование не заменяло физическую активность и общение с друзьями.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Безопасен ли Roblox для детей?</h4>
+                <p class="text-sm">При правильных настройках приватности Roblox безопасен. Обязательно настройте родительский контроль, ограничьте чат только друзьями, используйте PIN-код для покупок и регулярно проверяйте активность ребенка. Создание собственных игр в Roblox Studio еще безопаснее, чем игра в пользовательский контент.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Нужно ли покупать Robux для обучения программированию?</h4>
+                <p class="text-sm">Для изучения программирования Robux не нужны. Roblox Studio полностью бесплатен и содержит все инструменты для создания игр. Robux могут понадобиться только для покупки некоторых готовых ресурсов (модели, звуки) или рекламы созданных игр.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Можно ли зарабатывать деньги на играх в Roblox?</h4>
+                <p class="text-sm">Да, успешные разработчики могут зарабатывать через программу Developer Exchange, конвертируя заработанные Robux в реальные деньги. Однако для этого нужно создать популярную игру с тысячами игроков. Для начинающих это скорее мотивирующая перспектива, чем реальная цель.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Поможет ли изучение Lua в Roblox с другими языками программирования?</h4>
+                <p class="text-sm">Определенно да! Изучая Lua в Roblox, ребенок осваивает основные концепции программирования: переменные, условия, циклы, функции, события. Эти знания легко переносятся на Python, JavaScript, C# и другие языки. Roblox также учит логическому мышлению и решению задач.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">С какого возраста можно начинать изучение Roblox программирования?</h4>
+                <p class="text-sm">Дети могут начинать с 8-9 лет, если умеют читать и имеют базовые навыки работы с компьютером. Оптимальный возраст - 10-14 лет, когда ребенок может самостоятельно следовать инструкциям и логически мыслить. Важнее готовность ребенка и его интерес, чем конкретный возраст.</p>
+            </div>
+        </div>
+    </div>
+
+    <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+        Roblox - это не просто игровая платформа, это полноценная среда разработки, которая может стать первым шагом ребенка в мир профессионального программирования.
+    </blockquote>
+</div>`,
+    excerpt: 'Узнайте, как дети смогут освоить программирование в Roblox: пошаговые уроки, простые проекты и творческие задания для развития навыков кодирования.',
+    author: 'Дмитрий Козлов',
+    publishDate: '2025-09-11',
+    category: categories[2],
+    tags: ['Roblox', 'Lua', 'игры', 'дети', 'программирование'],
+    readTime: 20,
     featured: true,
   },
   {
