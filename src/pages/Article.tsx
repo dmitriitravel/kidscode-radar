@@ -15,6 +15,7 @@ import {
 import { Calendar, Clock, User, ArrowLeft, ChevronRight } from 'lucide-react';
 import { useArticles } from '@/hooks/useArticles';
 import { SEOHead } from '@/components/SEOHead';
+import { StructuredData } from '@/components/StructuredData';
 import InternalNavigation from '@/components/InternalNavigation';
 import Footer from '@/components/Footer';
 import NotFound from './NotFound';
@@ -34,7 +35,8 @@ const Article: React.FC = () => {
   const articleTitle = `${article.title} | Программирование для детей`;
   const articleDescription = article.excerpt;
   const articleKeywords = `${article.tags.join(', ')}, программирование для детей, ${article.category.name}`;
-  const canonicalUrl = `${window.location.origin}/articles/${article.slug}`;
+  const currentOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://programmirovanie-dlya-detej-online.ru';
+  const canonicalUrl = `${currentOrigin}/articles/${article.slug}`;
 
   // Structured data for article
   const structuredData = {
@@ -241,6 +243,7 @@ const Article: React.FC = () => {
           </div>
         </div>
         </div>
+        <StructuredData type="article" data={article} />
         <Footer />
       </div>
     </>

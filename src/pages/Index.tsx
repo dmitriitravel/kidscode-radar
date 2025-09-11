@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Search, Filter, GraduationCap, Users, Code, Star, X } from 'lucide-react';
 import { useSchoolFilters } from '@/hooks/useSchoolFilters';
 import { SEOHead } from '@/components/SEOHead';
+import { StructuredData } from '@/components/StructuredData';
 
 const Index = () => {
   const {
@@ -25,21 +26,7 @@ const Index = () => {
     resultsCount
   } = useSchoolFilters(schools);
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ТОП-10 онлайн-школ программирования для детей в России",
-    "description": "Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript.",
-    "url": window.location.origin,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${window.location.origin}/?search={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
+  const currentUrl = typeof window !== 'undefined' ? window.location.origin : 'https://programmirovanie-dlya-detej-online.ru';
 
   return (
     <>
@@ -47,10 +34,24 @@ const Index = () => {
         title="ТОП-10 онлайн-школ программирования для детей в России | Рейтинг 2025"
         description="Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript."
         keywords="программирование для детей, онлайн школа программирования, курсы программирования дети, Python для детей, Scratch, JavaScript дети, рейтинг школ программирования"
-        canonicalUrl={window.location.origin}
+        canonicalUrl={currentUrl}
         ogTitle="ТОП-10 онлайн-школ программирования для детей в России | Рейтинг 2025"
         ogDescription="Независимый рейтинг лучших онлайн-школ программирования для детей. Сравнение цен, отзывы, подробные обзоры курсов."
-        structuredData={structuredData}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "ТОП-10 онлайн-школ программирования для детей в России",
+          "description": "Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript.",
+          "url": currentUrl,
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": `${currentUrl}/?search={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }}
       />
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -227,6 +228,9 @@ const Index = () => {
         </div>
       </section>
 
+      <StructuredData type="website" />
+      <StructuredData type="itemlist" data={schools} />
+      
       <Reviews />
       
       <FAQ />
