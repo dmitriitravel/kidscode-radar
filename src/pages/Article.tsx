@@ -15,6 +15,8 @@ import {
 import { Calendar, Clock, User, ArrowLeft, ChevronRight } from 'lucide-react';
 import { useArticles } from '@/hooks/useArticles';
 import { SEOHead } from '@/components/SEOHead';
+import InternalNavigation from '@/components/InternalNavigation';
+import Footer from '@/components/Footer';
 import NotFound from './NotFound';
 
 const Article: React.FC = () => {
@@ -75,7 +77,8 @@ const Article: React.FC = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-6 lg:py-8 max-w-6xl">
+        <InternalNavigation />
+        <div className="container mx-auto px-4 py-6 lg:py-8 max-w-6xl">
         {/* Breadcrumbs */}
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
@@ -208,8 +211,9 @@ const Article: React.FC = () => {
             </div>
           </div>
         </div>
+        </div>
+        <Footer />
       </div>
-    </div>
     </>
   );
 };
