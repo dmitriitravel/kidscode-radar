@@ -234,6 +234,9 @@ const About: React.FC = () => {
                       Есть вопросы о нашем рейтинге или предложения по улучшению? 
                       Мы всегда рады обратной связи от родителей и школ.
                     </p>
+                    <p className="text-muted-foreground mb-4">
+                      📧 Email: support@programmirovanie-dlya-detej-online.ru
+                    </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button asChild>
                         <Link to="/">
