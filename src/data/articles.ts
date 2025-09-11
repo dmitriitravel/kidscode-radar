@@ -1548,15 +1548,424 @@ end)
   },
   {
     id: '6',
-    title: 'Игровые движки для детей: создаем первую игру',
-    slug: 'igrovye-dvizhki-dlya-detey',
-    content: 'Содержание статьи будет добавлено позже...',
-    excerpt: 'Обзор простых игровых движков и платформ, где дети могут создать свою первую компьютерную игру.',
-    author: 'Алексей Морозов',
-    publishDate: '2025-08-05',
+    title: 'Программирование на Python для детей: основы и проекты',
+    slug: 'programmirovanie-na-python-dlya-detej',
+    content: `<div class="space-y-8">
+    <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4">Для кого эта статья</h3>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Родители школьников 7–14 лет, желающие развить у ребёнка навыки программирования</li>
+            <li>Дети и подростки 7–14 лет, интересующиеся изучением основ программирования через игровые проекты</li>
+            <li>Учителя и репетиторы информатики, ищущие доступный и наглядный учебный материал</li>
+            <li>Подростки старших классов (15–17 лет), планирующие профильное развитие в IT</li>
+        </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Ключевые выводы статьи</h3>
+        <ul class="space-y-2 list-disc list-inside text-foreground">
+            <li>Python — идеальный язык для детей благодаря простому синтаксису и быстрым результатам</li>
+            <li>Начать можно с 5-минутной программы, используя бесплатный редактор Thonny</li>
+            <li>Практическое обучение через игры и проекты эффективнее теоретических знаний</li>
+            <li>Родительская поддержка и правильно подобранные ресурсы — ключ к успешному изучению программирования</li>
+        </ul>
+    </div>
+
+    <p class="text-lg leading-relaxed">Программирование на Python становится всё более популярным среди детей и подростков. Этот язык программирования открывает двери в мир технологий и помогает развивать логическое мышление. Если вы ищете качественные и структурированные <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">уроки по программированию для детей</a>, которые помогут вашему ребёнку освоить Python с нуля через интерактивные задания и игровые проекты, то этот материал станет отличным дополнением к практическим занятиям.</p>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Почему Python идеален для детей: 3 главных причины</h2>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Преимущество</th>
+                        <th class="text-left p-4 font-semibold">Объяснение</th>
+                        <th class="text-left p-4 font-semibold">Пример</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">Простота синтаксиса</td>
+                        <td class="p-4">Код читается как английский текст</td>
+                        <td class="p-4">print("Привет!") вместо сложных конструкций</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">Мгновенный результат</td>
+                        <td class="p-4">От идеи до работающей программы за минуты</td>
+                        <td class="p-4">Первая программа запускается сразу</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Безопасность экспериментов</td>
+                        <td class="p-4">Невозможно "сломать" компьютер</td>
+                        <td class="p-4">Ошибки в коде не повредят систему</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "Python позволяет детям сосредоточиться на решении задач, а не на сложности синтаксиса. Это делает программирование доступным и увлекательным занятием для юных умов."
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Быстрый старт: первая программа за 5 минут</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Пошаговая установка Python и выбор редактора</h3>
+
+        <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <ol class="space-y-2 list-decimal list-inside">
+                <li class="font-medium">Скачайте Python с официального сайта python.org</li>
+                <li class="font-medium">Установите Thonny — простой редактор для начинающих</li>
+                <li class="font-medium">Запустите Thonny и создайте новый файл</li>
+                <li class="font-medium">Сохраните файл с расширением .py</li>
+                <li class="font-medium">Готово к программированию!</li>
+            </ol>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">"Hello, World!" с эффектом</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+print("Привет, мир!")
+print("🌟" * 10)
+print("Моя первая программа работает!")
+print("🌟" * 10)
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">Чек-лист для родителей: что делать, если код не запускается</h3>
+
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Проверьте правильность скобок и кавычек</li>
+            <li>Убедитесь, что файл сохранён с расширением .py</li>
+            <li>Проверьте отступы — в Python они важны</li>
+            <li>Перезапустите программу кнопкой F5</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Превращаем компьютер в калькулятор и художника</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Создаём калькулятор возраста</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+current_year = 2024
+birth_year = int(input("В каком году ты родился? "))
+age = current_year - birth_year
+print(f"Тебе {age} лет!")
+
+days = age * 365
+print(f"Ты живёшь уже {days} дней!")
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">Переменные на примере конфет</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+candies_start = 20
+candies_eaten = 5
+candies_given = 3
+
+candies_left = candies_start - candies_eaten - candies_given
+print(f"У меня осталось {candies_left} конфет")
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">Рисование с помощью turtle</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+import turtle
+
+# Создаём экран и черепашку
+screen = turtle.Screen()
+pen = turtle.Turtle()
+
+# Рисуем квадрат
+for i in range(4):
+    pen.forward(100)
+    pen.right(90)
+
+# Закрываем окно по клику
+screen.exitonclick()
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Учим компьютер принимать решения</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Игра "Угадай, что я загадал"</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+secret_number = 7
+guess = int(input("Угадай число от 1 до 10: "))
+
+if guess == secret_number:
+    print("Поздравляю! Ты угадал!")
+elif guess < secret_number:
+    print("Моё число больше!")
+else:
+    print("Моё число меньше!")
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">Простой чат-бот</h3>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Мини-проект: Дружелюбный бот</h4>
+            <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+name = input("Как тебя зовут? ")
+print(f"Привет, {name}!")
+
+mood = input("Как дела? (хорошо/плохо) ")
+if mood == "хорошо":
+    print("Отлично! Давай программировать!")
+else:
+    print("Не переживай, программирование поднимет настроение!")
+            </div>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "Программирование — это искусство давать компьютеру точные инструкции. Дети естественным образом мыслят алгоритмами, что делает их отличными программистами."
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Циклы: когда компьютер работает вместо нас</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Рисуем узоры с циклом for</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+# Таблица умножения на 5
+for i in range(1, 11):
+    result = i * 5
+    print(f"5 × {i} = {result}")
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">Игра "Угадай число" с циклом while</h3>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+import random
+
+secret = random.randint(1, 10)
+attempts = 0
+
+while True:
+    guess = int(input("Угадай число: "))
+    attempts += 1
+    
+    if guess == secret:
+        print(f"Победа за {attempts} попыток!")
+        break
+    elif guess < secret:
+        print("Больше!")
+    else:
+        print("Меньше!")
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Функции — создаем собственные команды</h2>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+def draw_star():
+    import turtle
+    pen = turtle.Turtle()
+    
+    for i in range(5):
+        pen.forward(100)
+        pen.right(144)
+    
+    turtle.done()
+
+# Вызываем нашу функцию
+draw_star()
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Первая настоящая игра: "Поймай шарик"</h2>
+
+        <div class="bg-card border border-border rounded-lg p-6">
+            <h4 class="text-lg font-semibold text-primary mb-4">Пошаговое создание игры</h4>
+            <p class="mb-2"><strong>Шаг 1:</strong> Создаём игровое окно</p>
+            <p class="mb-2"><strong>Шаг 2:</strong> Добавляем движущийся шарик</p>
+            <p class="mb-2"><strong>Шаг 3:</strong> Реагируем на нажатия клавиш</p>
+            <p><strong>Шаг 4:</strong> Добавляем счётчик очков</p>
+        </div>
+
+        <div class="bg-slate-900 text-slate-200 p-5 rounded-lg font-mono text-sm overflow-x-auto border border-slate-600">
+import turtle
+import random
+
+# Настройка экрана
+screen = turtle.Screen()
+screen.bgcolor("black")
+screen.title("Поймай шарик")
+screen.setup(600, 600)
+
+# Создаём шарик
+ball = turtle.Turtle()
+ball.shape("circle")
+ball.color("red")
+ball.penup()
+ball.speed(0)
+
+# Движение шарика
+dx = 0.1
+dy = 0.1
+
+# Основной игровой цикл
+while True:
+    screen.update()
+    
+    # Движение шарика
+    ball.setx(ball.xcor() + dx)
+    ball.sety(ball.ycor() + dy)
+    
+    # Отскок от границ
+    if ball.xcor() > 290 or ball.xcor() < -290:
+        dx *= -1
+    if ball.ycor() > 290 or ball.ycor() < -290:
+        dy *= -1
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Проекты для самостоятельного творчества</h2>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">5 идей простых игр</h4>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li><strong>Крестики-нолики:</strong> классическая игра на поле 3×3</li>
+                    <li><strong>Змейка:</strong> растущая змейка собирает еду</li>
+                    <li><strong>Пинг-понг:</strong> отбивайте мячик ракеткой</li>
+                    <li><strong>Лабиринт:</strong> найдите выход из лабиринта</li>
+                    <li><strong>Викторина:</strong> вопросы и ответы на разные темы</li>
+                </ul>
+            </div>
+
+            <div class="bg-card border border-border rounded-lg p-6">
+                <h4 class="text-lg font-semibold text-primary mb-4">Программы-помощники</h4>
+                <ul class="space-y-2 list-disc list-inside">
+                    <li><strong>Генератор паролей:</strong> создаёт безопасные пароли</li>
+                    <li><strong>Конвертер величин:</strong> переводит метры в футы, градусы Цельсия в Фаренгейт</li>
+                    <li><strong>Калькулятор оценок:</strong> считает средний балл</li>
+                    <li><strong>Список дел:</strong> помогает планировать день</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Лучшие ресурсы и инструменты для продолжения обучения</h2>
+
+        <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold text-blue-700 mb-4">Международные образовательные ресурсы</h3>
+            <p class="mb-4">Для расширения знаний рекомендуем изучить материалы от ведущих мировых образовательных платформ:</p>
+            <ul class="space-y-2 list-disc list-inside">
+                <li><a href="https://developers.google.com/edu/python" class="text-blue-600 hover:underline font-medium" target="_blank">Google's Python Class</a> — бесплатный курс от Google для изучения основ Python</li>
+                <li><a href="https://www.learnpython.org" class="text-blue-600 hover:underline font-medium" target="_blank">LearnPython.org</a> — интерактивные уроки с немедленной проверкой кода</li>
+                <li><a href="https://www.codewizardshq.com/python-for-kids/" class="text-blue-600 hover:underline font-medium" target="_blank">CodeWizardsHQ Python for Kids</a> — специализированные курсы Python для детей 11-13 лет</li>
+            </ul>
+        </div>
+
+        <h3 class="text-xl font-semibold mb-4">Инструменты по возрастам</h3>
+
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+                <thead>
+                    <tr class="bg-primary text-primary-foreground">
+                        <th class="text-left p-4 font-semibold">Возраст</th>
+                        <th class="text-left p-4 font-semibold">Рекомендуемые инструменты</th>
+                        <th class="text-left p-4 font-semibold">Тип проектов</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-border">
+                        <td class="p-4">7-10 лет</td>
+                        <td class="p-4">Scratch, Thonny, Turtle Graphics</td>
+                        <td class="p-4">Рисование, простые игры</td>
+                    </tr>
+                    <tr class="bg-muted/50 border-b border-border">
+                        <td class="p-4">11-14 лет</td>
+                        <td class="p-4">Python IDLE, PyGame, Repl.it</td>
+                        <td class="p-4">Игры, веб-приложения</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">15+ лет</td>
+                        <td class="p-4">VS Code, PyCharm, GitHub</td>
+                        <td class="p-4">Серьёзные проекты, алгоритмы</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Как поддержать юного программиста</h2>
+
+        <h3 class="text-xl font-semibold mb-4">Роль родителей: мотивация без давления</h3>
+
+        <ul class="space-y-3 list-disc list-inside">
+            <li><strong>Празднуйте маленькие победы:</strong> каждая работающая программа — достижение</li>
+            <li><strong>Не сравнивайте с другими:</strong> каждый ребёнок учится в своём темпе</li>
+            <li><strong>Показывайте интерес:</strong> спрашивайте о проектах, но не критикуйте</li>
+            <li><strong>Обеспечьте комфортную среду:</strong> удобное рабочее место и время для занятий</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mb-4 mt-6">Работа с ошибками и фрустрацией</h3>
+
+        <div class="bg-red-50 border-2 border-red-200 rounded-lg p-6">
+            <ol class="space-y-2 list-decimal list-inside">
+                <li class="font-medium">Объясните, что ошибки — это нормально и полезно</li>
+                <li class="font-medium">Научите читать сообщения об ошибках как подсказки</li>
+                <li class="font-medium">Делайте перерывы при появлении фрустрации</li>
+                <li class="font-medium">Возвращайтесь к более простым задачам при необходимости</li>
+                <li class="font-medium">Ищите решения в интернете — это нормальная практика</li>
+            </ol>
+        </div>
+
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+            "Лучшие программисты — это не те, кто никогда не делает ошибок, а те, кто умеет их находить и исправлять. Ошибки в коде — это учителя, которые делают нас сильнее."
+        </blockquote>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Частые вопросы родителей</h2>
+        
+        <div class="space-y-4">
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">С какого возраста можно начинать изучение Python?</h4>
+                <p class="text-sm">Python можно изучать с 7-8 лет при наличии базовых навыков чтения и математики. Начинать лучше с визуальных проектов используя библиотеку Turtle, постепенно переходя к более сложным концепциям.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Сколько времени нужно заниматься программированием?</h4>
+                <p class="text-sm">Оптимально заниматься 2-3 раза в неделю по 30-45 минут для детей 7-10 лет, и по 45-60 минут для подростков. Регулярность важнее продолжительности занятий.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Как понять, что ребенку интересно программирование?</h4>
+                <p class="text-sm">Обратите внимание на признаки: ребёнок сам просит позаниматься, рассказывает о своих проектах, пытается модифицировать код, интересуется как работают программы и игры.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Нужен ли мощный компьютер для обучения?</h4>
+                <p class="text-sm">Нет, Python отлично работает даже на старых компьютерах. Достаточно любого компьютера с Windows, macOS или Linux. Многие начальные проекты можно делать даже на планшете через онлайн-редакторы.</p>
+            </div>
+            
+            <div class="bg-muted/50 rounded-lg p-4">
+                <h4 class="font-semibold text-primary mb-2">Как Python поможет в будущей карьере?</h4>
+                <p class="text-sm">Python используется в веб-разработке, анализе данных, искусственном интеллекте, автоматизации и научных исследованиях. Это один из самых востребованных языков программирования в мире, что открывает множество карьерных возможностей.</p>
+            </div>
+        </div>
+    </div>
+</div>`,
+    excerpt: 'Увлекательный курс по программированию на Python для детей: шаг за шагом изучаем основы, создаём первые проекты и развиваем логическое мышление.',
+    author: 'Дмитрий Козлов',
+    publishDate: '2025-09-11',
     category: categories[1],
-    tags: ['игры', 'движки', 'создание'],
-    readTime: 9,
+    tags: ['Python', 'дети', 'программирование', 'проекты', 'обучение'],
+    readTime: 22,
     featured: true,
   },
   {
