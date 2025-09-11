@@ -2675,42 +2675,42 @@ while True:
             </table>
         </div>
 
-        <blockquote class="bg-muted border-l-4 border-blue-500 p-4 my-6 italic text-slate-700">
+        <blockquote class="bg-muted border-l-4 border-blue-500 p-4 my-6 italic">
             "Лучший инструмент — тот, который вы освоите до конца, а не самый популярный или дорогой"
         </blockquote>
     </div>
 
     <div>
-        <h2 class="text-2xl font-bold mb-4 text-slate-700 border-b-2 border-blue-500 pb-2">❓ Часто задаваемые вопросы (FAQ)</h2>
+        <h2 class="text-2xl font-bold mb-4 border-b-2 border-blue-500 pb-2">❓ Часто задаваемые вопросы (FAQ)</h2>
         
         <div class="space-y-4">
             <div class="bg-muted/50 rounded-lg p-4">
-                <h4 class="font-semibold text-slate-700 mb-2">С какого инструмента начать школьнику?</h4>
+                <h4 class="font-semibold mb-2">С какого инструмента начать школьнику?</h4>
                 <p class="text-sm text-slate-600">Рекомендуем Visual Studio Code + Python. Это сочетание дает хороший баланс между простотой и функциональностью, позволяет изучать как основы программирования, так и современные технологии разработки.</p>
             </div>
 
             <div class="bg-muted/50 rounded-lg p-4">
-                <h4 class="font-semibold text-slate-700 mb-2">Нужно ли платить за инструменты разработки школьнику?</h4>
+                <h4 class="font-semibold mb-2">Нужно ли платить за инструменты разработки школьнику?</h4>
                 <p class="text-sm text-slate-600">На начальном этапе — нет. Бесплатных инструментов (VS Code, Python, Git, GitHub) достаточно для изучения программирования. Платные решения стоит рассматривать только при переходе к профессиональной разработке.</p>
             </div>
 
             <div class="bg-muted/50 rounded-lg p-4">
-                <h4 class="font-semibold text-slate-700 mb-2">Какой язык программирования выбрать для изучения в школе?</h4>
+                <h4 class="font-semibold mb-2">Какой язык программирования выбрать для изучения в школе?</h4>
                 <p class="text-sm text-slate-600">Python — лучший выбор для начала. Простой синтаксис, много образовательных материалов, широкое применение (веб, данные, автоматизация). После освоения Python можно переходить к JavaScript для веб-разработки.</p>
             </div>
 
             <div class="bg-muted/50 rounded-lg p-4">
-                <h4 class="font-semibold text-slate-700 mb-2">Стоит ли использовать AI-помощники при обучении?</h4>
+                <h4 class="font-semibold mb-2">Стоит ли использовать AI-помощники при обучении?</h4>
                 <p class="text-sm text-slate-600">Да, но осторожно. AI-инструменты отлично подходят для объяснения сложных концепций и исправления ошибок. Однако важно сначала попытаться решить задачу самостоятельно, а ИИ использовать как наставника, а не как решение "в один клик".</p>
             </div>
 
             <div class="bg-muted/50 rounded-lg p-4">
-                <h4 class="font-semibold text-slate-700 mb-2">Как выбрать между разными IDE?</h4>
+                <h4 class="font-semibold mb-2">Как выбрать между разными IDE?</h4>
                 <p class="text-sm text-slate-600">Начните с VS Code — он бесплатный и подходит для любых задач. Если планируете серьезно заниматься конкретным языком (Java, Python), рассмотрите специализированные IDE от JetBrains — они предоставляют бесплатные лицензии для студентов.</p>
             </div>
 
             <div class="bg-muted/50 rounded-lg p-4">
-                <h4 class="font-semibold text-slate-700 mb-2">Обязательно ли изучать Git с самого начала?</h4>
+                <h4 class="font-semibold mb-2">Обязательно ли изучать Git с самого начала?</h4>
                 <p class="text-sm text-slate-600">Да, обязательно. Git — это основа современной разработки. Даже для учебных проектов полезно с самого начала привыкать сохранять код в репозиториях. Начните с GitHub Desktop для визуального интерфейса, постепенно переходя к командной строке.</p>
             </div>
         </div>
