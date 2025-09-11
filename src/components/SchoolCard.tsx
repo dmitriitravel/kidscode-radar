@@ -113,7 +113,7 @@ export const SchoolCard: React.FC<SchoolCardProps> = ({ school, className }) => 
         <div className="flex gap-2 pt-2">
           {school.name === 'Skysmart Pro' ? (
             <a 
-              href="https://programmirovanie.skysmart.ru/" 
+              href="#" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex-1 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3"
