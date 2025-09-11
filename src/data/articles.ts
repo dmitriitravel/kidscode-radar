@@ -2324,9 +2324,9 @@ while True:
         </ul>
     </div>
 
-    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg p-6">
-        <h3 class="text-xl font-semibold mb-4">🎯 Ключевые выводы статьи</h3>
-        <ul class="space-y-2 list-disc list-inside">
+    <div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">🎯 Ключевые выводы статьи</h3>
+        <ul class="space-y-2 list-disc list-inside text-foreground">
             <li>Visual Studio Code — оптимальный выбор для начала изучения программирования</li>
             <li>Git и GitHub — обязательные инструменты для современного разработчика</li>
             <li>Правильный выбор инструментов зависит от конкретных задач и уровня подготовки</li>
@@ -2334,35 +2334,35 @@ while True:
         </ul>
     </div>
 
-    <p class="text-lg leading-relaxed">Выбор правильных инструментов программирования — первый и важнейший шаг в освоении IT-профессий. Современный рынок предлагает сотни различных сервисов и программ, от простых редакторов кода до сложных интегрированных сред разработки. Для школьников и их родителей особенно важно найти баланс между функциональностью и простотой использования. Именно поэтому <a href="https://programmirovanie-dlya-detej-online.ru/" class="bg-gradient-to-r from-blue-400 to-pink-400 text-white px-2 py-1 rounded font-semibold hover:from-pink-400 hover:to-blue-400 transition-all duration-300">курсы по программированию для детей</a> становятся отличной отправной точкой — там вы найдете структурированные программы обучения, которые помогут выбрать подходящие инструменты и освоить их под руководством опытных наставников.</p>
+    <p class="text-lg leading-relaxed">Выбор правильных инструментов программирования — первый и важнейший шаг в освоении IT-профессий. Современный рынок предлагает сотни различных сервисов и программ, от простых редакторов кода до сложных интегрированных сред разработки. Для школьников и их родителей особенно важно найти баланс между функциональностью и простотой использования. Именно поэтому <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">курсы по программированию для детей</a> становятся отличной отправной точкой — там вы найдете структурированные программы обучения, которые помогут выбрать подходящие инструменты и освоить их под руководством опытных наставников.</p>
 
     <div>
-        <h2 class="text-2xl font-bold mb-4 text-slate-700 border-b-2 border-blue-500 pb-2">🚀 Быстрый выбор IDE и редакторов по задачам</h2>
+        <h2 class="text-2xl font-bold mb-4">🚀 Быстрый выбор IDE и редакторов по задачам</h2>
 
-        <h3 class="text-xl font-semibold mb-4 text-slate-600">Для новичков (простота + обучение)</h3>
+        <h3 class="text-xl font-semibold mb-4 text-muted-foreground">Для новичков (простота + обучение)</h3>
 
         <div class="grid gap-6">
             <div class="bg-card border border-border rounded-lg p-6">
-                <h4 class="text-lg font-semibold text-blue-600 mb-3">Visual Studio Code — универсальный старт</h4>
+                <h4 class="text-lg font-semibold text-primary mb-3">Visual Studio Code — универсальный старт</h4>
                 <p class="mb-2"><strong>Преимущества:</strong> Бесплатный, легкий в освоении, огромное количество расширений, поддержка всех популярных языков программирования.</p>
                 <p class="mb-2"><strong>Идеально для:</strong> Изучения веб-разработки, Python, JavaScript</p>
                 <p><strong>Установка:</strong> Скачайте с официального сайта Microsoft, установка займет 5-10 минут</p>
             </div>
 
             <div class="bg-card border border-border rounded-lg p-6">
-                <h4 class="text-lg font-semibold text-blue-600 mb-3">IDLE — для изучения Python</h4>
+                <h4 class="text-lg font-semibold text-primary mb-3">IDLE — для изучения Python</h4>
                 <p class="mb-2"><strong>Особенности:</strong> Входит в стандартную поставку Python, простой интерфейс, встроенная командная строка</p>
                 <p><strong>Подходит для:</strong> Первых шагов в Python, выполнения простых скриптов</p>
             </div>
 
             <div class="bg-card border border-border rounded-lg p-6">
-                <h4 class="text-lg font-semibold text-blue-600 mb-3">Thonny — Python IDE для начинающих</h4>
+                <h4 class="text-lg font-semibold text-primary mb-3">Thonny — Python IDE для начинающих</h4>
                 <p class="mb-2"><strong>Уникальные функции:</strong> Пошаговое выполнение кода, визуализация переменных, простой дебаггер</p>
                 <p><strong>Возраст:</strong> Особенно подходит для школьников 10-15 лет</p>
             </div>
         </div>
 
-        <h3 class="text-xl font-semibold mb-4 mt-8 text-slate-600">Для профессиональной разработки</h3>
+        <h3 class="text-xl font-semibold mb-4 mt-8 text-muted-foreground">Для профессиональной разработки</h3>
 
         <div class="overflow-x-auto">
             <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
@@ -2403,49 +2403,49 @@ while True:
             </table>
         </div>
 
-        <blockquote class="bg-muted border-l-4 border-blue-500 p-4 my-6 italic text-slate-700">
+        <blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic text-muted-foreground">
             "Хорошая IDE экономит 30-50% времени разработки за счет автоматизации рутинных задач и интеллектуального анализа кода"
         </blockquote>
 
-        <h3 class="text-xl font-semibold mb-4 text-slate-600">Для специализированных задач</h3>
+        <h3 class="text-xl font-semibold mb-4 text-muted-foreground">Для специализированных задач</h3>
 
         <div class="bg-card border border-border rounded-lg p-6">
-            <h4 class="text-lg font-semibold text-blue-600 mb-3">JupyterLab — data science и анализ данных</h4>
+            <h4 class="text-lg font-semibold text-primary mb-3">JupyterLab — data science и анализ данных</h4>
             <p class="mb-2"><strong>Применение:</strong> Исследование данных, машинное обучение, научные вычисления</p>
             <p class="mb-2"><strong>Возможности:</strong> Интерактивные блокноты, визуализация данных, поддержка Python, R, Julia</p>
         </div>
     </div>
 
     <div>
-        <h2 class="text-2xl font-bold mb-4 text-slate-700 border-b-2 border-blue-500 pb-2">📂 Системы контроля версий: выбор и настройка</h2>
+        <h2 class="text-2xl font-bold mb-4">📂 Системы контроля версий: выбор и настройка</h2>
 
-        <h3 class="text-xl font-semibold mb-4 text-slate-600">Базовые решения</h3>
+        <h3 class="text-xl font-semibold mb-4 text-muted-foreground">Базовые решения</h3>
 
-        <div class="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-lg p-6">
+        <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
             <h4 class="text-lg font-semibold mb-3">Git — основа современной разработки</h4>
             <p class="mb-3"><strong>Почему важно изучать:</strong> 95% IT-компаний используют Git для управления кодом</p>
             <p class="mb-2"><strong>Первые шаги:</strong></p>
             <ol class="space-y-1 list-decimal list-inside">
                 <li>Установите Git с официального сайта</li>
-                <li>Настройте имя пользователя: <code className="bg-black/20 px-1 rounded">git config --global user.name "Ваше Имя"</code></li>
-                <li>Настройте email: <code className="bg-black/20 px-1 rounded">git config --global user.email "email@example.com"</code></li>
-                <li>Создайте первый репозиторий: <code className="bg-black/20 px-1 rounded">git init</code></li>
+                <li>Настройте имя пользователя: <code class="bg-muted/20 px-1 rounded text-primary-foreground">git config --global user.name "Ваше Имя"</code></li>
+                <li>Настройте email: <code class="bg-muted/20 px-1 rounded text-primary-foreground">git config --global user.email "email@example.com"</code></li>
+                <li>Создайте первый репозиторий: <code class="bg-muted/20 px-1 rounded text-primary-foreground">git init</code></li>
             </ol>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2 mt-6">
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-                <h5 class="text-lg font-semibold text-green-800 mb-3">✅ GitHub Desktop — GUI для новичков</h5>
-                <ul class="space-y-1 text-green-700">
+            <div class="bg-secondary/20 border border-secondary rounded-lg p-6">
+                <h5 class="text-lg font-semibold text-foreground mb-3">✅ GitHub Desktop — GUI для новичков</h5>
+                <ul class="space-y-1 text-foreground">
                     <li>Визуальный интерфейс</li>
                     <li>Простота использования</li>
                     <li>Интеграция с GitHub</li>
                     <li>Подходит для школьников</li>
                 </ul>
             </div>
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-                <h5 class="text-lg font-semibold text-red-800 mb-3">⚠️ Ограничения GUI-клиентов</h5>
-                <ul class="space-y-1 text-red-700">
+            <div class="bg-destructive/20 border border-destructive rounded-lg p-6">
+                <h5 class="text-lg font-semibold text-foreground mb-3">⚠️ Ограничения GUI-клиентов</h5>
+                <ul class="space-y-1 text-foreground">
                     <li>Меньше возможностей</li>
                     <li>Не все команды доступны</li>
                     <li>Зависимость от интерфейса</li>
@@ -2454,7 +2454,7 @@ while True:
             </div>
         </div>
 
-        <h3 class="text-xl font-semibold mb-4 mt-8 text-slate-600">Хостинг репозиториев</h3>
+        <h3 class="text-xl font-semibold mb-4 mt-8 text-muted-foreground">Хостинг репозиториев</h3>
 
         <div class="overflow-x-auto">
             <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
@@ -2491,9 +2491,9 @@ while True:
     </div>
 
     <div>
-        <h2 class="text-2xl font-bold mb-4 text-slate-700 border-b-2 border-blue-500 pb-2">🤖 AI-инструменты для разработки</h2>
+        <h2 class="text-2xl font-bold mb-4">🤖 AI-инструменты для разработки</h2>
 
-        <h3 class="text-xl font-semibold mb-4 text-slate-600">Кодогенерация и помощники</h3>
+        <h3 class="text-xl font-semibold mb-4 text-muted-foreground">Кодогенерация и помощники</h3>
 
         <div class="overflow-x-auto">
             <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
@@ -2528,22 +2528,22 @@ while True:
             </table>
         </div>
 
-        <div class="bg-orange-50 border-2 border-orange-200 rounded-lg p-6 mt-6">
-            <h4 class="text-lg font-semibold text-orange-800 mb-3">🌐 Полезные ресурсы для разработчиков</h4>
-            <p class="text-orange-700 mb-3">Правительственные и образовательные ресурсы предоставляют ценную информацию о современных инструментах разработки:</p>
-            <ul class="space-y-2 text-orange-700">
-                <li><a href="https://resources.data.gov/categories/data-tools/" target="_blank" class="text-blue-600 hover:underline font-medium">Инструменты для работы с данными</a> — официальный каталог инструментов управления данными</li>
-                <li><a href="https://digital.gov/resources/requirements-for-achieving-efficiency-transparency-and-innovation-through-reusable-and-open-source-software" target="_blank" class="text-blue-600 hover:underline font-medium">Требования к эффективному ПО</a> — руководство по использованию открытого ПО</li>
+        <div class="bg-accent/20 border border-accent rounded-lg p-6 mt-6">
+            <h4 class="text-lg font-semibold text-foreground mb-3">🌐 Полезные ресурсы для разработчиков</h4>
+            <p class="text-foreground mb-3">Правительственные и образовательные ресурсы предоставляют ценную информацию о современных инструментах разработки:</p>
+            <ul class="space-y-2 text-foreground">
+                <li><a href="https://resources.data.gov/categories/data-tools/" target="_blank" class="text-primary hover:underline font-medium">Инструменты для работы с данными</a> — официальный каталог инструментов управления данными</li>
+                <li><a href="https://digital.gov/resources/requirements-for-achieving-efficiency-transparency-and-innovation-through-reusable-and-open-source-software" target="_blank" class="text-primary hover:underline font-medium">Требования к эффективному ПО</a> — руководство по использованию открытого ПО</li>
             </ul>
         </div>
     </div>
 
     <div>
-        <h2 class="text-2xl font-bold mb-4 text-slate-700 border-b-2 border-blue-500 pb-2">📊 Готовые стеки под задачи</h2>
+        <h2 class="text-2xl font-bold mb-4">📊 Готовые стеки под задачи</h2>
 
-        <h3 class="text-xl font-semibold mb-4 text-slate-600">Web-стартап на Python</h3>
+        <h3 class="text-xl font-semibold mb-4 text-muted-foreground">Web-стартап на Python</h3>
 
-        <div class="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-lg p-6">
+        <div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
             <h4 class="text-lg font-semibold mb-3">Полный стек для веб-приложения</h4>
             <ul class="space-y-2 mb-4">
                 <li><strong>Backend:</strong> FastAPI + PostgreSQL</li>
@@ -2555,21 +2555,21 @@ while True:
             <p><strong>Время освоения:</strong> 6-12 месяцев для школьника</p>
         </div>
 
-        <h3 class="text-xl font-semibold mb-4 mt-8 text-slate-600">Мобильная разработка для начинающих</h3>
+        <h3 class="text-xl font-semibold mb-4 mt-8 text-muted-foreground">Мобильная разработка для начинающих</h3>
 
         <div class="grid gap-6 md:grid-cols-2">
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-                <h5 class="text-lg font-semibold text-green-800 mb-3">✅ Flutter (Google)</h5>
-                <ul class="space-y-1 text-green-700">
+            <div class="bg-secondary/20 border border-secondary rounded-lg p-6">
+                <h5 class="text-lg font-semibold text-foreground mb-3">✅ Flutter (Google)</h5>
+                <ul class="space-y-1 text-foreground">
                     <li>Один код для iOS и Android</li>
                     <li>Быстрая разработка</li>
                     <li>Хорошая документация</li>
                     <li>Растущая популярность</li>
                 </ul>
             </div>
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-                <h5 class="text-lg font-semibold text-red-800 mb-3">⚠️ React Native (Meta)</h5>
-                <ul class="space-y-1 text-red-700">
+            <div class="bg-destructive/20 border border-destructive rounded-lg p-6">
+                <h5 class="text-lg font-semibold text-foreground mb-3">⚠️ React Native (Meta)</h5>
+                <ul class="space-y-1 text-foreground">
                     <li>JavaScript знания обязательны</li>
                     <li>Сложнее для новичков</li>
                     <li>Больше настроек</li>
@@ -2578,10 +2578,10 @@ while True:
             </div>
         </div>
 
-        <h3 class="text-xl font-semibold mb-4 mt-8 text-slate-600">Data Science проект</h3>
+        <h3 class="text-xl font-semibold mb-4 mt-8 text-muted-foreground">Data Science проект</h3>
 
         <div class="bg-card border border-border rounded-lg p-6">
-            <h4 class="text-lg font-semibold text-blue-600 mb-3">Инструменты для анализа данных</h4>
+            <h4 class="text-lg font-semibold text-primary mb-3">Инструменты для анализа данных</h4>
             <p class="mb-2"><strong>Язык:</strong> Python (библиотеки pandas, numpy, matplotlib)</p>
             <p class="mb-2"><strong>IDE:</strong> JupyterLab для интерактивной работы</p>
             <p class="mb-2"><strong>Визуализация:</strong> Plotly, Seaborn</p>
@@ -2591,9 +2591,9 @@ while True:
     </div>
 
     <div>
-        <h2 class="text-2xl font-bold mb-4 text-slate-700 border-b-2 border-blue-500 pb-2">💰 Сравнительные таблицы и быстрый выбор</h2>
+        <h2 class="text-2xl font-bold mb-4">💰 Сравнительные таблицы и быстрый выбор</h2>
 
-        <h3 class="text-xl font-semibold mb-4 text-slate-600">Ценообразование популярных инструментов</h3>
+        <h3 class="text-xl font-semibold mb-4 text-muted-foreground">Ценообразование популярных инструментов</h3>
 
         <div class="overflow-x-auto">
             <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
@@ -2634,7 +2634,7 @@ while True:
             </table>
         </div>
 
-        <h3 class="text-xl font-semibold mb-4 mt-8 text-slate-600">Матрица "задача → инструмент"</h3>
+        <h3 class="text-xl font-semibold mb-4 mt-8 text-muted-foreground">Матрица "задача → инструмент"</h3>
 
         <div class="overflow-x-auto">
             <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
