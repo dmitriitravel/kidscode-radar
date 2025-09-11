@@ -3297,15 +3297,829 @@ while True:
   },
   {
     id: '10',
-    title: 'Веб-разработка для детей: HTML, CSS и JavaScript',
-    slug: 'veb-razrabotka-dlya-detey',
-    content: 'Содержание статьи будет добавлено позже...',
-    excerpt: 'Пошаговое руководство по изучению основ веб-разработки: от первого HTML-тега до интерактивных элементов на JavaScript.',
-    author: 'Николай Белов',
-    publishDate: '2025-07-15',
+    title: 'Переменная в программировании: понятие, типы и примеры',
+    slug: 'peremennaya-v-programmirovanii-ponyatie-tipy-primery',
+    content: `<div class="space-y-8">
+
+<div class="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-lg p-6">
+    <h3 class="text-xl font-semibold mb-4">👨‍💻 Для кого эта статья:</h3>
+    <ul class="space-y-2 list-disc list-inside">
+        <li>Российские школьники, изучающие основы программирования</li>
+        <li>Родители школьников, желающие помочь детям в изучении кода</li>
+        <li>Учителя информатики и школьные наставники</li>
+        <li>Самостоятельные подростки, интересующиеся программированием</li>
+    </ul>
+</div>
+
+<div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+    <h3 class="text-xl font-semibold mb-4 text-foreground">💡 Ключевые выводы из статьи:</h3>
+    <ul class="space-y-2 list-disc list-inside text-foreground">
+        <li>Переменные - это основа программирования, без них невозможно создать полезные программы</li>
+        <li>Правильное именование переменных делает код понятным и легким для чтения</li>
+        <li>Каждый язык программирования имеет свои особенности работы с переменными</li>
+        <li>Понимание областей видимости переменных поможет избежать многих ошибок в коде</li>
+    </ul>
+</div>
+
+<p class="text-lg leading-relaxed">Переменные в программировании - это фундаментальная концепция, которую должен освоить каждый начинающий программист. Понимание работы с переменными открывает двери к созданию интересных и полезных программ. Для школьников, которые только начинают свой путь в программировании, особенно важно изучать эту тему системно и с практическими примерами. <a href="https://programmirovanie-dlya-detej-online.ru/" class="text-primary font-semibold hover:underline transition-colors">Программирование для детей онлайн</a> предоставляет отличную возможность изучить основы программирования в интерактивном формате с опытными преподавателями, которые помогут разобраться со всеми сложностями работы с переменными на практике.</p>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Что такое переменная и зачем она нужна</h2>
+    
+    <p class="mb-4">Представьте переменную как <strong>ящик с наклейкой-названием</strong>, в который можно положить какую-то информацию. На ящике написано его имя, а внутри лежит значение - число, текст или другие данные.</p>
+    
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Пример</div>
+        <pre class="text-sm font-mono"><code># Создаем "ящик" с именем age и кладем туда число 15
+age = 15
+
+# Создаем "ящик" с именем name и кладем туда текст
+name = "Анна"</code></pre>
+    </div>
+
+    <p class="mb-4">Давайте сравним калькулятор без переменных и с переменными:</p>
+
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Без переменных</th>
+                    <th class="text-left p-4 font-semibold">С переменными</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border">
+                    <td class="p-4">print(5 + 3)<br>print(5 + 3 + 10)<br>print((5 + 3) * 2)</td>
+                    <td class="p-4">a = 5<br>b = 3<br>sum = a + b<br>print(sum)<br>print(sum + 10)<br>print(sum * 2)</td>
+                </tr>
+                <tr class="bg-muted/50">
+                    <td class="p-4">Если нужно изменить число 5 на 7 - придется менять в трех местах</td>
+                    <td class="p-4">Достаточно изменить только a = 7</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">3 основные причины использования переменных:</h3>
+    <ol class="space-y-2 list-decimal list-inside">
+        <li><strong>Хранение данных</strong> - сохраняем информацию для дальнейшего использования</li>
+        <li><strong>Переиспользование</strong> - одно значение можно использовать много раз</li>
+        <li><strong>Читаемость кода</strong> - понятные имена делают программу более понятной</li>
+    </ol>
+</div>
+
+<blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic relative">
+    <div class="absolute -left-1 top-4 bg-card p-2 rounded-full text-lg">📝</div>
+    <p class="pl-6">Переменная - это именованная область памяти, которая используется для хранения данных, которые могут изменяться во время выполнения программы.</p>
+</blockquote>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Как создать переменную: синтаксис в популярных языках</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Python - самый простой синтаксис</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Python</div>
+        <pre class="text-sm font-mono"><code># Объявление и присвоение в одной строке
+age = 16
+name = "Максим"
+height = 1.75
+is_student = True</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">JavaScript - три способа объявления</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">JavaScript</div>
+        <pre class="text-sm font-mono"><code>var age = 16;           // старый способ (не рекомендуется)
+let name = "Максим";    // современный способ (можно менять)
+const height = 1.75;    // константа (нельзя менять)</code></pre>
+    </div>
+
+    <p class="mb-4"><strong>Какой выбрать в JavaScript:</strong></p>
+    <ul class="space-y-2 list-disc list-inside mb-6">
+        <li><code class="bg-muted px-2 py-1 rounded">let</code> - если значение будет изменяться</li>
+        <li><code class="bg-muted px-2 py-1 rounded">const</code> - если значение постоянное</li>
+        <li><code class="bg-muted px-2 py-1 rounded">var</code> - не используйте (устаревший)</li>
+    </ul>
+
+    <h3 class="text-xl font-semibold mb-4">Java - строгая типизация</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Java</div>
+        <pre class="text-sm font-mono"><code>int age = 16;                    // целое число
+String name = "Максим";          // строка
+double height = 1.75;            // дробное число
+boolean isStudent = true;        // логическое значение</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">C++ - указание типа обязательно</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">C++</div>
+        <pre class="text-sm font-mono"><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int age = 16;
+std::string name = "Максим";
+double height = 1.75;
+bool isStudent = true;</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">C# - Microsoft's подход</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">C#</div>
+        <pre class="text-sm font-mono"><code>int age = 16;
+string name = "Максим";
+double height = 1.75;
+bool isStudent = true;
+
+// Автоматическое определение типа
+var score = 95;  // компилятор сам понимает, что это int</code></pre>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Правила именования переменных</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Что можно использовать в названиях:</h3>
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Разрешено</th>
+                    <th class="text-left p-4 font-semibold">Примеры</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border hover:bg-muted/50">
+                    <td class="p-4">Буквы (a-z, A-Z)</td>
+                    <td class="p-4">name, userName, Score</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border hover:bg-muted/70">
+                    <td class="p-4">Цифры (0-9)</td>
+                    <td class="p-4">score1, player2, level10</td>
+                </tr>
+                <tr class="border-b border-border hover:bg-muted/50">
+                    <td class="p-4">Подчеркивание (_)</td>
+                    <td class="p-4">user_name, max_score, _private</td>
+                </tr>
+                <tr class="bg-muted/50 hover:bg-muted/70">
+                    <td class="p-4">В Python: русские буквы</td>
+                    <td class="p-4">имя, возраст, оценка</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Что НЕЛЬЗЯ использовать:</h3>
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-6">
+        <div class="text-destructive font-semibold mb-3">❌ Неправильные названия:</div>
+        <ul class="space-y-2 list-disc list-inside">
+            <li><code class="bg-muted px-2 py-1 rounded">2name</code> - начинается с цифры</li>
+            <li><code class="bg-muted px-2 py-1 rounded">user-name</code> - содержит дефис</li>
+            <li><code class="bg-muted px-2 py-1 rounded">user name</code> - содержит пробел</li>
+            <li><code class="bg-muted px-2 py-1 rounded">class</code> - зарезервированное слово</li>
+        </ul>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Зарезервированные слова (нельзя использовать как имена переменных):</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Python</div>
+        <pre class="text-sm font-mono"><code>if, else, elif, while, for, def, class, import, from, as, 
+try, except, finally, with, lambda, return, yield, pass, 
+break, continue, and, or, not, is, in, True, False, None</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Best practices - хорошие практики именования:</h3>
+    
+    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4 dark:bg-green-950/20 dark:border-green-800">
+        <div class="text-green-700 font-semibold mb-3 dark:text-green-400">✅ Хорошие названия:</div>
+        <ul class="space-y-2 list-disc list-inside">
+            <li><code class="bg-muted px-2 py-1 rounded">student_age</code> - понятно, что это возраст студента</li>
+            <li><code class="bg-muted px-2 py-1 rounded">max_score</code> - максимальный результат</li>
+            <li><code class="bg-muted px-2 py-1 rounded">is_ready</code> - логическая переменная</li>
+            <li><code class="bg-muted px-2 py-1 rounded">user_count</code> - количество пользователей</li>
+        </ul>
+    </div>
+
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4">
+        <div class="text-destructive font-semibold mb-3">❌ Плохие названия:</div>
+        <ul class="space-y-2 list-disc list-inside">
+            <li><code class="bg-muted px-2 py-1 rounded">a</code> - непонятно, что это</li>
+            <li><code class="bg-muted px-2 py-1 rounded">data123</code> - цифры без смысла</li>
+            <li><code class="bg-muted px-2 py-1 rounded">temp</code> - слишком общее</li>
+            <li><code class="bg-muted px-2 py-1 rounded">x1y2z3</code> - бессмысленная комбинация</li>
+        </ul>
+    </div>
+</div>
+
+<blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+    <p>Код читается гораздо чаще, чем пишется. Потратьте время на хорошие имена переменных - это сэкономит часы отладки в будущем.</p>
+</blockquote>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Основные типы переменных и данных</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Числа (Numbers)</h3>
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Тип</th>
+                    <th class="text-left p-4 font-semibold">Описание</th>
+                    <th class="text-left p-4 font-semibold">Python</th>
+                    <th class="text-left p-4 font-semibold">Java</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border hover:bg-muted/50">
+                    <td class="p-4">Целые числа</td>
+                    <td class="p-4">Без дробной части</td>
+                    <td class="p-4">age = 15</td>
+                    <td class="p-4">int age = 15;</td>
+                </tr>
+                <tr class="bg-muted/50 hover:bg-muted/70">
+                    <td class="p-4">Дробные числа</td>
+                    <td class="p-4">С запятой</td>
+                    <td class="p-4">height = 1.75</td>
+                    <td class="p-4">double height = 1.75;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Текст (Strings)</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Примеры строк</div>
+        <pre class="text-sm font-mono"><code># Python
+name = "Анна"
+surname = 'Иванова'
+full_info = """Меня зовут Анна.
+Я учусь в 9 классе."""
+
+// JavaScript
+let greeting = "Привет, мир!";
+let message = 'Как дела?';</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Логические значения (Boolean)</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Boolean</div>
+        <pre class="text-sm font-mono"><code># Python
+is_student = True
+has_homework = False
+is_ready_for_test = True
+
+// JavaScript
+let isOnline = true;
+let isCompleted = false;</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Списки и массивы (Arrays/Lists)</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Списки</div>
+        <pre class="text-sm font-mono"><code># Python - списки
+grades = [5, 4, 5, 3, 4]
+subjects = ["Математика", "Физика", "Химия"]
+mixed_data = [15, "Анна", True, 4.8]
+
+// JavaScript - массивы
+let scores = [95, 87, 92, 78, 85];
+let colors = ["красный", "синий", "зеленый"];</code></pre>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Присвоение и изменение значений</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Первоначальное присвоение (инициализация)</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Инициализация</div>
+        <pre class="text-sm font-mono"><code># При создании переменной сразу даем ей значение
+student_name = "Петр"
+current_grade = 8
+average_score = 4.2</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Изменение значения существующей переменной</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Изменение значений</div>
+        <pre class="text-sm font-mono"><code># Создали переменную
+score = 85
+
+# Изменили её значение
+score = 90
+
+# Можно изменить на основе старого значения
+score = score + 5  # теперь score = 95
+
+# Короткая запись
+score += 10        # score = score + 10, теперь 105</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Операции с переменными</h3>
+    <div class="overflow-x-auto mb-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Операция</th>
+                    <th class="text-left p-4 font-semibold">Пример</th>
+                    <th class="text-left p-4 font-semibold">Результат</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border hover:bg-muted/50">
+                    <td class="p-4">Сложение чисел</td>
+                    <td class="p-4">a = 10; b = 5; sum = a + b</td>
+                    <td class="p-4">sum = 15</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border hover:bg-muted/70">
+                    <td class="p-4">Соединение строк</td>
+                    <td class="p-4">name = "Анна"; greeting = "Привет, " + name</td>
+                    <td class="p-4">greeting = "Привет, Анна"</td>
+                </tr>
+                <tr class="hover:bg-muted/50">
+                    <td class="p-4">Умножение</td>
+                    <td class="p-4">price = 100; total = price * 3</td>
+                    <td class="p-4">total = 300</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Частые ошибки новичков при присвоении:</h3>
+    
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
+        <div class="text-destructive font-semibold mb-3">Ошибка 1: Путаница с операцией присвоения</div>
+        <pre class="text-sm font-mono"><code># ❌ НЕПРАВИЛЬНО - это не уравнение!
+x + 5 = 10
+
+# ✅ ПРАВИЛЬНО
+x = 10 - 5  # x получает значение 5</code></pre>
+    </div>
+
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4">
+        <div class="text-destructive font-semibold mb-3">Ошибка 2: Использование переменной до её создания</div>
+        <pre class="text-sm font-mono"><code># ❌ НЕПРАВИЛЬНО
+print(name)
+name = "Анна"
+
+# ✅ ПРАВИЛЬНО
+name = "Анна"
+print(name)</code></pre>
+    </div>
+</div>
+
+<div class="bg-gradient-to-br from-secondary to-accent/20 border border-border rounded-lg p-6">
+    <h4 class="text-lg font-semibold text-primary mb-4">📚 Дополнительные материалы на английском</h4>
+    <p class="mb-4">Для углубленного изучения переменных в программировании рекомендуем ознакомиться с материалами ведущих IT-ресурсов:</p>
+    <p class="mb-2">• <a href="https://dev.to/m__mdy__m/what-is-a-variable-in-programming-2p8k" target="_blank" class="text-primary hover:underline font-medium">What is a Variable in Programming? - DEV Community</a> - подробное объяснение концепции переменных с практическими примерами</p>
+    <p class="mb-2">• <a href="https://en.wikipedia.org/wiki/Variable_(computer_science)" target="_blank" class="text-primary hover:underline font-medium">Variable (computer science) - Wikipedia</a> - академическое определение и теоретические основы</p>
+    <p>• <a href="https://www.geeksforgeeks.org/dsa/variables-programming/" target="_blank" class="text-primary hover:underline font-medium">Variable in Programming - GeeksforGeeks</a> - практические примеры и упражнения для закрепления материала</p>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Области видимости переменных</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Локальные переменные - внутри функций</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Локальные переменные</div>
+        <pre class="text-sm font-mono"><code>def calculate_grade():
+    test_score = 85        # локальная переменная
+    homework_score = 92    # локальная переменная
+    final_grade = (test_score + homework_score) / 2
+    return final_grade
+
+result = calculate_grade()
+print(result)              # выведет 88.5
+
+# print(test_score)       # ❌ ОШИБКА! test_score недоступна здесь</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Глобальные переменные - доступны везде</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Глобальные переменные</div>
+        <pre class="text-sm font-mono"><code>school_name = "Школа №15"  # глобальная переменная
+
+def print_school_info():
+    print(f"Учусь в {school_name}")  # используем глобальную переменную
+
+def change_school():
+    global school_name
+    school_name = "Лицей №3"         # изменяем глобальную переменную
+
+print_school_info()  # Учусь в Школа №15
+change_school()
+print_school_info()  # Учусь в Лицей №3</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Практический пример конфликта имен</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Конфликт имен</div>
+        <pre class="text-sm font-mono"><code>score = 100  # глобальная переменная
+
+def test_function():
+    score = 50   # локальная переменная с тем же именем
+    print(f"Внутри функции: {score}")  # выведет 50
+
+test_function()
+print(f"Снаружи функции: {score}")     # выведет 100</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Когда использовать каждый тип:</h3>
+    <ul class="space-y-2 list-disc list-inside">
+        <li><strong>Локальные переменные</strong> - для временных вычислений внутри функций</li>
+        <li><strong>Глобальные переменные</strong> - для настроек программы, констант</li>
+        <li><strong>Избегайте</strong> изменения глобальных переменных внутри функций</li>
+    </ul>
+</div>
+
+<blockquote class="bg-muted border-l-4 border-primary p-4 my-6 italic">
+    <p>Хорошая практика: используйте локальные переменные везде, где это возможно. Глобальные переменные усложняют отладку и понимание кода.</p>
+</blockquote>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Практические примеры использования</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Калькулятор - хранение результатов вычислений</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Простой калькулятор</div>
+        <pre class="text-sm font-mono"><code># Исходные данные
+first_number = 15
+second_number = 7
+
+# Вычисления
+sum_result = first_number + second_number
+difference = first_number - second_number
+product = first_number * second_number
+quotient = first_number / second_number
+
+# Вывод результатов
+print(f"Сумма: {sum_result}")           # 22
+print(f"Разность: {difference}")        # 8
+print(f"Произведение: {product}")       # 105
+print(f"Частное: {quotient}")          # 2.14...</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Ввод данных пользователя</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Работа с пользовательским вводом</div>
+        <pre class="text-sm font-mono"><code># Получаем информацию от пользователя
+student_name = input("Как тебя зовут? ")
+current_class = input("В каком классе учишься? ")
+favorite_subject = input("Какой твой любимый предмет? ")
+
+# Обрабатываем данные
+age = int(input("Сколько тебе лет? "))
+birth_year = 2024 - age
+
+# Выводим персональную информацию
+print(f"\nПривет, {student_name}!")
+print(f"Ты учишься в {current_class} классе")
+print(f"Твой любимый предмет: {favorite_subject}")
+print(f"Ты родился примерно в {birth_year} году")</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Счетчики и накопители в циклах</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Счетчики и накопители</div>
+        <pre class="text-sm font-mono"><code># Подсчет суммы оценок
+grades = [5, 4, 5, 3, 4, 5, 4]
+total_sum = 0      # накопитель суммы
+count = 0          # счетчик количества
+
+for grade in grades:
+    total_sum += grade    # добавляем оценку к сумме
+    count += 1           # увеличиваем счетчик
+
+average = total_sum / count
+print(f"Средняя оценка: {average}")  # 4.28
+
+# Подсчет отличных оценок
+excellent_count = 0
+for grade in grades:
+    if grade == 5:
+        excellent_count += 1
+
+print(f"Количество пятерок: {excellent_count}")  # 3</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Обмен значений (swap) двух переменных</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-6 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Обмен значений</div>
+        <pre class="text-sm font-mono"><code># Исходные значения
+first_student = "Анна"
+second_student = "Петр"
+
+print(f"До обмена: {first_student}, {second_student}")
+
+# Способ 1: через временную переменную
+temp = first_student
+first_student = second_student
+second_student = temp
+
+print(f"После обмена: {first_student}, {second_student}")
+
+# Способ 2: Python-способ (одновременное присвоение)
+a = 10
+b = 20
+a, b = b, a  # меняем местами в одной строке
+print(f"a = {a}, b = {b}")  # a = 20, b = 10</code></pre>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Частые ошибки и как их избежать</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Ошибка 1: "Variable is not defined"</h3>
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
+        <div class="text-destructive font-semibold mb-3">❌ Ошибка:</div>
+        <pre class="text-sm font-mono"><code>print(student_name)
+# NameError: name 'student_name' is not defined</code></pre>
+        <div class="text-green-700 font-semibold mb-2 mt-4 dark:text-green-400">✅ Решение:</div>
+        <pre class="text-sm font-mono"><code>student_name = "Анна"  # сначала создаем переменную
+print(student_name)    # потом используем</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Ошибка 2: Опечатки в названиях переменных</h3>
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
+        <div class="text-destructive font-semibold mb-3">❌ Ошибка:</div>
+        <pre class="text-sm font-mono"><code>student_age = 15
+print(studnet_age)  # опечатка в названии
+# NameError: name 'studnet_age' is not defined</code></pre>
+        <div class="text-green-700 font-semibold mb-2 mt-4 dark:text-green-400">✅ Решение:</div>
+        <ul class="space-y-2 list-disc list-inside">
+            <li>Используйте копирование-вставку для длинных имен</li>
+            <li>Включите автодополнение в редакторе кода</li>
+            <li>Используйте короткие, но понятные имена</li>
+        </ul>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Ошибка 3: Неправильные типы данных</h3>
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
+        <div class="text-destructive font-semibold mb-3">❌ Ошибка:</div>
+        <pre class="text-sm font-mono"><code>age = input("Сколько тебе лет? ")  # input всегда возвращает строку
+next_year_age = age + 1
+# TypeError: can only concatenate str (not "int") to str</code></pre>
+        <div class="text-green-700 font-semibold mb-2 mt-4 dark:text-green-400">✅ Решение:</div>
+        <pre class="text-sm font-mono"><code>age = int(input("Сколько тебе лет? "))  # преобразуем в число
+next_year_age = age + 1
+print(f"В следующем году тебе будет {next_year_age}")</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Ошибка 4: Перезаписывание важных значений</h3>
+    <div class="bg-destructive/10 border border-destructive/50 rounded-lg p-4 mb-4">
+        <div class="text-destructive font-semibold mb-3">❌ Ошибка:</div>
+        <pre class="text-sm font-mono"><code>original_score = 95
+print(f"Первоначальный результат: {original_score}")
+
+# Много кода...
+original_score = 87  # случайно перезаписали!
+
+print(f"Результат потерян: {original_score}")  # 87 вместо 95</code></pre>
+        <div class="text-green-700 font-semibold mb-2 mt-4 dark:text-green-400">✅ Решение:</div>
+        <pre class="text-sm font-mono"><code>ORIGINAL_SCORE = 95  # константы пишем БОЛЬШИМИ буквами
+current_score = ORIGINAL_SCORE
+
+print(f"Первоначальный: {ORIGINAL_SCORE}")
+print(f"Текущий: {current_score}")
+
+# Или используйте const в JavaScript
+const ORIGINAL_SCORE = 95;  // нельзя изменить</code></pre>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Упражнения для закрепления</h2>
+
+    <h3 class="text-xl font-semibold mb-4">Задача 1: Информация о студенте</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-4 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Условие</div>
+        <pre class="text-sm font-mono"><code>Создайте переменные для хранения информации о себе:
+- Имя
+- Возраст  
+- Класс
+- Любимый предмет
+- Средняя оценка
+
+Выведите эту информацию в красивом формате.</code></pre>
+    </div>
+
+    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 dark:bg-green-950/20 dark:border-green-800">
+        <div class="text-green-700 font-semibold mb-3 dark:text-green-400">Пошаговое решение:</div>
+        <pre class="text-sm font-mono"><code># Шаг 1: Создаем переменные
+name = "Мария"
+age = 16
+school_class = "10А"
+favorite_subject = "Математика"
+average_grade = 4.6
+
+# Шаг 2: Выводим информацию
+print("=== ИНФОРМАЦИЯ О СТУДЕНТЕ ===")
+print(f"Имя: {name}")
+print(f"Возраст: {age} лет")
+print(f"Класс: {school_class}")
+print(f"Любимый предмет: {favorite_subject}")
+print(f"Средняя оценка: {average_grade}")</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Задача 2: Калькулятор площади</h3>
+    <div class="bg-muted border border-border rounded-lg p-5 mb-4 relative">
+        <div class="absolute top-2 right-3 bg-primary text-primary-foreground px-2 py-1 rounded text-xs font-bold">Условие</div>
+        <pre class="text-sm font-mono"><code>Создайте программу для вычисления площади прямоугольника.
+Используйте переменные для длины, ширины и результата.</code></pre>
+    </div>
+
+    <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6 dark:bg-green-950/20 dark:border-green-800">
+        <div class="text-green-700 font-semibold mb-3 dark:text-green-400">Решение:</div>
+        <pre class="text-sm font-mono"><code># Исходные данные
+length = 12  # длина в метрах
+width = 8    # ширина в метрах
+
+# Вычисления
+area = length * width
+perimeter = 2 * (length + width)
+
+# Вывод результата
+print(f"Прямоугольник {length} x {width} метров")
+print(f"Площадь: {area} кв.м")
+print(f"Периметр: {perimeter} м")</code></pre>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Задача 5: Мини-проект "Простой калькулятор с переменными"</h3>
+    <div class="bg-green-50 border border-green-200 rounded-lg p-4 dark:bg-green-950/20 dark:border-green-800">
+        <div class="text-green-700 font-semibold mb-3 dark:text-green-400">Полное решение:</div>
+        <pre class="text-sm font-mono"><code># Простой калькулятор с переменными
+print("=== КАЛЬКУЛЯТОР ===")
+
+# Ввод данных
+first_number = float(input("Введите первое число: "))
+second_number = float(input("Введите второе число: "))
+operation = input("Выберите операцию (+, -, *, /): ")
+
+# Вычисления
+result = 0
+
+if operation == "+":
+    result = first_number + second_number
+    operation_name = "Сложение"
+elif operation == "-":
+    result = first_number - second_number
+    operation_name = "Вычитание"
+elif operation == "*":
+    result = first_number * second_number
+    operation_name = "Умножение"
+elif operation == "/":
+    if second_number != 0:
+        result = first_number / second_number
+        operation_name = "Деление"
+    else:
+        print("Ошибка: Деление на ноль!")
+        exit()
+else:
+    print("Ошибка: Неизвестная операция!")
+    exit()
+
+# Вывод результата
+print(f"\n{operation_name}: {first_number} {operation} {second_number} = {result}")</code></pre>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-2xl font-bold mb-4 border-l-4 border-primary pl-4">Что изучать дальше</h2>
+
+    <p class="mb-6">После освоения основ работы с переменными, переходите к изучению более сложных тем:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+            <h3 class="text-xl font-semibold mb-4">1. Массивы и списки</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li>Создание и управление коллекциями данных</li>
+                <li>Индексация и срезы</li>
+                <li>Методы работы со списками</li>
+                <li>Многомерные массивы</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-4 mt-6">2. Структуры данных</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li>Словари (dictionaries) в Python</li>
+                <li>Множества (sets)</li>
+                <li>Кортежи (tuples)</li>
+                <li>Объекты в JavaScript</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="text-xl font-semibold mb-4">3. Объектно-ориентированное программирование</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li>Классы и объекты</li>
+                <li>Методы и атрибуты</li>
+                <li>Наследование</li>
+                <li>Инкапсуляция</li>
+            </ul>
+
+            <h3 class="text-xl font-semibold mb-4 mt-6">4. Управление памятью</h3>
+            <ul class="space-y-2 list-disc list-inside">
+                <li>Как компьютер хранит переменные</li>
+                <li>Ссылки и значения</li>
+                <li>Сборка мусора</li>
+                <li>Оптимизация использования памяти</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto mt-6">
+        <table class="w-full border-collapse bg-card rounded-lg shadow-sm overflow-hidden">
+            <thead>
+                <tr class="bg-primary text-primary-foreground">
+                    <th class="text-left p-4 font-semibold">Тема</th>
+                    <th class="text-left p-4 font-semibold">Сложность</th>
+                    <th class="text-left p-4 font-semibold">Время изучения</th>
+                    <th class="text-left p-4 font-semibold">Необходимо знать</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-border hover:bg-muted/50">
+                    <td class="p-4">Списки и массивы</td>
+                    <td class="p-4">Легко</td>
+                    <td class="p-4">1-2 недели</td>
+                    <td class="p-4">Переменные, циклы</td>
+                </tr>
+                <tr class="bg-muted/50 border-b border-border hover:bg-muted/70">
+                    <td class="p-4">Словари</td>
+                    <td class="p-4">Средне</td>
+                    <td class="p-4">2-3 недели</td>
+                    <td class="p-4">Списки, условия</td>
+                </tr>
+                <tr class="border-b border-border hover:bg-muted/50">
+                    <td class="p-4">ООП</td>
+                    <td class="p-4">Сложно</td>
+                    <td class="p-4">1-2 месяца</td>
+                    <td class="p-4">Функции, структуры данных</td>
+                </tr>
+                <tr class="bg-muted/50 hover:bg-muted/70">
+                    <td class="p-4">Управление памятью</td>
+                    <td class="p-4">Сложно</td>
+                    <td class="p-4">3-4 недели</td>
+                    <td class="p-4">ООП, указатели</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="bg-muted/50 border border-border rounded-lg p-6">
+    <h2 class="text-2xl font-bold mb-4">FAQ - Частые вопросы</h2>
+
+    <div class="space-y-4">
+        <div class="bg-card border border-border rounded-lg">
+            <h3 class="bg-muted p-5 m-0 font-semibold rounded-t-lg cursor-pointer relative">
+                <span class="mr-3">❓</span>Можно ли использовать русские буквы в названиях переменных?
+            </h3>
+            <p class="p-5 m-0 text-muted-foreground leading-relaxed">В Python - да, можно. Например: <code class="bg-muted px-2 py-1 rounded">имя = "Анна"</code>. Но в большинстве других языков (Java, C++, JavaScript) лучше использовать английские буквы. Также многие программисты рекомендуют всегда использовать английский для совместимости и профессионального стандарта.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg">
+            <h3 class="bg-muted p-5 m-0 font-semibold cursor-pointer relative">
+                <span class="mr-3">❓</span>Что будет, если я забуду объявить переменную?
+            </h3>
+            <p class="p-5 m-0 text-muted-foreground leading-relaxed">Программа выдаст ошибку "NameError: name 'variable_name' is not defined" в Python или подобную в других языках. Это одна из самых частых ошибок начинающих. Всегда создавайте переменную перед её использованием.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg">
+            <h3 class="bg-muted p-5 m-0 font-semibold cursor-pointer relative">
+                <span class="mr-3">❓</span>Сколько переменных можно создать в программе?
+            </h3>
+            <p class="p-5 m-0 text-muted-foreground leading-relaxed">Теоретически - сколько угодно, ограничение только в доступной памяти компьютера. На практике в учебных программах вы можете создавать десятки и сотни переменных без проблем. Важнее следить за понятностью имен и логикой программы.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg">
+            <h3 class="bg-muted p-5 m-0 font-semibold cursor-pointer relative">
+                <span class="mr-3">❓</span>Нужно ли удалять переменные после использования?
+            </h3>
+            <p class="p-5 m-0 text-muted-foreground leading-relaxed">В большинстве современных языков (Python, Java, JavaScript) есть автоматическая сборка мусора - система сама удаляет неиспользуемые переменные. В C++ нужно управлять памятью вручную, но это тема для продвинутого уровня.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg">
+            <h3 class="bg-muted p-5 m-0 font-semibold cursor-pointer relative">
+                <span class="mr-3">❓</span>Можно ли изменить тип переменной во время выполнения программы?
+            </h3>
+            <p class="p-5 m-0 text-muted-foreground leading-relaxed">В Python и JavaScript - да, это называется динамической типизацией. Например: <code class="bg-muted px-2 py-1 rounded">x = 5</code> (число), потом <code class="bg-muted px-2 py-1 rounded">x = "привет"</code> (строка). В Java и C++ тип переменной фиксированный - это статическая типизация.</p>
+        </div>
+
+        <div class="bg-card border border-border rounded-lg">
+            <h3 class="bg-muted p-5 m-0 font-semibold cursor-pointer relative">
+                <span class="mr-3">❓</span>Какие символы точно нельзя использовать в названиях переменных?
+            </h3>
+            <p class="p-5 m-0 text-muted-foreground leading-relaxed">Нельзя: пробелы, дефисы (-), математические операторы (+, -, *, /), скобки, точки, запятые. Можно: буквы, цифры (не в начале), подчеркивание (_). Пример правильного: <code class="bg-muted px-2 py-1 rounded">user_age_2024</code>, неправильного: <code class="bg-muted px-2 py-1 rounded">user-age 2024</code>.</p>
+        </div>
+    </div>
+</div>
+
+</div>`,
+    excerpt: 'Узнайте, что такое переменная в программировании, зачем она нужна и как с ней работать. Пошаговые примеры на популярных языках для начинающих.',
+    author: 'Дмитрий Козлов',
+    publishDate: '2025-09-11',
     category: categories[1],
-    tags: ['веб-разработка', 'HTML', 'CSS', 'JavaScript'],
-    readTime: 10,
+    tags: ['переменные', 'программирование', 'основы', 'Python', 'JavaScript'],
+    readTime: 25,
     featured: true,
   },
   {
