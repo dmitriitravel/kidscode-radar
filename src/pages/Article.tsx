@@ -152,7 +152,7 @@ const Article: React.FC = () => {
                   {article.excerpt}
                 </p>
                 
-                <div className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: article.content }}>
+                <div className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-foreground prose-strong:text-foreground prose-code:bg-muted prose-code:text-foreground prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-blockquote:text-muted-foreground prose-blockquote:border-l-primary" dangerouslySetInnerHTML={{ __html: article.content }}>
                 </div>
                 
                 {/* Only show placeholder for placeholder content */}
