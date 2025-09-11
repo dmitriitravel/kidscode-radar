@@ -2228,27 +2228,27 @@ while True:
 
         <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
             <ul class="space-y-3 list-none">
-                <li class="flex items-center">
+                <li class="text-blue-500 flex items-center">
                     <span class="text-blue-500 mr-3 text-lg">☐</span>
                     Четко определены цели обучения (ЕГЭ, вуз, хобби)
                 </li>
-                <li class="flex items-center">
+                <li class="text-blue-500 flex items-center">
                     <span class="text-blue-500 mr-3 text-lg">☐</span>
                     Проверена репутация школы и отзывы учеников
                 </li>
-                <li class="flex items-center">
+                <li class="text-blue-500 flex items-center">
                     <span class="text-blue-500 mr-3 text-lg">☐</span>
                     Уточнена возможность возврата средств при неудовлетворенности
                 </li>
-                <li class="flex items-center">
+                <li class="text-blue-500 flex items-center">
                     <span class="text-blue-500 mr-3 text-lg">☐</span>
                     Есть компьютер с необходимыми техническими характеристиками
                 </li>
-                <li class="flex items-center">
+                <li class="text-blue-500 flex items-center">
                     <span class="text-blue-500 mr-3 text-lg">☐</span>
                     Составлен реалистичный график занятий
                 </li>
-                <li class="flex items-center">
+                <li class="text-blue-500 flex items-center">
                     <span class="text-blue-500 mr-3 text-lg">☐</span>
                     Пройден пробный урок или консультация
                 </li>
