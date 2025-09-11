@@ -372,9 +372,7 @@ const PrivacyPolicy: React.FC = () => {
                       вы хотите воспользоваться своими правами, свяжитесь с нами:
                     </p>
                     <div className="space-y-2 text-muted-foreground">
-                      <p>📧 Email: privacy@schoolrating.ru</p>
-                      <p>📞 Телефон: +7 (800) 123-45-67</p>
-                      <p>📍 Адрес: г. Москва, ул. Примерная, д. 123</p>
+                      <p>📧 Email: support@programmirovanie-dlya-detej-online.ru</p>
                     </div>
                     <div className="mt-6 pt-4 border-t border-border">
                       <p className="text-sm text-muted-foreground">
