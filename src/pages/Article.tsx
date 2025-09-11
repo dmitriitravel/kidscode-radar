@@ -34,7 +34,7 @@ const Article: React.FC = () => {
   const articleTitle = `${article.title} | Программирование для детей`;
   const articleDescription = article.excerpt;
   const articleKeywords = `${article.tags.join(', ')}, программирование для детей, ${article.category.name}`;
-  const canonicalUrl = `${window.location.origin}/articles/${article.slug}`;
+  const canonicalUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}/articles/${article.slug}`;
 
   // Structured data for article
   const structuredData = {

@@ -22,7 +22,7 @@ const TermsOfService: React.FC = () => {
     "@type": "WebPage",
     "name": "Правила пользования сервисом",
     "description": "Правила пользования платформой рейтинга онлайн-школ программирования для детей",
-    "url": `${window.location.origin}/terms-of-service`
+    "url": `${typeof window !== 'undefined' ? window.location.origin : ''}/terms-of-service`
   };
 
   return (
@@ -31,7 +31,7 @@ const TermsOfService: React.FC = () => {
         title="Правила пользования сервисом | Рейтинг школ программирования"
         description="Правила пользования нашей платформой рейтинга онлайн-школ программирования для детей. Условия использования и ответственность пользователей."
         keywords="правила пользования, условия использования, пользовательское соглашение, ответственность"
-        canonicalUrl={`${window.location.origin}/terms-of-service`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/terms-of-service`}
         ogTitle="Правила пользования сервисом | Рейтинг школ программирования"
         ogDescription="Условия использования платформы рейтинга онлайн-школ программирования для детей."
         structuredData={structuredData}

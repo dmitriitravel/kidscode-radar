@@ -24,7 +24,7 @@ const RatingMethodology: React.FC = () => {
     "@type": "WebPage",
     "name": "Методология составления рейтинга онлайн-школ программирования",
     "description": "Подробное описание критериев и методологии оценки онлайн-школ программирования для детей",
-    "url": `${window.location.origin}/rating-methodology`
+    "url": `${typeof window !== 'undefined' ? window.location.origin : ''}/rating-methodology`
   };
 
   const criteria = [
@@ -42,7 +42,7 @@ const RatingMethodology: React.FC = () => {
         title="Как составляется рейтинг | Методология оценки школ программирования"
         description="Узнайте, как мы составляем независимый рейтинг онлайн-школ программирования для детей. Критерии оценки, веса факторов и прозрачная методология."
         keywords="методология рейтинга, критерии оценки школ, как составляется рейтинг, независимая оценка, качество образования"
-        canonicalUrl={`${window.location.origin}/rating-methodology`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/rating-methodology`}
         ogTitle="Методология составления рейтинга школ программирования"
         ogDescription="Прозрачная методология оценки онлайн-школ программирования: критерии, веса факторов и процесс анализа."
         structuredData={structuredData}

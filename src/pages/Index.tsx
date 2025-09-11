@@ -30,12 +30,12 @@ const Index = () => {
     "@type": "WebSite",
     "name": "ТОП-10 онлайн-школ программирования для детей в России",
     "description": "Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript.",
-    "url": window.location.origin,
+    "url": typeof window !== 'undefined' ? window.location.origin : '',
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": `${window.location.origin}/?search={search_term_string}`
+        "urlTemplate": `${typeof window !== 'undefined' ? window.location.origin : ''}/?search={search_term_string}`
       },
       "query-input": "required name=search_term_string"
     }
@@ -47,7 +47,7 @@ const Index = () => {
         title="ТОП-10 онлайн-школ программирования для детей в России | Рейтинг 2025"
         description="Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript."
         keywords="программирование для детей, онлайн школа программирования, курсы программирования дети, Python для детей, Scratch, JavaScript дети, рейтинг школ программирования"
-        canonicalUrl={window.location.origin}
+        canonicalUrl={typeof window !== 'undefined' ? window.location.origin : ''}
         ogTitle="ТОП-10 онлайн-школ программирования для детей в России | Рейтинг 2025"
         ogDescription="Независимый рейтинг лучших онлайн-школ программирования для детей. Сравнение цен, отзывы, подробные обзоры курсов."
         structuredData={structuredData}

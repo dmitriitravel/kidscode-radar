@@ -17,7 +17,7 @@ const Compare: React.FC = () => {
     "@type": "WebPage",
     "name": "Сравнение онлайн-школ программирования для детей",
     "description": "Детальное сравнение характеристик, цен и программ обучения различных онлайн-школ программирования для детей и подростков.",
-    "url": `${window.location.origin}/compare`
+    "url": `${typeof window !== 'undefined' ? window.location.origin : ''}/compare`
   };
 
   return (
@@ -26,7 +26,7 @@ const Compare: React.FC = () => {
         title="Сравнение школ программирования для детей | Подробный анализ"
         description="Детальное сравнение характеристик, цен и программ обучения различных онлайн-школ программирования для детей и подростков."
         keywords="сравнение школ программирования, сравнить курсы программирования, выбор школы программирования, анализ школ"
-        canonicalUrl={`${window.location.origin}/compare`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/compare`}
         ogTitle="Сравнение школ программирования для детей | Подробный анализ"
         ogDescription="Детальное сравнение онлайн-школ программирования: цены, программы, преподаватели, отзывы."
         structuredData={structuredData}

@@ -22,7 +22,7 @@ const PrivacyPolicy: React.FC = () => {
     "@type": "WebPage",
     "name": "Политика конфиденциальности",
     "description": "Политика конфиденциальности платформы рейтинга онлайн-школ программирования для детей",
-    "url": `${window.location.origin}/privacy-policy`
+    "url": `${typeof window !== 'undefined' ? window.location.origin : ''}/privacy-policy`
   };
 
   return (
@@ -31,7 +31,7 @@ const PrivacyPolicy: React.FC = () => {
         title="Политика конфиденциальности | Рейтинг школ программирования"
         description="Политика конфиденциальности нашей платформы. Узнайте, как мы собираем, используем и защищаем ваши персональные данные."
         keywords="политика конфиденциальности, защита персональных данных, GDPR, безопасность данных"
-        canonicalUrl={`${window.location.origin}/privacy-policy`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/privacy-policy`}
         ogTitle="Политика конфиденциальности | Рейтинг школ программирования"
         ogDescription="Узнайте, как мы защищаем ваши персональные данные на платформе рейтинга школ программирования для детей."
         structuredData={structuredData}

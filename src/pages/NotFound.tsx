@@ -16,7 +16,7 @@ const NotFound = () => {
     "@type": "WebPage",
     "name": "Страница не найдена | 404 ошибка",
     "description": "Запрашиваемая страница не найдена. Вернитесь на главную страницу рейтинга онлайн-школ программирования для детей.",
-    "url": window.location.href
+    "url": typeof window !== 'undefined' ? window.location.href : ''
   };
 
   return (
@@ -24,7 +24,7 @@ const NotFound = () => {
       <SEOHead
         title="Страница не найдена | 404 ошибка"
         description="Запрашиваемая страница не найдена. Вернитесь на главную страницу рейтинга онлайн-школ программирования для детей."
-        canonicalUrl={`${window.location.origin}/404`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/404`}
         ogTitle="Страница не найдена | 404 ошибка"
         ogDescription="Запрашиваемая страница не найдена на нашем сайте."
         structuredData={structuredData}

@@ -25,7 +25,7 @@ const About: React.FC = () => {
       "@type": "Organization",
       "name": "School Rating Platform",
       "description": "Независимая платформа для сравнения и выбора лучших онлайн-школ программирования для детей в России",
-      "url": window.location.origin,
+      "url": typeof window !== 'undefined' ? window.location.origin : '',
       "foundingDate": "2024",
       "areaServed": "Russia",
       "serviceType": "Educational Rating Platform"
@@ -38,7 +38,7 @@ const About: React.FC = () => {
         title="О проекте | Рейтинг онлайн-школ программирования для детей"
         description="Узнайте больше о нашей независимой платформе для сравнения онлайн-школ программирования для детей. Наша миссия, принципы работы и команда экспертов."
         keywords="о проекте, рейтинг школ программирования, независимая оценка, команда экспертов, миссия"
-        canonicalUrl={`${window.location.origin}/about`}
+        canonicalUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/about`}
         ogTitle="О нашем проекте | Независимый рейтинг школ программирования"
         ogDescription="Узнайте о миссии и принципах работы нашей платформы для сравнения онлайн-школ программирования для детей."
         structuredData={structuredData}

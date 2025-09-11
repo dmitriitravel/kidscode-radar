@@ -23,7 +23,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogType = "website",
   structuredData
 }) => {
-  const currentUrl = canonicalUrl || window.location.href;
+  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href : '');
   
   return (
     <Helmet>
