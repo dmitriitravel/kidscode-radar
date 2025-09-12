@@ -15,4 +15,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        client: 'src/entry-client.tsx'
+      }
+    }
+  },
+  ssr: {
+    noExternal: ['react-helmet-async']
+  }
 }));
