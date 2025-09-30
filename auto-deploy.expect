@@ -1,0 +1,60 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+set password "VsHJwxM9uc"
+set host "195.133.49.159"
+
+# Connect to VPS
+spawn ssh -o StrictHostKeyChecking=no root@$host
+
+expect {
+    "password:" {
+        send "$password\r"
+        exp_continue
+    }
+    "# " {
+        # We're connected, now run commands
+        send "pwd\r"
+        expect "# "
+        
+        send "whoami\r"
+        expect "# "
+        
+        # Update system
+        send "apt update && apt upgrade -y\r"
+        expect "# " { timeout 300 }
+        
+        # Install Node.js
+        send "curl -fsSL https://deb.nodesource.com/setup_18.x | bash -\r"
+        expect "# " { timeout 180 }
+        
+        send "apt-get install -y nodejs\r"
+        expect "# " { timeout 180 }
+        
+        # Install Nginx and PM2
+        send "apt install -y nginx\r"
+        expect "# " { timeout 120 }
+        
+        send "npm install -g pm2\r"
+        expect "# " { timeout 120 }
+        
+        # Create app directory
+        send "mkdir -p /var/www/programmirovanie-dlya-detej-online.ru\r"
+        expect "# "
+        
+        send "cd /var/www/programmirovanie-dlya-detej-online.ru\r"
+        expect "# "
+        
+        # Show completion
+        send "echo 'Basic setup completed'\r"
+        expect "# "
+        
+        send "exit\r"
+    }
+    timeout {
+        puts "Connection timed out"
+        exit 1
+    }
+}
+
+expect eof
