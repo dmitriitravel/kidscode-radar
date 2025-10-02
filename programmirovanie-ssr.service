@@ -1,0 +1,19 @@
+[Unit]
+Description=Programmirovanie SSR Node.js Application
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/programmirovanie-dlya-detej-online.ru
+Environment="NODE_ENV=production"
+Environment="PORT=3000"
+ExecStart=/usr/local/bin/node /root/programmirovanie-dlya-detej-online.ru/production-server.mjs
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=programmirovanie-ssr
+
+[Install]
+WantedBy=multi-user.target
