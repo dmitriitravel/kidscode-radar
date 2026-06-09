@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00c1ff" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Домашний лицей Skysmart — онлайн-школа с аттестатом [5–11 класс]</title>
+  <meta name="description" content="Домашний лицей Skysmart — школьная программа с 5 по 11 класс с учителями, расписанием и аттестатом государственного образца. Уроки на собственной платформе, аттестация, тарифы и поддержка классного руководителя." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Домашний лицей Skysmart — онлайн-школа с аттестатом" />
+  <meta property="og:description" content="Школьная программа с 5 по 11 класс — с учителями, расписанием и аттестатом государственного образца." />
+  <meta property="og:url" content="https://homeschooling.skysmart.ru/" />
+  <link rel="canonical" href="https://homeschooling.skysmart.ru/" />
+
+  <!-- Фирменный шрифт StratosSkyeng (CDN Skyeng). Единственный шрифт на странице. -->
+  <link rel="preconnect" href="https://cdn-user49501.skyeng.ru" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-regular.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"EducationalOrganization","name":"Домашний лицей Skysmart","description":"Онлайн-школа с аттестатом государственного образца для 5–11 классов: уроки с учителями, расписание, аттестация и сопровождение классного руководителя.","url":"https://homeschooling.skysmart.ru/"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Что такое семейная форма обучения?","acceptedAnswer":{"@type":"Answer","text":"Согласно статье 17 закона «Об образовании в Российской Федерации», любой ребёнок может учиться на семейной форме обучения дома и приходить в школу только для аттестации."}},
+      {"@type":"Question","name":"Как перевести ребёнка на семейную форму обучения?","acceptedAnswer":{"@type":"Answer","text":"Нужно выбрать вариант прохождения аттестации — дистанционно или очно. Мы поможем с документами и организуем обучение."}},
+      {"@type":"Question","name":"Вы получите аттестат государственного образца?","acceptedAnswer":{"@type":"Answer","text":"Да, при выборе тарифа с аттестацией и прохождении промежуточной и государственной итоговой аттестации."}}
+    ]}
+  ]}
+  </script>
+
+  <style>
+    /* ===== Фирменный шрифт ===== */
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+    /* ===== Переменные: фирменный акцент ===== */
+    :root{
+      --brand-accent:#00c1ff;          /* основной акцент */
+      --brand-accent-hover:#6fe4ff;    /* при наведении */
+      --brand-accent-active:#009ff4;   /* в активном состоянии */
+      --fg:#1b2330;
+      --muted:#5b6573;
+      --bg:#ffffff;
+      --soft:#f4f5f7;
+      --surface-soft:#fbf4e7;
+      --border:#e6e8ec;
+      --radius:20px;
+      --shadow:0 6px 24px -10px rgba(16,36,64,.18);
+      --container:1180px;
+    }
+
+    /* ===== База ===== */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"StratosSkyeng",system-ui,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.45}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,h4{margin:0;line-height:1.1;font-weight:700;letter-spacing:-.01em}
+    p{margin:0}
+    ul,ol{margin:0;padding:0;list-style:none}
+
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px;width:100%}
+    .section{padding:64px 0}
+    .section--soft{background:var(--soft)}
+    .h2{font-size:clamp(26px,4vw,38px);font-weight:700}
+    .muted{color:var(--muted)}
+    .lead{font-size:18px;color:var(--muted);max-width:680px;margin-top:14px}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:16px;border-radius:14px;padding:14px 26px;transition:all .2s ease;text-align:center}
+    .btn-accent{background:var(--brand-accent);color:#fff}
+    .btn-accent:hover{background:var(--brand-accent-hover)}
+    .btn-accent:active{background:var(--brand-accent-active)}
+    .btn-ghost{background:#fff;color:var(--fg);border:1px solid rgba(27,35,48,.15)}
+    .btn-ghost:hover{border-color:rgba(27,35,48,.35)}
+    .btn-sm{padding:10px 18px;font-size:14px;border-radius:12px}
+    .btn-block{width:100%}
+
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .card--plain{background:var(--soft);border:0}
+
+    .grid{display:grid;gap:20px}
+    .g2{grid-template-columns:repeat(2,1fr)}
+    .g3{grid-template-columns:repeat(3,1fr)}
+    .g4{grid-template-columns:repeat(4,1fr)}
+    .g5{grid-template-columns:repeat(5,1fr)}
+    @media(max-width:980px){.g3,.g4,.g5{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.g2,.g3,.g4,.g5{grid-template-columns:1fr}}
+
+    .accent{color:var(--brand-accent)}
+    .accent-d{color:var(--brand-accent-active)}
+    .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--brand-accent);flex:0 0 auto;margin-top:7px}
+
+    /* ===== Header ===== */
+    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+    .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px}
+    .logo .mark{width:28px;height:28px;border-radius:8px;background:var(--brand-accent);display:flex;align-items:center;justify-content:center}
+    .menu{display:flex;gap:28px;font-weight:500;font-size:15px}
+    .menu a{color:rgba(27,35,48,.8)}
+    .menu a:hover{color:var(--fg)}
+    .grades{display:flex;gap:20px;overflow-x:auto;padding:8px 0;font-size:14px;color:rgba(27,35,48,.7);border-top:1px solid var(--border);scrollbar-width:none}
+    .grades::-webkit-scrollbar{display:none}
+    .grades a{white-space:nowrap}
+    .grades a:hover{color:var(--fg)}
+    .burger{display:none;background:none;border:0;cursor:pointer;font-size:24px;line-height:1}
+    #mobile-menu{display:none;border-top:1px solid var(--border);padding:12px 0}
+    #mobile-menu a{display:block;padding:8px 0;font-weight:500}
+    @media(max-width:900px){.menu,.nav .btn{display:none}.burger{display:block}}
+
+    /* ===== Hero ===== */
+    .hero{position:relative;overflow:hidden;background:var(--surface-soft)}
+    .hero .blob1,.hero .blob2{position:absolute;border-radius:50%;filter:blur(40px);pointer-events:none}
+    .hero .blob1{right:-6%;top:-10%;width:420px;height:420px;opacity:.7;background:radial-gradient(circle at 30% 30%,#ffd58a 0%,#ffb347 55%,transparent 75%)}
+    .hero .blob2{left:-8%;bottom:-12%;width:360px;height:360px;opacity:.5;background:radial-gradient(circle at 50% 50%,#ffe3a8 0%,transparent 70%)}
+    .hero-inner{position:relative;min-height:560px;padding:48px 0}
+    .float{position:absolute;max-width:230px;background:#fff;border-radius:18px;padding:14px 16px;font-size:14px;font-weight:500;box-shadow:var(--shadow)}
+    .float .emoji{font-size:20px;display:block;margin-bottom:6px}
+    .float.f1{left:0;top:30px}
+    .float.f2{left:40px;top:280px}
+    .float.f3{right:0;top:200px}
+    .hero-box{position:relative;z-index:10;max-width:640px;margin-left:auto;margin-top:200px}
+    .hero h1{font-size:clamp(40px,7vw,64px);line-height:1.04}
+    .hero-sub{margin-top:16px;font-size:clamp(18px,2.4vw,22px);color:rgba(27,35,48,.75);max-width:560px}
+    .hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+    @media(max-width:900px){
+      .hero-inner{min-height:auto;padding:32px 0}
+      .float{position:static;max-width:none;margin:0 0 12px}
+      .floats{display:grid;gap:12px;margin-bottom:20px}
+      .hero-box{margin:0}
+    }
+    .floats{display:contents}
+    @media(max-width:900px){.floats{display:grid}}
+    .promo{background:var(--brand-accent);color:#fff}
+    .promo-in{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px 0;font-weight:500;text-align:center}
+    .promo a{background:rgba(255,255,255,.2);padding:6px 16px;border-radius:10px;font-weight:600}
+    .promo a:hover{background:rgba(255,255,255,.3)}
+
+    /* ===== Stats ===== */
+    .stat .num{font-size:38px;font-weight:700;color:var(--brand-accent)}
+    .stat p{margin-top:12px;font-size:14px;color:var(--muted)}
+
+    /* ===== Tabs ===== */
+    .tabs-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+    .tab-btn{border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px 16px;font-family:inherit;font-size:15px;cursor:pointer;transition:all .15s}
+    .tab-btn[aria-selected="true"]{background:var(--brand-accent);color:#fff;border-color:var(--brand-accent)}
+    .tab-panel{display:none;margin-top:24px}
+    .tab-panel.active{display:block}
+
+    /* ===== Steps ===== */
+    .step .n{width:36px;height:36px;border-radius:50%;background:var(--brand-accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .step p{margin-top:12px;font-size:14px}
+
+    /* ===== Tariff ===== */
+    .tariff{display:flex;flex-direction:column}
+    .tariff .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .badge{background:var(--brand-accent);color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px}
+    .tariff ul{margin-top:16px;flex:1;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+    .tariff li{display:flex;gap:8px}
+    .tariff li .d{width:6px;height:6px;border-radius:50%;background:var(--brand-accent);flex:0 0 auto;margin-top:7px}
+    .price-old{font-size:14px;color:var(--muted);text-decoration:line-through}
+    .price{font-size:18px;font-weight:700}
+    .price-note{font-size:12px;color:var(--muted)}
+
+    /* ===== FAQ (нативный details — без JS, доступно роботам) ===== */
+    .faq{max-width:760px}
+    .faq details{border-bottom:1px solid var(--border)}
+    .faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--brand-accent);font-size:22px;line-height:1}
+    .faq details[open] summary::after{content:"–"}
+    .faq .answer{padding:0 0 18px;color:var(--muted);display:flex;flex-direction:column;gap:12px}
+
+    /* ===== Trial / accent block ===== */
+    .accent-block{background:var(--brand-accent);border-radius:28px;padding:40px;display:grid;gap:32px;grid-template-columns:1fr 1fr}
+    .accent-block .txt{color:#fff}
+    .accent-block h2{color:#fff}
+    .accent-block li{display:flex;gap:10px;color:#fff;margin-bottom:10px}
+    .accent-block .d{width:10px;height:10px;border-radius:50%;background:#fff;flex:0 0 auto;margin-top:7px}
+    @media(max-width:820px){.accent-block{grid-template-columns:1fr;padding:28px}}
+
+    /* ===== Knowledge ===== */
+    .knowledge{columns:3;column-gap:32px}
+    .knowledge li{break-inside:avoid;margin-bottom:8px}
+    .knowledge a{font-size:14px;color:rgba(27,35,48,.8)}
+    .knowledge a:hover{color:var(--fg);text-decoration:underline;text-decoration-color:var(--brand-accent)}
+    @media(max-width:900px){.knowledge{columns:2}}
+    @media(max-width:600px){.knowledge{columns:1}}
+
+    /* ===== Form ===== */
+    .form{display:flex;flex-direction:column;gap:12px}
+    .form input,.form select{height:48px;border:1px solid var(--border);border-radius:12px;padding:0 14px;font-family:inherit;font-size:15px;background:#fff;color:var(--fg);width:100%}
+    .form .check{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--muted)}
+    .form .check input{height:auto;width:auto;margin-top:2px}
+    .form-ok{display:none;color:#0a8f3c;font-weight:600;font-size:14px}
+
+    /* ===== Two columns ===== */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    @media(max-width:820px){.two{grid-template-columns:1fr}}
+
+    /* ===== Modal (нативный dialog) ===== */
+    dialog{border:0;border-radius:24px;padding:0;max-width:440px;width:calc(100% - 32px);box-shadow:0 20px 60px -20px rgba(16,36,64,.4)}
+    dialog::backdrop{background:rgba(16,24,40,.55)}
+    .modal-in{padding:28px}
+    .modal-in h3{font-size:24px}
+    .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--muted);line-height:1}
+    dialog{position:relative}
+
+    footer{border-top:1px solid var(--border);background:#fff;padding:32px 0}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+    .mt40{margin-top:40px}.mt24{margin-top:24px}.mt16{margin-top:16px}
+  </style>
+</head>
+<body id="top">
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="#top" aria-label="Skysmart — на главную">
+          <span class="mark" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z" fill="#fff"/></svg>
+          </span>
+          <span>skysmart</span>
+        </a>
+        <nav class="menu" aria-label="Основная навигация">
+          <a href="#trial">Бесплатный период</a>
+          <a href="#platform">Как устроено обучение</a>
+          <a href="#diploma">Аттестация</a>
+          <a href="#faq">FAQ</a>
+          <a href="#knowledge">База знаний</a>
+        </nav>
+        <button class="btn btn-accent btn-sm" data-open>Попробовать бесплатно</button>
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">☰</button>
+      </div>
+      <nav class="grades" aria-label="Классы">
+        <a href="#tariffs">5 класс</a><a href="#tariffs">6 класс</a><a href="#tariffs">7 класс</a>
+        <a href="#tariffs">8 класс</a><a href="#tariffs">9 класс</a><a href="#tariffs">10 класс</a>
+        <a href="#tariffs">11 класс</a><a href="#tariffs">10–11 классы</a>
+      </nav>
+      <nav id="mobile-menu" aria-label="Мобильная навигация">
+        <a href="#trial">Бесплатный период</a>
+        <a href="#platform">Как устроено обучение</a>
+        <a href="#diploma">Аттестация</a>
+        <a href="#faq">FAQ</a>
+        <a href="#knowledge">База знаний</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="blob1" aria-hidden="true"></span>
+      <span class="blob2" aria-hidden="true"></span>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="floats">
+            <div class="float f1"><span class="emoji" aria-hidden="true">🧑‍🏫</span>Сопровождение и помощь классного руководителя</div>
+            <div class="float f2"><span class="emoji" aria-hidden="true">📚</span>Профильные классы с усиленной программой</div>
+            <div class="float f3"><span class="emoji" aria-hidden="true">💬</span>Командные проекты и комьюнити учеников</div>
+          </div>
+          <div class="hero-box">
+            <h1 id="hero-title">Домашний лицей</h1>
+            <p class="hero-sub">Школьная программа с 5 по 11 класс — с учителями, расписанием и аттестатом государственного образца</p>
+            <div class="hero-cta">
+              <button class="btn btn-accent" data-open>Записаться на консультацию</button>
+              <a class="btn btn-ghost" href="#trial">Попробовать 7 дней бесплатно</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo">
+        <div class="container"><div class="promo-in">
+          <span>Открыт набор на 2026/27 учебный год — −20% для новых учеников</span>
+          <a href="#tariffs">Узнать об обучении</a>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="section" aria-labelledby="stats-title">
+      <div class="container">
+        <h2 class="h2" id="stats-title">Онлайн-школа с аттестатом</h2>
+        <div class="grid g4 mt40">
+          <div class="card card--plain stat"><div class="num">№1</div><p>в рейтинге образовательных компаний по версии Smart Ranking в 2024 году</p></div>
+          <div class="card card--plain stat"><div class="num">12+</div><p>лет на рынке онлайн-образования</p></div>
+          <div class="card card--plain stat"><div class="num">топ-100</div><p>входим в топ EdTech-компаний по версии HolonIQ за 2021 год</p></div>
+          <div class="card card--plain stat"><div class="num">4,9</div><p>рейтинг по отзывам на УчисьОнлайн.ру и MOOC.ru</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AUDIENCE ===================== -->
+    <section class="section section--soft" aria-labelledby="aud-title">
+      <div class="container">
+        <h2 class="h2" id="aud-title">Домашний лицей — идеальный выбор для тех, кто:</h2>
+        <div class="grid g3 mt40">
+          <div class="card"><h3>Недоволен школой по месту жительства</h3><p class="muted mt16">и хочет качественного образования для ребёнка</p></div>
+          <div class="card"><h3>Профессионально занимается спортом или творчеством</h3><p class="muted mt16">и не успевает посещать обычную школу</p></div>
+          <div class="card"><h3>Часто болеет или легко утомляется</h3><p class="muted mt16">и выбирает комфортное домашнее обучение</p></div>
+          <div class="card"><h3>Живёт за границей,</h3><p class="muted mt16">но планирует получить российский аттестат</p></div>
+          <div class="card"><h3>Столкнулся с травлей</h3><p class="muted mt16">или токсичной школьной средой</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== APPROVAL ===================== -->
+    <section class="section" aria-labelledby="appr-title">
+      <div class="container">
+        <h2 class="h2" id="appr-title">Наша модель обучения одобрена Министерством образования</h2>
+        <div class="grid g2 mt40">
+          <div class="card card--plain">
+            <h3>Программа разработана НИУ ВШЭ</h3>
+            <p class="muted mt16">С учётом знаний и опыта научных сотрудников Института образования Высшей школы экономики. Мы изучили опыт более 100 тысяч детей и взрослых, чтобы максимизировать вовлечённость, мотивацию и прогресс в учёбе.</p>
+            <a class="accent-d mt16" style="display:inline-block;font-weight:600" href="#platform">Посмотреть информацию о кафедре →</a>
+          </div>
+          <div class="card card--plain">
+            <h3>Проводим уроки с учётом ФГОС и требований к аттестации</h3>
+            <p class="muted mt16">Образовательная лицензия от Минобразования. Уроки соответствуют федеральным государственным образовательным стандартам.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLATFORM TABS ===================== -->
+    <section class="section section--soft" id="platform" aria-labelledby="plat-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="plat-title">Мы ведём уроки на собственной платформе</h2>
+        <div class="tabs" data-tabs>
+          <div class="tabs-btns" role="tablist">
+            <button class="tab-btn" role="tab" aria-selected="true" data-tab="p1">Уроки</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p2">Библиотека материалов</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p3">Задания с письмом от руки</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p4">Отчёты о прогрессе</button>
+          </div>
+          <div class="tab-panel active" id="p1" role="tabpanel"><div class="card"><h3>Уроки с активным участием</h3><p class="muted mt16">Ученики выполняют задания и получают оценку прямо во время урока, как в обычной школе.</p></div></div>
+          <div class="tab-panel" id="p2" role="tabpanel"><div class="card"><h3>Библиотека материалов</h3><p class="muted mt16">Все записи уроков, конспекты и дополнительные материалы хранятся в личном кабинете весь учебный год.</p></div></div>
+          <div class="tab-panel" id="p3" role="tabpanel"><div class="card"><h3>Задания с письмом от руки</h3><p class="muted mt16">Часть заданий ребёнок выполняет письменно — это помогает лучше усваивать материал и готовит к экзаменам.</p></div></div>
+          <div class="tab-panel" id="p4" role="tabpanel"><div class="card"><h3>Отчёты о прогрессе</h3><p class="muted mt16">Родители видят посещаемость, оценки и динамику успеваемости ребёнка в удобных отчётах.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEACHERS ===================== -->
+    <section class="section" aria-labelledby="teach-title">
+      <div class="container">
+        <h2 class="h2" id="teach-title">Кто преподаёт в лицее</h2>
+        <p class="lead">Уроки проводят опытные педагоги из ведущих школ России, эксперты ЕГЭ, победители всероссийских конкурсов. Только 5 из 100 кандидатов проходят конкурсный отбор.</p>
+        <div class="grid g4 mt40">
+          <div class="card card--plain"><h3 class="mt16">Алексей Мелкозеров</h3><p class="muted mt16">Участвовал в разработке множества игр на Unity с использованием продвинутых алгоритмов и технологий.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Куратор учебной программы</p><h3 class="mt16">Александра Калинина</h3><p class="muted mt16">Разрабатывает уроки, на которых детям интересно и не страшно пробовать новое.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Классный руководитель</p><h3 class="mt16">Татьяна Брейкина</h3><p class="muted mt16">Следит за посещаемостью и успеваемостью, помогает с учёбой и решает вопросы с аттестацией.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMAT (FORM) ===================== -->
+    <section class="section section--soft" aria-labelledby="fmt-title">
+      <div class="container two">
+        <div>
+          <h2 class="h2" id="fmt-title">Подберём формат обучения для ребёнка</h2>
+          <p class="lead">И зафиксируем лучшую цену на 2026/27 учебный год.</p>
+          <ul class="mt24" style="display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;gap:10px"><span class="dot"></span>Покажем, как проходят уроки в нашей школе</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Расскажем про учебную программу и аттестацию</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Поможем с документами для зачисления</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Хочу на консультацию</h3>
+          <form class="form mt16" data-form>
+            <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+            <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+            <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+            <button class="btn btn-accent btn-block" type="submit">Хочу на консультацию</button>
+            <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+            <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+            <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERTS ===================== -->
+    <section class="section" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 class="h2" id="exp-title">За процесс обучения отвечают опытные эксперты</h2>
+        <div class="grid g3 mt40">
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Куратор учебной программы</p><h3 class="mt16">Александра Калинина</h3><p class="muted mt16">Разрабатывает уроки, на которых детям интересно и не страшно пробовать новое.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Классный руководитель</p><h3 class="mt16">Татьяна Брейкина</h3><p class="muted mt16">Следит за посещаемостью и успеваемостью, помогает с учёбой и решает вопросы с аттестацией.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
+        </div>
+        <p class="lead">Помогаем не только детям, но и родителям. Сопровождаем от зачисления до аттестации, не оставляем один на один с вопросами и помогаем, даже если сроки уже прошли, а с документами есть проблемы.</p>
+      </div>
+    </section>
+
+    <!-- ===================== TRIAL ===================== -->
+    <section class="section" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <div class="accent-block">
+          <div class="txt">
+            <h2 class="h2" id="trial-title">Попробуйте 7 дней учёбы в лицее бесплатно</h2>
+            <ul class="mt24">
+              <li><span class="d"></span>Доступ к живым урокам по расписанию</li>
+              <li><span class="d"></span>Все записи прошедших уроков</li>
+              <li><span class="d"></span>Интерактивные задания и домашки с автопроверкой</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Начать учиться бесплатно</h3>
+            <form class="form mt16" data-form>
+              <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+              <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+              <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+              <button class="btn btn-accent btn-block" type="submit">Начать учиться бесплатно</button>
+              <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+              <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+              <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SCHEDULE TABS ===================== -->
+    <section class="section section--soft" aria-labelledby="sch-title">
+      <div class="container">
+        <h2 class="h2" id="sch-title">Расписание устроено так, чтобы ребёнок мог всё успевать</h2>
+        <div class="tabs" data-tabs>
+          <div class="tabs-btns" role="tablist">
+            <button class="tab-btn" role="tab" aria-selected="true" data-tab="s1">Для углублённого изучения</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="s2">Для тренировок и спорта</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="s3">Для комфортной учёбы</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="s4">Для поступления за рубеж</button>
+          </div>
+          <div class="tab-panel active" id="s1" role="tabpanel"><div class="card"><p class="accent-d" style="font-weight:600">Тариф: Профильный IT</p><h3 class="mt16">Пример расписания занятий 7-го класса</h3><p class="muted mt16">Ринат собирается в IT и увлекается программированием — расписание подобрано так, чтобы оставалось время на любимое дело и дополнительные занятия.</p></div></div>
+          <div class="tab-panel" id="s2" role="tabpanel"><div class="card"><h3>Для тренировок и спорта</h3><p class="muted mt16">Гибкое расписание позволяет совмещать учёбу с регулярными тренировками и соревнованиями.</p></div></div>
+          <div class="tab-panel" id="s3" role="tabpanel"><div class="card"><h3>Для комфортной учёбы</h3><p class="muted mt16">Равномерная нагрузка без перегрузок — ребёнок учится в комфортном темпе.</p></div></div>
+          <div class="tab-panel" id="s4" role="tabpanel"><div class="card"><h3>Для поступления за рубеж</h3><p class="muted mt16">Расписание с упором на языки и профильные предметы для поступления в зарубежные вузы.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DIPLOMA ===================== -->
+    <section class="section" id="diploma" aria-labelledby="dip-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="dip-title">Вы получите аттестат государственного образца</h2>
+        <p class="muted mt16">Что для этого нужно:</p>
+        <ol class="grid g5 mt40">
+          <li class="card card--plain step"><span class="n">1</span><p>Выберите тариф с аттестацией</p></li>
+          <li class="card card--plain step"><span class="n">2</span><p>Оформите документы и дождитесь зачисления от школы-партнёра</p></li>
+          <li class="card card--plain step"><span class="n">3</span><p>Сдайте промежуточные аттестации онлайн</p></li>
+          <li class="card card--plain step"><span class="n">4</span><p>Сдайте государственную итоговую аттестацию (ОГЭ, ЕГЭ) очно в аккредитованной школе-партнёре</p></li>
+          <li class="card card--plain step"><span class="n">5</span><p>Получите аттестат</p></li>
+        </ol>
+        <div class="mt24"><button class="btn btn-accent" data-open>Выбрать тариф</button></div>
+        <div class="card card--plain mt40">
+          <h3>Как перейти на семейное обучение</h3>
+          <p class="muted mt16" style="max-width:680px">Скачайте инструкцию и получите шаблоны заявлений с рекомендациями по переходу и адаптации ребёнка.</p>
+          <div class="mt16"><button class="btn btn-ghost" data-open>Скачать инструкцию</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="section section--soft" aria-labelledby="rev-title">
+      <div class="container">
+        <h2 class="h2" id="rev-title">Семьи по всему миру доверяют нам образование детей</h2>
+        <p class="lead">Тысячи учеников уже создают своё будущее с нами. 80% учеников и родителей готовы рекомендовать нас своим друзьям и близким.</p>
+        <div class="grid g2 mt40">
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Заметила, что сын стал отказываться от помощи с домашней работой по математике. Раньше мы каждый вечер с ним сидели, либо я, либо папа. Теперь только сам. Самое интересное, что оценки при этом не подкачали. Дневник проверяю без страха!</blockquote><figcaption class="mt16" style="font-weight:600">Наталья, мама Владимира</figcaption></figure>
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Сначала, если честно, не доверял онлайн-школам. Хотелось, чтобы сын учился «как положено». Но сейчас рад, что выбрал Skysmart. Работаю за границей, и сын живёт со мной. Благодаря Skysmart он учится, как и все, — с расписанием, классными преподавателями, домашкой. И главное — мы вместе. Это самое ценное.</blockquote><figcaption class="mt16" style="font-weight:600">Дмитрий, папа Мирона</figcaption></figure>
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Преподаватели в Домашнем лицее невероятные. Пока сын занимается, сама слушаю, настолько интересно всё объясняют. Наконец-то учёба перестала быть обязанностью и стала по-настоящему увлекательной. Сын учится с удовольствием и без стресса.</blockquote><figcaption class="mt16" style="font-weight:600">Майя, мама Елисея</figcaption></figure>
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Моя мечта — стать профессиональным баскетболистом. В обычной школе это было сложно: тренировки часто совпадают с уроками. А здесь я сам планирую день и всегда успеваю и потренироваться, и поучиться.</blockquote><figcaption class="mt16" style="font-weight:600">Сергей, ученик</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TARIFFS ===================== -->
+    <section class="section" id="tariffs" aria-labelledby="tar-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="tar-title">Выбирайте подходящий тариф</h2>
+        <p class="muted mt16">Со скидкой −20% на новый учебный год.</p>
+        <div class="grid g4 mt40">
+          <div class="card tariff">
+            <div class="top"><h3>Стандарт</h3></div>
+            <ul><li><span class="d"></span>Вебинары по всем предметам</li><li><span class="d"></span>Регулярная отчётность</li><li><span class="d"></span>Помощь и письменная обратная связь от классного руководителя</li></ul>
+            <div class="mt16"><p class="price-old">10 895 ₽ / мес.</p><p class="price">от 8 716 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+          <div class="card tariff">
+            <div class="top"><h3>Оптимум</h3><span class="badge">популярно</span></div>
+            <ul><li><span class="d"></span>Дополнительные уроки в мини-группах для отработки навыков</li><li><span class="d"></span>Регулярные встречи по успеваемости и дисциплине с классным руководителем</li><li><span class="d"></span>Письменные домашние задания с проверкой</li></ul>
+            <div class="mt16"><p class="price-old">24 258 ₽ / мес.</p><p class="price">от 19 406 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+          <div class="card tariff">
+            <div class="top"><h3>Профильный</h3><span class="badge">новинка</span></div>
+            <ul><li><span class="d"></span>Гуманитарное и техническое направления</li><li><span class="d"></span>Углублённая программа</li><li><span class="d"></span>Увеличенное количество уроков по профильным предметам</li><li><span class="d"></span>Проект в конце учебного года</li><li><span class="d"></span>Письменные домашние задания с проверкой</li><li><span class="d"></span>Встречи с нейропсихологом (по запросу)</li></ul>
+            <div class="mt16"><p class="price-old">31 098 ₽ / мес.</p><p class="price">от 24 878 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+          <div class="card tariff">
+            <div class="top"><h3>Премиум</h3><span class="badge">рекомендуем</span></div>
+            <ul><li><span class="d"></span>Дополнительно 4 индивидуальных урока для разбора трудных тем или решения задач повышенной сложности</li><li><span class="d"></span>Составление и контроль индивидуального учебного плана с помощью классного руководителя</li><li><span class="d"></span>Письменные домашние задания с проверкой</li><li><span class="d"></span>Встречи с нейропсихологом (по запросу)</li></ul>
+            <div class="mt16"><p class="price-old">47 775 ₽ / мес.</p><p class="price">от 38 220 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+        </div>
+        <div class="mt24"><button class="btn btn-ghost" data-open>Подробный состав тарифов</button></div>
+      </div>
+    </section>
+
+    <!-- ===================== PAYMENT ===================== -->
+    <section class="section section--soft" aria-labelledby="pay-title">
+      <div class="container">
+        <h2 class="h2" id="pay-title">Оплачивайте учёбу ребёнка без вреда для семейного бюджета</h2>
+        <div class="grid g3 mt40">
+          <div class="card"><h3>Материнский капитал</h3><p class="muted mt16">Можно использовать частично или полностью. Поможем с оформлением документов.</p></div>
+          <div class="card"><h3>Налоговый вычет до 33 800 ₽</h3><p class="muted mt16">Государство вернёт 13% от стоимости любого тарифа, а мы поможем оформить заявку.</p></div>
+          <div class="card"><h3>Внутренняя и банковская рассрочка</h3><p class="muted mt16">Если в рассрочку, то без процентов — их мы берём на себя.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONSULT (FORM) ===================== -->
+    <section class="section" aria-labelledby="con-title">
+      <div class="container two">
+        <div>
+          <h2 class="h2" id="con-title">Узнайте больше о школе на бесплатной консультации</h2>
+          <ul class="mt24" style="display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;gap:10px"><span class="dot"></span>Покажем, как проходят уроки на нашей платформе</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Поможем выбрать тариф и разобраться с документами</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</li>
+          </ul>
+        </div>
+        <div class="card card--plain">
+          <h3>Записаться</h3>
+          <form class="form mt16" data-form>
+            <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+            <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+            <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+            <button class="btn btn-accent btn-block" type="submit">Записаться</button>
+            <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+            <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+            <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section section--soft" id="faq" aria-labelledby="faq-title" style="scroll-margin-top:90px">
+      <div class="container faq">
+        <h2 class="h2" id="faq-title">Частые вопросы</h2>
+        <div class="mt24">
+          <details><summary>Что такое семейная форма обучения?</summary><div class="answer"><p>Согласно статье 17 закона «Об образовании в Российской Федерации», любой ребёнок независимо от состояния здоровья может учиться на семейной форме обучения. Это значит, что ребёнку не обязательно посещать обычную офлайн-школу: разрешено учиться дома и приходить в образовательное учреждение только для прохождения аттестации и получения документов об образовании.</p><p>А если школа, к которой прикреплён ребёнок, имеет разрешение проводить аттестацию онлайн, то посещать школу не придётся. Полностью онлайн не получится учиться только в 9 и 11 классах: в них дети сдают ОГЭ и ЕГЭ, которые проходят очно.</p><p>Задача родителя — организовать обучение ребёнка. Оба вопроса мы помогаем решить — разберёмся с документами и организуем качественное образование.</p></div></details>
+          <details><summary>Как перевести ребёнка на семейную форму обучения?</summary><div class="answer"><p>Нужно выбрать вариант прохождения аттестации — дистанционно или очно. Дистанционно: мы прикрепим ребёнка к партнёрской школе для прохождения аттестации онлайн. Юридически ребёнок будет закреплён за московской школой и сможет сдавать аттестацию из любой точки мира.</p><p>Такой вариант доступен для учеников 5–8 и 10 классов. В 9 и 11 классах полностью дистанционно аттестоваться не получится. Запишитесь на бесплатную консультацию — мы расскажем, как всё устроено, и подскажем, что делать дальше.</p></div></details>
+          <details><summary>В чём особенность прикрепления к школе для детей 9 и 11 классов?</summary><div class="answer"><p>В 9 классе аттестация проводится в формате ОГЭ, в 11 — в формате ЕГЭ, а также контрольных работ. Без этого ребёнку не выдадут аттестат за 9 или 11 класс. ОГЭ и ЕГЭ проводятся только офлайн.</p><p>Ребёнок может остаться прикреплённым к прежней школе либо мы поможем подобрать другую аккредитованную школу в формате экстерната / заочной формы. Учиться ребёнок при этом будет онлайн в нашем лицее.</p></div></details>
+          <details><summary>Как поступить, если я живу не в России?</summary><div class="answer"><p>Поступление из-за рубежа ничем не отличается от поступления из России: вы сможете предоставить все документы и подписать договор онлайн. Если документы были выданы в другой стране, понадобится их заверенный перевод на русский язык.</p><p>Если ребёнок учится в 9 или 11 классе, для получения аттестата нужно будет сдавать ОГЭ или ЕГЭ очно — через прикрепление к школе по месту жительства или к школе при консульстве/посольстве РФ.</p></div></details>
+          <details><summary>А как потом вернуться в обычную школу?</summary><div class="answer"><p>Если онлайн-обучение вам не подошло, вы можете без проблем вернуться в обычную школу. Сначала нужно обратиться в поддержку, чтобы расторгнуть договор — мы вернём деньги за все оставшиеся оплаченные дни.</p><p>Затем вы подаёте документы в нужную школу, а она проводит оценку знаний ребёнка через контрольные и проверочные работы по пройденному материалу.</p></div></details>
+          <details><summary>Что такое аттестация?</summary><div class="answer"><p>Аттестация — процесс оценки знаний за учебный год для тех, кто учится в Домашнем лицее вместо обычной школы. Её нужно проходить раз в год, выбрав один из трёх периодов: 25 августа — 25 сентября, 11 января — 11 февраля, 11 мая — 11 июня.</p><p>До 8 класса аттестация необязательна, но мы рекомендуем проходить её ежегодно. В 9 и 11 классах аттестация обязательна и проводится в формате ОГЭ и ЕГЭ офлайн.</p></div></details>
+          <details><summary>Как вы готовите к аттестации?</summary><div class="answer"><p>Наши программы по предметам составлены так, чтобы ученики успели изучить все необходимые темы для сдачи промежуточной аттестации в конкретном классе.</p><p>После каждого урока ребята получают домашнее задание, а после каждой темы пишут контрольные работы и тестовые аттестации, по которым классный руководитель подскажет, что повторить.</p></div></details>
+          <details><summary>Что будет, если ребёнок не поймёт тему?</summary><div class="answer"><p>Мы делаем всё для усвоения материала: контент разнообразен и адаптирован для учеников с разными особенностями восприятия — «живые» уроки и вебинары, конспекты, задания с иллюстрациями.</p><p>Все записи уроков хранятся в кабинете весь год, есть задания разного уровня сложности, помощь куратора и мини-группы по основным предметам.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KNOWLEDGE ===================== -->
+    <section class="section" id="knowledge" aria-labelledby="kn-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="kn-title">Больше информации о дистанционном обучении в онлайн-школе</h2>
+        <p class="muted mt16">Узнать подробнее о дистанционном образовании детей вы можете в следующих материалах:</p>
+        <ul class="knowledge mt40">
+          <li><a href="#knowledge">Заявление в школу об отсутствии ребёнка по семейным обстоятельствам</a></li>
+          <li><a href="#knowledge">Образцы заявлений для освобождения от занятий в школе</a></li>
+          <li><a href="#knowledge">Школьные программы для начальных классов</a></li>
+          <li><a href="#knowledge">Всё о внеклассных мероприятиях в школе</a></li>
+          <li><a href="#knowledge">Можно ли давать домашние задания на каникулы</a></li>
+          <li><a href="#knowledge">Сколько стоит домашнее обучение</a></li>
+          <li><a href="#knowledge">Типы и виды образовательных учреждений в России</a></li>
+          <li><a href="#knowledge">Углублённое изучение предметов в школе</a></li>
+          <li><a href="#knowledge">Индивидуальный план обучения в школе</a></li>
+          <li><a href="#knowledge">Домашнее обучение — что это, как перейти, плюсы и минусы</a></li>
+          <li><a href="#knowledge">Какие бывают уроки в школе</a></li>
+          <li><a href="#knowledge">Какие бывают олимпиады и зачем в них участвовать</a></li>
+          <li><a href="#knowledge">Как заставить ребёнка учиться без давления и чувства вины</a></li>
+          <li><a href="#knowledge">Как быстро выучить текст наизусть</a></li>
+          <li><a href="#knowledge">Лучший стул для школьника</a></li>
+          <li><a href="#knowledge">Как строить отношения с репетитором</a></li>
+          <li><a href="#knowledge">Типы обучающихся в образовательных организациях</a></li>
+          <li><a href="#knowledge">Заочное обучение в школе</a></li>
+          <li><a href="#knowledge">Промежуточная аттестация: что это и как подготовиться</a></li>
+          <li><a href="#knowledge">Что такое школьный буллинг</a></li>
+          <li><a href="#knowledge">Необщительный ребёнок: что делать родителям</a></li>
+          <li><a href="#knowledge">Электронный дневник школьника: регистрация и использование</a></li>
+          <li><a href="#knowledge">Что такое экстернат и как окончить школу экстерном</a></li>
+          <li><a href="#knowledge">Лучшие приложения для учёбы</a></li>
+          <li><a href="#knowledge">Всё о профориентации в школе: советы и рекомендации</a></li>
+          <li><a href="#knowledge">Как перевести ребёнка в другую школу</a></li>
+          <li><a href="#knowledge">Что такое дистанционное обучение</a></li>
+          <li><a href="#knowledge">Семейное образование в России</a></li>
+          <li><a href="#knowledge">Как выбрать профильное обучение в старших классах</a></li>
+          <li><a href="#knowledge">Что такое синдром отличника</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <p>© <span id="year"></span> Skysmart. Домашний лицей.</p>
+      <p>Онлайн-школа с аттестатом государственного образца, 5–11 класс.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL ===================== -->
+  <dialog id="modal" aria-labelledby="modal-title">
+    <div class="modal-in">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+      <h3 id="modal-title">Записаться на консультацию</h3>
+      <p class="muted mt16">Оставьте контакты — расскажем, как проходят уроки, поможем выбрать тариф и зафиксируем цену на новый учебный год.</p>
+      <form class="form mt16" data-form>
+        <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+        <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+        <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+        <button class="btn btn-accent btn-block" type="submit">Записаться</button>
+        <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+        <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+        <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    // Год в футере
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Мобильное меню
+    var burger = document.getElementById("burger");
+    var mobileMenu = document.getElementById("mobile-menu");
+    burger.addEventListener("click", function () {
+      var open = mobileMenu.style.display === "block";
+      mobileMenu.style.display = open ? "none" : "block";
+      burger.setAttribute("aria-expanded", String(!open));
+    });
+    mobileMenu.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") { mobileMenu.style.display = "none"; burger.setAttribute("aria-expanded", "false"); }
+    });
+
+    // Табы
+    document.querySelectorAll("[data-tabs]").forEach(function (group) {
+      var btns = group.querySelectorAll(".tab-btn");
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          btns.forEach(function (b) { b.setAttribute("aria-selected", "false"); });
+          group.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("active"); });
+          btn.setAttribute("aria-selected", "true");
+          var panel = group.querySelector("#" + btn.getAttribute("data-tab"));
+          if (panel) panel.classList.add("active");
+        });
+      });
+    });
+
+    // Модальное окно
+    var modal = document.getElementById("modal");
+    document.querySelectorAll("[data-open]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (typeof modal.showModal === "function") modal.showModal();
+        else modal.setAttribute("open", "");
+      });
+    });
+    document.getElementById("modal-close").addEventListener("click", function () { modal.close(); });
+    modal.addEventListener("click", function (e) {
+      var r = modal.querySelector(".modal-in").getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) modal.close();
+    });
+
+    // Формы (без бэкенда — показываем подтверждение)
+    document.querySelectorAll("[data-form]").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var ok = form.querySelector(".form-ok");
+        if (ok) ok.style.display = "block";
+        form.querySelectorAll('input[type="text"],input[type="tel"],select').forEach(function (f) { f.value = ""; });
+      });
+    });
+  </script>
+</body>
+</html>
