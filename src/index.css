@@ -2,111 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ===========================================================================
+   Skysmart «Домашний лицей» — дизайн-система
+   Единственный шрифт на странице — StratosSkyeng.
+   Акцентный цвет — #00c1ff (hover #6fe4ff, active #009ff4) — в переменных.
+   =========================================================================== */
+
+/* Фирменный шрифт. font-display: swap + woff2 для быстрого первого рендера. */
+@font-face {
+  font-family: "StratosSkyeng";
+  src: url("/fonts/stratosskyengweb-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "StratosSkyeng";
+  src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "StratosSkyeng";
+  src: url("/fonts/stratosskyengweb-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "StratosSkyeng";
+  src: url("/fonts/stratosskyengweb-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "StratosSkyeng";
+  src: url("/fonts/stratosskyengweb-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @layer base {
   :root {
-    --background: 260 30% 6%;
-    --foreground: 260 15% 95%;
+    /* --- Фирменный акцентный цвет (в переменных, как просили) --- */
+    --brand-accent: #00c1ff;        /* основной акцент */
+    --brand-accent-hover: #6fe4ff;  /* при наведении */
+    --brand-accent-active: #009ff4; /* в активном состоянии */
 
-    --card: 260 25% 8%;
-    --card-foreground: 260 15% 95%;
+    /* HSL-каналы для Tailwind-токенов (эквивалент hex выше) */
+    --background: 0 0% 100%;
+    --foreground: 220 26% 14%;
 
-    --popover: 260 25% 8%;
-    --popover-foreground: 260 15% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
 
-    --primary: 262 72% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 262 72% 55%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
 
-    --secondary: 260 20% 12%;
-    --secondary-foreground: 260 15% 85%;
+    /* primary = акцент #00c1ff */
+    --primary: 194 100% 50%;
+    --primary-foreground: 220 30% 12%;
+    --primary-hover: 191 100% 72%;   /* #6fe4ff */
+    --primary-active: 201 100% 48%;  /* #009ff4 */
 
-    --muted: 260 15% 10%;
-    --muted-foreground: 260 10% 65%;
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 220 26% 14%;
 
-    --accent: 280 85% 65%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 12% 46%;
 
-    --success: 160 60% 55%;
+    --accent: 194 100% 50%;
+    --accent-foreground: 220 30% 12%;
+
+    --success: 152 60% 45%;
     --success-foreground: 0 0% 100%;
 
-    --warning: 45 85% 65%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 38 95% 55%;
+    --warning-foreground: 220 30% 12%;
 
-    --destructive: 15 70% 60%;
+    --destructive: 0 72% 56%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 260 15% 15%;
-    --input: 260 15% 15%;
-    --ring: 262 72% 60%;
+    --border: 220 16% 90%;
+    --input: 220 16% 90%;
+    --ring: 194 100% 50%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(262 72% 60%), hsl(280 85% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(260 30% 6%), hsl(262 72% 60%));
-    --gradient-card: linear-gradient(145deg, hsl(260 25% 8%), hsl(260 20% 12%));
-    
-    --shadow-card: 0 4px 16px -4px hsl(262 72% 60% / 0.15), 0 2px 8px -2px hsl(262 72% 60% / 0.1);
-    --shadow-hover: 0 10px 30px -6px hsl(262 72% 60% / 0.25), 0 4px 16px -4px hsl(262 72% 60% / 0.15);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Мягкая фирменная подложка первого экрана */
+    --surface-soft: 40 38% 96%;
 
-    --radius: 0.75rem;
+    --gradient-primary: linear-gradient(135deg, #00c1ff, #6fe4ff);
+    --shadow-card: 0 6px 24px -10px rgba(16, 36, 64, 0.18);
+    --shadow-hover: 0 14px 36px -12px rgba(16, 36, 64, 0.28);
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-}
-
-  .dark {
-    --background: 260 35% 4%;
-    --foreground: 260 15% 98%;
-
-    --card: 260 30% 6%;
-    --card-foreground: 260 15% 98%;
-
-    --popover: 260 30% 6%;
-    --popover-foreground: 260 15% 98%;
-
-    --primary: 262 72% 65%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 260 25% 10%;
-    --secondary-foreground: 260 15% 90%;
-
-    --muted: 260 20% 8%;
-    --muted-foreground: 260 10% 70%;
-
-    --accent: 280 85% 70%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 260 15% 12%;
-    --input: 260 15% 12%;
-    --ring: 262 72% 65%;
-    --sidebar-background: 260 35% 4%;
-    --sidebar-foreground: 260 15% 98%;
-    --sidebar-primary: 262 72% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 260 25% 10%;
-    --sidebar-accent-foreground: 260 15% 90%;
-    --sidebar-border: 260 15% 12%;
-    --sidebar-ring: 262 72% 65%;
+    --radius: 1.25rem;
   }
 }
 
@@ -115,7 +107,39 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: "StratosSkyeng", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1180px] px-4 sm:px-6;
+  }
+
+  /* Акцентная кнопка — строго фирменные цвета из переменных */
+  .btn-accent {
+    background-color: var(--brand-accent);
+    color: #ffffff;
+    transition: var(--transition-smooth);
+  }
+  .btn-accent:hover {
+    background-color: var(--brand-accent-hover);
+  }
+  .btn-accent:active {
+    background-color: var(--brand-accent-active);
   }
 }
