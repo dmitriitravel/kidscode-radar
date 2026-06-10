@@ -205,6 +205,24 @@
     .needs-card .nc-img img{width:100%;height:auto;display:block}
     @media(max-width:900px){.needs-row.r1,.needs-row.r2{grid-template-columns:1fr}}
 
+    /* ===== CTA-баннер «Подойдёт ли онлайн-обучение» (адаптив) ===== */
+    .consult{background:#fff;padding:24px 0}
+    .consult-banner{position:relative;overflow:hidden;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 40px;min-height:144px;background:linear-gradient(110deg,#a32be6 0%,#c9a6f2 100%)}
+    .consult-text{max-width:520px}
+    .consult-text h2{color:#fff;font-size:clamp(20px,2.4vw,28px);line-height:1.15;font-weight:700}
+    .consult-text p{margin-top:8px;color:rgba(255,255,255,.82);font-size:clamp(15px,1.6vw,18px)}
+    .consult-mascot{flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+    .consult-mascot img{height:150px;width:auto}
+    .consult-btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;background:#0d0d0d;color:#fff;border-radius:16px;padding:16px 28px;font-size:18px;font-weight:600;transition:background .2s ease;white-space:nowrap}
+    .consult-btn:hover{background:#2b2b2b}
+    @media(max-width:760px){
+      .consult-banner{flex-direction:column;align-items:stretch;text-align:center;padding:32px 24px;background:linear-gradient(180deg,#a32be6 0%,#c9a6f2 100%)}
+      .consult-text{max-width:none}
+      .consult-btn{order:2;width:100%}
+      .consult-mascot{order:3}
+      .consult-mascot img{height:auto;width:68%;max-width:300px}
+    }
+
     /* ===== Соцдоказательство (Figma: 4 карточки) ===== */
     .proof{position:relative;overflow:hidden;background:#fff}
     .proof::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(925px,90%);height:170px;border-radius:50%;background:#d570ff;filter:blur(90px);opacity:.16;pointer-events:none}
@@ -476,6 +494,22 @@
               <div class="nc-img"><img src="https://static.tildacdn.com/tild3166-6234-4437-b863-653234343938/Product_Image_Contai.png" alt="" aria-hidden="true" width="752" height="512" loading="lazy" decoding="async" /></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA-БАННЕР «Подойдёт ли онлайн-обучение» ===================== -->
+    <section class="consult" aria-labelledby="consult-banner-title">
+      <div class="container">
+        <div class="consult-banner">
+          <div class="consult-text">
+            <h2 id="consult-banner-title">Подойдёт ли онлайн-обучение вашему ребёнку?</h2>
+            <p>Поможем разобраться на бесплатной консультации</p>
+          </div>
+          <div class="consult-mascot">
+            <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.webp" alt="" aria-hidden="true" width="204" height="150" loading="lazy" decoding="async" />
+          </div>
+          <button class="consult-btn" type="button" data-open>Получить консультацию</button>
         </div>
       </div>
     </section>
