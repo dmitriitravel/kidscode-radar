@@ -4,7 +4,6 @@ import { PromoBanner } from "@/components/landing/PromoBanner";
 import { ParentConcerns } from "@/components/landing/ParentConcerns";
 import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
 import { SocialProof } from "@/components/landing/SocialProof";
-import { AudienceSlider } from "@/components/landing/AudienceSlider";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
 import { SEOHead } from "@/components/SEOHead";
@@ -81,8 +80,6 @@ const Index = () => {
         <PromoBanner />
 
         <SocialProof />
-
-        <AudienceSlider />
 
         <ParentConcerns />
 
