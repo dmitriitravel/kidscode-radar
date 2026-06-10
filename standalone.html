@@ -164,6 +164,27 @@
     .worry-card.text-top .tx{order:0;padding:0 24px 8px}
     @media(max-width:900px){.worry-row{flex-direction:column;align-items:center;gap:24px}.worry-card .ic{order:0}.worry-card.text-top .ic{order:0}.worry-card .tx,.worry-card.text-top .tx{order:1;padding:8px 24px 0}}
 
+    /* ===== «Идеальный выбор» — адаптив: строка на ПК, слайдер на мобильных ===== */
+    .choice{background:#fff}
+    .choice-viewport{overflow:hidden}
+    .choice-track{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .choice-card{background:var(--soft);border-radius:24px;padding:24px;display:flex;flex-direction:column}
+    .choice-card .ico{height:96px;display:flex;align-items:center;margin-bottom:12px}
+    .choice-card .ico img{height:96px;width:auto;object-fit:contain}
+    .choice-card .ct{font-size:18px;font-weight:600;line-height:1.25;color:var(--fg)}
+    .choice-card .cd{margin-top:8px;font-size:15px;color:var(--muted)}
+    .choice-controls{display:none}
+    .choice-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--fg);font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+    .choice-btn:hover{border-color:var(--brand-accent);color:var(--brand-accent)}
+    .choice-dots{display:flex;gap:8px}
+    .choice-dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(0,0,0,.18);padding:0;cursor:pointer}
+    .choice-dot.active{background:var(--brand-accent)}
+    @media(max-width:900px){
+      .choice-track{display:flex;grid-template-columns:none;transition:transform .35s ease}
+      .choice-card{min-width:100%;flex:0 0 100%}
+      .choice-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    }
+
     /* ===== «И строим обучение вокруг потребностей ребёнка» (Figma) ===== */
     .needs{background:#fff;padding:56px 0}
     .needs-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:40px;max-width:760px;margin-left:auto;margin-right:auto}
@@ -436,16 +457,45 @@
       </div>
     </section>
 
-    <!-- ===================== AUDIENCE ===================== -->
-    <section class="section section--soft" aria-labelledby="aud-title">
+    <!-- ===================== AUDIENCE (адаптив: строка / слайдер) ===================== -->
+    <section class="section choice" aria-labelledby="aud-title">
       <div class="container">
         <h2 class="h2" id="aud-title">Домашний лицей — идеальный выбор для тех, кто:</h2>
-        <div class="grid g3 mt40">
-          <div class="card"><h3>Недоволен школой по месту жительства</h3><p class="muted mt16">и хочет качественного образования для ребёнка</p></div>
-          <div class="card"><h3>Профессионально занимается спортом или творчеством</h3><p class="muted mt16">и не успевает посещать обычную школу</p></div>
-          <div class="card"><h3>Часто болеет или легко утомляется</h3><p class="muted mt16">и выбирает комфортное домашнее обучение</p></div>
-          <div class="card"><h3>Живёт за границей,</h3><p class="muted mt16">но планирует получить российский аттестат</p></div>
-          <div class="card"><h3>Столкнулся с травлей</h3><p class="muted mt16">или токсичной школьной средой</p></div>
+        <div class="choice-slider mt40">
+          <div class="choice-viewport">
+            <div class="choice-track" id="choiceTrack">
+              <article class="choice-card">
+                <div class="ico"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-case.png" alt="" aria-hidden="true" width="148" height="108" loading="lazy" decoding="async" /></div>
+                <h3 class="ct">Недоволен школой по месту жительства</h3>
+                <p class="cd">и хочет качественного образования для ребёнка</p>
+              </article>
+              <article class="choice-card">
+                <div class="ico"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-cup.png" alt="" aria-hidden="true" width="148" height="96" loading="lazy" decoding="async" /></div>
+                <h3 class="ct">Профессионально занимается спортом или творчеством</h3>
+                <p class="cd">и не успевает посещать обычную школу</p>
+              </article>
+              <article class="choice-card">
+                <div class="ico"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-home.png" alt="" aria-hidden="true" width="148" height="108" loading="lazy" decoding="async" /></div>
+                <h3 class="ct">Часто болеет или легко утомляется</h3>
+                <p class="cd">и выбирает комфортное домашнее обучение</p>
+              </article>
+              <article class="choice-card">
+                <div class="ico"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-planet.png" alt="" aria-hidden="true" width="148" height="124" loading="lazy" decoding="async" /></div>
+                <h3 class="ct">Живёт за границей,</h3>
+                <p class="cd">но планирует получить российский аттестат</p>
+              </article>
+              <article class="choice-card">
+                <div class="ico"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-warning.png" alt="" aria-hidden="true" width="148" height="124" loading="lazy" decoding="async" /></div>
+                <h3 class="ct">Столкнулся с травлей</h3>
+                <p class="cd">или токсичной школьной средой</p>
+              </article>
+            </div>
+          </div>
+          <div class="choice-controls">
+            <button class="choice-btn" id="choicePrev" type="button" aria-label="Назад">‹</button>
+            <div class="choice-dots" id="choiceDots"></div>
+            <button class="choice-btn" id="choiceNext" type="button" aria-label="Вперёд">›</button>
+          </div>
         </div>
       </div>
     </section>
@@ -814,6 +864,33 @@
         e.target.style.display = "none";
       }
     }, true);
+
+    // Слайдер «Идеальный выбор» (активен на мобильных)
+    (function () {
+      var track = document.getElementById("choiceTrack");
+      if (!track) return;
+      var count = track.children.length;
+      var i = 0;
+      var dotsWrap = document.getElementById("choiceDots");
+      var isMobile = function () { return window.matchMedia("(max-width:900px)").matches; };
+      for (var d = 0; d < count; d++) {
+        var b = document.createElement("button");
+        b.className = "choice-dot";
+        b.type = "button";
+        b.setAttribute("aria-label", "Слайд " + (d + 1));
+        (function (idx) { b.addEventListener("click", function () { i = idx; update(); }); })(d);
+        dotsWrap.appendChild(b);
+      }
+      function update() {
+        track.style.transform = isMobile() ? "translateX(" + (-i * 100) + "%)" : "none";
+        var dots = dotsWrap.children;
+        for (var k = 0; k < dots.length; k++) dots[k].classList.toggle("active", k === i);
+      }
+      document.getElementById("choicePrev").addEventListener("click", function () { i = (i - 1 + count) % count; update(); });
+      document.getElementById("choiceNext").addEventListener("click", function () { i = (i + 1) % count; update(); });
+      window.addEventListener("resize", function () { if (!isMobile()) { i = 0; } update(); });
+      update();
+    })();
 
     // Год в футере
     document.getElementById("year").textContent = new Date().getFullYear();

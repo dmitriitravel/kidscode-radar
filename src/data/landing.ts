@@ -40,24 +40,32 @@ export const STATS = [
   { value: "4,9", text: "рейтинг по отзывам на УчисьОнлайн.ру и MOOC.ru" },
 ] as const;
 
+const PC_BASE =
+  "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice";
+
 export const AUDIENCE = [
   {
+    icon: `${PC_BASE}/perfect-choice-case.png`,
     title: "Недоволен школой по месту жительства",
     text: "и хочет качественного образования для ребёнка",
   },
   {
+    icon: `${PC_BASE}/perfect-choice-cup.png`,
     title: "Профессионально занимается спортом или творчеством",
     text: "и не успевает посещать обычную школу",
   },
   {
+    icon: `${PC_BASE}/perfect-choice-home.png`,
     title: "Часто болеет или легко утомляется",
     text: "и выбирает комфортное домашнее обучение",
   },
   {
+    icon: `${PC_BASE}/perfect-choice-planet.png`,
     title: "Живёт за границей,",
     text: "но планирует получить российский аттестат",
   },
   {
+    icon: `${PC_BASE}/perfect-choice-warning.png`,
     title: "Столкнулся с травлей",
     text: "или токсичной школьной средой",
   },

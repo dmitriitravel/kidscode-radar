@@ -4,6 +4,7 @@ import { PromoBanner } from "@/components/landing/PromoBanner";
 import { ParentConcerns } from "@/components/landing/ParentConcerns";
 import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
 import { SocialProof } from "@/components/landing/SocialProof";
+import { AudienceSlider } from "@/components/landing/AudienceSlider";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
 import { SEOHead } from "@/components/SEOHead";
@@ -16,7 +17,6 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   STATS,
-  AUDIENCE,
   PLATFORM_TABS,
   TEACHERS,
   EXPERTS,
@@ -110,26 +110,7 @@ const Index = () => {
         </section>
 
         {/* Кому подходит */}
-        <section aria-labelledby="audience-title" className="bg-secondary/60 py-16 sm:py-20">
-          <div className="container-page">
-            <SectionTitle>
-              <span id="audience-title">
-                Домашний лицей — идеальный выбор для тех, кто:
-              </span>
-            </SectionTitle>
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {AUDIENCE.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl bg-white p-6 shadow-card"
-                >
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <AudienceSlider />
 
         {/* Одобрено Минобразования / НИУ ВШЭ */}
         <section id="approval" aria-labelledby="approval-title" className="scroll-mt-24 py-16 sm:py-20">
