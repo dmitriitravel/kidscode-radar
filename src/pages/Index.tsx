@@ -80,6 +80,10 @@ const Index = () => {
 
         <PromoBanner />
 
+        <SocialProof />
+
+        <AudienceSlider />
+
         <ParentConcerns />
 
         <ProgramFeatures />
@@ -108,9 +112,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        {/* Кому подходит */}
-        <AudienceSlider />
 
         {/* Одобрено Минобразования / НИУ ВШЭ */}
         <section id="approval" aria-labelledby="approval-title" className="scroll-mt-24 py-16 sm:py-20">
@@ -409,8 +410,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        <SocialProof />
 
         {/* Отзывы */}
         <section aria-labelledby="reviews-title" className="bg-secondary/60 py-16 sm:py-20">
