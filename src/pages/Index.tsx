@@ -1,6 +1,7 @@
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { PromoBanner } from "@/components/landing/PromoBanner";
+import { ParentConcerns } from "@/components/landing/ParentConcerns";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -77,6 +78,8 @@ const Index = () => {
         <Hero />
 
         <PromoBanner />
+
+        <ParentConcerns />
 
         {/* Статы / достижения */}
         <section aria-labelledby="stats-title" className="py-16 sm:py-20">

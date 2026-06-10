@@ -151,6 +151,19 @@
     @media(max-width:1000px){.promo-banner{padding:36px 200px}.promo-banner .pb-left{width:170px}.promo-banner .pb-right{width:178px}}
     @media(max-width:760px){.promo-banner{padding:32px 24px}.promo-banner .pb-img{display:none}}
 
+    /* ===== «Мы знаем, что волнует родителей» (Figma) ===== */
+    .worry{background:#fff;padding:56px 0}
+    .worry-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:44px}
+    .worry-rows{display:flex;flex-direction:column;gap:16px}
+    .worry-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .worry-card{width:376px;max-width:100%;display:flex;flex-direction:column;align-items:center}
+    .worry-card .ic{height:180px;display:flex;align-items:center;justify-content:center;order:0}
+    .worry-card .ic img{max-height:180px;width:auto;height:auto}
+    .worry-card .tx{order:1;padding:8px 24px 0;text-align:center;font-size:24px;line-height:1.16}
+    .worry-card.text-top .ic{order:1}
+    .worry-card.text-top .tx{order:0;padding:0 24px 8px}
+    @media(max-width:900px){.worry-row{flex-direction:column;align-items:center;gap:24px}.worry-card .ic{order:0}.worry-card.text-top .ic{order:0}.worry-card .tx,.worry-card.text-top .tx{order:1;padding:8px 24px 0}}
+
     /* ===== Соцдоказательство (Figma: 4 карточки) ===== */
     .proof{position:relative;overflow:hidden;background:#fff}
     .proof::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(925px,90%);height:170px;border-radius:50%;background:#d570ff;filter:blur(90px);opacity:.16;pointer-events:none}
@@ -310,6 +323,39 @@
           </div>
           <img class="pb-img pb-right" src="https://static.tildacdn.com/tild3833-3034-4535-b662-373336643662/Image_Container_2.png"
                alt="" aria-hidden="true" width="225" height="225" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== МЫ ЗНАЕМ, ЧТО ВОЛНУЕТ РОДИТЕЛЕЙ (Figma) ===================== -->
+    <section class="worry" aria-labelledby="worry-title">
+      <div class="container">
+        <h2 class="worry-title" id="worry-title">Мы знаем, что волнует родителей</h2>
+        <div class="worry-rows">
+          <div class="worry-row">
+            <div class="worry-card">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-backpack.webp" alt="" aria-hidden="true" width="204" height="204" loading="lazy" decoding="async" /></div>
+              <p class="tx">Ребёнок теряет интерес к учёбе, школа не даёт результата</p>
+            </div>
+            <div class="worry-card text-top">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-trophy.webp" alt="" aria-hidden="true" width="210" height="210" loading="lazy" decoding="async" /></div>
+              <p class="tx">Нет времени учиться из-за соревнований или концертов</p>
+            </div>
+            <div class="worry-card">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-house.webp" alt="" aria-hidden="true" width="212" height="212" loading="lazy" decoding="async" /></div>
+              <p class="tx">Ребёнок часто болеет, пропускает занятия, легко устаёт</p>
+            </div>
+          </div>
+          <div class="worry-row">
+            <div class="worry-card text-top">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-globe.webp" alt="" aria-hidden="true" width="204" height="204" loading="lazy" decoding="async" /></div>
+              <p class="tx">Семья много переезжает или живёт за границей</p>
+            </div>
+            <div class="worry-card">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-warning.webp" alt="" aria-hidden="true" width="218" height="218" loading="lazy" decoding="async" /></div>
+              <p class="tx">В школе токсичная, небезопасная среда, случаи травли</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
