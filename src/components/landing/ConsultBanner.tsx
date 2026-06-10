@@ -1,7 +1,7 @@
 import { LeadDialog } from "./LeadDialog";
 
 const MASCOT =
-  "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.webp";
+  "https://static.tildacdn.com/tild6365-3232-4236-b461-386138353865/Frame_2131329618.png";
 
 // Адаптивный CTA-баннер «Подойдёт ли онлайн-обучение вашему ребёнку?»
 // ПК — в строку (текст · маскот · кнопка), мобильные — стопкой (текст, кнопка, маскот).
@@ -30,11 +30,11 @@ export function ConsultBanner() {
               src={MASCOT}
               alt=""
               aria-hidden="true"
-              width={204}
-              height={150}
+              width={722}
+              height={286}
               loading="lazy"
               decoding="async"
-              className="mx-auto h-auto w-[68%] max-w-[300px] md:h-[140px] md:w-auto"
+              className="mx-auto h-auto w-[80%] max-w-[340px] md:h-[120px] md:w-auto"
             />
           </div>
 

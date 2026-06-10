@@ -4,6 +4,7 @@ import { PromoBanner } from "@/components/landing/PromoBanner";
 import { ParentConcerns } from "@/components/landing/ParentConcerns";
 import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
 import { ConsultBanner } from "@/components/landing/ConsultBanner";
+import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -88,6 +89,8 @@ const Index = () => {
 
         <ConsultBanner />
 
+        <ApprovalOfficial />
+
         {/* Статы / достижения */}
         <section aria-labelledby="stats-title" className="py-16 sm:py-20">
           <div className="container-page">
@@ -109,46 +112,6 @@ const Index = () => {
                   <p className="mt-3 text-sm text-muted-foreground">{stat.text}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Одобрено Минобразования / НИУ ВШЭ */}
-        <section id="approval" aria-labelledby="approval-title" className="scroll-mt-24 py-16 sm:py-20">
-          <div className="container-page">
-            <SectionTitle>
-              <span id="approval-title">
-                Наша модель обучения одобрена Министерством образования
-              </span>
-            </SectionTitle>
-            <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-              <div className="rounded-2xl bg-secondary p-7 shadow-card">
-                <h3 className="text-xl font-semibold">
-                  Программа разработана НИУ ВШЭ
-                </h3>
-                <p className="mt-3 text-muted-foreground">
-                  С учётом знаний и опыта научных сотрудников Института образования
-                  Высшей школы экономики. Мы изучили опыт более 100 тысяч детей и
-                  взрослых, чтобы максимизировать вовлечённость, мотивацию и прогресс
-                  в учёбе.
-                </p>
-                <a
-                  href="#platform"
-                  className="mt-4 inline-block font-semibold"
-                  style={{ color: "var(--brand-accent-active)" }}
-                >
-                  Посмотреть информацию о кафедре →
-                </a>
-              </div>
-              <div className="rounded-2xl bg-secondary p-7 shadow-card">
-                <h3 className="text-xl font-semibold">
-                  Проводим уроки с учётом ФГОС и требований к аттестации
-                </h3>
-                <p className="mt-3 text-muted-foreground">
-                  Образовательная лицензия от Минобразования. Уроки соответствуют
-                  федеральным государственным образовательным стандартам.
-                </p>
-              </div>
             </div>
           </div>
         </section>
