@@ -122,7 +122,7 @@ const Index = () => {
         </section>
 
         {/* Одобрено Минобразования / НИУ ВШЭ */}
-        <section aria-labelledby="approval-title" className="py-16 sm:py-20">
+        <section id="approval" aria-labelledby="approval-title" className="scroll-mt-24 py-16 sm:py-20">
           <div className="container-page">
             <SectionTitle>
               <span id="approval-title">

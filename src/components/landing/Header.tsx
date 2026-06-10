@@ -1,36 +1,23 @@
 import { useState } from "react";
-import { NAV_LINKS, GRADE_TABS } from "@/data/landing";
-import { LeadDialog } from "./LeadDialog";
+import { NAV_LINKS } from "@/data/landing";
 import { Menu, X } from "lucide-react";
 
-function Logo() {
-  return (
-    <a href="#top" className="flex items-center gap-2" aria-label="Skysmart — на главную">
-      <span
-        className="flex h-7 w-7 items-center justify-center rounded-lg"
-        style={{ backgroundColor: "var(--brand-accent)" }}
-        aria-hidden="true"
-      >
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-          <path d="M3 2l10 6-10 6V2z" fill="#fff" />
-        </svg>
-      </span>
-      <span className="text-xl font-bold tracking-tight">skysmart</span>
-    </a>
-  );
-}
+const LOGO_URL =
+  "https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg";
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header id="top" className="sticky top-0 z-40 bg-white/95 backdrop-blur">
+    <header id="top" className="sticky top-0 z-40 border-b border-border bg-white/95 backdrop-blur">
       <div className="container-page">
-        <div className="flex h-16 items-center justify-between gap-4">
-          <Logo />
+        <div className="flex h-[72px] items-center gap-6">
+          <a href="#top" className="flex items-center" aria-label="Skysmart — на главную">
+            <img src={LOGO_URL} alt="Skysmart" width={132} height={28} className="h-7 w-auto" />
+          </a>
 
-          <nav aria-label="Основная навигация" className="hidden lg:block">
-            <ul className="flex items-center gap-7 text-sm font-medium">
+          <nav aria-label="Основная навигация" className="mr-auto hidden lg:block">
+            <ul className="flex items-center gap-6 text-[15px] font-medium">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
@@ -44,16 +31,19 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="hidden items-center lg:flex">
-            <LeadDialog
-              triggerLabel="Попробовать бесплатно"
-              triggerClassName="btn-accent inline-flex h-10 items-center justify-center rounded-xl px-5 text-sm font-semibold"
-            />
-          </div>
+          <button
+            type="button"
+            className="ml-auto hidden rounded-xl px-5 py-2.5 text-sm font-semibold btn-accent lg:inline-flex"
+            onClick={() =>
+              document.getElementById("tariffs")?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Поступить в школу
+          </button>
 
           <button
             type="button"
-            className="lg:hidden"
+            className="ml-auto lg:hidden"
             aria-label={open ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -62,29 +52,12 @@ export function Header() {
           </button>
         </div>
 
-        {/* Лента классов */}
-        <nav aria-label="Классы" className="border-t border-border">
-          <ul className="flex gap-5 overflow-x-auto py-2 text-sm text-foreground/70 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {GRADE_TABS.map((grade) => (
-              <li key={grade} className="whitespace-nowrap">
-                <a href="#tariffs" className="transition-colors hover:text-foreground">
-                  {grade}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         {open && (
           <nav aria-label="Мобильная навигация" className="border-t border-border py-3 lg:hidden">
             <ul className="space-y-2 text-base font-medium">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="block py-1"
-                    onClick={() => setOpen(false)}
-                  >
+                  <a href={link.href} className="block py-1" onClick={() => setOpen(false)}>
                     {link.label}
                   </a>
                 </li>

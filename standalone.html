@@ -22,6 +22,10 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
         href="https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2" />
 
+  <!-- Картинка первого экрана — приоритетная загрузка (LCP) -->
+  <link rel="preload" as="image" fetchpriority="high"
+        href="https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png" />
+
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"EducationalOrganization","name":"Домашний лицей Skysmart","description":"Онлайн-школа с аттестатом государственного образца для 5–11 классов: уроки с учителями, расписание, аттестация и сопровождение классного руководителя.","url":"https://homeschooling.skysmart.ru/"},
@@ -80,6 +84,8 @@
     .btn-accent:active{background:var(--brand-accent-active)}
     .btn-ghost{background:#fff;color:var(--fg);border:1px solid rgba(27,35,48,.15)}
     .btn-ghost:hover{border-color:rgba(27,35,48,.35)}
+    .btn-dark{background:#1b2330;color:#fff}
+    .btn-dark:hover{background:#33405a}
     .btn-sm{padding:10px 18px;font-size:14px;border-radius:12px}
     .btn-block{width:100%}
 
@@ -100,48 +106,36 @@
 
     /* ===== Header ===== */
     header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
-    .logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px}
-    .logo .mark{width:28px;height:28px;border-radius:8px;background:var(--brand-accent);display:flex;align-items:center;justify-content:center}
-    .menu{display:flex;gap:28px;font-weight:500;font-size:15px}
+    .nav{display:flex;align-items:center;gap:24px;height:72px}
+    .logo{display:flex;align-items:center}
+    .logo img{height:28px;width:auto;display:block}
+    .menu{display:flex;gap:26px;font-weight:500;font-size:15px;margin-right:auto}
     .menu a{color:rgba(27,35,48,.8)}
     .menu a:hover{color:var(--fg)}
-    .grades{display:flex;gap:20px;overflow-x:auto;padding:8px 0;font-size:14px;color:rgba(27,35,48,.7);border-top:1px solid var(--border);scrollbar-width:none}
-    .grades::-webkit-scrollbar{display:none}
-    .grades a{white-space:nowrap}
-    .grades a:hover{color:var(--fg)}
     .burger{display:none;background:none;border:0;cursor:pointer;font-size:24px;line-height:1}
     #mobile-menu{display:none;border-top:1px solid var(--border);padding:12px 0}
     #mobile-menu a{display:block;padding:8px 0;font-weight:500}
     @media(max-width:900px){.menu,.nav .btn{display:none}.burger{display:block}}
 
-    /* ===== Hero ===== */
-    .hero{position:relative;overflow:hidden;background:var(--surface-soft)}
-    .hero .blob1,.hero .blob2{position:absolute;border-radius:50%;filter:blur(40px);pointer-events:none}
-    .hero .blob1{right:-6%;top:-10%;width:420px;height:420px;opacity:.7;background:radial-gradient(circle at 30% 30%,#ffd58a 0%,#ffb347 55%,transparent 75%)}
-    .hero .blob2{left:-8%;bottom:-12%;width:360px;height:360px;opacity:.5;background:radial-gradient(circle at 50% 50%,#ffe3a8 0%,transparent 70%)}
-    .hero-inner{position:relative;min-height:560px;padding:48px 0}
-    .float{position:absolute;max-width:230px;background:#fff;border-radius:18px;padding:14px 16px;font-size:14px;font-weight:500;box-shadow:var(--shadow)}
-    .float .emoji{font-size:20px;display:block;margin-bottom:6px}
-    .float.f1{left:0;top:30px}
-    .float.f2{left:40px;top:280px}
-    .float.f3{right:0;top:200px}
-    .hero-box{position:relative;z-index:10;max-width:640px;margin-left:auto;margin-top:200px}
-    .hero h1{font-size:clamp(40px,7vw,64px);line-height:1.04}
-    .hero-sub{margin-top:16px;font-size:clamp(18px,2.4vw,22px);color:rgba(27,35,48,.75);max-width:560px}
-    .hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+    /* ===== Hero (первый экран по макету) ===== */
+    .hero{background:#fff;padding:16px 0 48px}
+    .hero-card{position:relative;overflow:hidden;border-radius:36px;background:linear-gradient(115deg,#ffe7b0 0%,#ffd478 40%,#ffbe54 100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:520px}
+    .hero-card::before{content:"";position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,#fff3d6 0%,rgba(255,243,214,0) 62%);opacity:.75;pointer-events:none}
+    .hero-content{position:relative;z-index:2;padding:52px 48px;align-self:center}
+    .badge-promo{display:inline-block;background:linear-gradient(90deg,#b16cf0,#7c5cf5);color:#fff;font-weight:600;font-size:15px;padding:11px 20px;border-radius:14px}
+    .hero h1{margin-top:24px;font-size:clamp(34px,4.6vw,56px);line-height:1.03;color:#1b2330}
+    .hero-list{margin:26px 0 32px;display:flex;flex-direction:column;gap:14px;max-width:480px}
+    .hero-list li{display:flex;gap:12px;font-size:17px;font-weight:500;line-height:1.3}
+    .hcheck{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--brand-accent);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-media{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end}
+    .hero-media img{width:100%;max-width:620px;height:auto;object-fit:contain;object-position:bottom right}
     @media(max-width:900px){
-      .hero-inner{min-height:auto;padding:32px 0}
-      .float{position:static;max-width:none;margin:0 0 12px}
-      .floats{display:grid;gap:12px;margin-bottom:20px}
-      .hero-box{margin:0}
+      .hero-card{grid-template-columns:1fr;min-height:0;border-radius:28px}
+      .hero-content{padding:32px 24px}
+      .hero-media{justify-content:center;padding:0 16px}
+      .hero-media img{max-width:360px}
     }
-    .floats{display:contents}
-    @media(max-width:900px){.floats{display:grid}}
-    .promo{background:var(--brand-accent);color:#fff}
-    .promo-in{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px 0;font-weight:500;text-align:center}
-    .promo a{background:rgba(255,255,255,.2);padding:6px 16px;border-radius:10px;font-weight:600}
-    .promo a:hover{background:rgba(255,255,255,.3)}
 
     /* ===== Stats ===== */
     .stat .num{font-size:38px;font-weight:700;color:var(--brand-accent)}
@@ -226,32 +220,26 @@
     <div class="container">
       <div class="nav">
         <a class="logo" href="#top" aria-label="Skysmart — на главную">
-          <span class="mark" aria-hidden="true">
-            <svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 2l10 6-10 6V2z" fill="#fff"/></svg>
-          </span>
-          <span>skysmart</span>
+          <img src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="132" height="28" />
         </a>
         <nav class="menu" aria-label="Основная навигация">
           <a href="#trial">Бесплатный период</a>
+          <a href="#approval">Лицензия</a>
           <a href="#platform">Как устроено обучение</a>
           <a href="#diploma">Аттестация</a>
-          <a href="#faq">FAQ</a>
-          <a href="#knowledge">База знаний</a>
+          <a href="#tariffs">Тарифы</a>
+          <a href="#faq">Вопросы</a>
         </nav>
-        <button class="btn btn-accent btn-sm" data-open>Попробовать бесплатно</button>
+        <button class="btn btn-accent btn-sm" data-open>Поступить в школу</button>
         <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">☰</button>
       </div>
-      <nav class="grades" aria-label="Классы">
-        <a href="#tariffs">5 класс</a><a href="#tariffs">6 класс</a><a href="#tariffs">7 класс</a>
-        <a href="#tariffs">8 класс</a><a href="#tariffs">9 класс</a><a href="#tariffs">10 класс</a>
-        <a href="#tariffs">11 класс</a><a href="#tariffs">10–11 классы</a>
-      </nav>
       <nav id="mobile-menu" aria-label="Мобильная навигация">
         <a href="#trial">Бесплатный период</a>
+        <a href="#approval">Лицензия</a>
         <a href="#platform">Как устроено обучение</a>
         <a href="#diploma">Аттестация</a>
-        <a href="#faq">FAQ</a>
-        <a href="#knowledge">База знаний</a>
+        <a href="#tariffs">Тарифы</a>
+        <a href="#faq">Вопросы</a>
       </nav>
     </div>
   </header>
@@ -259,30 +247,27 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero" aria-labelledby="hero-title">
-      <span class="blob1" aria-hidden="true"></span>
-      <span class="blob2" aria-hidden="true"></span>
       <div class="container">
-        <div class="hero-inner">
-          <div class="floats">
-            <div class="float f1"><span class="emoji" aria-hidden="true">🧑‍🏫</span>Сопровождение и помощь классного руководителя</div>
-            <div class="float f2"><span class="emoji" aria-hidden="true">📚</span>Профильные классы с усиленной программой</div>
-            <div class="float f3"><span class="emoji" aria-hidden="true">💬</span>Командные проекты и комьюнити учеников</div>
-          </div>
-          <div class="hero-box">
-            <h1 id="hero-title">Домашний лицей</h1>
-            <p class="hero-sub">Школьная программа с 5 по 11 класс — с учителями, расписанием и аттестатом государственного образца</p>
+        <div class="hero-card">
+          <div class="hero-content">
+            <span class="badge-promo">−20% для новых учеников</span>
+            <h1 id="hero-title">Домашнее обучение<br>для 5–11 классов</h1>
+            <ul class="hero-list">
+              <li><span class="hcheck" aria-hidden="true">✓</span>Полноценная альтернатива обычной школе</li>
+              <li><span class="hcheck" aria-hidden="true">✓</span>Аттестат государственного образца от школы-партнёра</li>
+              <li><span class="hcheck" aria-hidden="true">✓</span>3–4 урока в день с сильными преподавателями</li>
+            </ul>
             <div class="hero-cta">
-              <button class="btn btn-accent" data-open>Записаться на консультацию</button>
-              <a class="btn btn-ghost" href="#trial">Попробовать 7 дней бесплатно</a>
+              <button class="btn btn-dark" data-open>Получить консультацию</button>
+              <a class="btn btn-accent" href="#trial">Попробовать бесплатно</a>
             </div>
           </div>
+          <div class="hero-media">
+            <img src="https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png"
+                 alt="Школьница с игрушкой-талисманом Skysmart"
+                 width="620" height="563" fetchpriority="high" decoding="async" />
+          </div>
         </div>
-      </div>
-      <div class="promo">
-        <div class="container"><div class="promo-in">
-          <span>Открыт набор на 2026/27 учебный год — −20% для новых учеников</span>
-          <a href="#tariffs">Узнать об обучении</a>
-        </div></div>
       </div>
     </section>
 

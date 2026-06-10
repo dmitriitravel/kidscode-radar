@@ -3,10 +3,11 @@
 
 export const NAV_LINKS = [
   { label: "Бесплатный период", href: "#trial" },
+  { label: "Лицензия", href: "#approval" },
   { label: "Как устроено обучение", href: "#platform" },
   { label: "Аттестация", href: "#diploma" },
-  { label: "FAQ", href: "#faq" },
-  { label: "База знаний", href: "#knowledge" },
+  { label: "Тарифы", href: "#tariffs" },
+  { label: "Вопросы", href: "#faq" },
 ] as const;
 
 export const GRADE_TABS = [

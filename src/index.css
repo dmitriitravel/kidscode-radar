@@ -142,4 +142,14 @@
   .btn-accent:active {
     background-color: var(--brand-accent-active);
   }
+
+  /* Тёмная кнопка (вторичный сильный CTA, как «Получить консультацию» на макете) */
+  .btn-dark {
+    background-color: #1b2330;
+    color: #ffffff;
+    transition: var(--transition-smooth);
+  }
+  .btn-dark:hover {
+    background-color: #33405a;
+  }
 }

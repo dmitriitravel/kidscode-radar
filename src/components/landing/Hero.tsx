@@ -1,112 +1,89 @@
-import { HERO_CARDS } from "@/data/landing";
 import { LeadDialog } from "./LeadDialog";
 
-/** Декоративные мягкие фигуры — CSS вместо тяжёлых картинок (хорошо для LCP). */
-function FloatingCard({
-  emoji,
-  text,
-  className,
-}: {
-  emoji: string;
-  text: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`pointer-events-none absolute hidden max-w-[230px] rounded-2xl bg-white px-4 py-3 text-sm font-medium shadow-card md:block ${className ?? ""}`}
-    >
-      <span className="mb-1 block text-lg" aria-hidden="true">
-        {emoji}
-      </span>
-      {text}
-    </div>
-  );
-}
+const HERO_IMAGE =
+  "https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png";
+
+const HERO_POINTS = [
+  "Полноценная альтернатива обычной школе",
+  "Аттестат государственного образца от школы-партнёра",
+  "3–4 урока в день с сильными преподавателями",
+];
 
 export function Hero() {
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-surface-soft"
-    >
-      {/* мягкие фирменные блобы фона */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-6%] top-[-10%] h-[420px] w-[420px] rounded-full opacity-70 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle at 30% 30%, #ffd58a 0%, #ffb347 55%, transparent 75%)",
-        }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[-8%] bottom-[-12%] h-[360px] w-[360px] rounded-full opacity-50 blur-2xl"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, #ffe3a8 0%, transparent 70%)",
-        }}
-      />
-
-      <div className="container-page relative">
-        <div className="relative min-h-[520px] py-10 lg:min-h-[600px] lg:py-16">
-          {/* плавающие карточки, как на исходном первом экране */}
-          <FloatingCard
-            emoji={HERO_CARDS[0].emoji}
-            text={HERO_CARDS[0].text}
-            className="left-2 top-16 lg:left-8"
-          />
-          <FloatingCard
-            emoji={HERO_CARDS[1].emoji}
-            text={HERO_CARDS[1].text}
-            className="left-2 top-56 lg:left-16 lg:top-72"
-          />
-          <FloatingCard
-            emoji={HERO_CARDS[2].emoji}
-            text={HERO_CARDS[2].text}
-            className="right-2 top-44 lg:right-4 lg:top-56"
+    <section aria-labelledby="hero-title" className="bg-white pb-12 pt-4">
+      <div className="container-page">
+        <div
+          className="relative grid items-stretch overflow-hidden rounded-[28px] lg:rounded-[36px] lg:grid-cols-[1.05fr_0.95fr]"
+          style={{
+            background: "linear-gradient(115deg,#ffe7b0 0%,#ffd478 40%,#ffbe54 100%)",
+            minHeight: "min(520px, 72vh)",
+          }}
+        >
+          {/* мягкий световой круг за фото */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-[-4%] top-1/2 hidden h-[720px] w-[720px] -translate-y-1/2 rounded-full lg:block"
+            style={{
+              background:
+                "radial-gradient(circle,#fff3d6 0%,rgba(255,243,214,0) 62%)",
+              opacity: 0.75,
+            }}
           />
 
-          {/* основной блок с заголовком */}
-          <div className="relative z-10 ml-auto max-w-2xl rounded-3xl bg-white/70 p-6 backdrop-blur-sm sm:p-8 lg:mt-48 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
+          <div className="relative z-10 self-center p-6 sm:p-10 lg:p-12">
+            <span
+              className="inline-block rounded-2xl px-5 py-2.5 text-sm font-semibold text-white"
+              style={{ background: "linear-gradient(90deg,#b16cf0,#7c5cf5)" }}
+            >
+              −20% для новых учеников
+            </span>
             <h1
               id="hero-title"
-              className="text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl"
+              className="mt-6 text-4xl font-bold leading-[1.03] text-[#1b2330] sm:text-5xl lg:text-6xl"
             >
-              Домашний лицей
+              Домашнее обучение
+              <br />
+              для 5–11 классов
             </h1>
-            <p className="mt-4 max-w-xl text-lg text-foreground/75 sm:text-xl">
-              Школьная программа с 5 по 11 класс — с учителями, расписанием и
-              аттестатом государственного образца
-            </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <ul className="mb-8 mt-7 flex max-w-md flex-col gap-3.5">
+              {HERO_POINTS.map((point) => (
+                <li key={point} className="flex gap-3 text-[17px] font-medium leading-snug">
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[13px] text-white"
+                    style={{ backgroundColor: "var(--brand-accent)" }}
+                  >
+                    ✓
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-3.5">
               <LeadDialog
-                triggerLabel="Записаться на консультацию"
-                triggerClassName="btn-accent inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
+                triggerLabel="Получить консультацию"
+                triggerClassName="btn-dark inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
               />
               <a
                 href="#trial"
-                className="inline-flex items-center justify-center rounded-xl border border-foreground/15 bg-white px-7 py-3.5 text-base font-semibold transition-colors hover:border-foreground/30"
+                className="btn-accent inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
               >
-                Попробовать 7 дней бесплатно
+                Попробовать бесплатно
               </a>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* промо-полоса набора */}
-      <div style={{ backgroundColor: "var(--brand-accent)" }}>
-        <div className="container-page">
-          <div className="flex flex-col items-center justify-center gap-2 py-3 text-center text-sm font-medium text-white sm:flex-row sm:gap-4">
-            <span>
-              Открыт набор на 2026/27 учебный год — −20% для новых учеников
-            </span>
-            <a
-              href="#tariffs"
-              className="rounded-lg bg-white/20 px-4 py-1.5 font-semibold transition-colors hover:bg-white/30"
-            >
-              Узнать об обучении
-            </a>
+          <div className="relative z-10 flex items-end justify-center lg:justify-end">
+            <img
+              src={HERO_IMAGE}
+              alt="Школьница с игрушкой-талисманом Skysmart"
+              width={620}
+              height={563}
+              loading="eager"
+              decoding="async"
+              className="h-auto w-full max-w-[360px] object-contain object-bottom lg:max-w-[620px]"
+            />
           </div>
         </div>
       </div>
