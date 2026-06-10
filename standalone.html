@@ -137,6 +137,20 @@
       .hero-media img{max-width:360px}
     }
 
+    /* ===== Промо-баннер (Figma: header and subtext / horizontal / size M) ===== */
+    .promo-banner{position:relative;overflow:hidden;background:#091e2a;border-radius:24px;display:flex;align-items:center;justify-content:center;min-height:224px;padding:36px 260px}
+    .promo-banner .pb-img{position:absolute;bottom:0;pointer-events:none;user-select:none;height:auto}
+    .promo-banner .pb-left{left:6px;width:215px}
+    .promo-banner .pb-right{right:6px;width:225px}
+    .promo-text{position:relative;z-index:2;max-width:687px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+    .promo-text .pb-title{color:#fff;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1}
+    .promo-text .pb-sub{color:#fff;font-size:clamp(17px,2vw,24px);font-weight:400}
+    .promo-btn{margin-top:8px;display:inline-flex;align-items:center;justify-content:center;background:#de7aff;color:#fff;border-radius:8px;padding:12px 22px;font-size:18px;font-weight:500;transition:all .2s ease}
+    .promo-btn:hover{background:#e79bff}
+    .promo-btn:active{background:#cf63f5}
+    @media(max-width:1000px){.promo-banner{padding:36px 200px}.promo-banner .pb-left{width:170px}.promo-banner .pb-right{width:178px}}
+    @media(max-width:760px){.promo-banner{padding:32px 24px}.promo-banner .pb-img{display:none}}
+
     /* ===== Stats ===== */
     .stat .num{font-size:38px;font-weight:700;color:var(--brand-accent)}
     .stat p{margin-top:12px;font-size:14px;color:var(--muted)}
@@ -267,6 +281,23 @@
                  alt="Школьница с игрушкой-талисманом Skysmart"
                  width="620" height="563" fetchpriority="high" decoding="async" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ПРОМО-БАННЕР (Figma) ===================== -->
+    <section class="section" style="padding:24px 0" aria-label="Открыт набор">
+      <div class="container">
+        <div class="promo-banner">
+          <img class="pb-img pb-left" src="https://static.tildacdn.com/tild3434-3863-4139-b838-333834396634/Image_Container_3_1.png"
+               alt="" aria-hidden="true" width="215" height="215" loading="lazy" decoding="async" />
+          <div class="promo-text">
+            <p class="pb-title">Открыт набор на 2026/27 учебный год</p>
+            <p class="pb-sub">Скидка 20% для новых учеников</p>
+            <a class="promo-btn" href="#tariffs">Посмотреть тарифы</a>
+          </div>
+          <img class="pb-img pb-right" src="https://static.tildacdn.com/tild3833-3034-4535-b662-373336643662/Image_Container_2.png"
+               alt="" aria-hidden="true" width="225" height="225" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
