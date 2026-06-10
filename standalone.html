@@ -151,18 +151,23 @@
     @media(max-width:1000px){.promo-banner{padding:36px 200px}.promo-banner .pb-left{width:170px}.promo-banner .pb-right{width:178px}}
     @media(max-width:760px){.promo-banner{padding:32px 24px}.promo-banner .pb-img{display:none}}
 
-    /* ===== «Мы знаем, что волнует родителей» (Figma) ===== */
+    /* ===== «Мы знаем, что волнует родителей» — ровные карточки / слайдер ===== */
     .worry{background:#fff;padding:56px 0}
-    .worry-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:44px}
-    .worry-rows{display:flex;flex-direction:column;gap:16px}
-    .worry-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .worry-card{width:376px;max-width:100%;display:flex;flex-direction:column;align-items:center}
-    .worry-card .ic{height:180px;display:flex;align-items:center;justify-content:center;order:0}
-    .worry-card .ic img{max-height:180px;width:auto;height:auto}
-    .worry-card .tx{order:1;padding:8px 24px 0;text-align:center;font-size:24px;line-height:1.16}
+    .worry-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:40px}
+    .worry-viewport{overflow:hidden}
+    .worry-track{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch}
+    .worry-card{flex:0 0 calc((100% - 32px)/3);background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .worry-card .ic{height:160px;display:flex;align-items:center;justify-content:center;order:0}
+    .worry-card .ic img{max-height:160px;width:auto;height:auto}
+    .worry-card .tx{order:1;margin-top:12px;font-size:18px;font-weight:600;line-height:1.25;color:var(--fg)}
     .worry-card.text-top .ic{order:1}
-    .worry-card.text-top .tx{order:0;padding:0 24px 8px}
-    @media(max-width:900px){.worry-row{flex-direction:column;align-items:center;gap:24px}.worry-card .ic{order:0}.worry-card.text-top .ic{order:0}.worry-card .tx,.worry-card.text-top .tx{order:1;padding:8px 24px 0}}
+    .worry-card.text-top .tx{order:0;margin-top:0;margin-bottom:12px}
+    .worry-controls{display:none}
+    @media(max-width:900px){
+      .worry-track{flex-wrap:nowrap;justify-content:flex-start;transition:transform .35s ease}
+      .worry-card{flex:0 0 100%;min-width:100%}
+      .worry-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    }
 
     /* ===== «Идеальный выбор» — адаптив: строка на ПК, слайдер на мобильных ===== */
     .choice{background:#fff}
@@ -438,31 +443,34 @@
     <section class="worry" aria-labelledby="worry-title">
       <div class="container">
         <h2 class="worry-title" id="worry-title">Мы знаем, что волнует родителей</h2>
-        <div class="worry-rows">
-          <div class="worry-row">
-            <div class="worry-card">
-              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-backpack.webp" alt="" aria-hidden="true" width="204" height="204" loading="lazy" decoding="async" /></div>
+        <div class="worry-viewport">
+          <div class="worry-track" id="worryTrack">
+            <article class="worry-card">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-backpack.webp" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
               <p class="tx">Ребёнок теряет интерес к учёбе, школа не даёт результата</p>
-            </div>
-            <div class="worry-card text-top">
-              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-trophy.webp" alt="" aria-hidden="true" width="210" height="210" loading="lazy" decoding="async" /></div>
+            </article>
+            <article class="worry-card text-top">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-trophy.webp" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
               <p class="tx">Нет времени учиться из-за соревнований или концертов</p>
-            </div>
-            <div class="worry-card">
-              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-house.webp" alt="" aria-hidden="true" width="212" height="212" loading="lazy" decoding="async" /></div>
+            </article>
+            <article class="worry-card">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-house.webp" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
               <p class="tx">Ребёнок часто болеет, пропускает занятия, легко устаёт</p>
-            </div>
-          </div>
-          <div class="worry-row">
-            <div class="worry-card text-top">
-              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-globe.webp" alt="" aria-hidden="true" width="204" height="204" loading="lazy" decoding="async" /></div>
+            </article>
+            <article class="worry-card text-top">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-globe.webp" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
               <p class="tx">Семья много переезжает или живёт за границей</p>
-            </div>
-            <div class="worry-card">
-              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-warning.webp" alt="" aria-hidden="true" width="218" height="218" loading="lazy" decoding="async" /></div>
+            </article>
+            <article class="worry-card">
+              <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-warning.webp" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
               <p class="tx">В школе токсичная, небезопасная среда, случаи травли</p>
-            </div>
+            </article>
           </div>
+        </div>
+        <div class="worry-controls">
+          <button class="choice-btn" id="worryPrev" type="button" aria-label="Назад">‹</button>
+          <div class="choice-dots" id="worryDots"></div>
+          <button class="choice-btn" id="worryNext" type="button" aria-label="Вперёд">›</button>
         </div>
       </div>
     </section>
@@ -865,13 +873,13 @@
       }
     }, true);
 
-    // Слайдер «Идеальный выбор» (активен на мобильных)
-    (function () {
-      var track = document.getElementById("choiceTrack");
+    // Слайдеры (активны на мобильных, на ПК — обычная сетка)
+    function initSlider(trackId, prevId, nextId, dotsId) {
+      var track = document.getElementById(trackId);
       if (!track) return;
       var count = track.children.length;
       var i = 0;
-      var dotsWrap = document.getElementById("choiceDots");
+      var dotsWrap = document.getElementById(dotsId);
       var isMobile = function () { return window.matchMedia("(max-width:900px)").matches; };
       for (var d = 0; d < count; d++) {
         var b = document.createElement("button");
@@ -886,11 +894,13 @@
         var dots = dotsWrap.children;
         for (var k = 0; k < dots.length; k++) dots[k].classList.toggle("active", k === i);
       }
-      document.getElementById("choicePrev").addEventListener("click", function () { i = (i - 1 + count) % count; update(); });
-      document.getElementById("choiceNext").addEventListener("click", function () { i = (i + 1) % count; update(); });
+      document.getElementById(prevId).addEventListener("click", function () { i = (i - 1 + count) % count; update(); });
+      document.getElementById(nextId).addEventListener("click", function () { i = (i + 1) % count; update(); });
       window.addEventListener("resize", function () { if (!isMobile()) { i = 0; } update(); });
       update();
-    })();
+    }
+    initSlider("choiceTrack", "choicePrev", "choiceNext", "choiceDots");
+    initSlider("worryTrack", "worryPrev", "worryNext", "worryDots");
 
     // Год в футере
     document.getElementById("year").textContent = new Date().getFullYear();
