@@ -9,12 +9,15 @@ interface Concern {
   textTop?: boolean;
 }
 
+const PC_BASE =
+  "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice";
+
 const CONCERNS: Concern[] = [
-  { icon: "/figma/worry-backpack.webp", text: "Ребёнок теряет интерес к учёбе, школа не даёт результата" },
-  { icon: "/figma/worry-trophy.webp", text: "Нет времени учиться из-за соревнований или концертов", textTop: true },
-  { icon: "/figma/worry-house.webp", text: "Ребёнок часто болеет, пропускает занятия, легко устаёт" },
-  { icon: "/figma/worry-globe.webp", text: "Семья много переезжает или живёт за границей", textTop: true },
-  { icon: "/figma/worry-warning.webp", text: "В школе токсичная, небезопасная среда, случаи травли" },
+  { icon: `${PC_BASE}/perfect-choice-case.png`, text: "Ребёнок теряет интерес к учёбе, школа не даёт результата" },
+  { icon: `${PC_BASE}/perfect-choice-cup.png`, text: "Нет времени учиться из-за соревнований или концертов", textTop: true },
+  { icon: `${PC_BASE}/perfect-choice-home.png`, text: "Ребёнок часто болеет, пропускает занятия, легко устаёт" },
+  { icon: `${PC_BASE}/perfect-choice-planet.png`, text: "Семья много переезжает или живёт за границей", textTop: true },
+  { icon: `${PC_BASE}/perfect-choice-warning.png`, text: "В школе токсичная, небезопасная среда, случаи травли" },
 ];
 
 function CardBody({ item }: { item: Concern }) {
