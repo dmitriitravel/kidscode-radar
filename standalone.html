@@ -164,6 +164,21 @@
     .worry-card.text-top .tx{order:0;padding:0 24px 8px}
     @media(max-width:900px){.worry-row{flex-direction:column;align-items:center;gap:24px}.worry-card .ic{order:0}.worry-card.text-top .ic{order:0}.worry-card .tx,.worry-card.text-top .tx{order:1;padding:8px 24px 0}}
 
+    /* ===== «И строим обучение вокруг потребностей ребёнка» (Figma) ===== */
+    .needs{background:#fff;padding:56px 0}
+    .needs-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:40px;max-width:760px;margin-left:auto;margin-right:auto}
+    .needs-rows{display:flex;flex-direction:column;gap:16px}
+    .needs-row{display:grid;gap:16px}
+    .needs-row.r1{grid-template-columns:1fr 1fr}
+    .needs-row.r2{grid-template-columns:repeat(3,1fr)}
+    .needs-card{background:var(--soft);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+    .needs-card .nc-text{padding:16px 16px 0}
+    .needs-card .nc-title{font-size:24px;line-height:1.16;color:#000}
+    .needs-card .nc-desc{margin-top:8px;font-size:18px;line-height:1.32;color:rgba(0,0,0,.64)}
+    .needs-card .nc-img{margin-top:auto;display:flex;align-items:flex-end;justify-content:center}
+    .needs-card .nc-img img{width:100%;height:auto;display:block}
+    @media(max-width:900px){.needs-row.r1,.needs-row.r2{grid-template-columns:1fr}}
+
     /* ===== Соцдоказательство (Figma: 4 карточки) ===== */
     .proof{position:relative;overflow:hidden;background:#fff}
     .proof::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(925px,90%);height:170px;border-radius:50%;background:#d570ff;filter:blur(90px);opacity:.16;pointer-events:none}
@@ -354,6 +369,54 @@
             <div class="worry-card">
               <div class="ic"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/worry-warning.webp" alt="" aria-hidden="true" width="218" height="218" loading="lazy" decoding="async" /></div>
               <p class="tx">В школе токсичная, небезопасная среда, случаи травли</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== И СТРОИМ ОБУЧЕНИЕ ВОКРУГ ПОТРЕБНОСТЕЙ (Figma) ===================== -->
+    <section class="needs" aria-labelledby="needs-title">
+      <div class="container">
+        <h2 class="needs-title" id="needs-title">И строим обучение вокруг потребностей ребёнка</h2>
+        <div class="needs-rows">
+          <div class="needs-row r1">
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Аттестат гособразца</p>
+                <p class="nc-desc">Всё как в обычной школе, только с гибким графиком: ребёнок освоит школьную программу по ФГОС и получит российский аттестат для поступления в вуз</p>
+              </div>
+              <div class="nc-img"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/feature-diploma.webp" alt="" aria-hidden="true" width="572" height="252" loading="lazy" decoding="async" /></div>
+            </div>
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Сильные преподаватели</p>
+                <p class="nc-desc">Учителя из ведущих школ России объясняют сложное простым языком и помогают ребёнку не терять внимание на уроке. Только 5 из 100 кандидатов проходят конкурсный отбор в лицей</p>
+              </div>
+              <div class="nc-img"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/feature-teachers.webp" alt="" aria-hidden="true" width="572" height="228" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+          <div class="needs-row r2">
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Бережное общение</p>
+                <p class="nc-desc">Помогаем ребёнку адаптироваться и найти друзей: организуем общение между учениками и проводим встречи с нейропсихологом</p>
+              </div>
+              <div class="nc-img"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/feature-care.webp" alt="" aria-hidden="true" width="376" height="256" loading="lazy" decoding="async" /></div>
+            </div>
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Вся учёба под контролем</p>
+                <p class="nc-desc">Расписание, уроки, домашки, конспекты и отчёты о прогрессе — всё в одном месте</p>
+              </div>
+              <div class="nc-img"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/feature-control.webp" alt="" aria-hidden="true" width="376" height="256" loading="lazy" decoding="async" /></div>
+            </div>
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Навык письма сохраняется</p>
+                <p class="nc-desc">Часть заданий ребёнок выполняет письменно для развития мелкой моторики</p>
+              </div>
+              <div class="nc-img"><img src="https://raw.githack.com/dmitriitravel/kidscode-radar/cursor/skysmart-homeschooling-clone-a42c/public/figma/feature-writing.webp" alt="" aria-hidden="true" width="376" height="256" loading="lazy" decoding="async" /></div>
             </div>
           </div>
         </div>
@@ -745,6 +808,13 @@
   </dialog>
 
   <script>
+    // Если декоративная картинка не загрузилась — прячем её (без «битых» иконок)
+    document.addEventListener("error", function (e) {
+      if (e.target && e.target.tagName === "IMG" && e.target.getAttribute("aria-hidden") === "true") {
+        e.target.style.display = "none";
+      }
+    }, true);
+
     // Год в футере
     document.getElementById("year").textContent = new Date().getFullYear();
 
