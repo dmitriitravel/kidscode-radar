@@ -1,6 +1,7 @@
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { PromoBanner } from "@/components/landing/PromoBanner";
+import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
 import { SEOHead } from "@/components/SEOHead";
@@ -421,6 +422,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        <SocialProof />
 
         {/* Отзывы */}
         <section aria-labelledby="reviews-title" className="bg-secondary/60 py-16 sm:py-20">
