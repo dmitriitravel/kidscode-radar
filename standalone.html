@@ -260,6 +260,27 @@
       .lyc-media{border-radius:0 0 16px 0;min-height:240px}
     }
 
+    /* ===== «Вы получите аттестат государственного образца» (адаптив) ===== */
+    .cert{background:var(--soft);padding:56px 0}
+    .cert-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:40px}
+    .cert-card{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:32px;background:#fff}
+    .cert-content{padding:40px;display:flex;flex-direction:column}
+    .cert-h{font-size:clamp(24px,2.4vw,32px);font-weight:500;color:#000;line-height:1.2}
+    .cert-steps{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+    .cert-step{display:flex;align-items:flex-start;gap:8px;font-size:18px;color:#000;line-height:1.32}
+    .cert-num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#f4f4f4;display:flex;align-items:center;justify-content:center;font-size:16px}
+    .cert-note{margin-top:16px;display:flex;align-items:flex-start;gap:8px;border-radius:12px;background:#fff2e0;padding:16px;font-size:18px;line-height:1.32}
+    .cert-note svg{flex:0 0 auto;margin-top:2px}
+    .cert-btn{margin-top:32px;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:#03121b;color:#fff;padding:14px 26px;font-weight:600;font-size:18px;transition:background .2s}
+    .cert-btn:hover{background:#1b2a36}
+    .cert-media{position:relative;overflow:hidden;min-height:100%}
+    .cert-media img{width:100%;height:100%;object-fit:cover;display:block}
+    @media(max-width:900px){
+      .cert-card{grid-template-columns:1fr;border-radius:16px}
+      .cert-content{padding:24px}
+      .cert-media{min-height:240px}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -710,6 +731,36 @@
       </div>
     </section>
 
+    <!-- ===================== АТТЕСТАТ ===================== -->
+    <section class="cert" id="diploma" aria-labelledby="cert-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="cert-title" id="cert-title">Вы получите аттестат государственного образца</h2>
+        <div class="cert-card">
+          <div class="cert-content">
+            <h3 class="cert-h">Что для этого нужно:</h3>
+            <div class="cert-steps">
+              <div class="cert-step"><span class="cert-num">1</span>Выберите тариф с аттестацией</div>
+              <div class="cert-step"><span class="cert-num">2</span>Оформите документы и дождитесь зачисления от школы-партнёра</div>
+              <div class="cert-step"><span class="cert-num">3</span>Сдайте промежуточные аттестации онлайн</div>
+              <div class="cert-step"><span class="cert-num">4</span>Сдайте очно государственную итоговую аттестацию (ОГЭ, ЕГЭ) в аккредитованной школе-партнёре</div>
+              <div class="cert-step"><span class="cert-num">5</span>Заберите аттестат</div>
+            </div>
+            <div class="cert-note">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3v18M5 4h11l-2 3 2 3H5" stroke="#ff9e00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Менеджеры лицея помогут подать документы и будут сопровождать вас от заявки до получения аттестата
+            </div>
+            <a class="cert-btn" href="#tariffs">Подобрать тариф</a>
+          </div>
+          <div class="cert-media">
+            <picture>
+              <source media="(min-width:768px)" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-1024.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-1024@2x.png 2x" />
+              <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-375.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-375.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-375@2x.png 2x" alt="Аттестат государственного образца" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== PLATFORM TABS ===================== -->
     <section class="section section--soft" id="platform" aria-labelledby="plat-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -826,27 +877,6 @@
           <div class="tab-panel" id="s2" role="tabpanel"><div class="card"><h3>Для тренировок и спорта</h3><p class="muted mt16">Гибкое расписание позволяет совмещать учёбу с регулярными тренировками и соревнованиями.</p></div></div>
           <div class="tab-panel" id="s3" role="tabpanel"><div class="card"><h3>Для комфортной учёбы</h3><p class="muted mt16">Равномерная нагрузка без перегрузок — ребёнок учится в комфортном темпе.</p></div></div>
           <div class="tab-panel" id="s4" role="tabpanel"><div class="card"><h3>Для поступления за рубеж</h3><p class="muted mt16">Расписание с упором на языки и профильные предметы для поступления в зарубежные вузы.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== DIPLOMA ===================== -->
-    <section class="section" id="diploma" aria-labelledby="dip-title" style="scroll-margin-top:90px">
-      <div class="container">
-        <h2 class="h2" id="dip-title">Вы получите аттестат государственного образца</h2>
-        <p class="muted mt16">Что для этого нужно:</p>
-        <ol class="grid g5 mt40">
-          <li class="card card--plain step"><span class="n">1</span><p>Выберите тариф с аттестацией</p></li>
-          <li class="card card--plain step"><span class="n">2</span><p>Оформите документы и дождитесь зачисления от школы-партнёра</p></li>
-          <li class="card card--plain step"><span class="n">3</span><p>Сдайте промежуточные аттестации онлайн</p></li>
-          <li class="card card--plain step"><span class="n">4</span><p>Сдайте государственную итоговую аттестацию (ОГЭ, ЕГЭ) очно в аккредитованной школе-партнёре</p></li>
-          <li class="card card--plain step"><span class="n">5</span><p>Получите аттестат</p></li>
-        </ol>
-        <div class="mt24"><button class="btn btn-accent" data-open>Выбрать тариф</button></div>
-        <div class="card card--plain mt40">
-          <h3>Как перейти на семейное обучение</h3>
-          <p class="muted mt16" style="max-width:680px">Скачайте инструкцию и получите шаблоны заявлений с рекомендациями по переходу и адаптации ребёнка.</p>
-          <div class="mt16"><button class="btn btn-ghost" data-open>Скачать инструкцию</button></div>
         </div>
       </div>
     </section>

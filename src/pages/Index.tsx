@@ -6,6 +6,7 @@ import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
 import { ConsultBanner } from "@/components/landing/ConsultBanner";
 import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
 import { LyceumProcess } from "@/components/landing/LyceumProcess";
+import { CertificateBlock } from "@/components/landing/CertificateBlock";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -24,7 +25,6 @@ import {
   EXPERTS,
   TRIAL_FEATURES,
   SCHEDULE_TABS,
-  DIPLOMA_STEPS,
   REVIEWS,
   TARIFFS,
   PAYMENT_OPTIONS,
@@ -118,6 +118,8 @@ const Index = () => {
         </section>
 
         <LyceumProcess />
+
+        <CertificateBlock />
 
         {/* Платформа (табы) */}
         <section
@@ -324,56 +326,6 @@ const Index = () => {
                 </TabsContent>
               ))}
             </Tabs>
-          </div>
-        </section>
-
-        {/* Аттестат */}
-        <section
-          id="diploma"
-          aria-labelledby="diploma-title"
-          className="scroll-mt-24 py-16 sm:py-20"
-        >
-          <div className="container-page">
-            <SectionTitle>
-              <span id="diploma-title">
-                Вы получите аттестат государственного образца
-              </span>
-            </SectionTitle>
-            <p className="mt-4 text-muted-foreground">Что для этого нужно:</p>
-            <ol className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-              {DIPLOMA_STEPS.map((step, i) => (
-                <li key={step} className="rounded-2xl bg-secondary p-6 shadow-card">
-                  <div
-                    className="flex h-9 w-9 items-center justify-center rounded-full font-bold text-white"
-                    style={{ backgroundColor: "var(--brand-accent)" }}
-                  >
-                    {i + 1}
-                  </div>
-                  <p className="mt-3 text-sm">{step}</p>
-                </li>
-              ))}
-            </ol>
-            <div className="mt-8">
-              <LeadDialog triggerLabel="Выбрать тариф" />
-            </div>
-
-            <div className="mt-10 rounded-2xl bg-secondary p-7 shadow-card">
-              <h3 className="text-xl font-semibold">
-                Как перейти на семейное обучение
-              </h3>
-              <p className="mt-3 max-w-2xl text-muted-foreground">
-                Скачайте инструкцию и получите шаблоны заявлений с рекомендациями по
-                переходу и адаптации ребёнка.
-              </p>
-              <div className="mt-4">
-                <LeadDialog
-                  triggerLabel="Скачать инструкцию"
-                  title="Скачать инструкцию"
-                  description="Оставьте контакты — пришлём инструкцию и шаблоны заявлений."
-                  submitLabel="Получить инструкцию"
-                />
-              </div>
-            </div>
           </div>
         </section>
 
