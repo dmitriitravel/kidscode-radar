@@ -1,0 +1,1446 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#00c1ff" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Домашний лицей Skysmart — онлайн-школа с аттестатом [5–11 класс]</title>
+  <meta name="description" content="Домашний лицей Skysmart — школьная программа с 5 по 11 класс с учителями, расписанием и аттестатом государственного образца. Уроки на собственной платформе, аттестация, тарифы и поддержка классного руководителя." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Домашний лицей Skysmart — онлайн-школа с аттестатом" />
+  <meta property="og:description" content="Школьная программа с 5 по 11 класс — с учителями, расписанием и аттестатом государственного образца." />
+  <meta property="og:url" content="https://homeschooling.skysmart.ru/" />
+  <link rel="canonical" href="https://homeschooling.skysmart.ru/" />
+
+  <!-- Фирменный шрифт StratosSkyeng (CDN Skyeng). Единственный шрифт на странице. -->
+  <link rel="preconnect" href="https://cdn-user49501.skyeng.ru" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-regular.woff2" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2" />
+
+  <!-- Картинка первого экрана — приоритетная загрузка (LCP) -->
+  <link rel="preload" as="image" fetchpriority="high"
+        href="https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"EducationalOrganization","name":"Домашний лицей Skysmart","description":"Онлайн-школа с аттестатом государственного образца для 5–11 классов: уроки с учителями, расписание, аттестация и сопровождение классного руководителя.","url":"https://homeschooling.skysmart.ru/"},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Что такое семейная форма обучения?","acceptedAnswer":{"@type":"Answer","text":"Согласно статье 17 закона «Об образовании в Российской Федерации», любой ребёнок может учиться на семейной форме обучения дома и приходить в школу только для аттестации."}},
+      {"@type":"Question","name":"Как перевести ребёнка на семейную форму обучения?","acceptedAnswer":{"@type":"Answer","text":"Нужно выбрать вариант прохождения аттестации — дистанционно или очно. Мы поможем с документами и организуем обучение."}},
+      {"@type":"Question","name":"Вы получите аттестат государственного образца?","acceptedAnswer":{"@type":"Answer","text":"Да, при выборе тарифа с аттестацией и прохождении промежуточной и государственной итоговой аттестации."}}
+    ]}
+  ]}
+  </script>
+
+  <style>
+    /* ===== Фирменный шрифт ===== */
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+    /* ===== Переменные: фирменный акцент ===== */
+    :root{
+      --brand-accent:#00c1ff;          /* основной акцент */
+      --brand-accent-hover:#6fe4ff;    /* при наведении */
+      --brand-accent-active:#009ff4;   /* в активном состоянии */
+      --fg:#1b2330;
+      --muted:#5b6573;
+      --bg:#ffffff;
+      --soft:#f4f5f7;
+      --surface-soft:#fbf4e7;
+      --border:#e6e8ec;
+      --radius:20px;
+      --shadow:0 6px 24px -10px rgba(16,36,64,.18);
+      --container:1180px;
+    }
+
+    /* ===== База ===== */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"StratosSkyeng",system-ui,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.45}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,h4{margin:0;line-height:1.1;font-weight:700;letter-spacing:-.01em}
+    p{margin:0}
+    ul,ol{margin:0;padding:0;list-style:none}
+
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px;width:100%}
+    .section{padding:64px 0}
+    .section--soft{background:var(--soft)}
+    .h2{font-size:clamp(26px,4vw,38px);font-weight:700}
+    .muted{color:var(--muted)}
+    .lead{font-size:18px;color:var(--muted);max-width:680px;margin-top:14px}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:16px;border-radius:14px;padding:14px 26px;transition:all .2s ease;text-align:center}
+    .btn-accent{background:var(--brand-accent);color:#fff}
+    .btn-accent:hover{background:var(--brand-accent-hover)}
+    .btn-accent:active{background:var(--brand-accent-active)}
+    .btn-ghost{background:#fff;color:var(--fg);border:1px solid rgba(27,35,48,.15)}
+    .btn-ghost:hover{border-color:rgba(27,35,48,.35)}
+    .btn-dark{background:#1b2330;color:#fff}
+    .btn-dark:hover{background:#33405a}
+    .btn-sm{padding:10px 18px;font-size:14px;border-radius:12px}
+    .btn-block{width:100%}
+
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .card--plain{background:var(--soft);border:0}
+
+    .grid{display:grid;gap:20px}
+    .g2{grid-template-columns:repeat(2,1fr)}
+    .g3{grid-template-columns:repeat(3,1fr)}
+    .g4{grid-template-columns:repeat(4,1fr)}
+    .g5{grid-template-columns:repeat(5,1fr)}
+    @media(max-width:980px){.g3,.g4,.g5{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:620px){.g2,.g3,.g4,.g5{grid-template-columns:1fr}}
+
+    .accent{color:var(--brand-accent)}
+    .accent-d{color:var(--brand-accent-active)}
+    .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--brand-accent);flex:0 0 auto;margin-top:7px}
+
+    /* ===== Header ===== */
+    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;gap:24px;height:72px}
+    .logo{display:flex;align-items:center}
+    .logo img{height:28px;width:auto;display:block}
+    .menu{display:flex;gap:26px;font-weight:500;font-size:15px;margin-right:auto}
+    .menu a{color:rgba(27,35,48,.8)}
+    .menu a:hover{color:var(--fg)}
+    .burger{display:none;background:none;border:0;cursor:pointer;font-size:24px;line-height:1}
+    #mobile-menu{display:none;border-top:1px solid var(--border);padding:12px 0}
+    #mobile-menu a{display:block;padding:8px 0;font-weight:500}
+    @media(max-width:900px){.menu,.nav .btn{display:none}.burger{display:block}}
+
+    /* ===== Hero (первый экран по макету) ===== */
+    .hero{background:#fff;padding:16px 0 48px}
+    .hero-card{position:relative;overflow:hidden;border-radius:36px;background:linear-gradient(115deg,#ffe7b0 0%,#ffd478 40%,#ffbe54 100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:520px}
+    .hero-card::before{content:"";position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,#fff3d6 0%,rgba(255,243,214,0) 62%);opacity:.75;pointer-events:none}
+    .hero-content{position:relative;z-index:2;padding:52px 48px;align-self:center}
+    .badge-promo{display:inline-block;background:linear-gradient(90deg,#b16cf0,#7c5cf5);color:#fff;font-weight:600;font-size:15px;padding:11px 20px;border-radius:14px}
+    .hero h1{margin-top:24px;font-size:clamp(34px,4.6vw,56px);line-height:1.03;color:#1b2330}
+    .hero-list{margin:26px 0 32px;display:flex;flex-direction:column;gap:14px;max-width:480px}
+    .hero-list li{display:flex;gap:12px;font-size:17px;font-weight:500;line-height:1.3}
+    .hcheck{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--brand-accent);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-media{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end}
+    .hero-media img{width:100%;max-width:620px;height:auto;object-fit:contain;object-position:bottom right}
+    @media(max-width:900px){
+      .hero-card{grid-template-columns:1fr;min-height:0;border-radius:28px}
+      .hero-content{padding:32px 24px}
+      .hero-media{justify-content:center;padding:0 16px}
+      .hero-media img{max-width:360px}
+    }
+
+    /* ===== Промо-баннер (Figma: header and subtext / horizontal / size M) ===== */
+    .promo-banner{position:relative;overflow:hidden;background:#091e2a;border-radius:24px;display:flex;align-items:center;justify-content:center;min-height:224px;padding:36px 260px}
+    .promo-banner .pb-img{position:absolute;bottom:0;pointer-events:none;user-select:none;height:auto}
+    .promo-banner .pb-left{left:6px;width:215px}
+    .promo-banner .pb-right{right:6px;width:225px}
+    .promo-text{position:relative;z-index:2;max-width:687px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+    .promo-text .pb-title{color:#fff;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1}
+    .promo-text .pb-sub{color:#fff;font-size:clamp(17px,2vw,24px);font-weight:400}
+    .promo-btn{margin-top:8px;display:inline-flex;align-items:center;justify-content:center;background:#de7aff;color:#fff;border-radius:8px;padding:12px 22px;font-size:18px;font-weight:500;transition:all .2s ease}
+    .promo-btn:hover{background:#e79bff}
+    .promo-btn:active{background:#cf63f5}
+    @media(max-width:1000px){.promo-banner{padding:36px 200px}.promo-banner .pb-left{width:170px}.promo-banner .pb-right{width:178px}}
+    @media(max-width:760px){.promo-banner{padding:32px 24px}.promo-banner .pb-img{display:none}}
+
+    /* ===== «Мы знаем, что волнует родителей» — ровные карточки / слайдер ===== */
+    .worry{background:#fff;padding:56px 0}
+    .worry-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:40px}
+    .worry-viewport{overflow:hidden}
+    .worry-track{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;align-items:stretch}
+    .worry-card{flex:0 0 calc((100% - 32px)/3);background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .worry-card .ic{height:160px;display:flex;align-items:center;justify-content:center;order:0}
+    .worry-card .ic img{max-height:160px;width:auto;height:auto}
+    .worry-card .tx{order:1;margin-top:12px;font-size:18px;font-weight:600;line-height:1.25;color:var(--fg)}
+    .worry-card.text-top .ic{order:1}
+    .worry-card.text-top .tx{order:0;margin-top:0;margin-bottom:12px}
+    .worry-controls{display:none}
+    @media(max-width:900px){
+      .worry-track{flex-wrap:nowrap;justify-content:flex-start;transition:transform .35s ease}
+      .worry-card{flex:0 0 100%;min-width:100%}
+      .worry-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    }
+
+    /* ===== «Идеальный выбор» — адаптив: строка на ПК, слайдер на мобильных ===== */
+    .choice{background:#fff}
+    .choice-viewport{overflow:hidden}
+    .choice-track{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .choice-card{background:var(--soft);border-radius:24px;padding:24px;display:flex;flex-direction:column}
+    .choice-card .ico{height:96px;display:flex;align-items:center;margin-bottom:12px}
+    .choice-card .ico img{height:96px;width:auto;object-fit:contain}
+    .choice-card .ct{font-size:18px;font-weight:600;line-height:1.25;color:var(--fg)}
+    .choice-card .cd{margin-top:8px;font-size:15px;color:var(--muted)}
+    .choice-controls{display:none}
+    .choice-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:#fff;color:var(--fg);font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+    .choice-btn:hover{border-color:var(--brand-accent);color:var(--brand-accent)}
+    .choice-dots{display:flex;gap:8px}
+    .choice-dot{width:8px;height:8px;border-radius:50%;border:0;background:rgba(0,0,0,.18);padding:0;cursor:pointer}
+    .choice-dot.active{background:var(--brand-accent)}
+    @media(max-width:900px){
+      .choice-track{display:flex;grid-template-columns:none;transition:transform .35s ease}
+      .choice-card{min-width:100%;flex:0 0 100%}
+      .choice-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    }
+
+    /* ===== «И строим обучение вокруг потребностей ребёнка» (Figma) ===== */
+    .needs{background:#fff;padding:56px 0}
+    .needs-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:500;line-height:1.1;margin-bottom:40px;max-width:760px;margin-left:auto;margin-right:auto}
+    .needs-rows{display:flex;flex-direction:column;gap:16px}
+    .needs-row{display:grid;gap:16px}
+    .needs-row.r1{grid-template-columns:1fr 1fr}
+    .needs-row.r2{grid-template-columns:repeat(3,1fr)}
+    .needs-card{background:var(--soft);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+    .needs-card .nc-text{padding:16px 16px 0}
+    .needs-card .nc-title{font-size:24px;line-height:1.16;color:#000}
+    .needs-card .nc-desc{margin-top:8px;font-size:18px;line-height:1.32;color:rgba(0,0,0,.64)}
+    .needs-card .nc-img{margin-top:auto;display:flex;align-items:flex-end;justify-content:center}
+    .needs-card .nc-img img{width:100%;height:auto;display:block}
+    @media(max-width:900px){.needs-row.r1,.needs-row.r2{grid-template-columns:1fr}}
+
+    /* ===== CTA-баннер «Подойдёт ли онлайн-обучение» (адаптив) ===== */
+    .consult{background:#fff;padding:24px 0}
+    .consult-banner{position:relative;overflow:hidden;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 40px;min-height:144px;background:linear-gradient(110deg,#a32be6 0%,#c9a6f2 100%)}
+    .consult-text{max-width:520px}
+    .consult-text h2{color:#fff;font-size:clamp(20px,2.4vw,28px);line-height:1.15;font-weight:700}
+    .consult-text p{margin-top:8px;color:rgba(255,255,255,.82);font-size:clamp(15px,1.6vw,18px)}
+    .consult-mascot{flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+    .consult-mascot img{height:120px;width:auto}
+    .consult-btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;background:#0d0d0d;color:#fff;border-radius:16px;padding:16px 28px;font-size:18px;font-weight:600;transition:background .2s ease;white-space:nowrap}
+    .consult-btn:hover{background:#2b2b2b}
+    @media(max-width:760px){
+      .consult-banner{flex-direction:column;align-items:stretch;text-align:center;padding:32px 24px;background:linear-gradient(180deg,#a32be6 0%,#c9a6f2 100%)}
+      .consult-text{max-width:none}
+      .consult-btn{order:2;width:100%}
+      .consult-mascot{order:3}
+      .consult-mascot img{height:auto;width:80%;max-width:340px}
+    }
+
+    /* ===== «Как проходит обучение в лицее?» — вкладки ===== */
+    .lyc{background:var(--soft);padding:56px 0}
+    .lyc-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
+    .lyc-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:32px}
+    .lyc-tab{border-radius:999px;background:#ededed;border:1px solid transparent;padding:11px 18px;font-size:16px}
+    .lyc-panel{margin-top:0;display:none;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:32px;background:#fff;min-height:520px}
+    .lyc .lyc-panel.active{display:grid}
+    .lyc-content{padding:40px;display:flex;flex-direction:column}
+    .lyc-media{position:relative;overflow:hidden;border-radius:0 0 32px 0}
+    .lyc-media img,.lyc-media video{width:100%;height:100%;object-fit:cover;display:block}
+    .lyc-h{font-size:clamp(24px,2.4vw,32px);font-weight:500;color:#000;line-height:1.2}
+    .lyc-sub{margin-top:16px;font-size:18px;color:rgba(0,0,0,.5);line-height:1.32}
+    .lyc-strong{margin-top:16px;font-size:18px;color:#000}
+    .lyc-pills{margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:8px}
+    .lyc-pill{display:flex;align-items:center;gap:8px;border-radius:16px;padding:14px 16px;color:#fff;font-size:16px}
+    .lyc-pill img{width:16px;height:16px}
+    .lyc-chips{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+    .lyc-chip{display:inline-block;border-radius:8px;background:#f4f4f4;color:rgba(0,0,0,.64);padding:6px 10px;font-size:14px}
+    .lyc-box{margin-top:24px;border-radius:16px;background:#f4f4f4;padding:16px}
+    .lyc-check{display:flex;align-items:flex-start;gap:8px;margin-top:8px;font-size:18px;color:rgba(0,0,0,.64);line-height:1.32}
+    .lyc-check img{width:24px;height:24px;flex-shrink:0}
+    .lyc-acc+.lyc-acc{margin-top:16px}
+    .lyc-acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .lyc-acc summary::-webkit-details-marker{display:none}
+    .lyc-acc .ttl{font-size:18px;color:#000}
+    .lyc-acc .prev{display:inline-block;margin-top:8px;border-radius:8px;background:#f4f4f4;color:rgba(0,0,0,.64);padding:4px 8px;font-size:14px}
+    .lyc-acc .arr{flex-shrink:0;transition:transform .3s}
+    .lyc-acc[open] .arr{transform:rotate(180deg)}
+    .lyc-acc .ans{margin-top:12px;font-size:18px;color:rgba(0,0,0,.48);line-height:1.32}
+    .lyc-guide{margin-top:24px;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:#de7aff;color:#fff;padding:12px 24px;font-weight:600;transition:background .2s}
+    .lyc-guide:hover{background:#e38fff}
+    @media(max-width:1000px){
+      .lyc-panel{grid-template-columns:1fr;border-radius:16px;min-height:0}
+      .lyc-content{padding:24px}
+      .lyc-media{border-radius:0 0 16px 0;min-height:240px}
+    }
+
+    /* ===== «Вы получите аттестат государственного образца» (адаптив) ===== */
+    .cert{background:var(--soft);padding:56px 0}
+    .cert-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:40px}
+    .cert-card{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:32px;background:#fff}
+    .cert-content{padding:40px;display:flex;flex-direction:column}
+    .cert-h{font-size:clamp(24px,2.4vw,32px);font-weight:500;color:#000;line-height:1.2}
+    .cert-steps{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+    .cert-step{display:flex;align-items:flex-start;gap:8px;font-size:18px;color:#000;line-height:1.32}
+    .cert-num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#f4f4f4;display:flex;align-items:center;justify-content:center;font-size:16px}
+    .cert-note{margin-top:16px;display:flex;align-items:flex-start;gap:8px;border-radius:12px;background:#fff2e0;padding:16px;font-size:18px;line-height:1.32}
+    .cert-note svg{flex:0 0 auto;margin-top:2px}
+    .cert-btn{margin-top:32px;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:#03121b;color:#fff;padding:14px 26px;font-weight:600;font-size:18px;transition:background .2s}
+    .cert-btn:hover{background:#1b2a36}
+    .cert-media{position:relative;overflow:hidden;min-height:100%}
+    .cert-media img{width:100%;height:100%;object-fit:cover;display:block}
+    @media(max-width:900px){
+      .cert-card{grid-template-columns:1fr;border-radius:16px}
+      .cert-content{padding:24px}
+      .cert-media{min-height:240px}
+    }
+
+    /* ===== «Попробуйте 7 дней бесплатно» (лид-блок, адаптив) ===== */
+    .trial{background:var(--soft);padding:56px 0}
+    .trial-card{position:relative;border-radius:32px;padding:40px;background:linear-gradient(180deg,#D571FF 0%,#B400FF 74.82%)}
+    .trial-grid{display:grid;grid-template-columns:1.05fr minmax(0,360px) minmax(300px,330px);gap:24px;align-items:center}
+    .trial-h{font-size:clamp(28px,3.2vw,40px);font-weight:700;color:#fff;line-height:1.1}
+    .trial-list{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+    .trial-li{display:flex;gap:12px;color:#fff;font-size:18px;line-height:1.3}
+    .trial-li svg{flex:0 0 auto;margin-top:2px}
+    .trial-media{display:flex;justify-content:center;align-self:end}
+    .trial-media img{width:100%;max-width:420px;height:auto;object-fit:contain;display:block}
+    .trial-welcome{display:flex;align-items:center;gap:12px}
+    .trial-heart{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#ff9e00;display:flex;align-items:center;justify-content:center}
+    .trial-welcome .wt{color:#fff}
+    .trial-welcome .wt b{display:block;font-size:18px;font-weight:600}
+    .trial-welcome .wt span{font-size:14px;color:rgba(255,255,255,.7)}
+    .trial-form{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+    .trial-select{position:relative}
+    .trial-select-btn{width:100%;height:48px;background:#fff;border-radius:12px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:16px;color:var(--fg);border:0;font-family:inherit}
+    .trial-select-btn svg{transition:transform .2s;flex:0 0 auto}
+    .trial-select.open .trial-select-btn svg{transform:rotate(180deg)}
+    .trial-select-list{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:8px 0;z-index:20;display:none;list-style:none;margin:0;max-height:264px;overflow-y:auto}
+    .trial-select.open .trial-select-list{display:block}
+    .trial-option{padding:12px 16px;cursor:pointer;font-size:16px;color:var(--fg)}
+    .trial-option:hover{background:#f4f4f4}
+    .trial-btn{height:48px;border-radius:12px;background:#04121b;color:#fff;font-weight:600;font-size:16px;border:0;cursor:pointer;transition:background .2s;font-family:inherit}
+    .trial-btn:hover{background:#1b2a36}
+    .trial-ok{display:none;color:#fff;font-size:14px;font-weight:600}
+    @media(max-width:1000px){
+      .trial-grid{grid-template-columns:1fr}
+      .trial-card{padding:24px}
+      .trial-media{order:2}
+      .trial-media img{max-width:360px}
+    }
+
+    /* ===== «Кто преподаёт в лицее» — слайдер ===== */
+    .teach{background:var(--soft);padding:56px 0}
+    .teach-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
+    .teach-card{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:32px;background:#fff;min-height:430px}
+    .teach-content{padding:40px;display:flex;flex-direction:column}
+    .teach-name{font-size:clamp(24px,2.4vw,32px);font-weight:500;color:#000;line-height:1.2}
+    .teach-tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+    .teach-tag{border-radius:8px;background:#f4f4f4;color:rgba(0,0,0,.64);padding:6px 10px;font-size:14px}
+    .teach-bio{margin-top:16px;font-size:18px;color:rgba(0,0,0,.5);line-height:1.32}
+    .teach-btn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:12px;background:#04121b;color:#fff;padding:14px 24px;font-weight:600;font-size:16px;font-family:inherit;transition:background .2s}
+    .teach-btn:hover{background:#1b2a36}
+    .teach-media{position:relative;overflow:hidden;min-height:100%}
+    .teach-media>img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+    .teach-subject{position:absolute;left:16px;top:16px;z-index:2;display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#ff6ec7;color:#fff;padding:6px 12px;font-size:14px;font-weight:500}
+    .teach-subject img{width:18px;height:18px}
+    .teach-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    .teach-counter{font-size:14px;color:var(--muted)}
+    .teach-modal{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:16px}
+    .teach-modal.open{display:flex}
+    .teach-modal-inner{position:relative;width:100%;max-width:760px}
+    .teach-modal video{width:100%;border-radius:16px;display:block}
+    .teach-modal-close{position:absolute;top:-48px;right:0;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;border:0;font-size:24px;cursor:pointer;line-height:1}
+    @media(max-width:1000px){
+      .teach-card{display:flex;flex-direction:column-reverse;grid-template-columns:1fr;border-radius:16px;min-height:0}
+      .teach-content{padding:24px}
+      .teach-media{min-height:240px}
+    }
+
+    /* ===== «Расписание устроено так…» — вкладки с расписаниями ===== */
+    .sch{background:var(--soft);padding:56px 0}
+    .sch-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
+    .sch-panel{background:#fff;border-radius:32px;padding:32px}
+    .sch-h{font-size:clamp(20px,2.2vw,24px);font-weight:500;color:#000;margin-bottom:20px}
+    .sch-img-wrap{overflow-x:auto;border-radius:16px}
+    .sch-img-wrap img{width:100%;height:auto;display:block;border-radius:16px}
+    @media(max-width:760px){.sch-panel{padding:20px;border-radius:16px}.sch-img-wrap img{width:970px;max-width:none}}
+
+    /* ===== «Подберите расписание…» — CTA + поп-ап консультации ===== */
+    .pick{background:#fff;padding:56px 0}
+    .pick-card{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:32px;padding:64px 24px;background:radial-gradient(120% 120% at 50% 0%, #ffe9f3 0%, #fff4e3 60%, #fdf6ee 100%)}
+    .pick-h{max-width:680px;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1}
+    .pick-btn{margin-top:32px;display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;border-radius:12px;background:#ff9e00;color:#fff;padding:16px 32px;font-weight:600;font-size:16px;font-family:inherit;transition:background .2s}
+    .pick-btn:hover{background:#ffb53d}
+    .pick-modal{display:none;position:fixed;inset:0;z-index:60;padding:16px;overflow-y:auto;background:radial-gradient(80% 80% at 50% 30%, rgba(255,150,210,.45), rgba(0,0,0,.55));align-items:flex-start;justify-content:center}
+    .pick-modal.open{display:flex}
+    .pick-modal-row{position:relative;width:100%;max-width:880px;display:flex;align-items:flex-start;gap:24px;margin:auto}
+    .pick-back{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.7);border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1b2330}
+    .pick-form-card{position:relative;width:100%;max-width:440px;background:#fff;border-radius:24px;padding:32px;text-align:center;box-shadow:0 20px 60px -20px rgba(0,0,0,.4)}
+    .pick-form-card h3{font-size:24px;font-weight:700;line-height:1.15}
+    .pick-heart{margin:24px auto 0;width:56px;height:56px;border-radius:50%;background:#ff9e00;display:flex;align-items:center;justify-content:center}
+    .pick-welcome{margin-top:20px;font-size:20px;font-weight:700}
+    .pick-sub{margin-top:4px;color:var(--muted)}
+    .pick-form-card .trial-select{margin-top:24px;text-align:left}
+    .pick-form-card .trial-select-btn{background:#f4f4f6}
+    .pick-benefits{flex:1;list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+    .pick-benefits li{display:flex;align-items:flex-start;gap:8px;font-size:16px;font-weight:500;color:#fff}
+    .pick-benefits svg{flex:0 0 auto;margin-top:2px}
+    .pick-modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;background:none;cursor:pointer;font-size:22px;color:var(--muted);line-height:1}
+    @media(max-width:760px){
+      .pick-card{padding:40px 20px;border-radius:20px}
+      .pick-modal-row{flex-direction:column;align-items:center;gap:16px}
+      .pick-back,.pick-benefits{display:none}
+    }
+
+    /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
+    .appr{background:#fff;padding:56px 0}
+    .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
+    .appr-grid{display:flex;gap:16px;align-items:center}
+    .appr-card{flex:1;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;min-height:300px}
+    .appr-card.lic{background:linear-gradient(180deg,#fcefd6,#f8e3b9)}
+    .appr-card.vshe{background:linear-gradient(180deg,#f4ecfc,#ead7f6)}
+    .appr-card.fgos{background:#fff;justify-content:center;min-height:368px;padding-bottom:80px;box-shadow:0 10px 40px -16px rgba(16,36,64,.18);clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%)}
+    .appr-card .lic-icon{height:88px;width:auto;display:block}
+    .appr-pill{background:#fff;border-radius:999px;padding:14px 28px;box-shadow:0 6px 18px -8px rgba(16,36,64,.25);display:inline-flex;align-items:center}
+    .appr-pill img{height:28px;width:auto;display:block}
+    .appr-text{font-size:18px;font-weight:600;line-height:1.3;color:var(--fg)}
+    .appr-open{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--fg)}
+    .appr-open .arr{width:24px;height:24px;border-radius:50%;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1}
+    .appr-open.orange .arr{background:#f59e0b}
+    .appr-open.purple .arr{background:#b45cf0}
+    @media(max-width:760px){
+      .appr-grid{flex-direction:column;align-items:stretch}
+      .appr-card{min-height:0}
+      .appr-card.fgos{clip-path:none;padding-bottom:32px;min-height:0}
+    }
+
+    /* ===== Соцдоказательство (Figma: 4 карточки) ===== */
+    .proof{position:relative;overflow:hidden;background:#fff}
+    .proof::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(925px,90%);height:170px;border-radius:50%;background:#d570ff;filter:blur(90px);opacity:.16;pointer-events:none}
+    .proof-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .proof-card{background:#fff;border-radius:24px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;box-shadow:var(--shadow)}
+    .proof-card .pt{font-size:24px;line-height:1.16;color:#000;font-weight:500}
+    .proof-card .pd{font-size:18px;line-height:1.32;color:rgba(0,0,0,.64)}
+    .proof-logos{display:flex;gap:10px;margin-top:4px;justify-content:center;flex-wrap:wrap}
+    .proof-logos svg{height:24px;width:auto;display:block}
+    @media(max-width:980px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.proof-grid{grid-template-columns:1fr}}
+
+    /* ===== Stats ===== */
+    .stat .num{font-size:38px;font-weight:700;color:var(--brand-accent)}
+    .stat p{margin-top:12px;font-size:14px;color:var(--muted)}
+
+    /* ===== Tabs ===== */
+    .tabs-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+    .tab-btn{border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px 16px;font-family:inherit;font-size:15px;cursor:pointer;transition:all .15s}
+    .tab-btn[aria-selected="true"]{background:var(--brand-accent);color:#fff;border-color:var(--brand-accent)}
+    .tab-panel{display:none;margin-top:24px}
+    .tab-panel.active{display:block}
+
+    /* ===== Steps ===== */
+    .step .n{width:36px;height:36px;border-radius:50%;background:var(--brand-accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .step p{margin-top:12px;font-size:14px}
+
+    /* ===== Tariff ===== */
+    .tariff{display:flex;flex-direction:column}
+    .tariff .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .badge{background:var(--brand-accent);color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px}
+    .tariff ul{margin-top:16px;flex:1;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--muted)}
+    .tariff li{display:flex;gap:8px}
+    .tariff li .d{width:6px;height:6px;border-radius:50%;background:var(--brand-accent);flex:0 0 auto;margin-top:7px}
+    .price-old{font-size:14px;color:var(--muted);text-decoration:line-through}
+    .price{font-size:18px;font-weight:700}
+    .price-note{font-size:12px;color:var(--muted)}
+
+    /* ===== FAQ (нативный details — без JS, доступно роботам) ===== */
+    .faq{max-width:760px}
+    .faq details{border-bottom:1px solid var(--border)}
+    .faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+    .faq summary::-webkit-details-marker{display:none}
+    .faq summary::after{content:"+";color:var(--brand-accent);font-size:22px;line-height:1}
+    .faq details[open] summary::after{content:"–"}
+    .faq .answer{padding:0 0 18px;color:var(--muted);display:flex;flex-direction:column;gap:12px}
+
+    /* ===== Trial / accent block ===== */
+    .accent-block{background:var(--brand-accent);border-radius:28px;padding:40px;display:grid;gap:32px;grid-template-columns:1fr 1fr}
+    .accent-block .txt{color:#fff}
+    .accent-block h2{color:#fff}
+    .accent-block li{display:flex;gap:10px;color:#fff;margin-bottom:10px}
+    .accent-block .d{width:10px;height:10px;border-radius:50%;background:#fff;flex:0 0 auto;margin-top:7px}
+    @media(max-width:820px){.accent-block{grid-template-columns:1fr;padding:28px}}
+
+    /* ===== Knowledge ===== */
+    .knowledge{columns:3;column-gap:32px}
+    .knowledge li{break-inside:avoid;margin-bottom:8px}
+    .knowledge a{font-size:14px;color:rgba(27,35,48,.8)}
+    .knowledge a:hover{color:var(--fg);text-decoration:underline;text-decoration-color:var(--brand-accent)}
+    @media(max-width:900px){.knowledge{columns:2}}
+    @media(max-width:600px){.knowledge{columns:1}}
+
+    /* ===== Form ===== */
+    .form{display:flex;flex-direction:column;gap:12px}
+    .form input,.form select{height:48px;border:1px solid var(--border);border-radius:12px;padding:0 14px;font-family:inherit;font-size:15px;background:#fff;color:var(--fg);width:100%}
+    .form .check{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--muted)}
+    .form .check input{height:auto;width:auto;margin-top:2px}
+    .form-ok{display:none;color:#0a8f3c;font-weight:600;font-size:14px}
+
+    /* ===== Two columns ===== */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+    @media(max-width:820px){.two{grid-template-columns:1fr}}
+
+    /* ===== Modal (нативный dialog) ===== */
+    dialog{border:0;border-radius:24px;padding:0;max-width:440px;width:calc(100% - 32px);box-shadow:0 20px 60px -20px rgba(16,36,64,.4)}
+    dialog::backdrop{background:rgba(16,24,40,.55)}
+    .modal-in{padding:28px}
+    .modal-in h3{font-size:24px}
+    .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--muted);line-height:1}
+    dialog{position:relative}
+
+    footer{border-top:1px solid var(--border);background:#fff;padding:32px 0}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+    .mt40{margin-top:40px}.mt24{margin-top:24px}.mt16{margin-top:16px}
+  </style>
+</head>
+<body id="top">
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="logo" href="#top" aria-label="Skysmart — на главную">
+          <img src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="132" height="28" />
+        </a>
+        <nav class="menu" aria-label="Основная навигация">
+          <a href="#trial">Бесплатный период</a>
+          <a href="#approval">Лицензия</a>
+          <a href="#platform">Как устроено обучение</a>
+          <a href="#diploma">Аттестация</a>
+          <a href="#tariffs">Тарифы</a>
+          <a href="#faq">Вопросы</a>
+        </nav>
+        <button class="btn btn-accent btn-sm" data-open>Поступить в школу</button>
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">☰</button>
+      </div>
+      <nav id="mobile-menu" aria-label="Мобильная навигация">
+        <a href="#trial">Бесплатный период</a>
+        <a href="#approval">Лицензия</a>
+        <a href="#platform">Как устроено обучение</a>
+        <a href="#diploma">Аттестация</a>
+        <a href="#tariffs">Тарифы</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-content">
+            <span class="badge-promo">−20% для новых учеников</span>
+            <h1 id="hero-title">Домашнее обучение<br>для 5–11 классов</h1>
+            <ul class="hero-list">
+              <li><span class="hcheck" aria-hidden="true">✓</span>Полноценная альтернатива обычной школе</li>
+              <li><span class="hcheck" aria-hidden="true">✓</span>Аттестат государственного образца от школы-партнёра</li>
+              <li><span class="hcheck" aria-hidden="true">✓</span>3–4 урока в день с сильными преподавателями</li>
+            </ul>
+            <div class="hero-cta">
+              <button class="btn btn-dark" data-open>Получить консультацию</button>
+              <a class="btn btn-accent" href="#trial">Попробовать бесплатно</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png"
+                 alt="Школьница с игрушкой-талисманом Skysmart"
+                 width="620" height="563" fetchpriority="high" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ПРОМО-БАННЕР (Figma) ===================== -->
+    <section class="section" style="padding:24px 0" aria-label="Открыт набор">
+      <div class="container">
+        <div class="promo-banner">
+          <img class="pb-img pb-left" src="https://static.tildacdn.com/tild3434-3863-4139-b838-333834396634/Image_Container_3_1.png"
+               alt="" aria-hidden="true" width="215" height="215" loading="lazy" decoding="async" />
+          <div class="promo-text">
+            <p class="pb-title">Открыт набор на 2026/27 учебный год</p>
+            <p class="pb-sub">Скидка 20% для новых учеников</p>
+            <a class="promo-btn" href="#tariffs">Посмотреть тарифы</a>
+          </div>
+          <img class="pb-img pb-right" src="https://static.tildacdn.com/tild3833-3034-4535-b662-373336643662/Image_Container_2.png"
+               alt="" aria-hidden="true" width="225" height="225" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== СОЦДОКАЗАТЕЛЬСТВО (Figma) ===================== -->
+    <section class="section proof" aria-label="Нам доверяют">
+      <div class="container">
+        <div class="proof-grid">
+          <div class="proof-card">
+            <p class="pt">99 000+ детей в России</p>
+            <p class="pd">уже перешли на семейное обучение и занимаются онлайн</p>
+          </div>
+          <div class="proof-card">
+            <p class="pt">72% родителей</p>
+            <p class="pd">замечают, что ребёнок стал спокойнее и меньше нервничает из-за учёбы, когда учится дома</p>
+          </div>
+          <div class="proof-card">
+            <p class="pt">Каждый второй ребёнок</p>
+            <p class="pd">остаётся с нами после первого года обучения</p>
+          </div>
+          <div class="proof-card">
+            <p class="pt">4,9</p>
+            <p class="pd">Наш рейтинг по отзывам на УчисьОнлайн.ру и MOOC.ru</p>
+            <div class="proof-logos" aria-hidden="true">
+              <svg width="86" height="24" viewBox="0 0 86 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="85.6" height="24" rx="12" fill="#F4F4F4"/><g clip-path="url(#mooc_clip)"><path d="M29.6686 7.29646C31.095 7.12096 33.6589 7.77444 34.1886 9.23681C34.025 9.60325 33.2275 10.665 32.9269 10.9287C32.4963 10.5625 32.1535 10.1292 31.6363 9.83611C29.528 8.64154 27.3322 10.327 27.9461 12.6599C28.1333 13.225 28.5098 13.9201 29.0815 14.1724C31.371 15.1827 32.5248 13.0505 33.5101 11.5874L34.7006 9.83739C35.4133 8.77537 36.0722 7.92236 37.3673 7.51657C38.5686 7.14015 40.2544 7.16881 41.3833 7.75215C45.1912 9.71995 44.7432 15.1324 40.5737 16.3976C39.2121 16.7554 37.7814 16.6692 36.5338 15.9683C36.2084 15.7855 35.8661 15.5185 35.5614 15.2968C35.9589 14.8041 36.5591 13.9511 36.9852 13.5508C37.8442 14.1456 38.3561 14.5313 39.4729 14.4046C41.6708 14.1551 42.1088 11.1255 40.4719 9.88535C39.9221 9.46881 39.3629 9.40092 38.6877 9.47327C37.5602 9.59164 37.0128 10.6102 36.4235 11.439C35.5908 12.5881 34.8189 13.7765 33.979 14.9225C33.2369 15.8796 32.0533 16.4266 30.8813 16.5672C28.2808 16.8791 25.7245 15.3524 25.4101 12.6115C25.0809 9.74166 26.8352 7.62321 29.6686 7.29646Z" fill="black" fill-opacity="0.48"/><path d="M14.4921 7.29546C15.8523 7.10788 16.7122 7.55503 17.4663 8.64381C18.341 7.76653 19.0918 7.2734 20.3781 7.27025C21.1813 7.27262 21.9924 7.38486 22.5867 7.97336C23.7207 9.09635 23.5064 10.8797 23.5052 12.3572L23.5111 16.396C22.6877 16.4277 21.7676 16.4169 20.9427 16.3997L20.9474 13.0767C20.9485 11.8807 21.2279 9.51686 19.478 9.5454C17.6664 9.57495 17.8776 11.3849 17.8777 12.6627L17.8774 15.3499L17.8783 16.3988C17.0733 16.4284 16.1524 16.4168 15.3453 16.3998C15.3171 15.268 15.3605 14.1298 15.3415 12.989C15.3213 11.7742 15.6288 9.57989 13.8455 9.54979C13.1064 9.53728 12.4321 10.0014 12.3106 10.7524C12.1973 11.453 12.2338 12.2253 12.2336 12.9404L12.2335 16.4021C11.3851 16.4168 10.5364 16.4156 9.68806 16.3985L9.68787 7.4327L12.2415 7.43375L12.2224 8.64505C13.0101 7.86998 13.3664 7.45278 14.4921 7.29546Z" fill="black" fill-opacity="0.48"/><path d="M67.7343 7.41797C68.5259 7.45308 69.4504 7.43086 70.2518 7.42989L70.2471 10.8577C70.2463 11.5651 70.225 12.1532 70.3018 12.901C70.4498 14.3362 72.0218 14.6902 73.0045 13.8408C73.5574 13.363 73.4398 11.5945 73.439 10.8213L73.4436 7.42577C74.2516 7.45164 75.1733 7.43086 75.9902 7.43179L75.9883 10.9515L75.9832 16.4009C75.1434 16.4218 74.2788 16.4109 73.4386 16.4053C73.4328 16.0062 73.4444 15.5847 73.4495 15.1838C73.385 15.2521 73.3194 15.3195 73.253 15.386C72.7323 15.9116 72.2917 16.3183 71.5458 16.4916C69.8134 16.8943 68.0818 16.0016 67.8247 14.1483C67.6854 13.1429 67.7319 12.1799 67.7323 11.1673L67.7343 7.41797Z" fill="black" fill-opacity="0.48"/><path d="M49.9687 7.2955C50.0719 7.2783 50.4497 7.2637 50.5639 7.26583C52.2008 7.2964 52.9986 7.69787 54.1254 8.81562C53.635 9.3091 53.0941 9.79671 52.6445 10.3223C52.0047 9.77174 51.3652 9.41488 50.5033 9.44207C49.0702 9.48723 48.2665 10.6893 48.3026 12.0471C48.3679 14.5177 51.0907 15.1711 52.657 13.4811L53.2809 14.0909C53.5787 14.3489 53.9161 14.7268 54.1778 15.0194C53.2378 15.87 52.5937 16.3961 51.2612 16.5644C48.5395 16.9079 46.133 15.2985 45.7898 12.4819C45.6454 11.219 46.0111 9.95073 46.8055 8.95853C47.624 7.92191 48.687 7.44618 49.9687 7.2955Z" fill="black" fill-opacity="0.48"/><path d="M65.8195 7.25694C65.9387 7.24518 66.0431 7.22378 66.1518 7.27392C66.2039 7.45924 66.1771 9.57252 66.1755 9.91873C63.2659 9.95675 63.2484 12.0554 63.2496 14.3274L63.2523 16.4025C62.3981 16.4137 61.5444 16.4143 60.6902 16.4042C60.6805 15.9559 60.6879 15.4787 60.6875 15.0279C60.6863 12.5051 60.6642 9.94296 60.6976 7.42374C61.53 7.4446 62.4187 7.42968 63.2558 7.42976C63.2566 8.00413 63.2752 8.69287 63.2069 9.25236C63.9205 7.96029 64.3359 7.43978 65.8195 7.25694Z" fill="black" fill-opacity="0.48"/><path d="M58.324 13.7461L58.4355 13.7574C58.5349 13.9682 58.4883 16.0134 58.4856 16.3991C58.3023 16.4038 58.0666 16.4163 57.8888 16.4042C57.3864 16.4448 56.3008 16.4082 55.767 16.396L55.7743 13.7606C56.5668 13.7659 57.5464 13.7918 58.324 13.7461Z" fill="black" fill-opacity="0.48"/></g><defs><clipPath id="mooc_clip"><rect width="66.4" height="9.6" fill="white" transform="translate(9.59998 7.2002)"/></clipPath></defs></svg>
+              <svg width="100" height="24" viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="99.4909" height="24" rx="12" fill="#F4F4F4"/><g clip-path="url(#uchis_clip)"><path d="M16.6817 9.28522L18.6433 7.31797C18.8716 7.08782 19.1106 6.84601 19.3396 6.61831C20.0409 5.92077 20.3827 5.57517 21.3367 6.12624C21.6997 6.63631 21.8244 7.17705 21.3315 7.66086C20.3349 8.63901 19.3544 9.63028 18.3602 10.6114L14.379 14.5918L12.395 16.576C11.9225 17.0516 11.4405 17.6668 10.8585 18.005C10.6603 18.1202 10.4385 18.1743 10.212 18.1143C10.0041 18.0593 9.62101 17.8672 9.51273 17.6763C9.35711 17.402 9.33345 16.9726 9.43219 16.6761C9.60606 16.1541 12.2573 13.7567 12.8299 13.1373C13.2128 12.7659 13.6266 12.3793 13.9758 11.9799C13.5997 11.5938 13.2218 11.1973 12.8279 10.8304C12.1207 10.1127 11.3851 9.42397 10.6787 8.69304C10.3118 8.2468 9.36218 7.61165 9.35081 6.99479C9.33433 6.10033 10.2182 5.53893 10.9773 6.03223C11.5118 6.3796 11.9923 7.01534 12.4524 7.46026C13.0901 8.07712 13.7327 8.7047 14.3335 9.35322C14.4486 9.55476 15.3144 10.307 15.5395 10.5055C15.8878 10.0277 16.3164 9.72729 16.6817 9.28522Z" fill="black" fill-opacity="0.48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M48.189 8.41681C50.3015 8.28289 51.8713 9.31548 52.149 11.4666C52.4535 13.8287 51.4576 15.6902 49.0064 16.0076C48.1387 16.0574 47.1529 15.9378 46.4458 15.3856C44.777 14.082 44.563 11.2845 45.8267 9.63849C46.4435 8.83522 47.2184 8.54134 48.189 8.41681ZM50.438 11.1834C50.1348 10.0615 49.2817 9.67997 48.1734 9.78595C47.6782 9.9313 47.2173 10.2301 46.9976 10.7117C46.1877 12.488 46.6958 14.8659 49.0464 14.6404C50.5541 14.2001 50.8036 12.5396 50.438 11.1834Z" fill="black" fill-opacity="0.48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M67.8145 10.3303C68.441 10.303 68.7918 10.358 69.3077 10.7014C69.4081 10.768 69.6086 10.8865 69.7257 10.9133C69.7438 10.8834 69.7626 10.8531 69.7813 10.8235C70.2816 10.0267 70.9283 10.4612 70.9923 10.9543C71.0911 11.7167 71.1943 15.2621 70.8878 15.7395C70.1035 16.2444 69.965 15.4849 69.5811 15.4338C68.8147 15.9643 67.9714 16.2806 67.1094 15.7453C65.0485 14.466 65.3935 10.955 67.8145 10.3303ZM68.0245 11.7092C66.9087 12.2896 66.8167 14.1079 68.0255 14.6311C68.2134 14.712 68.5807 14.6509 68.7813 14.6194C69.6378 14.1696 69.9649 13.2407 69.5001 12.3772C69.3255 12.0543 69.0295 11.8142 68.6768 11.7111C68.458 11.6478 68.2487 11.6832 68.0245 11.7092Z" fill="black" fill-opacity="0.48"/><path d="M28.1746 10.4146C28.7073 10.3681 29.0954 10.5717 29.14 11.1134C29.2113 11.98 29.166 13.0346 29.1616 13.8975C29.9976 12.8616 30.6348 11.6121 31.5522 10.646C31.6967 10.4938 31.9376 10.4248 32.1429 10.4181C32.3008 10.4129 32.4883 10.447 32.604 10.5636C32.8792 10.8409 32.7566 14.7911 32.7551 15.4437C32.6219 15.6148 32.4462 15.7599 32.2836 15.9044C31.3037 15.8844 31.3585 15.2536 31.3565 14.4692C31.3549 13.8207 31.3744 13.1693 31.3564 12.5205C30.7177 13.5398 29.8141 14.6904 29.0513 15.6196C28.7904 15.9387 27.9122 16.1168 27.8455 15.572C27.6841 14.2546 27.6585 12.0629 27.8273 10.7995C27.926 10.6531 28.0498 10.5392 28.1746 10.4146Z" fill="black" fill-opacity="0.48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M39.6952 10.4207C40.1198 10.3816 40.2146 10.4394 40.6005 10.6365C40.6593 11.2073 40.6665 11.6867 40.6747 12.2576C42.2774 12.3455 44.2842 11.9671 44.1503 14.4128C44.128 14.8187 43.741 15.2602 43.4218 15.4822C42.4599 16.0123 40.5877 15.8846 39.4745 15.8064C39.1493 14.9129 39.3218 12.2418 39.3066 11.1726C39.301 10.7795 39.4234 10.6539 39.6952 10.4207ZM40.6679 13.4617V14.699C41.2205 14.7097 42.1253 14.7816 42.5888 14.5281C43.3734 13.2633 41.315 13.4615 40.6679 13.4617Z" fill="black" fill-opacity="0.48"/><path d="M72.8569 10.4236C72.9494 10.4152 73.0424 10.4099 73.1354 10.4077C74.1012 10.3941 73.7528 13.2446 73.7435 13.9234C74.0613 13.5947 74.2207 13.2649 74.4815 12.9073C74.9936 12.2612 75.4443 11.4653 75.9894 10.8523C76.6684 10.0889 77.4024 10.246 77.3502 11.3723C77.2878 12.7216 77.3803 14.0582 77.3281 15.4047C77.3188 15.64 77.2223 15.6924 77.0738 15.8418C75.0473 16.4093 76.5522 12.9021 75.8748 12.6874C75.7075 12.7725 75.6145 13.0726 75.5048 13.2307C75.1235 13.781 73.8665 15.556 73.3878 15.8289C73.2215 15.9236 73.007 15.9962 72.8176 15.9399C72.6916 15.9026 72.5711 15.7942 72.5101 15.6793C72.2705 15.2275 72.2838 11.4075 72.4446 10.859C72.516 10.6172 72.6503 10.5382 72.8569 10.4236Z" fill="black" fill-opacity="0.48"/><path d="M53.6748 10.4145C53.7403 10.4106 53.8062 10.4077 53.8716 10.4058C55.0362 10.375 54.7503 11.5881 54.7449 12.4202C55.4179 12.4301 56.1284 12.4166 56.8039 12.4136C56.8137 11.8923 56.674 11.0422 57.0031 10.6106C57.29 10.2343 58.18 10.4064 58.2257 10.9169C58.2705 11.418 58.2508 11.9593 58.2498 12.468C58.2508 13.4821 58.2454 14.4961 58.2321 15.5101C58.025 15.7182 57.8853 15.8456 57.6004 15.9175C56.458 15.7516 56.8752 14.7794 56.8058 13.9204C56.7994 13.8389 56.8078 13.7382 56.8088 13.6542C56.1215 13.632 55.4337 13.6308 54.7469 13.6505C54.7341 14.1701 54.8625 15.2058 54.5658 15.6664C54.3056 16.0244 53.5651 15.9916 53.45 15.5053C53.3732 15.1818 53.3324 14.8844 53.3413 14.5528C53.3742 13.3458 53.2601 12.1086 53.4116 10.911C53.4338 10.736 53.57 10.5511 53.6748 10.4145Z" fill="black" fill-opacity="0.48"/><path d="M79.088 10.4174C80.3918 10.2991 80.0961 11.4854 80.0848 12.42L82.1919 12.4136C82.1772 11.8804 82.0084 10.6945 82.5796 10.4481C82.7479 10.3742 82.9393 10.3714 83.1095 10.4404C83.9715 10.7919 83.4391 13.5814 83.5808 14.4314C83.6704 14.9721 83.5715 15.7034 82.9698 15.9239C82.248 15.789 82.1408 15.4868 82.1639 14.7817C82.1762 14.399 82.1846 14.0093 82.187 13.6261C81.4904 13.6273 80.7942 13.639 80.0985 13.6615C80.0936 14.2582 80.3007 16.0213 79.3537 15.9042C79.1249 15.8783 78.9178 15.7574 78.783 15.5711C78.6211 15.3489 78.72 13.2918 78.7003 12.8417C78.6747 12.2649 78.6895 11.4998 78.7195 10.9096C78.7308 10.6871 78.9232 10.5391 79.088 10.4174Z" fill="black" fill-opacity="0.48"/><path d="M61.1934 10.4772L61.2396 10.4745C61.7306 10.4473 64.1965 10.3442 64.4543 10.5887C64.6063 10.7325 64.6284 10.8987 64.6363 11.0965C64.6589 11.6671 64.7298 15.4493 64.5089 15.6817C64.3583 15.8403 64.1404 15.8934 63.9283 15.8955C63.7507 15.8973 63.5829 15.8554 63.454 15.7263C63.0934 15.3643 63.2184 12.46 63.2189 11.7508L62.7279 11.7371L61.8472 11.725C61.6327 12.8571 61.556 14.1343 61.0492 15.1726C60.8126 15.6573 59.7912 16.0975 59.3159 15.7859C59.2102 15.7156 59.1383 15.6044 59.1182 15.4791C59.0798 15.2505 59.0995 15.1287 59.2874 14.9994C60.6935 14.0337 59.9895 12.0032 60.7102 10.6769C60.7953 10.5205 61.0305 10.4999 61.1934 10.4772Z" fill="black" fill-opacity="0.48"/><path d="M36.1101 10.3283C36.1363 10.3267 36.1625 10.3254 36.1887 10.3243C37.1427 10.2851 37.6227 10.3088 38.3237 10.9537C38.3266 11.148 38.3556 11.5577 38.2332 11.7089C37.7169 12.174 36.9423 11.5445 36.2441 11.732C35.5447 11.8545 35.3297 12.3698 35.3007 13.0346C35.2669 13.8114 35.4682 14.2157 36.1102 14.6494C36.9276 14.7166 37.2086 14.4418 37.9604 14.4804C38.1176 14.4885 38.2199 14.6853 38.3051 14.8213C38.3116 14.949 38.2738 15.2522 38.2595 15.3919C36.7922 16.7514 34.2723 15.8777 33.9378 13.8819C33.6518 12.1757 34.3384 10.6952 36.1101 10.3283Z" fill="black" fill-opacity="0.48"/><path d="M25.1043 13.0654C25.1424 12.4254 24.9066 11.0355 25.3763 10.5366C25.4663 10.441 25.5823 10.39 25.7135 10.3878C25.9096 10.3845 26.1298 10.4808 26.2684 10.619C26.5822 10.9317 26.4416 13.2055 26.4395 13.7363C26.4546 14.6076 26.678 16.7068 25.1319 15.6298C25.1059 15.1953 25.1188 14.6377 25.1172 14.1939C24.1507 14.1921 22.7274 14.2206 22.1827 13.2789C21.813 12.6396 21.6498 11.718 21.8054 10.9897C21.8748 10.665 21.9967 10.5791 22.2601 10.4174C23.2742 10.2365 23.1696 11.1824 23.2041 11.834C23.2331 12.3812 23.4658 12.6202 23.8633 12.9553L25.1043 13.0654Z" fill="black" fill-opacity="0.48"/><path d="M12.828 10.832C13.2218 11.1989 13.5997 11.5955 13.9758 11.9815C13.6267 12.3809 13.2128 12.7676 12.8299 13.1389C12.508 13.063 11.9593 13.0869 11.6137 13.0825C10.5536 13.0694 9.45593 13.1276 8.39948 13.069C8.0638 13.0504 7.60842 12.846 7.39657 12.5704C7.24375 12.3674 7.18039 12.1108 7.22122 11.8601C7.29345 11.3941 7.60748 11.1753 7.95684 10.9235C9.05447 10.822 10.2445 10.8958 11.3526 10.8773C11.8269 10.8693 12.363 10.8956 12.828 10.832Z" fill="black" fill-opacity="0.24"/><path d="M14.3335 9.35454C14.5007 8.14511 14.0995 5.08599 14.6107 4.21169C14.7426 3.98601 14.945 3.80714 15.2043 3.74573C15.598 3.65255 15.9414 3.83546 16.2665 4.03233C16.9527 5.06406 16.296 8.64534 16.6817 9.28654C16.3164 9.7286 15.8877 10.029 15.5395 10.5068C15.3144 10.3083 14.4486 9.55608 14.3335 9.35454Z" fill="black" fill-opacity="0.24"/><path fill-rule="evenodd" clip-rule="evenodd" d="M87.3937 12.6934C87.5018 12.6998 87.8536 12.717 87.9426 12.7461C89.1158 13.1292 89.3294 15.0874 88.2717 15.7129C87.768 16.0108 87.2481 15.8546 86.7385 15.7168L86.7209 16.6738C86.6736 16.9626 86.534 17.3418 86.1594 17.1953C85.845 16.842 86.0129 13.9943 85.9963 13.3809C85.9894 13.1299 86.1159 12.7716 86.4367 12.751C86.6197 12.797 86.6903 12.9394 86.799 13.0957C87.0036 12.8459 87.0779 12.766 87.3937 12.6934ZM87.2746 13.4541C86.9587 13.7179 86.8459 13.8389 86.7765 14.2568C86.6956 14.7506 87.146 15.2808 87.6447 15.2441C88.4637 14.6101 88.3912 13.4107 87.2746 13.4541Z" fill="black" fill-opacity="0.48"/><path d="M15.1863 16.319C15.8033 16.2881 16.4139 16.5325 16.5218 17.2267C16.6548 18.0819 16.8293 19.9644 15.7255 20.2424C15.3671 20.2691 15.1668 20.2014 14.8279 20.0947C14.3166 19.5228 14.3533 18.9109 14.3527 18.185C14.3519 17.2908 14.3544 16.7626 15.1863 16.319Z" fill="black" fill-opacity="0.24"/><path d="M89.9648 12.7539C89.987 12.7529 90.0273 12.7711 90.0509 12.7798L90.8376 14.7126C90.9527 14.247 91.394 12.7727 91.9131 12.7334C92.0622 12.7774 92.0813 12.8058 92.1807 12.9293C92.3431 13.3961 91.49 15.0515 91.2568 15.6038C91.0113 16.0695 90.7279 16.9899 90.1872 17.169C90.0061 17.2288 89.6765 17.2477 89.5142 17.1409C89.5019 17.0837 89.4723 16.8148 89.5014 16.7872C89.9451 16.3688 90.1267 16.2168 90.3564 15.6441C90.167 15.0389 89.2992 13.27 89.4349 12.8667C89.5535 12.7692 89.801 12.7695 89.9648 12.7539Z" fill="black" fill-opacity="0.48"/><path d="M20.316 16.0274C21.8524 15.91 22.0581 17.5774 20.9199 18.1491C20.6755 18.1755 20.4525 18.1987 20.2165 18.1123C19.9586 18.0175 19.7487 17.8248 19.6322 17.5761C19.5077 17.3016 19.4967 16.9891 19.6015 16.7066C19.7441 16.3267 19.9674 16.1846 20.316 16.0274Z" fill="black" fill-opacity="0.24"/><path d="M74.6084 8.16253C74.8264 8.1404 74.9888 8.12029 75.1983 8.2086C75.4104 8.29744 75.5786 8.46643 75.6667 8.67869C75.8886 9.22362 75.5801 9.57998 75.1004 9.77356C73.9782 9.85837 73.6545 8.69206 74.6084 8.16253Z" fill="black" fill-opacity="0.48"/><path d="M84.6976 15.0596C84.979 15.0817 85.2841 15.4006 85.1906 15.7237C85.0651 15.8745 85.1079 15.8291 84.8964 15.9018C84.5928 15.8682 84.3773 15.8451 84.3591 15.516C84.4275 15.3169 84.552 15.2104 84.6976 15.0596Z" fill="black" fill-opacity="0.48"/></g><defs><clipPath id="uchis_clip"><rect width="85.5273" height="17.0182" fill="white" transform="translate(6.98181 3.49121)"/></clipPath></defs></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== МЫ ЗНАЕМ, ЧТО ВОЛНУЕТ РОДИТЕЛЕЙ (Figma) ===================== -->
+    <section class="worry" aria-labelledby="worry-title">
+      <div class="container">
+        <h2 class="worry-title" id="worry-title">Мы знаем, что волнует родителей</h2>
+        <div class="worry-viewport">
+          <div class="worry-track" id="worryTrack">
+            <article class="worry-card">
+              <div class="ic"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-case.png" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
+              <p class="tx">Ребёнок теряет интерес к учёбе, школа не даёт результата</p>
+            </article>
+            <article class="worry-card text-top">
+              <div class="ic"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-cup.png" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
+              <p class="tx">Нет времени учиться из-за соревнований или концертов</p>
+            </article>
+            <article class="worry-card">
+              <div class="ic"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-home.png" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
+              <p class="tx">Ребёнок часто болеет, пропускает занятия, легко устаёт</p>
+            </article>
+            <article class="worry-card text-top">
+              <div class="ic"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-planet.png" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
+              <p class="tx">Семья много переезжает или живёт за границей</p>
+            </article>
+            <article class="worry-card">
+              <div class="ic"><img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice/perfect-choice-warning.png" alt="" aria-hidden="true" width="200" height="160" loading="lazy" decoding="async" /></div>
+              <p class="tx">В школе токсичная, небезопасная среда, случаи травли</p>
+            </article>
+          </div>
+        </div>
+        <div class="worry-controls">
+          <button class="choice-btn" id="worryPrev" type="button" aria-label="Назад">‹</button>
+          <div class="choice-dots" id="worryDots"></div>
+          <button class="choice-btn" id="worryNext" type="button" aria-label="Вперёд">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== И СТРОИМ ОБУЧЕНИЕ ВОКРУГ ПОТРЕБНОСТЕЙ (Figma) ===================== -->
+    <section class="needs" aria-labelledby="needs-title">
+      <div class="container">
+        <h2 class="needs-title" id="needs-title">И строим обучение вокруг потребностей ребёнка</h2>
+        <div class="needs-rows">
+          <div class="needs-row r1">
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Аттестат гособразца</p>
+                <p class="nc-desc">Всё как в обычной школе, только с гибким графиком: ребёнок освоит школьную программу по ФГОС и получит российский аттестат для поступления в вуз</p>
+              </div>
+              <div class="nc-img"><img src="https://static.tildacdn.com/tild6639-3661-4234-b162-636137643836/Image_Container_10.png" alt="" aria-hidden="true" width="1144" height="538" loading="lazy" decoding="async" /></div>
+            </div>
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Сильные преподаватели</p>
+                <p class="nc-desc">Учителя из ведущих школ России объясняют сложное простым языком и помогают ребёнку не терять внимание на уроке. Только 5 из 100 кандидатов проходят конкурсный отбор в лицей</p>
+              </div>
+              <div class="nc-img"><img src="https://static.tildacdn.com/tild3332-3233-4162-b834-376633663761/Other_teachers_1.png" alt="" aria-hidden="true" width="998" height="230" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+          <div class="needs-row r2">
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Бережное общение</p>
+                <p class="nc-desc">Помогаем ребёнку адаптироваться и найти друзей: организуем общение между учениками и проводим встречи с нейропсихологом</p>
+              </div>
+              <div class="nc-img"><img src="https://static.tildacdn.com/tild6637-3464-4433-b137-333635393534/Frame_2131329616_1.png" alt="" aria-hidden="true" width="752" height="512" loading="lazy" decoding="async" /></div>
+            </div>
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Вся учёба под контролем</p>
+                <p class="nc-desc">Расписание, уроки, домашки, конспекты и отчёты о прогрессе — всё в одном месте</p>
+              </div>
+              <div class="nc-img"><img src="https://static.tildacdn.com/tild3636-3738-4133-a464-313662636363/Image_Container_11_1.png" alt="" aria-hidden="true" width="752" height="538" loading="lazy" decoding="async" /></div>
+            </div>
+            <div class="needs-card">
+              <div class="nc-text">
+                <p class="nc-title">Навык письма сохраняется</p>
+                <p class="nc-desc">Часть заданий ребёнок выполняет письменно для развития мелкой моторики</p>
+              </div>
+              <div class="nc-img"><img src="https://static.tildacdn.com/tild3166-6234-4437-b863-653234343938/Product_Image_Contai.png" alt="" aria-hidden="true" width="752" height="512" loading="lazy" decoding="async" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA-БАННЕР «Подойдёт ли онлайн-обучение» ===================== -->
+    <section class="consult" aria-labelledby="consult-banner-title">
+      <div class="container">
+        <div class="consult-banner">
+          <div class="consult-text">
+            <h2 id="consult-banner-title">Подойдёт ли онлайн-обучение вашему ребёнку?</h2>
+            <p>Поможем разобраться на бесплатной консультации</p>
+          </div>
+          <div class="consult-mascot">
+            <img src="https://static.tildacdn.com/tild6365-3232-4236-b461-386138353865/Frame_2131329618.png" alt="" aria-hidden="true" width="722" height="286" loading="lazy" decoding="async" />
+          </div>
+          <button class="consult-btn" type="button" data-open>Получить консультацию</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ОБРАЗОВАТЕЛЬНАЯ МОДЕЛЬ ОДОБРЕНА ===================== -->
+    <section class="appr" id="approval" aria-labelledby="appr-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="appr-title" id="appr-title">Наша образовательная модель одобрена официально</h2>
+        <div class="appr-grid">
+          <div class="appr-card lic">
+            <img class="lic-icon" src="https://static.tildacdn.com/tild6466-6538-4064-a162-363266663635/icon_container_1_1.png" alt="" aria-hidden="true" width="88" height="88" loading="lazy" decoding="async" />
+            <p class="appr-text">Лицензия от Департамента образования</p>
+            <a class="appr-open orange" href="https://legal.skyengforbusiness.ru/doc/view/https://skyengforbusiness.ru/edu-license" target="_blank" rel="noopener noreferrer">Открыть <span class="arr" aria-hidden="true">›</span></a>
+          </div>
+          <div class="appr-card fgos">
+            <span class="appr-pill"><img src="https://static.tildacdn.com/tild3864-3835-4336-b839-383665626231/fgos_2.png" alt="ФГОС" width="82" height="28" loading="lazy" decoding="async" /></span>
+            <p class="appr-text">Проводим уроки с учётом ФГОС и требований к аттестации</p>
+          </div>
+          <div class="appr-card vshe">
+            <span class="appr-pill"><img src="https://static.tildacdn.com/tild3365-3466-4339-a538-356132376435/fgos_2_1.png" alt="ВШЭ" width="61" height="28" loading="lazy" decoding="async" /></span>
+            <p class="appr-text">Программа разработана НИУ ВШЭ</p>
+            <a class="appr-open purple" href="https://ioe.hse.ru/skyeng/" target="_blank" rel="noopener noreferrer">Открыть <span class="arr" aria-hidden="true">›</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="section" aria-labelledby="stats-title">
+      <div class="container">
+        <h2 class="h2" id="stats-title">Онлайн-школа с аттестатом</h2>
+        <div class="grid g4 mt40">
+          <div class="card card--plain stat"><div class="num">№1</div><p>в рейтинге образовательных компаний по версии Smart Ranking в 2024 году</p></div>
+          <div class="card card--plain stat"><div class="num">12+</div><p>лет на рынке онлайн-образования</p></div>
+          <div class="card card--plain stat"><div class="num">топ-100</div><p>входим в топ EdTech-компаний по версии HolonIQ за 2021 год</p></div>
+          <div class="card card--plain stat"><div class="num">4,9</div><p>рейтинг по отзывам на УчисьОнлайн.ру и MOOC.ru</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== КАК ПРОХОДИТ ОБУЧЕНИЕ (вкладки) ===================== -->
+    <section class="lyc" aria-labelledby="lyc-title">
+      <div class="container">
+        <h2 class="lyc-title" id="lyc-title">Как проходит обучение в лицее?</h2>
+        <div class="tabs" data-tabs>
+          <div class="lyc-tabs" role="tablist" aria-label="Этапы обучения">
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="true" data-tab="lyc1">Уроки</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc2">Формат занятий</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc3">Личный кабинет</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc4">Отчёты об учёбе</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc5">Домашнее задание</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc6">Аттестация</button>
+          </div>
+
+          <div class="tab-panel lyc-panel active" id="lyc1" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Уроки</h3>
+              <p class="lyc-sub">Преподаватель объясняет тему на виртуальной доске, а ученики закрепляют материал в интерактивных заданиях и получают баллы. Преподаватель видит статистику по каждому ребёнку и сразу понимает, кому нужно дополнительное объяснение</p>
+              <div class="lyc-pills">
+                <span class="lyc-pill" style="background:#ffb53d"><img src="https://static.tildacdn.com/tild3535-3730-4331-a331-346563626132/Union.svg" alt="" width="16" height="16" />2–5 уроков с учителями ежедневно</span>
+                <span class="lyc-pill" style="background:#ff9e00"><img src="https://static.tildacdn.com/tild6432-3937-4530-b739-313464666135/Play.svg" alt="" width="16" height="16" />Любой урок можно пересмотреть в записи</span>
+              </div>
+            </div>
+            <div class="lyc-media"><video autoplay loop muted playsinline preload="metadata"><source src="https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc2" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Формат занятий</h3>
+              <p class="lyc-strong">Вебинары с активным участием</p>
+              <p class="lyc-sub" style="margin-top:8px">Ребёнок слушает урок в прямом эфире, задаёт вопросы и общается с одноклассниками в чате, который модерируют помощники преподавателя</p>
+              <p class="lyc-strong">Групповые уроки по видеосвязи</p>
+              <p class="lyc-sub" style="margin-top:8px">Ребёнок подключается с видео и общается голосом. Если нужно, камеру можно отключить: строгих требований нет. Обычно на занятиях в группе около 8 человек, максимум — 12</p>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild3963-6562-4939-b035-646336386235/pic_6_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc3" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Личный кабинет</h3>
+              <p class="lyc-sub">Всё, что нужно для учёбы, находится в одном месте, в кабинете ученика. Там вы найдёте расписание занятий, домашки, конспекты, записи прошедших уроков, а также теорию по предмету, чтобы легко повторять её</p>
+              <div class="lyc-chips">
+                <span class="lyc-chip">доступ 24/7</span>
+                <span class="lyc-chip">с любого устройства</span>
+              </div>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild3632-3831-4130-a133-613338663635/pic_7_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc4" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Отчёты об учёбе</h3>
+              <p class="lyc-sub">Каждую неделю присылаем родителям отчёт: сколько вебинаров ребёнок посетил на этой неделе, сколько домашек сделал и какие баллы получил</p>
+              <div class="lyc-box">
+                <p style="font-size:18px;color:#000">По учебным вопросам с вами на связи классный руководитель:</p>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />отчитывается о прогрессе</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />напоминает о занятиях</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />отвечает на вопросы детей и родителей</div>
+              </div>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild6162-3330-4232-b538-323836666432/pic_5_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc5" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Домашнее задание</h3>
+              <p class="lyc-strong">Ручная проверка</p>
+              <p class="lyc-sub" style="margin-top:8px">Часть домашних заданий выполняется письменно: ученик фотографирует тетрадь, загружает работу, а учитель проверяет и даёт обратную связь</p>
+              <p class="lyc-strong">Мгновенная проверка</p>
+              <p class="lyc-sub" style="margin-top:8px">Интерактивные упражнения, где система сразу показывает ошибки и правильные ответы, фиксирует количество попыток и считает баллы, чтобы отслеживать прогресс ребёнка</p>
+            </div>
+            <div class="lyc-media"><video autoplay loop muted playsinline preload="metadata"><source src="https://static.tildacdn.com/vide6361-3735-4730-b764-343330376531/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc6" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Аттестация</h3>
+              <div style="margin-top:20px">
+                <details class="lyc-acc" open>
+                  <summary>
+                    <span><span class="ttl">Промежуточная аттестация</span><br><span class="prev">5–8 и 10 классы</span></span>
+                    <svg class="arr" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414z" fill="#000"/></svg>
+                  </summary>
+                  <p class="ans">На семейном обучении контрольные и ВПР желательно сдавать каждый год, чтобы контролировать знания и прогресс. В тарифах с прикреплением мы не только готовим ребёнка к аттестации, но и помогаем пройти её онлайн через школу-партнёра</p>
+                </details>
+                <details class="lyc-acc">
+                  <summary>
+                    <span><span class="ttl">Итоговая аттестация</span><br><span class="prev">9 и 11 классы</span></span>
+                    <svg class="arr" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414z" fill="#000"/></svg>
+                  </summary>
+                  <p class="ans">Это экзамены, итоговое сочинение и собеседование, которые можно сдать только офлайн. В тарифах с прикреплением мы берём на себя договорённости со школой, где ребёнок будет сдавать ОГЭ и ЕГЭ</p>
+                </details>
+              </div>
+              <a class="lyc-guide" href="https://study.skysmart.ru/how-to-switch-to-homeschooling" target="_blank" rel="noopener noreferrer">Скачать гайд по аттестации</a>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild3361-6435-4361-a261-646666666466/pic_8_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== АТТЕСТАТ ===================== -->
+    <section class="cert" id="diploma" aria-labelledby="cert-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="cert-title" id="cert-title">Вы получите аттестат государственного образца</h2>
+        <div class="cert-card">
+          <div class="cert-content">
+            <h3 class="cert-h">Что для этого нужно:</h3>
+            <div class="cert-steps">
+              <div class="cert-step"><span class="cert-num">1</span>Выберите тариф с аттестацией</div>
+              <div class="cert-step"><span class="cert-num">2</span>Оформите документы и дождитесь зачисления от школы-партнёра</div>
+              <div class="cert-step"><span class="cert-num">3</span>Сдайте промежуточные аттестации онлайн</div>
+              <div class="cert-step"><span class="cert-num">4</span>Сдайте очно государственную итоговую аттестацию (ОГЭ, ЕГЭ) в аккредитованной школе-партнёре</div>
+              <div class="cert-step"><span class="cert-num">5</span>Заберите аттестат</div>
+            </div>
+            <div class="cert-note">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3v18M5 4h11l-2 3 2 3H5" stroke="#ff9e00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Менеджеры лицея помогут подать документы и будут сопровождать вас от заявки до получения аттестата
+            </div>
+            <a class="cert-btn" href="#tariffs">Подобрать тариф</a>
+          </div>
+          <div class="cert-media">
+            <picture>
+              <source media="(min-width:768px)" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-1024.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-1024@2x.png 2x" />
+              <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-375.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-375.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/certificate/image-375@2x.png 2x" alt="Аттестат государственного образца" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== КТО ПРЕПОДАЁТ В ЛИЦЕЕ (слайдер) ===================== -->
+    <section class="teach" aria-labelledby="teach-title">
+      <div class="container">
+        <h2 class="teach-title" id="teach-title">Кто преподаёт в лицее</h2>
+        <div class="teach-card">
+          <div class="teach-content">
+            <h3 class="teach-name" id="teachName"></h3>
+            <div class="teach-tags"><span class="teach-tag" id="teachGrades"></span><span class="teach-tag">вебинары</span></div>
+            <p class="teach-bio" id="teachBio"></p>
+            <button class="teach-btn" type="button" id="teachWatch">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Посмотреть урок
+            </button>
+          </div>
+          <div class="teach-media">
+            <span class="teach-subject"><img id="teachIcon" src="" alt="" /><span id="teachSubject"></span></span>
+            <img id="teachPhoto" src="" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="teach-controls">
+          <button class="choice-btn" id="teachPrev" type="button" aria-label="Предыдущий преподаватель">‹</button>
+          <span class="teach-counter" id="teachCounter"></span>
+          <button class="choice-btn" id="teachNext" type="button" aria-label="Следующий преподаватель">›</button>
+        </div>
+      </div>
+    </section>
+    <div class="teach-modal" id="teachModal" role="dialog" aria-modal="true" aria-label="Видео урока">
+      <div class="teach-modal-inner">
+        <button class="teach-modal-close" id="teachModalClose" type="button" aria-label="Закрыть">×</button>
+        <video id="teachVideo" controls playsinline><source src="https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <!-- ===================== РАСПИСАНИЕ (вкладки) ===================== -->
+    <section class="sch" aria-labelledby="sch-title">
+      <div class="container">
+        <h2 class="sch-title" id="sch-title">Расписание устроено так, чтобы ребёнок мог всё успевать</h2>
+        <div class="tabs" data-tabs>
+          <div class="lyc-tabs" role="tablist" aria-label="Варианты расписания">
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="true" data-tab="sch1">Углублённое изучение</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="sch2">Тренировки и спорт</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="sch3">Комфортная учёба</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="sch4">Поступление за рубеж</button>
+          </div>
+          <div class="tab-panel sch-panel active" id="sch1" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 7 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/raspisaniye-uglublennoye-izucheniye-68df7ec70aa7e259227734.png" alt="Пример расписания занятий 7-го класса" width="970" height="568" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="tab-panel sch-panel" id="sch2" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 9 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/rapisaniye-sport-68df8591ee3b6927699939.png" alt="Пример расписания занятий 9-го класса" width="970" height="625" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="tab-panel sch-panel" id="sch3" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 6 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/raspisaniye-komfortnaya-ucheba-68df8a55bf074122203197.png" alt="Пример расписания занятий 6-го класса" width="970" height="568" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="tab-panel sch-panel" id="sch4" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 9 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/raspisaniye-postupleniye-za-rubezh-68df81c0f3f9e747894057.png" alt="Пример расписания занятий 9-го класса" width="970" height="568" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ПОДБЕРИТЕ РАСПИСАНИЕ (CTA + поп-ап) ===================== -->
+    <section class="pick" aria-labelledby="pick-title">
+      <div class="container">
+        <div class="pick-card">
+          <h2 class="pick-h" id="pick-title">Подберите расписание, которое подойдёт вашему ребёнку</h2>
+          <button class="pick-btn" type="button" id="pickOpen">Подобрать расписание</button>
+        </div>
+      </div>
+    </section>
+    <div class="pick-modal" id="pickModal" role="dialog" aria-modal="true" aria-label="Бесплатная консультация">
+      <div class="pick-modal-row">
+        <button class="pick-back" type="button" id="pickBack" aria-label="Закрыть">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="pick-form-card">
+          <button class="pick-modal-close" type="button" id="pickClose" aria-label="Закрыть">×</button>
+          <h3>Посетите бесплатную консультацию</h3>
+          <span class="pick-heart" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
+          <p class="pick-welcome">Рады видеть вас снова!</p>
+          <p class="pick-sub">Начните учиться на выгодных условиях</p>
+          <div class="trial-select" id="pickSelect">
+            <button class="trial-select-btn" type="button" id="pickSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span id="pickSelectVal" style="color:var(--muted)">Класс</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414L12 14.086Z" clip-rule="evenodd"/></svg>
+            </button>
+            <ul class="trial-select-list" role="listbox">
+              <li class="trial-option" role="option">5 класс</li>
+              <li class="trial-option" role="option">6 класс</li>
+              <li class="trial-option" role="option">7 класс</li>
+              <li class="trial-option" role="option">8 класс</li>
+              <li class="trial-option" role="option">9 класс</li>
+              <li class="trial-option" role="option">10 класс</li>
+              <li class="trial-option" role="option">11 класс</li>
+            </ul>
+          </div>
+          <button class="pick-btn" type="button" id="pickSubmit" style="width:100%;margin-top:12px">Записаться на консультацию</button>
+          <p class="trial-ok" id="pickOk" style="color:#0a8f3c;margin-top:8px">Спасибо! Запишем вас на консультацию.</p>
+        </div>
+        <ul class="pick-benefits">
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>Расскажем о нашей школе</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>Составим персональный план обучения</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>Поможем выбрать мотивирующую цель</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
+    <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <div class="trial-card">
+          <div class="trial-grid">
+            <div>
+              <h2 class="trial-h" id="trial-title">Попробуйте 7 дней учёбы в лицее бесплатно</h2>
+              <div class="trial-list">
+                <div class="trial-li"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffb53d"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Доступ к живым урокам по расписанию</div>
+                <div class="trial-li"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffb53d"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Все записи прошедших уроков</div>
+                <div class="trial-li"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffb53d"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Интерактивные задания и домашки с автопроверкой</div>
+              </div>
+            </div>
+            <div class="trial-media">
+              <picture>
+                <source media="(min-width:1024px)" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-1024.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-1024@2x.png 2x" />
+                <source media="(min-width:768px)" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-768.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-768@2x.png 2x" />
+                <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-375@2x.png" alt="Ученик лицея Skysmart" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div>
+              <div class="trial-welcome">
+                <span class="trial-heart" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="#04121b"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
+                <div class="wt"><b>Рады видеть вас снова!</b><span>Выбирайте класс и начинайте учиться</span></div>
+              </div>
+              <div class="trial-form">
+                <div class="trial-select" id="trialSelect">
+                  <button class="trial-select-btn" type="button" id="trialSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span id="trialSelectVal">Триал 9 класс</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414L12 14.086Z" clip-rule="evenodd"/></svg>
+                  </button>
+                  <ul class="trial-select-list" role="listbox">
+                    <li class="trial-option" role="option">Триал 5 класс</li>
+                    <li class="trial-option" role="option">Триал 6 класс</li>
+                    <li class="trial-option" role="option">Триал 7 класс</li>
+                    <li class="trial-option" role="option">Триал 8 класс</li>
+                    <li class="trial-option" role="option">Триал 9 класс</li>
+                    <li class="trial-option" role="option">Триал 10 класс</li>
+                    <li class="trial-option" role="option">Триал 11 класс</li>
+                  </ul>
+                </div>
+                <button class="trial-btn" type="button" id="trialSubmit">Начать учиться бесплатно</button>
+                <p class="trial-ok" id="trialOk">Спасибо! Откроем доступ и свяжемся с вами.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PLATFORM TABS ===================== -->
+    <section class="section section--soft" id="platform" aria-labelledby="plat-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="plat-title">Мы ведём уроки на собственной платформе</h2>
+        <div class="tabs" data-tabs>
+          <div class="tabs-btns" role="tablist">
+            <button class="tab-btn" role="tab" aria-selected="true" data-tab="p1">Уроки</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p2">Библиотека материалов</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p3">Задания с письмом от руки</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p4">Отчёты о прогрессе</button>
+          </div>
+          <div class="tab-panel active" id="p1" role="tabpanel"><div class="card"><h3>Уроки с активным участием</h3><p class="muted mt16">Ученики выполняют задания и получают оценку прямо во время урока, как в обычной школе.</p></div></div>
+          <div class="tab-panel" id="p2" role="tabpanel"><div class="card"><h3>Библиотека материалов</h3><p class="muted mt16">Все записи уроков, конспекты и дополнительные материалы хранятся в личном кабинете весь учебный год.</p></div></div>
+          <div class="tab-panel" id="p3" role="tabpanel"><div class="card"><h3>Задания с письмом от руки</h3><p class="muted mt16">Часть заданий ребёнок выполняет письменно — это помогает лучше усваивать материал и готовит к экзаменам.</p></div></div>
+          <div class="tab-panel" id="p4" role="tabpanel"><div class="card"><h3>Отчёты о прогрессе</h3><p class="muted mt16">Родители видят посещаемость, оценки и динамику успеваемости ребёнка в удобных отчётах.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TEACHERS ===================== -->
+    <section class="section" aria-labelledby="teach-title">
+      <div class="container">
+        <h2 class="h2" id="teach-title">Кто преподаёт в лицее</h2>
+        <p class="lead">Уроки проводят опытные педагоги из ведущих школ России, эксперты ЕГЭ, победители всероссийских конкурсов. Только 5 из 100 кандидатов проходят конкурсный отбор.</p>
+        <div class="grid g4 mt40">
+          <div class="card card--plain"><h3 class="mt16">Алексей Мелкозеров</h3><p class="muted mt16">Участвовал в разработке множества игр на Unity с использованием продвинутых алгоритмов и технологий.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Куратор учебной программы</p><h3 class="mt16">Александра Калинина</h3><p class="muted mt16">Разрабатывает уроки, на которых детям интересно и не страшно пробовать новое.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Классный руководитель</p><h3 class="mt16">Татьяна Брейкина</h3><p class="muted mt16">Следит за посещаемостью и успеваемостью, помогает с учёбой и решает вопросы с аттестацией.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMAT (FORM) ===================== -->
+    <section class="section section--soft" aria-labelledby="fmt-title">
+      <div class="container two">
+        <div>
+          <h2 class="h2" id="fmt-title">Подберём формат обучения для ребёнка</h2>
+          <p class="lead">И зафиксируем лучшую цену на 2026/27 учебный год.</p>
+          <ul class="mt24" style="display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;gap:10px"><span class="dot"></span>Покажем, как проходят уроки в нашей школе</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Расскажем про учебную программу и аттестацию</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Поможем с документами для зачисления</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Хочу на консультацию</h3>
+          <form class="form mt16" data-form>
+            <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+            <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+            <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+            <button class="btn btn-accent btn-block" type="submit">Хочу на консультацию</button>
+            <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+            <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+            <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERTS ===================== -->
+    <section class="section" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 class="h2" id="exp-title">За процесс обучения отвечают опытные эксперты</h2>
+        <div class="grid g3 mt40">
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Куратор учебной программы</p><h3 class="mt16">Александра Калинина</h3><p class="muted mt16">Разрабатывает уроки, на которых детям интересно и не страшно пробовать новое.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Классный руководитель</p><h3 class="mt16">Татьяна Брейкина</h3><p class="muted mt16">Следит за посещаемостью и успеваемостью, помогает с учёбой и решает вопросы с аттестацией.</p></div>
+          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
+        </div>
+        <p class="lead">Помогаем не только детям, но и родителям. Сопровождаем от зачисления до аттестации, не оставляем один на один с вопросами и помогаем, даже если сроки уже прошли, а с документами есть проблемы.</p>
+      </div>
+    </section>
+
+    <!-- ===================== REVIEWS ===================== -->
+    <section class="section section--soft" aria-labelledby="rev-title">
+      <div class="container">
+        <h2 class="h2" id="rev-title">Семьи по всему миру доверяют нам образование детей</h2>
+        <p class="lead">Тысячи учеников уже создают своё будущее с нами. 80% учеников и родителей готовы рекомендовать нас своим друзьям и близким.</p>
+        <div class="grid g2 mt40">
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Заметила, что сын стал отказываться от помощи с домашней работой по математике. Раньше мы каждый вечер с ним сидели, либо я, либо папа. Теперь только сам. Самое интересное, что оценки при этом не подкачали. Дневник проверяю без страха!</blockquote><figcaption class="mt16" style="font-weight:600">Наталья, мама Владимира</figcaption></figure>
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Сначала, если честно, не доверял онлайн-школам. Хотелось, чтобы сын учился «как положено». Но сейчас рад, что выбрал Skysmart. Работаю за границей, и сын живёт со мной. Благодаря Skysmart он учится, как и все, — с расписанием, классными преподавателями, домашкой. И главное — мы вместе. Это самое ценное.</blockquote><figcaption class="mt16" style="font-weight:600">Дмитрий, папа Мирона</figcaption></figure>
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Преподаватели в Домашнем лицее невероятные. Пока сын занимается, сама слушаю, настолько интересно всё объясняют. Наконец-то учёба перестала быть обязанностью и стала по-настоящему увлекательной. Сын учится с удовольствием и без стресса.</blockquote><figcaption class="mt16" style="font-weight:600">Майя, мама Елисея</figcaption></figure>
+          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Моя мечта — стать профессиональным баскетболистом. В обычной школе это было сложно: тренировки часто совпадают с уроками. А здесь я сам планирую день и всегда успеваю и потренироваться, и поучиться.</blockquote><figcaption class="mt16" style="font-weight:600">Сергей, ученик</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TARIFFS ===================== -->
+    <section class="section" id="tariffs" aria-labelledby="tar-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="tar-title">Выбирайте подходящий тариф</h2>
+        <p class="muted mt16">Со скидкой −20% на новый учебный год.</p>
+        <div class="grid g4 mt40">
+          <div class="card tariff">
+            <div class="top"><h3>Стандарт</h3></div>
+            <ul><li><span class="d"></span>Вебинары по всем предметам</li><li><span class="d"></span>Регулярная отчётность</li><li><span class="d"></span>Помощь и письменная обратная связь от классного руководителя</li></ul>
+            <div class="mt16"><p class="price-old">10 895 ₽ / мес.</p><p class="price">от 8 716 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+          <div class="card tariff">
+            <div class="top"><h3>Оптимум</h3><span class="badge">популярно</span></div>
+            <ul><li><span class="d"></span>Дополнительные уроки в мини-группах для отработки навыков</li><li><span class="d"></span>Регулярные встречи по успеваемости и дисциплине с классным руководителем</li><li><span class="d"></span>Письменные домашние задания с проверкой</li></ul>
+            <div class="mt16"><p class="price-old">24 258 ₽ / мес.</p><p class="price">от 19 406 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+          <div class="card tariff">
+            <div class="top"><h3>Профильный</h3><span class="badge">новинка</span></div>
+            <ul><li><span class="d"></span>Гуманитарное и техническое направления</li><li><span class="d"></span>Углублённая программа</li><li><span class="d"></span>Увеличенное количество уроков по профильным предметам</li><li><span class="d"></span>Проект в конце учебного года</li><li><span class="d"></span>Письменные домашние задания с проверкой</li><li><span class="d"></span>Встречи с нейропсихологом (по запросу)</li></ul>
+            <div class="mt16"><p class="price-old">31 098 ₽ / мес.</p><p class="price">от 24 878 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+          <div class="card tariff">
+            <div class="top"><h3>Премиум</h3><span class="badge">рекомендуем</span></div>
+            <ul><li><span class="d"></span>Дополнительно 4 индивидуальных урока для разбора трудных тем или решения задач повышенной сложности</li><li><span class="d"></span>Составление и контроль индивидуального учебного плана с помощью классного руководителя</li><li><span class="d"></span>Письменные домашние задания с проверкой</li><li><span class="d"></span>Встречи с нейропсихологом (по запросу)</li></ul>
+            <div class="mt16"><p class="price-old">47 775 ₽ / мес.</p><p class="price">от 38 220 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
+            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
+          </div>
+        </div>
+        <div class="mt24"><button class="btn btn-ghost" data-open>Подробный состав тарифов</button></div>
+      </div>
+    </section>
+
+    <!-- ===================== PAYMENT ===================== -->
+    <section class="section section--soft" aria-labelledby="pay-title">
+      <div class="container">
+        <h2 class="h2" id="pay-title">Оплачивайте учёбу ребёнка без вреда для семейного бюджета</h2>
+        <div class="grid g3 mt40">
+          <div class="card"><h3>Материнский капитал</h3><p class="muted mt16">Можно использовать частично или полностью. Поможем с оформлением документов.</p></div>
+          <div class="card"><h3>Налоговый вычет до 33 800 ₽</h3><p class="muted mt16">Государство вернёт 13% от стоимости любого тарифа, а мы поможем оформить заявку.</p></div>
+          <div class="card"><h3>Внутренняя и банковская рассрочка</h3><p class="muted mt16">Если в рассрочку, то без процентов — их мы берём на себя.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONSULT (FORM) ===================== -->
+    <section class="section" aria-labelledby="con-title">
+      <div class="container two">
+        <div>
+          <h2 class="h2" id="con-title">Узнайте больше о школе на бесплатной консультации</h2>
+          <ul class="mt24" style="display:flex;flex-direction:column;gap:12px">
+            <li style="display:flex;gap:10px"><span class="dot"></span>Покажем, как проходят уроки на нашей платформе</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Поможем выбрать тариф и разобраться с документами</li>
+            <li style="display:flex;gap:10px"><span class="dot"></span>Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</li>
+          </ul>
+        </div>
+        <div class="card card--plain">
+          <h3>Записаться</h3>
+          <form class="form mt16" data-form>
+            <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+            <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+            <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+            <button class="btn btn-accent btn-block" type="submit">Записаться</button>
+            <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+            <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+            <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section section--soft" id="faq" aria-labelledby="faq-title" style="scroll-margin-top:90px">
+      <div class="container faq">
+        <h2 class="h2" id="faq-title">Частые вопросы</h2>
+        <div class="mt24">
+          <details><summary>Что такое семейная форма обучения?</summary><div class="answer"><p>Согласно статье 17 закона «Об образовании в Российской Федерации», любой ребёнок независимо от состояния здоровья может учиться на семейной форме обучения. Это значит, что ребёнку не обязательно посещать обычную офлайн-школу: разрешено учиться дома и приходить в образовательное учреждение только для прохождения аттестации и получения документов об образовании.</p><p>А если школа, к которой прикреплён ребёнок, имеет разрешение проводить аттестацию онлайн, то посещать школу не придётся. Полностью онлайн не получится учиться только в 9 и 11 классах: в них дети сдают ОГЭ и ЕГЭ, которые проходят очно.</p><p>Задача родителя — организовать обучение ребёнка. Оба вопроса мы помогаем решить — разберёмся с документами и организуем качественное образование.</p></div></details>
+          <details><summary>Как перевести ребёнка на семейную форму обучения?</summary><div class="answer"><p>Нужно выбрать вариант прохождения аттестации — дистанционно или очно. Дистанционно: мы прикрепим ребёнка к партнёрской школе для прохождения аттестации онлайн. Юридически ребёнок будет закреплён за московской школой и сможет сдавать аттестацию из любой точки мира.</p><p>Такой вариант доступен для учеников 5–8 и 10 классов. В 9 и 11 классах полностью дистанционно аттестоваться не получится. Запишитесь на бесплатную консультацию — мы расскажем, как всё устроено, и подскажем, что делать дальше.</p></div></details>
+          <details><summary>В чём особенность прикрепления к школе для детей 9 и 11 классов?</summary><div class="answer"><p>В 9 классе аттестация проводится в формате ОГЭ, в 11 — в формате ЕГЭ, а также контрольных работ. Без этого ребёнку не выдадут аттестат за 9 или 11 класс. ОГЭ и ЕГЭ проводятся только офлайн.</p><p>Ребёнок может остаться прикреплённым к прежней школе либо мы поможем подобрать другую аккредитованную школу в формате экстерната / заочной формы. Учиться ребёнок при этом будет онлайн в нашем лицее.</p></div></details>
+          <details><summary>Как поступить, если я живу не в России?</summary><div class="answer"><p>Поступление из-за рубежа ничем не отличается от поступления из России: вы сможете предоставить все документы и подписать договор онлайн. Если документы были выданы в другой стране, понадобится их заверенный перевод на русский язык.</p><p>Если ребёнок учится в 9 или 11 классе, для получения аттестата нужно будет сдавать ОГЭ или ЕГЭ очно — через прикрепление к школе по месту жительства или к школе при консульстве/посольстве РФ.</p></div></details>
+          <details><summary>А как потом вернуться в обычную школу?</summary><div class="answer"><p>Если онлайн-обучение вам не подошло, вы можете без проблем вернуться в обычную школу. Сначала нужно обратиться в поддержку, чтобы расторгнуть договор — мы вернём деньги за все оставшиеся оплаченные дни.</p><p>Затем вы подаёте документы в нужную школу, а она проводит оценку знаний ребёнка через контрольные и проверочные работы по пройденному материалу.</p></div></details>
+          <details><summary>Что такое аттестация?</summary><div class="answer"><p>Аттестация — процесс оценки знаний за учебный год для тех, кто учится в Домашнем лицее вместо обычной школы. Её нужно проходить раз в год, выбрав один из трёх периодов: 25 августа — 25 сентября, 11 января — 11 февраля, 11 мая — 11 июня.</p><p>До 8 класса аттестация необязательна, но мы рекомендуем проходить её ежегодно. В 9 и 11 классах аттестация обязательна и проводится в формате ОГЭ и ЕГЭ офлайн.</p></div></details>
+          <details><summary>Как вы готовите к аттестации?</summary><div class="answer"><p>Наши программы по предметам составлены так, чтобы ученики успели изучить все необходимые темы для сдачи промежуточной аттестации в конкретном классе.</p><p>После каждого урока ребята получают домашнее задание, а после каждой темы пишут контрольные работы и тестовые аттестации, по которым классный руководитель подскажет, что повторить.</p></div></details>
+          <details><summary>Что будет, если ребёнок не поймёт тему?</summary><div class="answer"><p>Мы делаем всё для усвоения материала: контент разнообразен и адаптирован для учеников с разными особенностями восприятия — «живые» уроки и вебинары, конспекты, задания с иллюстрациями.</p><p>Все записи уроков хранятся в кабинете весь год, есть задания разного уровня сложности, помощь куратора и мини-группы по основным предметам.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KNOWLEDGE ===================== -->
+    <section class="section" id="knowledge" aria-labelledby="kn-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <h2 class="h2" id="kn-title">Больше информации о дистанционном обучении в онлайн-школе</h2>
+        <p class="muted mt16">Узнать подробнее о дистанционном образовании детей вы можете в следующих материалах:</p>
+        <ul class="knowledge mt40">
+          <li><a href="#knowledge">Заявление в школу об отсутствии ребёнка по семейным обстоятельствам</a></li>
+          <li><a href="#knowledge">Образцы заявлений для освобождения от занятий в школе</a></li>
+          <li><a href="#knowledge">Школьные программы для начальных классов</a></li>
+          <li><a href="#knowledge">Всё о внеклассных мероприятиях в школе</a></li>
+          <li><a href="#knowledge">Можно ли давать домашние задания на каникулы</a></li>
+          <li><a href="#knowledge">Сколько стоит домашнее обучение</a></li>
+          <li><a href="#knowledge">Типы и виды образовательных учреждений в России</a></li>
+          <li><a href="#knowledge">Углублённое изучение предметов в школе</a></li>
+          <li><a href="#knowledge">Индивидуальный план обучения в школе</a></li>
+          <li><a href="#knowledge">Домашнее обучение — что это, как перейти, плюсы и минусы</a></li>
+          <li><a href="#knowledge">Какие бывают уроки в школе</a></li>
+          <li><a href="#knowledge">Какие бывают олимпиады и зачем в них участвовать</a></li>
+          <li><a href="#knowledge">Как заставить ребёнка учиться без давления и чувства вины</a></li>
+          <li><a href="#knowledge">Как быстро выучить текст наизусть</a></li>
+          <li><a href="#knowledge">Лучший стул для школьника</a></li>
+          <li><a href="#knowledge">Как строить отношения с репетитором</a></li>
+          <li><a href="#knowledge">Типы обучающихся в образовательных организациях</a></li>
+          <li><a href="#knowledge">Заочное обучение в школе</a></li>
+          <li><a href="#knowledge">Промежуточная аттестация: что это и как подготовиться</a></li>
+          <li><a href="#knowledge">Что такое школьный буллинг</a></li>
+          <li><a href="#knowledge">Необщительный ребёнок: что делать родителям</a></li>
+          <li><a href="#knowledge">Электронный дневник школьника: регистрация и использование</a></li>
+          <li><a href="#knowledge">Что такое экстернат и как окончить школу экстерном</a></li>
+          <li><a href="#knowledge">Лучшие приложения для учёбы</a></li>
+          <li><a href="#knowledge">Всё о профориентации в школе: советы и рекомендации</a></li>
+          <li><a href="#knowledge">Как перевести ребёнка в другую школу</a></li>
+          <li><a href="#knowledge">Что такое дистанционное обучение</a></li>
+          <li><a href="#knowledge">Семейное образование в России</a></li>
+          <li><a href="#knowledge">Как выбрать профильное обучение в старших классах</a></li>
+          <li><a href="#knowledge">Что такое синдром отличника</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <p>© <span id="year"></span> Skysmart. Домашний лицей.</p>
+      <p>Онлайн-школа с аттестатом государственного образца, 5–11 класс.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL ===================== -->
+  <dialog id="modal" aria-labelledby="modal-title">
+    <div class="modal-in">
+      <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+      <h3 id="modal-title">Записаться на консультацию</h3>
+      <p class="muted mt16">Оставьте контакты — расскажем, как проходят уроки, поможем выбрать тариф и зафиксируем цену на новый учебный год.</p>
+      <form class="form mt16" data-form>
+        <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
+        <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
+        <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
+        <button class="btn btn-accent btn-block" type="submit">Записаться</button>
+        <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
+        <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
+        <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+      </form>
+    </div>
+  </dialog>
+
+  <script>
+    // Если декоративная картинка не загрузилась — прячем её (без «битых» иконок)
+    document.addEventListener("error", function (e) {
+      if (e.target && e.target.tagName === "IMG" && e.target.getAttribute("aria-hidden") === "true") {
+        e.target.style.display = "none";
+      }
+    }, true);
+
+    // Слайдеры (активны на мобильных, на ПК — обычная сетка)
+    function initSlider(trackId, prevId, nextId, dotsId) {
+      var track = document.getElementById(trackId);
+      if (!track) return;
+      var count = track.children.length;
+      var i = 0;
+      var dotsWrap = document.getElementById(dotsId);
+      var isMobile = function () { return window.matchMedia("(max-width:900px)").matches; };
+      for (var d = 0; d < count; d++) {
+        var b = document.createElement("button");
+        b.className = "choice-dot";
+        b.type = "button";
+        b.setAttribute("aria-label", "Слайд " + (d + 1));
+        (function (idx) { b.addEventListener("click", function () { i = idx; update(); }); })(d);
+        dotsWrap.appendChild(b);
+      }
+      function update() {
+        track.style.transform = isMobile() ? "translateX(" + (-i * 100) + "%)" : "none";
+        var dots = dotsWrap.children;
+        for (var k = 0; k < dots.length; k++) dots[k].classList.toggle("active", k === i);
+      }
+      document.getElementById(prevId).addEventListener("click", function () { i = (i - 1 + count) % count; update(); });
+      document.getElementById(nextId).addEventListener("click", function () { i = (i + 1) % count; update(); });
+      window.addEventListener("resize", function () { if (!isMobile()) { i = 0; } update(); });
+      update();
+    }
+    initSlider("worryTrack", "worryPrev", "worryNext", "worryDots");
+
+    // Выпадающий список «Триал N класс»
+    (function () {
+      var sel = document.getElementById("trialSelect");
+      if (!sel) return;
+      var btn = document.getElementById("trialSelectBtn");
+      var val = document.getElementById("trialSelectVal");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sel.classList.toggle("open");
+        btn.setAttribute("aria-expanded", sel.classList.contains("open"));
+      });
+      sel.querySelectorAll(".trial-option").forEach(function (opt) {
+        opt.addEventListener("click", function () {
+          val.textContent = opt.textContent;
+          sel.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+      document.addEventListener("click", function (e) {
+        if (!sel.contains(e.target)) {
+          sel.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+      var submit = document.getElementById("trialSubmit");
+      var ok = document.getElementById("trialOk");
+      if (submit && ok) submit.addEventListener("click", function () { ok.style.display = "block"; });
+    })();
+
+    // Слайдер преподавателей + поп-ап видео урока
+    (function () {
+      var card = document.getElementById("teachName");
+      if (!card) return;
+      var T = [
+        { name: "Татьяна Терещенко", subject: "физика", icon: "https://static.tildacdn.com/tild6531-3364-4335-b839-313635663465/Magnet.svg", grades: "7–11 классы", bio: "Магистр в области ИТ в образовании, преподаватель физики с опытом работы в колледжах и вузах. Ведёт научную работу и разрабатывает проекты, готовит к ОГЭ и ЕГЭ, помогает разобраться со сложными заданиями. Стаж преподавания — 8 лет", photo: "https://static.tildacdn.com/tild3533-3866-4930-b738-313730316463/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0.mp4" },
+        { name: "Алексей Мелкозеров", subject: "информатика", icon: "https://static.tildacdn.com/tild6631-3937-4461-b633-363164663732/Code.svg", grades: "5–11 классы", bio: "Научил 300+ учеников программировать, участвовал в разработке игр с использованием продвинутых технологий. Обучает языку программирования Python, алгоритмам и веб-разработке (языки HTML, CSS, JavaScript). Стаж преподавания — 5 лет", photo: "https://static.tildacdn.com/tild3861-6666-4332-b762-623034386130/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D1%82%D0%B0%D0%B8%D0%BA%D0%B0.mp4" },
+        { name: "Екатерина Бордун", subject: "математика", icon: "https://static.tildacdn.com/tild3234-6535-4263-b332-393964656632/Calculator.svg", grades: "5–8 классы", bio: "Экономист, математик с профильным педагогическим образованием, автор нескольких сотен заданий по математике. Стаж преподавания — 12 лет", photo: "https://static.tildacdn.com/tild6434-6364-4464-a262-356432363264/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0.mp4" },
+        { name: "Константин Нестеров", subject: "биология", icon: "https://static.tildacdn.com/tild6437-3732-4562-b664-393133353833/Leaf.svg", grades: "5–11 классы", bio: "Магистр биотехнологии, выпускник ХТИ УрФУ. Автор курса «Биология с нуля», методист курса подготовки к ЕГЭ по биологии и программы Домашнего лицея. Стаж преподавания — 9 лет", photo: "https://static.tildacdn.com/tild3363-6662-4535-a639-333733653731/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.mp4" },
+        { name: "Арина Матвеева", subject: "география", icon: "https://static.tildacdn.com/tild6535-3566-4037-a235-613630646234/Globe.svg", grades: "5–11 классы", bio: "Выпускница РГПУ им. А. И. Герцена с двумя красными дипломами, учитель первой квалификационной категории. Автор курса подготовки к ОГЭ и ЕГЭ, предметный методист и методист СПО. Более 7 лет преподаёт географию и готовит учеников к экзаменам", photo: "https://static.tildacdn.com/tild6532-6135-4532-b837-303635363066/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B3%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%20.mp4" },
+        { name: "Маргарита Могилат", subject: "литература", icon: "https://static.tildacdn.com/tild3136-6664-4330-b065-373233393161/Book.svg", grades: "5–11 классы", bio: "Филолог-литературовед, выпускница Государственного института русского языка им. А. С. Пушкина. Стаж преподавания — 5 лет", photo: "https://static.tildacdn.com/tild3937-6638-4433-b431-346237646663/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0.mp4" },
+        { name: "Иван Лобов", subject: "история", icon: "https://static.tildacdn.com/tild3831-3534-4835-a364-656464303765/Column.svg", grades: "5–11 классы", bio: "Региональный эксперт проверки ОГЭ/ЕГЭ, преподаватель обществознания и истории, магистр управления образованием. Учитель первой квалификационной категории, участник конкурса «Учитель года». Стаж преподавания — 9 лет", photo: "https://static.tildacdn.com/tild6135-6464-4932-b265-626261393063/Property_1_Deskyes_1.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F.mp4" },
+        { name: "Дарья Афанасьева", subject: "обществознание", icon: "https://static.tildacdn.com/tild6635-6633-4239-a466-383665643534/Social_Studies.svg", grades: "6–11 классы", bio: "Выпускница НИУ ВШЭ, юрист, педагог, автор научных работ в области юриспруденции, сдала ЕГЭ на 100 баллов и знает экзамен изнутри. Стаж преподавания и подготовки к ЕГЭ по обществознанию — 9 лет", photo: "https://static.tildacdn.com/tild6666-3931-4666-b032-323266373466/Property_1_Deskyes.png", video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20.mp4" },
+        { name: "Богдан Шмыков", subject: "химия", icon: "https://static.tildacdn.com/tild6465-3061-4138-b935-306135333835/Chemistry.svg", grades: "8–11 классы", bio: "Выпускник химфака МГУ. Стаж преподавания — 6 лет, средний балл учеников на ЕГЭ — 90", photo: "https://static.tildacdn.com/tild3435-3966-4437-b438-356437373830/Property_1_Deskyes_1.png", video: "https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" },
+        { name: "Эльмаз Умерова", subject: "английский язык", icon: "https://static.tildacdn.com/tild6434-3233-4730-b538-353234653331/Flag_Eng.svg", grades: "9–11 классы", bio: "Магистр филологии, владеет английским на высоком уровне (Advanced), сдала экзамен IELTS на 8 баллов. Ведёт уроки с опорой на международные стандарты преподавания, готовит учеников к ОГЭ, ЕГЭ и помогает заговорить на английском более 7 лет", photo: "https://static.tildacdn.com/tild3761-3162-4464-b762-633132613239/Property_1_Deskyes_1.png", video: "https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" }
+      ];
+      var i = 0;
+      var name = document.getElementById("teachName"), grades = document.getElementById("teachGrades"), bio = document.getElementById("teachBio"), icon = document.getElementById("teachIcon"), subject = document.getElementById("teachSubject"), photo = document.getElementById("teachPhoto"), counter = document.getElementById("teachCounter");
+      function render() {
+        var t = T[i];
+        name.textContent = t.name; grades.textContent = t.grades; bio.textContent = t.bio;
+        icon.src = t.icon; subject.textContent = t.subject; photo.src = t.photo; photo.alt = t.name;
+        counter.textContent = (i + 1) + " / " + T.length;
+      }
+      document.getElementById("teachPrev").addEventListener("click", function () { i = (i - 1 + T.length) % T.length; render(); });
+      document.getElementById("teachNext").addEventListener("click", function () { i = (i + 1) % T.length; render(); });
+      var modal = document.getElementById("teachModal"), video = document.getElementById("teachVideo");
+      document.getElementById("teachWatch").addEventListener("click", function () { video.src = T[i].video; modal.classList.add("open"); if (video.play) video.play(); });
+      function closeModal() { modal.classList.remove("open"); if (video.pause) video.pause(); }
+      document.getElementById("teachModalClose").addEventListener("click", closeModal);
+      modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+      // Предзагрузка фото всех преподавателей при попадании секции в зону видимости
+      var section = document.querySelector(".teach");
+      if (section && "IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) { T.forEach(function (x) { var im = new Image(); im.src = x.photo; }); io.disconnect(); }
+        }, { rootMargin: "300px" });
+        io.observe(section);
+      }
+      render();
+    })();
+
+    // «Подберите расписание» — поп-ап консультации + выбор класса
+    (function () {
+      var openBtn = document.getElementById("pickOpen"), modal = document.getElementById("pickModal");
+      if (!openBtn || !modal) return;
+      function show() { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
+      function hide() { modal.classList.remove("open"); document.body.style.overflow = ""; }
+      openBtn.addEventListener("click", show);
+      document.getElementById("pickClose").addEventListener("click", hide);
+      document.getElementById("pickBack").addEventListener("click", hide);
+      modal.addEventListener("click", function (e) { if (e.target === modal) hide(); });
+      var sel = document.getElementById("pickSelect"), btn = document.getElementById("pickSelectBtn"), val = document.getElementById("pickSelectVal");
+      btn.addEventListener("click", function (e) { e.stopPropagation(); sel.classList.toggle("open"); });
+      sel.querySelectorAll(".trial-option").forEach(function (opt) {
+        opt.addEventListener("click", function () { val.textContent = opt.textContent; val.style.color = ""; sel.classList.remove("open"); });
+      });
+      document.addEventListener("click", function (e) { if (!sel.contains(e.target)) sel.classList.remove("open"); });
+      var ok = document.getElementById("pickOk");
+      document.getElementById("pickSubmit").addEventListener("click", function () { ok.style.display = "block"; });
+    })();
+
+    // Год в футере
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Мобильное меню
+    var burger = document.getElementById("burger");
+    var mobileMenu = document.getElementById("mobile-menu");
+    burger.addEventListener("click", function () {
+      var open = mobileMenu.style.display === "block";
+      mobileMenu.style.display = open ? "none" : "block";
+      burger.setAttribute("aria-expanded", String(!open));
+    });
+    mobileMenu.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") { mobileMenu.style.display = "none"; burger.setAttribute("aria-expanded", "false"); }
+    });
+
+    // Табы
+    document.querySelectorAll("[data-tabs]").forEach(function (group) {
+      var btns = group.querySelectorAll(".tab-btn");
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          btns.forEach(function (b) { b.setAttribute("aria-selected", "false"); });
+          group.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("active"); });
+          btn.setAttribute("aria-selected", "true");
+          var panel = group.querySelector("#" + btn.getAttribute("data-tab"));
+          if (panel) panel.classList.add("active");
+        });
+      });
+    });
+
+    // Модальное окно
+    var modal = document.getElementById("modal");
+    document.querySelectorAll("[data-open]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (typeof modal.showModal === "function") modal.showModal();
+        else modal.setAttribute("open", "");
+      });
+    });
+    document.getElementById("modal-close").addEventListener("click", function () { modal.close(); });
+    modal.addEventListener("click", function (e) {
+      var r = modal.querySelector(".modal-in").getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) modal.close();
+    });
+
+    // Формы (без бэкенда — показываем подтверждение)
+    document.querySelectorAll("[data-form]").forEach(function (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var ok = form.querySelector(".form-ok");
+        if (ok) ok.style.display = "block";
+        form.querySelectorAll('input[type="text"],input[type="tel"],select').forEach(function (f) { f.value = ""; });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -15,4 +15,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  ssr: {
+    // CommonJS-пакеты бандлим для корректного SSR-интеропа именованных экспортов
+    noExternal: ["react-helmet-async"],
+  },
 }));
