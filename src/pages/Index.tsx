@@ -12,6 +12,7 @@ import { TeachersSlider } from "@/components/landing/TeachersSlider";
 import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
 import { PickSchedule } from "@/components/landing/PickSchedule";
 import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
+import { StudentsFuture } from "@/components/landing/StudentsFuture";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -130,6 +131,8 @@ const Index = () => {
         <PickSchedule />
 
         <FamiliesTrust />
+
+        <StudentsFuture />
 
         <TrialBlock />
 

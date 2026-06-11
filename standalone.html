@@ -412,6 +412,43 @@
       .fam-cap{margin:0 0 12px}
     }
 
+    /* ===== «Тысячи учеников уже создают своё будущее с нами» (отзывы + рейтинги) ===== */
+    .stu{background:#f4f5f6;padding:56px 0}
+    .stu-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
+    .stu-grid{display:grid;grid-template-columns:minmax(0,1fr) 376px;gap:16px}
+    .stu-left{display:grid;grid-template-rows:minmax(264px,auto) minmax(288px,auto);gap:16px}
+    .stu-r1{display:grid;grid-template-columns:278px minmax(0,1fr);gap:16px}
+    .stu-r2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .stu-card{background:#fff;border-radius:24px;padding:24px;height:100%}
+    .stu-card.-tall{height:100%}
+    .stu-stat{position:relative;overflow:hidden;border-radius:24px;padding:24px;color:#fff;height:100%;background:linear-gradient(15deg,#ff8400 0%,#ff9e00 100%)}
+    .stu-stat-spark{position:absolute;top:20px;right:20px;width:24px;height:24px}
+    .stu-stat-num{font-size:32px;font-weight:600;line-height:1;margin:0}
+    .stu-stat-sub{margin:16px 0 0;max-width:220px;font-size:17px;line-height:1.3;color:rgba(255,255,255,.8)}
+    .stu-head{display:flex;align-items:center;gap:12px}
+    .stu-head img{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+    .stu-name{font-size:17px;font-weight:600;line-height:1.15;margin:0}
+    .stu-since{font-size:15px;color:rgba(0,0,0,.5);margin:4px 0 0}
+    .stu-text{margin:16px 0 0;font-size:15px;line-height:1.35;color:rgba(0,0,0,.62)}
+    .stu-text p{margin:0 0 12px}
+    .stu-text p:last-child{margin-bottom:0}
+    .stu-more{display:none}
+    .stu-rating{margin-top:16px;background:#fff;border-radius:24px;padding:24px 40px}
+    .stu-rating ul{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .stu-rating img{display:block;width:165px;height:auto}
+    @media(max-width:1100px){
+      .stu-grid{display:block}
+      .stu-left{display:block}
+      .stu-r1,.stu-r2{display:block}
+      .stu-card,.stu-stat{margin-bottom:16px;height:auto}
+      .stu-right{margin-top:0}
+      .stu.collapsed .stu-extra{display:none}
+      .stu.collapsed .stu-more{display:flex;align-items:center;justify-content:center;width:100%;border:1px solid rgba(0,0,0,.15);background:#fff;border-radius:999px;padding:12px 24px;font-size:16px;font-family:inherit;cursor:pointer;margin:4px 0 16px}
+      .stu-rating{padding:24px}
+      .stu-rating ul{flex-direction:column;gap:28px}
+      .stu-rating img{width:150px}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -1048,6 +1085,65 @@
       </div>
     </section>
 
+    <!-- ===================== ТЫСЯЧИ УЧЕНИКОВ (отзывы + рейтинги) ===================== -->
+    <section class="stu collapsed" id="students" aria-labelledby="stu-title">
+      <div class="container">
+        <h2 class="stu-title" id="stu-title">Тысячи учеников уже создают своё будущее с нами</h2>
+        <div class="stu-grid">
+          <div class="stu-left">
+            <div class="stu-r1">
+              <div class="stu-stat">
+                <img class="stu-stat-spark" src="https://static.tildacdn.com/tild3239-3138-4137-a363-313839646134/Effects_1.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy">
+                <p class="stu-stat-num">80%</p>
+                <p class="stu-stat-sub">учеников и родителей готовы рекомендовать нас друзьям и близким</p>
+              </div>
+              <article class="stu-card">
+                <header class="stu-head">
+                  <img src="https://static.tildacdn.com/tild6339-3038-4361-b134-653963333139/image_896.png" alt="" aria-hidden="true" width="60" height="60" loading="lazy" decoding="async">
+                  <div><p class="stu-name">Наталья, мама Владимира</p><p class="stu-since">Занимаются с 2023 года</p></div>
+                </header>
+                <div class="stu-text"><p>Заметила, что сын стал отказываться от помощи с домашней работой по математике. Раньше мы каждый вечер с ним сидели, либо я, либо папа. Теперь только сам. Самое интересное, что оценки при этом не подкачали. Дневник проверяю без страха!</p></div>
+              </article>
+            </div>
+            <div class="stu-r2">
+              <article class="stu-card stu-extra">
+                <header class="stu-head">
+                  <img src="https://static.tildacdn.com/tild3334-3330-4364-b563-393766653435/Ellipse_58.png" alt="" aria-hidden="true" width="60" height="60" loading="lazy" decoding="async">
+                  <div><p class="stu-name">Майя, мама Елисея</p><p class="stu-since">Занимаются с 2024 года</p></div>
+                </header>
+                <div class="stu-text"><p>Преподаватели в Домашнем лицее невероятные. Пока сын занимается, сама слушаю, настолько интересно всё объясняют. Наконец-то учёба перестала быть обязанностью и стала по-настоящему увлекательной. Сын учится с удовольствием и без стресса.</p></div>
+              </article>
+              <article class="stu-card stu-extra">
+                <header class="stu-head">
+                  <img src="https://static.tildacdn.com/tild3633-3362-4432-b966-663634386136/image_894.png" alt="" aria-hidden="true" width="60" height="60" loading="lazy" decoding="async">
+                  <div><p class="stu-name">Сергей, ученик</p><p class="stu-since">Занимается с 2024 года</p></div>
+                </header>
+                <div class="stu-text"><p>Моя мечта — стать профессиональным баскетболистом. В обычной школе это было сложно, тренировки часто совпадают с уроками. А здесь я сам планирую день, и всегда успеваю и потренироваться, и поучиться.</p></div>
+              </article>
+            </div>
+          </div>
+          <div class="stu-right stu-extra">
+            <article class="stu-card -tall">
+              <header class="stu-head">
+                <img src="https://static.tildacdn.com/tild6632-6364-4837-b536-656237383031/Frame_2087331462.png" alt="" aria-hidden="true" width="60" height="60" loading="lazy" decoding="async">
+                <div><p class="stu-name">Дмитрий, папа Мирона</p><p class="stu-since">Занимаются с 2022 года</p></div>
+              </header>
+              <div class="stu-text"><p>Сначала, если честно, не доверял онлайн-школам. Хотелось, чтобы сын учился «как положено». Но сейчас рад, что выбрал Skysmart. Работаю за границей, и сын живёт со мной. Благодаря Skysmart он учится, как и все, — с расписанием, классными преподавателями, домашкой.</p><p>И главное — мы вместе. Это самое ценное.</p></div>
+            </article>
+          </div>
+        </div>
+        <button class="stu-more" type="button" id="stuMore">Показать все отзывы</button>
+        <div class="stu-rating">
+          <ul>
+            <li><img src="https://static.tildacdn.com/tild6161-6431-4330-b032-353930613831/Frame_2131329075.png" alt="Сравни — рейтинг 4,8" width="165" height="56" loading="lazy" decoding="async"></li>
+            <li><img src="https://static.tildacdn.com/tild6365-3731-4030-a232-626463396136/Frame_2131329070.png" alt="Яндекс — рейтинг 4,7" width="165" height="56" loading="lazy" decoding="async"></li>
+            <li><img src="https://static.tildacdn.com/tild3534-3834-4764-a164-363438303434/Frame_2131329074.png" alt="2ГИС — рейтинг 4,8" width="165" height="56" loading="lazy" decoding="async"></li>
+            <li><img src="https://static.tildacdn.com/tild3535-6534-4139-b739-346335626430/Frame_2131329073.png" alt="Отзовик — рейтинг 4,7" width="165" height="56" loading="lazy" decoding="async"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -1477,6 +1573,12 @@
         vid.addEventListener("play", function () { card.classList.add("playing"); });
         vid.addEventListener("pause", function () { card.classList.remove("playing"); });
       });
+    })();
+
+    // «Тысячи учеников» — показать все отзывы на мобильных
+    (function () {
+      var sec = document.getElementById("students"), more = document.getElementById("stuMore");
+      if (sec && more) more.addEventListener("click", function () { sec.classList.remove("collapsed"); });
     })();
 
     // Год в футере
