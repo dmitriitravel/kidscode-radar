@@ -513,15 +513,15 @@
 
     /* ===== «Как перейти на семейное обучение» (адаптив) ===== */
     .hsw{background:#f4f5f6;padding:56px 0}
-    .hsw-card{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:#fff;border-radius:24px;overflow:hidden}
+    .hsw-card{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:linear-gradient(115deg,#0d0813 0%,#241043 45%,#7a2cb8 100%);color:#fff;border-radius:24px;overflow:hidden}
     .hsw-body{padding:48px}
     .hsw-title{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0}
     .hsw-steps{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
     .hsw-steps li{display:flex;align-items:flex-start;gap:12px}
-    .hsw-num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--brand-accent);color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
-    .hsw-steps span:last-child{font-size:16px;line-height:1.32}
-    .hsw-btn{margin-top:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:#04121b;color:#fff;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;transition:background .2s}
-    .hsw-btn:hover{background:#1d3949}
+    .hsw-num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
+    .hsw-steps span:last-child{font-size:16px;line-height:1.32;color:rgba(255,255,255,.9)}
+    .hsw-btn{margin-top:32px;display:inline-flex;align-items:center;gap:8px;justify-content:center;border-radius:12px;background:linear-gradient(180deg,#cf9bff,#a86bf0);color:#fff;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;transition:opacity .2s}
+    .hsw-btn:hover{opacity:.9}
     .hsw-media{align-self:stretch;display:flex}
     .hsw-media img{width:100%;height:100%;object-fit:cover;object-position:top}
     .hsw-media .-mob{display:none}
@@ -530,6 +530,36 @@
       .hsw-body{padding:32px 24px}
       .hsw-media .-pc{display:none}
       .hsw-media .-mob{display:block;width:100%;height:auto}
+    }
+
+    /* ===== «Узнайте больше о школе на бесплатной консультации» (адаптив) ===== */
+    .cb{background:#f4f5f6;padding:56px 0}
+    .cb-card{background:#fff;border-radius:24px;overflow:hidden}
+    .cb-banner{background:#faf7ff;display:flex;justify-content:center}
+    .cb-banner img{width:100%;height:180px;object-fit:cover;object-position:center}
+    .cb-banner .-mob{display:none}
+    .cb-body{padding:40px}
+    .cb-title{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0}
+    .cb-list{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cb-list li{display:flex;align-items:center;gap:12px;font-size:16px;line-height:1.3}
+    .cb-list img{width:24px;height:24px;flex:0 0 auto}
+    .cb-foot{margin-top:32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cb-greet{display:flex;align-items:center;gap:12px}
+    .cb-heart{width:48px;height:48px;border-radius:50%;background:var(--brand-accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .cb-greet b{display:block;font-size:16px}
+    .cb-greet span.sub{color:var(--muted);font-size:15px}
+    .cb-form{display:flex;gap:12px}
+    .cb-form select{height:48px;border:0;border-radius:12px;background:#f4f4f6;padding:0 16px;font-family:inherit;font-size:16px;color:#000;cursor:pointer}
+    .cb-form button{height:48px;border:0;cursor:pointer;border-radius:12px;background:var(--brand-accent);color:#fff;padding:0 28px;font-family:inherit;font-size:16px;font-weight:600;transition:background .2s}
+    .cb-form button:hover{background:var(--brand-accent-hover)}
+    .cb-ok{display:none;color:#0a8f3c;margin:10px 0 0;font-size:15px}
+    @media(max-width:900px){
+      .cb-banner img{height:130px}
+      .cb-body{padding:28px 20px}
+      .cb-list{grid-template-columns:1fr;gap:12px}
+      .cb-foot{flex-direction:column;align-items:stretch;gap:20px}
+      .cb-form{flex-direction:column}
+      .cb-form select,.cb-form button{width:100%}
     }
 
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
@@ -1353,11 +1383,47 @@
               <li><span class="hsw-num">3</span><span>Выберите школу, где ребёнок будет проходить аттестацию, и дождитесь зачисления (на тарифах с прикреплением мы помогаем это сделать)</span></li>
               <li><span class="hsw-num">4</span><span>Начните обучение</span></li>
             </ol>
-            <a class="hsw-btn" href="https://study.skysmart.ru/how-to-start-homeschooling" target="_blank" rel="noopener noreferrer">Скачать инструкцию</a>
+            <a class="hsw-btn" href="https://study.skysmart.ru/how-to-start-homeschooling?source_type=search&manager=seoteam&utm_medium=organic&utm_term=generic&utm_content=seohsguide" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Скачать инструкцию</a>
           </div>
           <div class="hsw-media">
             <img class="-pc" src="https://static.tildacdn.com/tild6336-3532-4739-a134-636332373031/Frame_2087331475.png" alt="Инструкция по переходу на семейное обучение" width="1120" height="928" loading="lazy" decoding="async">
             <img class="-mob" src="https://static.tildacdn.com/tild6638-3635-4734-a637-323731616131/Frame_2087331475.png" alt="" aria-hidden="true" width="750" height="352" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== УЗНАЙТЕ БОЛЬШЕ НА КОНСУЛЬТАЦИИ ===================== -->
+    <section class="cb" aria-labelledby="cb-title">
+      <div class="container">
+        <div class="cb-card">
+          <div class="cb-banner">
+            <picture>
+              <source media="(min-width:768px)" srcset="https://static.tildacdn.com/tild3530-6262-4035-b330-396135353438/chika.png">
+              <img src="https://static.tildacdn.com/tild3361-6433-4133-b630-363165663636/chika.png" alt="" aria-hidden="true" width="2320" height="506" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="cb-body">
+            <h2 class="cb-title" id="cb-title">Узнайте больше о школе на бесплатной консультации</h2>
+            <ul class="cb-list">
+              <li><img src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">Покажем, как проходят уроки на нашей платформе</li>
+              <li><img src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">Поможем выбрать тариф и разобраться с документами</li>
+              <li><img src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</li>
+            </ul>
+            <div class="cb-foot">
+              <div class="cb-greet">
+                <span class="cb-heart" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
+                <div><b>Рады видеть вас снова!</b><span class="sub">Начните учиться на выгодных условиях</span></div>
+              </div>
+              <form class="cb-form" id="cbForm">
+                <select aria-label="Класс" required>
+                  <option value="">Класс</option>
+                  <option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option>
+                </select>
+                <button type="submit">Записаться на консультацию</button>
+              </form>
+            </div>
+            <p class="cb-ok" id="cbOk">Спасибо! Запишем вас на консультацию.</p>
           </div>
         </div>
       </div>
@@ -1501,32 +1567,6 @@
     </section>
 
     <!-- ===================== TARIFFS ===================== -->
-    <!-- ===================== CONSULT (FORM) ===================== -->
-    <section class="section" aria-labelledby="con-title">
-      <div class="container two">
-        <div>
-          <h2 class="h2" id="con-title">Узнайте больше о школе на бесплатной консультации</h2>
-          <ul class="mt24" style="display:flex;flex-direction:column;gap:12px">
-            <li style="display:flex;gap:10px"><span class="dot"></span>Покажем, как проходят уроки на нашей платформе</li>
-            <li style="display:flex;gap:10px"><span class="dot"></span>Поможем выбрать тариф и разобраться с документами</li>
-            <li style="display:flex;gap:10px"><span class="dot"></span>Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</li>
-          </ul>
-        </div>
-        <div class="card card--plain">
-          <h3>Записаться</h3>
-          <form class="form mt16" data-form>
-            <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
-            <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
-            <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
-            <button class="btn btn-accent btn-block" type="submit">Записаться</button>
-            <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
-            <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
-            <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== FAQ ===================== -->
     <section class="section section--soft" id="faq" aria-labelledby="faq-title" style="scroll-margin-top:90px">
       <div class="container faq">
@@ -1792,6 +1832,12 @@
       if (window.matchMedia("(max-width:1023px)").matches) {
         window.addEventListener("load", function () { var c = cards[1]; if (c) track.scrollLeft = c.offsetLeft - (track.clientWidth - c.clientWidth) / 2; });
       }
+    })();
+
+    // «Узнайте больше на консультации» — отправка формы
+    (function () {
+      var form = document.getElementById("cbForm"), ok = document.getElementById("cbOk");
+      if (form && ok) form.addEventListener("submit", function (e) { e.preventDefault(); ok.style.display = "block"; });
     })();
 
     // Год в футере

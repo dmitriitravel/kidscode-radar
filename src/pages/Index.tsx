@@ -16,6 +16,7 @@ import { StudentsFuture } from "@/components/landing/StudentsFuture";
 import { TariffsPlans } from "@/components/landing/TariffsPlans";
 import { FamilyBudget } from "@/components/landing/FamilyBudget";
 import { HowToSwitch } from "@/components/landing/HowToSwitch";
+import { ConsultBooking } from "@/components/landing/ConsultBooking";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -141,6 +142,8 @@ const Index = () => {
 
         <HowToSwitch />
 
+        <ConsultBooking />
+
         <TrialBlock />
 
         {/* Платформа (табы) */}
@@ -261,41 +264,6 @@ const Index = () => {
                   <figcaption className="mt-4 font-semibold">{review.name}</figcaption>
                 </figure>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Консультация */}
-        <section aria-labelledby="consult-title" className="py-16 sm:py-20">
-          <div className="container-page grid grid-cols-1 gap-10 lg:grid-cols-2">
-            <div>
-              <SectionTitle>
-                <span id="consult-title">
-                  Узнайте больше о школе на бесплатной консультации
-                </span>
-              </SectionTitle>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "Покажем, как проходят уроки на нашей платформе",
-                  "Поможем выбрать тариф и разобраться с документами",
-                  "Откроем бесплатный доступ, чтобы вы могли всё попробовать сами",
-                ].map((point) => (
-                  <li key={point} className="flex gap-3">
-                    <span
-                      className="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full"
-                      style={{ backgroundColor: "var(--brand-accent)" }}
-                      aria-hidden="true"
-                    />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl bg-secondary p-6 shadow-card sm:p-8">
-              <h3 className="text-xl font-semibold">Записаться</h3>
-              <div className="mt-4">
-                <LeadForm submitLabel="Записаться" />
-              </div>
             </div>
           </div>
         </section>
