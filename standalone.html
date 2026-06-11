@@ -534,32 +534,33 @@
 
     /* ===== «Узнайте больше о школе на бесплатной консультации» (адаптив) ===== */
     .cb{background:#f4f5f6;padding:56px 0}
-    .cb-card{background:#fff;border-radius:24px;overflow:hidden}
-    .cb-banner{background:#faf7ff;display:flex;justify-content:center}
-    .cb-banner img{width:100%;height:180px;object-fit:cover;object-position:center}
+    .cb-card{border-radius:24px;overflow:hidden}
+    .cb-banner{background:#f4f5f6;display:flex;justify-content:center}
+    .cb-banner img{width:100%;max-width:640px;height:200px;object-fit:contain;object-position:bottom}
     .cb-banner .-mob{display:none}
-    .cb-body{padding:40px}
-    .cb-title{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0}
-    .cb-list{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .cb-list li{display:flex;align-items:center;gap:12px;font-size:16px;line-height:1.3}
-    .cb-list img{width:24px;height:24px;flex:0 0 auto}
-    .cb-foot{margin-top:32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .cb-greet{display:flex;align-items:center;gap:12px}
-    .cb-heart{width:48px;height:48px;border-radius:50%;background:var(--brand-accent);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .cb-body{padding:40px;background:linear-gradient(160deg,#181222 0%,#0d0a13 100%);color:#fff}
+    .cb-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0}
+    .cb-list{margin:28px 0 0;display:flex;align-items:center;gap:16px}
+    .cb-item{flex:1;text-align:center;font-size:16px;line-height:1.3;color:rgba(255,255,255,.9)}
+    .cb-sep{width:24px;height:24px;flex:0 0 auto}
+    .cb-foot{margin-top:32px;display:flex;align-items:center;gap:20px}
+    .cb-greet{flex:1;display:flex;align-items:center;gap:12px}
+    .cb-heart{width:48px;height:48px;border-radius:50%;background:#ff9e00;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
     .cb-greet b{display:block;font-size:16px}
-    .cb-greet span.sub{color:var(--muted);font-size:15px}
-    .cb-form{display:flex;gap:12px}
-    .cb-form select{height:48px;border:0;border-radius:12px;background:#f4f4f6;padding:0 16px;font-family:inherit;font-size:16px;color:#000;cursor:pointer}
-    .cb-form button{height:48px;border:0;cursor:pointer;border-radius:12px;background:var(--brand-accent);color:#fff;padding:0 28px;font-family:inherit;font-size:16px;font-weight:600;transition:background .2s}
-    .cb-form button:hover{background:var(--brand-accent-hover)}
-    .cb-ok{display:none;color:#0a8f3c;margin:10px 0 0;font-size:15px}
+    .cb-greet span.sub{color:rgba(255,255,255,.6);font-size:15px}
+    .cb-form{flex:2;display:flex;gap:12px}
+    .cb-form select{flex:1;height:48px;border:0;border-radius:12px;background:#fff;padding:0 16px;font-family:inherit;font-size:16px;color:#000;cursor:pointer}
+    .cb-form button{flex:1;height:48px;border:0;cursor:pointer;border-radius:12px;background:linear-gradient(180deg,#cf9bff,#a86bf0);color:#fff;padding:0 20px;font-family:inherit;font-size:16px;font-weight:600;transition:opacity .2s}
+    .cb-form button:hover{opacity:.9}
+    .cb-ok{display:none;color:#b9ff6a;margin:12px 0 0;font-size:15px;text-align:center}
     @media(max-width:900px){
-      .cb-banner img{height:130px}
+      .cb-banner img{height:120px}
       .cb-body{padding:28px 20px}
-      .cb-list{grid-template-columns:1fr;gap:12px}
+      .cb-list{flex-direction:column;align-items:stretch;gap:12px}
+      .cb-sep{display:none}
       .cb-foot{flex-direction:column;align-items:stretch;gap:20px}
-      .cb-form{flex-direction:column}
-      .cb-form select,.cb-form button{width:100%}
+      .cb-greet{flex:none}
+      .cb-form{flex-direction:column;flex:none}
     }
 
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
@@ -898,19 +899,6 @@
       </div>
     </section>
 
-    <!-- ===================== STATS ===================== -->
-    <section class="section" aria-labelledby="stats-title">
-      <div class="container">
-        <h2 class="h2" id="stats-title">Онлайн-школа с аттестатом</h2>
-        <div class="grid g4 mt40">
-          <div class="card card--plain stat"><div class="num">№1</div><p>в рейтинге образовательных компаний по версии Smart Ranking в 2024 году</p></div>
-          <div class="card card--plain stat"><div class="num">12+</div><p>лет на рынке онлайн-образования</p></div>
-          <div class="card card--plain stat"><div class="num">топ-100</div><p>входим в топ EdTech-компаний по версии HolonIQ за 2021 год</p></div>
-          <div class="card card--plain stat"><div class="num">4,9</div><p>рейтинг по отзывам на УчисьОнлайн.ру и MOOC.ru</p></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== КАК ПРОХОДИТ ОБУЧЕНИЕ (вкладки) ===================== -->
     <section class="lyc" aria-labelledby="lyc-title">
       <div class="container">
@@ -1041,39 +1029,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ===================== КТО ПРЕПОДАЁТ В ЛИЦЕЕ (слайдер) ===================== -->
-    <section class="teach" aria-labelledby="teach-title">
-      <div class="container">
-        <h2 class="teach-title" id="teach-title">Кто преподаёт в лицее</h2>
-        <div class="teach-card">
-          <div class="teach-content">
-            <h3 class="teach-name" id="teachName"></h3>
-            <div class="teach-tags"><span class="teach-tag" id="teachGrades"></span><span class="teach-tag">вебинары</span></div>
-            <p class="teach-bio" id="teachBio"></p>
-            <button class="teach-btn" type="button" id="teachWatch">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              Посмотреть урок
-            </button>
-          </div>
-          <div class="teach-media">
-            <span class="teach-subject"><img id="teachIcon" src="" alt="" /><span id="teachSubject"></span></span>
-            <img id="teachPhoto" src="" alt="" loading="lazy" decoding="async" />
-          </div>
-        </div>
-        <div class="teach-controls">
-          <button class="choice-btn" id="teachPrev" type="button" aria-label="Предыдущий преподаватель">‹</button>
-          <span class="teach-counter" id="teachCounter"></span>
-          <button class="choice-btn" id="teachNext" type="button" aria-label="Следующий преподаватель">›</button>
-        </div>
-      </div>
-    </section>
-    <div class="teach-modal" id="teachModal" role="dialog" aria-modal="true" aria-label="Видео урока">
-      <div class="teach-modal-inner">
-        <button class="teach-modal-close" id="teachModalClose" type="button" aria-label="Закрыть">×</button>
-        <video id="teachVideo" controls playsinline><source src="https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video>
-      </div>
-    </div>
 
     <!-- ===================== РАСПИСАНИЕ (вкладки) ===================== -->
     <section class="sch" aria-labelledby="sch-title">
@@ -1405,11 +1360,13 @@
           </div>
           <div class="cb-body">
             <h2 class="cb-title" id="cb-title">Узнайте больше о школе на бесплатной консультации</h2>
-            <ul class="cb-list">
-              <li><img src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">Покажем, как проходят уроки на нашей платформе</li>
-              <li><img src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">Поможем выбрать тариф и разобраться с документами</li>
-              <li><img src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</li>
-            </ul>
+            <div class="cb-list">
+              <p class="cb-item">Покажем, как проходят уроки на нашей платформе</p>
+              <img class="cb-sep" src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">
+              <p class="cb-item">Поможем выбрать тариф и разобраться с документами</p>
+              <img class="cb-sep" src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">
+              <p class="cb-item">Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</p>
+            </div>
             <div class="cb-foot">
               <div class="cb-greet">
                 <span class="cb-heart" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
@@ -1479,94 +1436,6 @@
       </div>
     </section>
 
-    <!-- ===================== PLATFORM TABS ===================== -->
-    <section class="section section--soft" id="platform" aria-labelledby="plat-title" style="scroll-margin-top:90px">
-      <div class="container">
-        <h2 class="h2" id="plat-title">Мы ведём уроки на собственной платформе</h2>
-        <div class="tabs" data-tabs>
-          <div class="tabs-btns" role="tablist">
-            <button class="tab-btn" role="tab" aria-selected="true" data-tab="p1">Уроки</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p2">Библиотека материалов</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p3">Задания с письмом от руки</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="p4">Отчёты о прогрессе</button>
-          </div>
-          <div class="tab-panel active" id="p1" role="tabpanel"><div class="card"><h3>Уроки с активным участием</h3><p class="muted mt16">Ученики выполняют задания и получают оценку прямо во время урока, как в обычной школе.</p></div></div>
-          <div class="tab-panel" id="p2" role="tabpanel"><div class="card"><h3>Библиотека материалов</h3><p class="muted mt16">Все записи уроков, конспекты и дополнительные материалы хранятся в личном кабинете весь учебный год.</p></div></div>
-          <div class="tab-panel" id="p3" role="tabpanel"><div class="card"><h3>Задания с письмом от руки</h3><p class="muted mt16">Часть заданий ребёнок выполняет письменно — это помогает лучше усваивать материал и готовит к экзаменам.</p></div></div>
-          <div class="tab-panel" id="p4" role="tabpanel"><div class="card"><h3>Отчёты о прогрессе</h3><p class="muted mt16">Родители видят посещаемость, оценки и динамику успеваемости ребёнка в удобных отчётах.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== TEACHERS ===================== -->
-    <section class="section" aria-labelledby="teach-title">
-      <div class="container">
-        <h2 class="h2" id="teach-title">Кто преподаёт в лицее</h2>
-        <p class="lead">Уроки проводят опытные педагоги из ведущих школ России, эксперты ЕГЭ, победители всероссийских конкурсов. Только 5 из 100 кандидатов проходят конкурсный отбор.</p>
-        <div class="grid g4 mt40">
-          <div class="card card--plain"><h3 class="mt16">Алексей Мелкозеров</h3><p class="muted mt16">Участвовал в разработке множества игр на Unity с использованием продвинутых алгоритмов и технологий.</p></div>
-          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Куратор учебной программы</p><h3 class="mt16">Александра Калинина</h3><p class="muted mt16">Разрабатывает уроки, на которых детям интересно и не страшно пробовать новое.</p></div>
-          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Классный руководитель</p><h3 class="mt16">Татьяна Брейкина</h3><p class="muted mt16">Следит за посещаемостью и успеваемостью, помогает с учёбой и решает вопросы с аттестацией.</p></div>
-          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== FORMAT (FORM) ===================== -->
-    <section class="section section--soft" aria-labelledby="fmt-title">
-      <div class="container two">
-        <div>
-          <h2 class="h2" id="fmt-title">Подберём формат обучения для ребёнка</h2>
-          <p class="lead">И зафиксируем лучшую цену на 2026/27 учебный год.</p>
-          <ul class="mt24" style="display:flex;flex-direction:column;gap:12px">
-            <li style="display:flex;gap:10px"><span class="dot"></span>Покажем, как проходят уроки в нашей школе</li>
-            <li style="display:flex;gap:10px"><span class="dot"></span>Расскажем про учебную программу и аттестацию</li>
-            <li style="display:flex;gap:10px"><span class="dot"></span>Поможем с документами для зачисления</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Хочу на консультацию</h3>
-          <form class="form mt16" data-form>
-            <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
-            <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
-            <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
-            <button class="btn btn-accent btn-block" type="submit">Хочу на консультацию</button>
-            <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
-            <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
-            <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== EXPERTS ===================== -->
-    <section class="section" aria-labelledby="exp-title">
-      <div class="container">
-        <h2 class="h2" id="exp-title">За процесс обучения отвечают опытные эксперты</h2>
-        <div class="grid g3 mt40">
-          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Куратор учебной программы</p><h3 class="mt16">Александра Калинина</h3><p class="muted mt16">Разрабатывает уроки, на которых детям интересно и не страшно пробовать новое.</p></div>
-          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Классный руководитель</p><h3 class="mt16">Татьяна Брейкина</h3><p class="muted mt16">Следит за посещаемостью и успеваемостью, помогает с учёбой и решает вопросы с аттестацией.</p></div>
-          <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
-        </div>
-        <p class="lead">Помогаем не только детям, но и родителям. Сопровождаем от зачисления до аттестации, не оставляем один на один с вопросами и помогаем, даже если сроки уже прошли, а с документами есть проблемы.</p>
-      </div>
-    </section>
-
-    <!-- ===================== REVIEWS ===================== -->
-    <section class="section section--soft" aria-labelledby="rev-title">
-      <div class="container">
-        <h2 class="h2" id="rev-title">Отзывы учеников и родителей</h2>
-        <p class="lead">Тысячи учеников уже создают своё будущее с нами. 80% учеников и родителей готовы рекомендовать нас своим друзьям и близким.</p>
-        <div class="grid g2 mt40">
-          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Заметила, что сын стал отказываться от помощи с домашней работой по математике. Раньше мы каждый вечер с ним сидели, либо я, либо папа. Теперь только сам. Самое интересное, что оценки при этом не подкачали. Дневник проверяю без страха!</blockquote><figcaption class="mt16" style="font-weight:600">Наталья, мама Владимира</figcaption></figure>
-          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Сначала, если честно, не доверял онлайн-школам. Хотелось, чтобы сын учился «как положено». Но сейчас рад, что выбрал Skysmart. Работаю за границей, и сын живёт со мной. Благодаря Skysmart он учится, как и все, — с расписанием, классными преподавателями, домашкой. И главное — мы вместе. Это самое ценное.</blockquote><figcaption class="mt16" style="font-weight:600">Дмитрий, папа Мирона</figcaption></figure>
-          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Преподаватели в Домашнем лицее невероятные. Пока сын занимается, сама слушаю, настолько интересно всё объясняют. Наконец-то учёба перестала быть обязанностью и стала по-настоящему увлекательной. Сын учится с удовольствием и без стресса.</blockquote><figcaption class="mt16" style="font-weight:600">Майя, мама Елисея</figcaption></figure>
-          <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Моя мечта — стать профессиональным баскетболистом. В обычной школе это было сложно: тренировки часто совпадают с уроками. А здесь я сам планирую день и всегда успеваю и потренироваться, и поучиться.</blockquote><figcaption class="mt16" style="font-weight:600">Сергей, ученик</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== TARIFFS ===================== -->
     <!-- ===================== FAQ ===================== -->
     <section class="section section--soft" id="faq" aria-labelledby="faq-title" style="scroll-margin-top:90px">
       <div class="container faq">
