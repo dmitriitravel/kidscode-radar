@@ -352,6 +352,33 @@
     .sch-img-wrap img{width:100%;height:auto;display:block;border-radius:16px}
     @media(max-width:760px){.sch-panel{padding:20px;border-radius:16px}.sch-img-wrap img{width:970px;max-width:none}}
 
+    /* ===== «Подберите расписание…» — CTA + поп-ап консультации ===== */
+    .pick{background:#fff;padding:56px 0}
+    .pick-card{display:flex;flex-direction:column;align-items:center;text-align:center;border-radius:32px;padding:64px 24px;background:radial-gradient(120% 120% at 50% 0%, #ffe9f3 0%, #fff4e3 60%, #fdf6ee 100%)}
+    .pick-h{max-width:680px;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1}
+    .pick-btn{margin-top:32px;display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;border-radius:12px;background:#ff9e00;color:#fff;padding:16px 32px;font-weight:600;font-size:16px;font-family:inherit;transition:background .2s}
+    .pick-btn:hover{background:#ffb53d}
+    .pick-modal{display:none;position:fixed;inset:0;z-index:60;padding:16px;overflow-y:auto;background:radial-gradient(80% 80% at 50% 30%, rgba(255,150,210,.45), rgba(0,0,0,.55));align-items:flex-start;justify-content:center}
+    .pick-modal.open{display:flex}
+    .pick-modal-row{position:relative;width:100%;max-width:880px;display:flex;align-items:flex-start;gap:24px;margin:auto}
+    .pick-back{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.7);border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1b2330}
+    .pick-form-card{position:relative;width:100%;max-width:440px;background:#fff;border-radius:24px;padding:32px;text-align:center;box-shadow:0 20px 60px -20px rgba(0,0,0,.4)}
+    .pick-form-card h3{font-size:24px;font-weight:700;line-height:1.15}
+    .pick-heart{margin:24px auto 0;width:56px;height:56px;border-radius:50%;background:#ff9e00;display:flex;align-items:center;justify-content:center}
+    .pick-welcome{margin-top:20px;font-size:20px;font-weight:700}
+    .pick-sub{margin-top:4px;color:var(--muted)}
+    .pick-form-card .trial-select{margin-top:24px;text-align:left}
+    .pick-form-card .trial-select-btn{background:#f4f4f6}
+    .pick-benefits{flex:1;list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+    .pick-benefits li{display:flex;align-items:flex-start;gap:8px;font-size:16px;font-weight:500;color:#fff}
+    .pick-benefits svg{flex:0 0 auto;margin-top:2px}
+    .pick-modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border:0;background:none;cursor:pointer;font-size:22px;color:var(--muted);line-height:1}
+    @media(max-width:760px){
+      .pick-card{padding:40px 20px;border-radius:20px}
+      .pick-modal-row{flex-direction:column;align-items:center;gap:16px}
+      .pick-back,.pick-benefits{display:none}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -896,6 +923,52 @@
       </div>
     </section>
 
+    <!-- ===================== ПОДБЕРИТЕ РАСПИСАНИЕ (CTA + поп-ап) ===================== -->
+    <section class="pick" aria-labelledby="pick-title">
+      <div class="container">
+        <div class="pick-card">
+          <h2 class="pick-h" id="pick-title">Подберите расписание, которое подойдёт вашему ребёнку</h2>
+          <button class="pick-btn" type="button" id="pickOpen">Подобрать расписание</button>
+        </div>
+      </div>
+    </section>
+    <div class="pick-modal" id="pickModal" role="dialog" aria-modal="true" aria-label="Бесплатная консультация">
+      <div class="pick-modal-row">
+        <button class="pick-back" type="button" id="pickBack" aria-label="Закрыть">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="pick-form-card">
+          <button class="pick-modal-close" type="button" id="pickClose" aria-label="Закрыть">×</button>
+          <h3>Посетите бесплатную консультацию</h3>
+          <span class="pick-heart" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
+          <p class="pick-welcome">Рады видеть вас снова!</p>
+          <p class="pick-sub">Начните учиться на выгодных условиях</p>
+          <div class="trial-select" id="pickSelect">
+            <button class="trial-select-btn" type="button" id="pickSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+              <span id="pickSelectVal" style="color:var(--muted)">Класс</span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414L12 14.086Z" clip-rule="evenodd"/></svg>
+            </button>
+            <ul class="trial-select-list" role="listbox">
+              <li class="trial-option" role="option">5 класс</li>
+              <li class="trial-option" role="option">6 класс</li>
+              <li class="trial-option" role="option">7 класс</li>
+              <li class="trial-option" role="option">8 класс</li>
+              <li class="trial-option" role="option">9 класс</li>
+              <li class="trial-option" role="option">10 класс</li>
+              <li class="trial-option" role="option">11 класс</li>
+            </ul>
+          </div>
+          <button class="pick-btn" type="button" id="pickSubmit" style="width:100%;margin-top:12px">Записаться на консультацию</button>
+          <p class="trial-ok" id="pickOk" style="color:#0a8f3c;margin-top:8px">Спасибо! Запишем вас на консультацию.</p>
+        </div>
+        <ul class="pick-benefits">
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>Расскажем о нашей школе</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>Составим персональный план обучения</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z"/></svg>Поможем выбрать мотивирующую цель</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -1294,6 +1367,26 @@
         io.observe(section);
       }
       render();
+    })();
+
+    // «Подберите расписание» — поп-ап консультации + выбор класса
+    (function () {
+      var openBtn = document.getElementById("pickOpen"), modal = document.getElementById("pickModal");
+      if (!openBtn || !modal) return;
+      function show() { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
+      function hide() { modal.classList.remove("open"); document.body.style.overflow = ""; }
+      openBtn.addEventListener("click", show);
+      document.getElementById("pickClose").addEventListener("click", hide);
+      document.getElementById("pickBack").addEventListener("click", hide);
+      modal.addEventListener("click", function (e) { if (e.target === modal) hide(); });
+      var sel = document.getElementById("pickSelect"), btn = document.getElementById("pickSelectBtn"), val = document.getElementById("pickSelectVal");
+      btn.addEventListener("click", function (e) { e.stopPropagation(); sel.classList.toggle("open"); });
+      sel.querySelectorAll(".trial-option").forEach(function (opt) {
+        opt.addEventListener("click", function () { val.textContent = opt.textContent; val.style.color = ""; sel.classList.remove("open"); });
+      });
+      document.addEventListener("click", function (e) { if (!sel.contains(e.target)) sel.classList.remove("open"); });
+      var ok = document.getElementById("pickOk");
+      document.getElementById("pickSubmit").addEventListener("click", function () { ok.style.display = "block"; });
     })();
 
     // Год в футере

@@ -10,6 +10,7 @@ import { CertificateBlock } from "@/components/landing/CertificateBlock";
 import { TrialBlock } from "@/components/landing/TrialBlock";
 import { TeachersSlider } from "@/components/landing/TeachersSlider";
 import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
+import { PickSchedule } from "@/components/landing/PickSchedule";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -124,6 +125,8 @@ const Index = () => {
         <TeachersSlider />
 
         <ScheduleBlock />
+
+        <PickSchedule />
 
         <TrialBlock />
 
