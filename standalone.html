@@ -511,6 +511,27 @@
       .fb-nav{display:flex}
     }
 
+    /* ===== «Как перейти на семейное обучение» (адаптив) ===== */
+    .hsw{background:#f4f5f6;padding:56px 0}
+    .hsw-card{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:#fff;border-radius:24px;overflow:hidden}
+    .hsw-body{padding:48px}
+    .hsw-title{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0}
+    .hsw-steps{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+    .hsw-steps li{display:flex;align-items:flex-start;gap:12px}
+    .hsw-num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--brand-accent);color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
+    .hsw-steps span:last-child{font-size:16px;line-height:1.32}
+    .hsw-btn{margin-top:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:12px;background:#04121b;color:#fff;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;transition:background .2s}
+    .hsw-btn:hover{background:#1d3949}
+    .hsw-media{align-self:stretch;display:flex}
+    .hsw-media img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .hsw-media .-mob{display:none}
+    @media(max-width:1023px){
+      .hsw-card{grid-template-columns:1fr}
+      .hsw-body{padding:32px 24px}
+      .hsw-media .-pc{display:none}
+      .hsw-media .-mob{display:block;width:100%;height:auto}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -1316,6 +1337,28 @@
           <button type="button" id="fbPrev" aria-label="Предыдущая карточка"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <div class="fb-dots" id="fbDots"><span></span><span class="active"></span><span></span></div>
           <button type="button" id="fbNext" aria-label="Следующая карточка"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== КАК ПЕРЕЙТИ НА СЕМЕЙНОЕ ОБУЧЕНИЕ ===================== -->
+    <section class="hsw" aria-labelledby="hsw-title">
+      <div class="container">
+        <div class="hsw-card">
+          <div class="hsw-body">
+            <h2 class="hsw-title" id="hsw-title">Как перейти на семейное обучение</h2>
+            <ol class="hsw-steps">
+              <li><span class="hsw-num">1</span><span>Отправьте заявление о переходе в департамент образования по вашему региону</span></li>
+              <li><span class="hsw-num">2</span><span>Заберите документы из старой школы</span></li>
+              <li><span class="hsw-num">3</span><span>Выберите школу, где ребёнок будет проходить аттестацию, и дождитесь зачисления (на тарифах с прикреплением мы помогаем это сделать)</span></li>
+              <li><span class="hsw-num">4</span><span>Начните обучение</span></li>
+            </ol>
+            <a class="hsw-btn" href="https://study.skysmart.ru/how-to-start-homeschooling" target="_blank" rel="noopener noreferrer">Скачать инструкцию</a>
+          </div>
+          <div class="hsw-media">
+            <img class="-pc" src="https://static.tildacdn.com/tild6336-3532-4739-a134-636332373031/Frame_2087331475.png" alt="Инструкция по переходу на семейное обучение" width="1120" height="928" loading="lazy" decoding="async">
+            <img class="-mob" src="https://static.tildacdn.com/tild6638-3635-4734-a637-323731616131/Frame_2087331475.png" alt="" aria-hidden="true" width="750" height="352" loading="lazy" decoding="async">
+          </div>
         </div>
       </div>
     </section>

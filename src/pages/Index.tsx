@@ -15,6 +15,7 @@ import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
 import { StudentsFuture } from "@/components/landing/StudentsFuture";
 import { TariffsPlans } from "@/components/landing/TariffsPlans";
 import { FamilyBudget } from "@/components/landing/FamilyBudget";
+import { HowToSwitch } from "@/components/landing/HowToSwitch";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -137,6 +138,8 @@ const Index = () => {
         <TariffsPlans />
 
         <FamilyBudget />
+
+        <HowToSwitch />
 
         <TrialBlock />
 
