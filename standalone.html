@@ -281,6 +281,40 @@
       .cert-media{min-height:240px}
     }
 
+    /* ===== «Попробуйте 7 дней бесплатно» (лид-блок, адаптив) ===== */
+    .trial{background:var(--soft);padding:56px 0}
+    .trial-card{position:relative;overflow:hidden;border-radius:32px;padding:40px;background:linear-gradient(180deg,#D571FF 0%,#B400FF 74.82%)}
+    .trial-grid{display:grid;grid-template-columns:1.05fr minmax(0,360px) minmax(300px,330px);gap:24px;align-items:center}
+    .trial-h{font-size:clamp(28px,3.2vw,40px);font-weight:700;color:#fff;line-height:1.1}
+    .trial-list{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+    .trial-li{display:flex;gap:12px;color:#fff;font-size:18px;line-height:1.3}
+    .trial-li svg{flex:0 0 auto;margin-top:2px}
+    .trial-media{display:flex;justify-content:center;align-self:end}
+    .trial-media img{width:100%;max-width:420px;height:auto;object-fit:contain;display:block}
+    .trial-welcome{display:flex;align-items:center;gap:12px}
+    .trial-heart{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:#ff9e00;display:flex;align-items:center;justify-content:center}
+    .trial-welcome .wt{color:#fff}
+    .trial-welcome .wt b{display:block;font-size:18px;font-weight:600}
+    .trial-welcome .wt span{font-size:14px;color:rgba(255,255,255,.7)}
+    .trial-form{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+    .trial-select{position:relative}
+    .trial-select-btn{width:100%;height:48px;background:#fff;border-radius:12px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:16px;color:var(--fg);border:0;font-family:inherit}
+    .trial-select-btn svg{transition:transform .2s;flex:0 0 auto}
+    .trial-select.open .trial-select-btn svg{transform:rotate(180deg)}
+    .trial-select-list{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:8px 0;z-index:20;display:none;list-style:none;margin:0}
+    .trial-select.open .trial-select-list{display:block}
+    .trial-option{padding:12px 16px;cursor:pointer;font-size:16px;color:var(--fg)}
+    .trial-option:hover{background:#f4f4f4}
+    .trial-btn{height:48px;border-radius:12px;background:#04121b;color:#fff;font-weight:600;font-size:16px;border:0;cursor:pointer;transition:background .2s;font-family:inherit}
+    .trial-btn:hover{background:#1b2a36}
+    .trial-ok{display:none;color:#fff;font-size:14px;font-weight:600}
+    @media(max-width:1000px){
+      .trial-grid{grid-template-columns:1fr}
+      .trial-card{padding:24px}
+      .trial-media{order:2}
+      .trial-media img{max-width:360px}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -761,6 +795,56 @@
       </div>
     </section>
 
+    <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
+    <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
+      <div class="container">
+        <div class="trial-card">
+          <div class="trial-grid">
+            <div>
+              <h2 class="trial-h" id="trial-title">Попробуйте 7 дней учёбы в лицее бесплатно</h2>
+              <div class="trial-list">
+                <div class="trial-li"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffb53d"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Доступ к живым урокам по расписанию</div>
+                <div class="trial-li"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffb53d"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Все записи прошедших уроков</div>
+                <div class="trial-li"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#ffb53d"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Интерактивные задания и домашки с автопроверкой</div>
+              </div>
+            </div>
+            <div class="trial-media">
+              <picture>
+                <source media="(min-width:1024px)" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-1024.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-1024@2x.png 2x" />
+                <source media="(min-width:768px)" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-768.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-768@2x.png 2x" />
+                <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png/image-375@2x.png" alt="Ученик лицея Skysmart" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            <div>
+              <div class="trial-welcome">
+                <span class="trial-heart" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="#04121b"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
+                <div class="wt"><b>Рады видеть вас снова!</b><span>Выбирайте класс и начинайте учиться</span></div>
+              </div>
+              <div class="trial-form">
+                <div class="trial-select" id="trialSelect">
+                  <button class="trial-select-btn" type="button" id="trialSelectBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span id="trialSelectVal">Триал 9 класс</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414L12 14.086Z" clip-rule="evenodd"/></svg>
+                  </button>
+                  <ul class="trial-select-list" role="listbox">
+                    <li class="trial-option" role="option">Триал 5 класс</li>
+                    <li class="trial-option" role="option">Триал 6 класс</li>
+                    <li class="trial-option" role="option">Триал 7 класс</li>
+                    <li class="trial-option" role="option">Триал 8 класс</li>
+                    <li class="trial-option" role="option">Триал 9 класс</li>
+                    <li class="trial-option" role="option">Триал 10 класс</li>
+                    <li class="trial-option" role="option">Триал 11 класс</li>
+                  </ul>
+                </div>
+                <button class="trial-btn" type="button" id="trialSubmit">Начать учиться бесплатно</button>
+                <p class="trial-ok" id="trialOk">Спасибо! Откроем доступ и свяжемся с вами.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== PLATFORM TABS ===================== -->
     <section class="section section--soft" id="platform" aria-labelledby="plat-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -831,34 +915,6 @@
           <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
         </div>
         <p class="lead">Помогаем не только детям, но и родителям. Сопровождаем от зачисления до аттестации, не оставляем один на один с вопросами и помогаем, даже если сроки уже прошли, а с документами есть проблемы.</p>
-      </div>
-    </section>
-
-    <!-- ===================== TRIAL ===================== -->
-    <section class="section" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
-      <div class="container">
-        <div class="accent-block">
-          <div class="txt">
-            <h2 class="h2" id="trial-title">Попробуйте 7 дней учёбы в лицее бесплатно</h2>
-            <ul class="mt24">
-              <li><span class="d"></span>Доступ к живым урокам по расписанию</li>
-              <li><span class="d"></span>Все записи прошедших уроков</li>
-              <li><span class="d"></span>Интерактивные задания и домашки с автопроверкой</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Начать учиться бесплатно</h3>
-            <form class="form mt16" data-form>
-              <input type="text" required placeholder="Ваше имя" aria-label="Ваше имя" />
-              <input type="tel" required placeholder="Телефон" aria-label="Телефон" />
-              <select aria-label="Класс"><option value="">Класс</option><option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option></select>
-              <button class="btn btn-accent btn-block" type="submit">Начать учиться бесплатно</button>
-              <label class="check"><input type="checkbox" checked />Даю согласие на обработку персональных данных</label>
-              <label class="check"><input type="checkbox" checked />Соглашаюсь на получение рекламы</label>
-              <p class="form-ok">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-            </form>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1086,6 +1142,35 @@
       update();
     }
     initSlider("worryTrack", "worryPrev", "worryNext", "worryDots");
+
+    // Выпадающий список «Триал N класс»
+    (function () {
+      var sel = document.getElementById("trialSelect");
+      if (!sel) return;
+      var btn = document.getElementById("trialSelectBtn");
+      var val = document.getElementById("trialSelectVal");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        sel.classList.toggle("open");
+        btn.setAttribute("aria-expanded", sel.classList.contains("open"));
+      });
+      sel.querySelectorAll(".trial-option").forEach(function (opt) {
+        opt.addEventListener("click", function () {
+          val.textContent = opt.textContent;
+          sel.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+      document.addEventListener("click", function (e) {
+        if (!sel.contains(e.target)) {
+          sel.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+      var submit = document.getElementById("trialSubmit");
+      var ok = document.getElementById("trialOk");
+      if (submit && ok) submit.addEventListener("click", function () { ok.style.display = "block"; });
+    })();
 
     // Год в футере
     document.getElementById("year").textContent = new Date().getFullYear();

@@ -7,6 +7,7 @@ import { ConsultBanner } from "@/components/landing/ConsultBanner";
 import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
 import { LyceumProcess } from "@/components/landing/LyceumProcess";
 import { CertificateBlock } from "@/components/landing/CertificateBlock";
+import { TrialBlock } from "@/components/landing/TrialBlock";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -23,7 +24,6 @@ import {
   PLATFORM_TABS,
   TEACHERS,
   EXPERTS,
-  TRIAL_FEATURES,
   SCHEDULE_TABS,
   REVIEWS,
   TARIFFS,
@@ -120,6 +120,8 @@ const Index = () => {
         <LyceumProcess />
 
         <CertificateBlock />
+
+        <TrialBlock />
 
         {/* Платформа (табы) */}
         <section
@@ -251,40 +253,6 @@ const Index = () => {
               аттестации, не оставляем один на один с вопросами и помогаем, даже если
               сроки уже прошли, а с документами есть проблемы.
             </p>
-          </div>
-        </section>
-
-        {/* Бесплатный период */}
-        <section
-          id="trial"
-          aria-labelledby="trial-title"
-          className="scroll-mt-24 py-16 sm:py-20"
-        >
-          <div className="container-page">
-            <div
-              className="grid grid-cols-1 gap-10 rounded-3xl p-8 sm:p-12 lg:grid-cols-2"
-              style={{ backgroundColor: "var(--brand-accent)" }}
-            >
-              <div className="text-white">
-                <h2 id="trial-title" className="text-3xl font-bold sm:text-4xl">
-                  Попробуйте 7 дней учёбы в лицее бесплатно
-                </h2>
-                <ul className="mt-6 space-y-3">
-                  {TRIAL_FEATURES.map((f) => (
-                    <li key={f} className="flex gap-3">
-                      <span className="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-white" aria-hidden="true" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl bg-white p-6 shadow-card sm:p-8">
-                <h3 className="text-xl font-semibold">Начать учиться бесплатно</h3>
-                <div className="mt-4">
-                  <LeadForm submitLabel="Начать учиться бесплатно" />
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
