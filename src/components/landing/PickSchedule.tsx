@@ -3,6 +3,7 @@ import { ChevronDown, X, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 
 // «Подберите расписание…» — CTA-блок с поп-апом бесплатной консультации и выбором класса.
+const PICK_IMG = "https://static.tildacdn.com/tild6561-6137-4834-a333-363631353465/Image_1.png";
 const GRADES = [5, 6, 7, 8, 9, 10, 11].map((g) => `${g} класс`);
 
 const BENEFITS = [
@@ -75,27 +76,46 @@ export function PickSchedule() {
     <section aria-labelledby="pick-title" className="bg-white py-14 sm:py-16">
       <div className="container-page">
         <div
-          className="flex flex-col items-center rounded-[28px] px-6 py-12 text-center md:rounded-[32px] md:py-16"
-          style={{ background: "radial-gradient(120% 120% at 50% 0%, #ffe9f3 0%, #fff4e3 60%, #fdf6ee 100%)" }}
+          className="relative flex flex-col gap-6 overflow-hidden rounded-[24px] px-6 py-8 md:flex-row md:items-center md:justify-between md:gap-8 md:rounded-[32px] md:px-12 md:py-10"
+          style={{ background: "#ff9e00" }}
         >
-          <h2 id="pick-title" className="max-w-2xl text-3xl font-bold leading-tight sm:text-4xl">
-            Подберите расписание, которое подойдёт вашему ребёнку
-          </h2>
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="mt-8 inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-semibold text-white"
-            style={{ backgroundColor: "#ff9e00" }}
-          >
-            Подобрать расписание
-          </button>
+          <div className="md:order-1 md:max-w-[460px] md:flex-1">
+            <h2 id="pick-title" className="text-2xl font-bold leading-tight text-white sm:text-3xl">
+              Подберите расписание, которое подойдёт вашему ребёнку
+            </h2>
+            <p className="mt-3 text-base leading-snug text-white/90 sm:text-lg">
+              Расскажем, как устроено обучение и поможем подстроить расписание под ваш график
+            </p>
+          </div>
+          <div className="order-3 flex justify-center md:order-2 md:flex-1">
+            <img
+              src={PICK_IMG}
+              alt=""
+              aria-hidden="true"
+              width={617}
+              height={336}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full max-w-[340px] md:max-w-[300px]"
+            />
+          </div>
+          <div className="order-2 md:order-3 md:shrink-0">
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="inline-flex w-full items-center justify-center rounded-xl px-8 py-4 text-base font-semibold text-white transition-colors hover:opacity-90 md:w-auto"
+              style={{ backgroundColor: "#04121b" }}
+            >
+              Подобрать расписание
+            </button>
+          </div>
         </div>
       </div>
 
       {open && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4"
-          style={{ background: "radial-gradient(80% 80% at 50% 30%, rgba(255,150,210,0.45), rgba(0,0,0,0.55))" }}
+          style={{ background: "rgba(9,30,42,0.72)" }}
           onClick={() => setOpen(false)}
           role="dialog"
           aria-modal="true"
@@ -145,7 +165,7 @@ export function PickSchedule() {
 
             <ul className="hidden flex-1 space-y-4 pt-2 md:block">
               {BENEFITS.map((b) => (
-                <li key={b} className="flex items-start gap-2 text-base font-medium">
+                <li key={b} className="flex items-start gap-2 text-base font-medium text-white">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="#ff9e00" className="mt-0.5 shrink-0" aria-hidden="true">
                     <path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13z" />
                   </svg>
