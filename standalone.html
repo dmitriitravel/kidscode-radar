@@ -449,6 +449,48 @@
       .stu-rating img{width:150px}
     }
 
+    /* ===== «Выбирайте подходящий тариф» (4 тарифа, слайдер на мобильных) ===== */
+    .tar2{background:#f4f5f6;padding:56px 0;scroll-margin-top:90px}
+    .tar2-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 12px}
+    .tar2-sub{text-align:center;font-size:clamp(18px,1.8vw,22px);display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;justify-content:center;margin:0 0 40px}
+    .tar2-badge{display:inline-block;background:#ffb53d;border-radius:100px;padding:2px 12px;font-weight:500;transform:rotate(-3deg)}
+    .tar2-track{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .tar2-card{position:relative;overflow:hidden;background:#fff;border-radius:24px;padding:20px;display:flex;flex-direction:column;color:#000}
+    .tar2-card.-dark{color:#fff;background:linear-gradient(180deg,#7919a7 38%,#150016 100%)}
+    .tar2-ribbon{position:absolute;top:0;right:0;padding:8px 16px;font-size:14px;color:#fff;border-radius:0 24px 0 24px}
+    .tar2-name{font-size:24px;font-weight:700;line-height:1.15;margin:0;padding-right:96px}
+    .tar2-desc{margin:8px 0 0;font-size:15px;opacity:.64}
+    .tar2-card.-dark .tar2-desc{opacity:.64}
+    .tar2-pill{align-self:flex-start;margin-top:16px;border-radius:100px;padding:6px 12px;font-size:13px;line-height:1.2}
+    .tar2-pill.-green{background:#f2ffbd;color:rgba(0,0,0,.7)}
+    .tar2-pill.-muted{background:#f4f4f4;color:rgba(0,0,0,.48)}
+    .tar2-card.-dark .tar2-pill.-green{color:rgba(0,0,0,.7)}
+    .tar2-feats{list-style:none;margin:20px 0 0;padding:0;flex:1;display:flex;flex-direction:column;gap:12px}
+    .tar2-feats li{display:flex;gap:8px;font-size:14px;line-height:1.25;opacity:.78}
+    .tar2-feats svg{flex:0 0 auto;margin-top:2px}
+    .tar2-div{height:1px;background:rgba(0,0,0,.1);margin:16px 0;border:0}
+    .tar2-card.-dark .tar2-div{background:rgba(255,255,255,.2)}
+    .tar2-old{font-size:16px;text-decoration:line-through;opacity:.5;margin:0}
+    .tar2-price{font-size:24px;font-weight:700;margin:4px 0 0}
+    .tar2-price span{font-size:16px;font-weight:400;opacity:.6}
+    .tar2-note{font-size:14px;opacity:.4;margin:4px 0 0}
+    .tar2-card.-dark .tar2-note{opacity:.6}
+    .tar2-btn{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;width:100%;height:48px;border:0;cursor:pointer;border-radius:12px;font-family:inherit;font-size:16px;font-weight:600;color:#fff;background:#04121b;transition:background .2s}
+    .tar2-btn:hover{background:#1d3949}
+    .tar2-card.-dark .tar2-btn{background:#de7aff}
+    .tar2-card.-dark .tar2-btn:hover{background:#e38fff}
+    .tar2-nav{display:none;justify-content:center;gap:12px;margin-top:24px}
+    .tar2-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,.15);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .tar2-more{margin-top:32px;display:flex;justify-content:center}
+    .tar2-more button{border:0;cursor:pointer;border-radius:12px;background:#d571ff;color:#fff;padding:14px 32px;font-family:inherit;font-size:16px;font-weight:600;transition:background .2s}
+    .tar2-more button:hover{background:#e38fff}
+    @media(max-width:1100px){
+      .tar2-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+      .tar2-track::-webkit-scrollbar{display:none}
+      .tar2-card{flex:0 0 min(300px,72vw);scroll-snap-align:start}
+      .tar2-nav{display:flex}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -1144,6 +1186,91 @@
       </div>
     </section>
 
+    <!-- ===================== ВЫБИРАЙТЕ ПОДХОДЯЩИЙ ТАРИФ ===================== -->
+    <section class="tar2" id="tariffs" aria-labelledby="tar2-title">
+      <div class="container">
+        <h2 class="tar2-title" id="tar2-title">Выбирайте подходящий тариф</h2>
+        <p class="tar2-sub"><span>Со скидкой</span> <span class="tar2-badge">до 20%</span> <span>на 2026/27 учебный год</span></p>
+        <div class="tar2-track" id="tar2Track">
+          <article class="tar2-card">
+            <h3 class="tar2-name">Стандарт</h3>
+            <p class="tar2-desc">Школьная программа</p>
+            <span class="tar2-pill -muted">без прикрепления/аттестации</span>
+            <ul class="tar2-feats">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Вебинары по предметам с активным участием. Можно присутствовать или смотреть в записи</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Домашние задания с автоматической проверкой</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Классный руководитель</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Регулярные отчёты по прогрессу и активности ученика на уроках</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>5 клубов на выбор, можно посещать все</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Проектории и встречи с экспертами</li>
+            </ul>
+            <hr class="tar2-div">
+            <p class="tar2-old">10 895 ₽ / мес.</p>
+            <p class="tar2-price">от 8716 ₽ <span>/ мес.</span></p>
+            <p class="tar2-note">Рассрочка на 12 месяцев</p>
+            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+          </article>
+          <article class="tar2-card">
+            <span class="tar2-ribbon" style="background:linear-gradient(0deg,#ff64b0,#ff9acc)">популярно</span>
+            <h3 class="tar2-name">Оптимум</h3>
+            <p class="tar2-desc">Полноценная замена школе</p>
+            <span class="tar2-pill -green">прикрепление и аттестация</span>
+            <ul class="tar2-feats">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё, что в тарифе Стандарт</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Письменные домашние задания с ручной проверкой от учителя</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Личные встречи с классным руководителем</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Можно прикрепиться к школе, пройти аттестацию и сдать ОГЭ/ЕГЭ</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Уроки в мини-группах по математике, русскому и английскому языку</li>
+            </ul>
+            <hr class="tar2-div">
+            <p class="tar2-old">24 258 ₽ / мес.</p>
+            <p class="tar2-price">от 19 406 ₽ <span>/ мес.</span></p>
+            <p class="tar2-note">Рассрочка на 12 месяцев</p>
+            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+          </article>
+          <article class="tar2-card">
+            <span class="tar2-ribbon" style="background:linear-gradient(0deg,#ff9e00,#ffb53d)">новинка</span>
+            <h3 class="tar2-name">ИТ-профиль</h3>
+            <p class="tar2-desc">Углублённая программа по профильным предметам</p>
+            <span class="tar2-pill -green">прикрепление и аттестация</span>
+            <ul class="tar2-feats">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё, что в тарифах Стандарт и Оптимум</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>4 сессии с нейропсихологом по запросу</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Уроки в мини-группах по алгебре, информатике, программированию и английскому</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#00c1ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Куратор-наставник с опытом в профильной профессии</li>
+            </ul>
+            <hr class="tar2-div">
+            <p class="tar2-old">31 098 ₽ / мес.</p>
+            <p class="tar2-price">от 24 878 ₽ <span>/ мес.</span></p>
+            <p class="tar2-note">Рассрочка на 12 месяцев</p>
+            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+          </article>
+          <article class="tar2-card -dark">
+            <span class="tar2-ribbon" style="background:linear-gradient(0deg,#d571ff,#e6a8ff)">рекомендуем</span>
+            <h3 class="tar2-name">Премиум</h3>
+            <p class="tar2-desc">Индивидуальная программа и поддержка</p>
+            <span class="tar2-pill -green">прикрепление и аттестация</span>
+            <ul class="tar2-feats">
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#de7aff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё, что в тарифах Стандарт и Оптимум</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#de7aff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>8 сессий с нейропсихологом по запросу</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#de7aff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Уроки в мини-группах по математике, русскому и английскому языку</li>
+              <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4 10-10" stroke="#de7aff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>4 занятия один на один с преподавателями по предметам на выбор — каждую неделю</li>
+            </ul>
+            <hr class="tar2-div">
+            <p class="tar2-old">47 775 ₽ / мес.</p>
+            <p class="tar2-price">от 38 220 ₽ <span>/ мес.</span></p>
+            <p class="tar2-note">Рассрочка на 12 месяцев</p>
+            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+          </article>
+        </div>
+        <div class="tar2-nav">
+          <button type="button" id="tar2Prev" aria-label="Предыдущий тариф"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" id="tar2Next" aria-label="Следующий тариф"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="tar2-more"><button type="button" data-open>Подробный состав тарифов</button></div>
+      </div>
+    </section>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -1282,40 +1409,6 @@
     </section>
 
     <!-- ===================== TARIFFS ===================== -->
-    <section class="section" id="tariffs" aria-labelledby="tar-title" style="scroll-margin-top:90px">
-      <div class="container">
-        <h2 class="h2" id="tar-title">Выбирайте подходящий тариф</h2>
-        <p class="muted mt16">Со скидкой −20% на новый учебный год.</p>
-        <div class="grid g4 mt40">
-          <div class="card tariff">
-            <div class="top"><h3>Стандарт</h3></div>
-            <ul><li><span class="d"></span>Вебинары по всем предметам</li><li><span class="d"></span>Регулярная отчётность</li><li><span class="d"></span>Помощь и письменная обратная связь от классного руководителя</li></ul>
-            <div class="mt16"><p class="price-old">10 895 ₽ / мес.</p><p class="price">от 8 716 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
-            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
-          </div>
-          <div class="card tariff">
-            <div class="top"><h3>Оптимум</h3><span class="badge">популярно</span></div>
-            <ul><li><span class="d"></span>Дополнительные уроки в мини-группах для отработки навыков</li><li><span class="d"></span>Регулярные встречи по успеваемости и дисциплине с классным руководителем</li><li><span class="d"></span>Письменные домашние задания с проверкой</li></ul>
-            <div class="mt16"><p class="price-old">24 258 ₽ / мес.</p><p class="price">от 19 406 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
-            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
-          </div>
-          <div class="card tariff">
-            <div class="top"><h3>Профильный</h3><span class="badge">новинка</span></div>
-            <ul><li><span class="d"></span>Гуманитарное и техническое направления</li><li><span class="d"></span>Углублённая программа</li><li><span class="d"></span>Увеличенное количество уроков по профильным предметам</li><li><span class="d"></span>Проект в конце учебного года</li><li><span class="d"></span>Письменные домашние задания с проверкой</li><li><span class="d"></span>Встречи с нейропсихологом (по запросу)</li></ul>
-            <div class="mt16"><p class="price-old">31 098 ₽ / мес.</p><p class="price">от 24 878 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
-            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
-          </div>
-          <div class="card tariff">
-            <div class="top"><h3>Премиум</h3><span class="badge">рекомендуем</span></div>
-            <ul><li><span class="d"></span>Дополнительно 4 индивидуальных урока для разбора трудных тем или решения задач повышенной сложности</li><li><span class="d"></span>Составление и контроль индивидуального учебного плана с помощью классного руководителя</li><li><span class="d"></span>Письменные домашние задания с проверкой</li><li><span class="d"></span>Встречи с нейропсихологом (по запросу)</li></ul>
-            <div class="mt16"><p class="price-old">47 775 ₽ / мес.</p><p class="price">от 38 220 ₽ / мес.</p><p class="price-note">рассрочка на 12 месяцев</p></div>
-            <button class="btn btn-accent btn-block mt16" data-open>Выбрать</button>
-          </div>
-        </div>
-        <div class="mt24"><button class="btn btn-ghost" data-open>Подробный состав тарифов</button></div>
-      </div>
-    </section>
-
     <!-- ===================== PAYMENT ===================== -->
     <section class="section section--soft" aria-labelledby="pay-title">
       <div class="container">
@@ -1579,6 +1672,16 @@
     (function () {
       var sec = document.getElementById("students"), more = document.getElementById("stuMore");
       if (sec && more) more.addEventListener("click", function () { sec.classList.remove("collapsed"); });
+    })();
+
+    // «Выбирайте подходящий тариф» — слайдер тарифов на мобильных
+    (function () {
+      var track = document.getElementById("tar2Track");
+      if (!track) return;
+      function step() { var c = track.querySelector(".tar2-card"); return c ? c.offsetWidth + 16 : track.clientWidth * 0.8; }
+      var prev = document.getElementById("tar2Prev"), next = document.getElementById("tar2Next");
+      if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+      if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
     })();
 
     // Год в футере

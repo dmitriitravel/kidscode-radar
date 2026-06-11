@@ -13,6 +13,7 @@ import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
 import { PickSchedule } from "@/components/landing/PickSchedule";
 import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
 import { StudentsFuture } from "@/components/landing/StudentsFuture";
+import { TariffsPlans } from "@/components/landing/TariffsPlans";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -29,7 +30,6 @@ import {
   PLATFORM_TABS,
   EXPERTS,
   REVIEWS,
-  TARIFFS,
   PAYMENT_OPTIONS,
   FAQ_ITEMS,
   KNOWLEDGE_LINKS,
@@ -133,6 +133,8 @@ const Index = () => {
         <FamiliesTrust />
 
         <StudentsFuture />
+
+        <TariffsPlans />
 
         <TrialBlock />
 
@@ -254,75 +256,6 @@ const Index = () => {
                   <figcaption className="mt-4 font-semibold">{review.name}</figcaption>
                 </figure>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Тарифы */}
-        <section
-          id="tariffs"
-          aria-labelledby="tariffs-title"
-          className="scroll-mt-24 py-16 sm:py-20"
-        >
-          <div className="container-page">
-            <SectionTitle>
-              <span id="tariffs-title">Выбирайте подходящий тариф</span>
-            </SectionTitle>
-            <p className="mt-4 text-muted-foreground">
-              Со скидкой −20% на новый учебный год.
-            </p>
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {TARIFFS.map((tariff) => (
-                <div
-                  key={tariff.name}
-                  className="flex flex-col rounded-2xl border border-border bg-white p-6 shadow-card"
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">{tariff.name}</h3>
-                    {tariff.badge ? (
-                      <span
-                        className="rounded-full px-3 py-1 text-xs font-semibold text-white"
-                        style={{ backgroundColor: "var(--brand-accent)" }}
-                      >
-                        {tariff.badge}
-                      </span>
-                    ) : null}
-                  </div>
-                  <ul className="mt-4 flex-1 space-y-2 text-sm text-muted-foreground">
-                    {tariff.features.map((f) => (
-                      <li key={f} className="flex gap-2">
-                        <span
-                          className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-                          style={{ backgroundColor: "var(--brand-accent)" }}
-                          aria-hidden="true"
-                        />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-5">
-                    <p className="text-sm text-muted-foreground line-through">
-                      {tariff.oldPrice}
-                    </p>
-                    <p className="text-lg font-bold">{tariff.price}</p>
-                    <p className="text-xs text-muted-foreground">{tariff.note}</p>
-                  </div>
-                  <div className="mt-5">
-                    <LeadDialog
-                      triggerLabel="Выбрать"
-                      triggerClassName="btn-accent inline-flex h-11 w-full items-center justify-center rounded-xl text-base font-semibold"
-                      title={`Тариф «${tariff.name}»`}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <LeadDialog
-                triggerLabel="Подробный состав тарифов"
-                triggerClassName="inline-flex items-center justify-center rounded-xl border border-foreground/15 bg-white px-6 py-3 text-base font-semibold transition-colors hover:border-foreground/30"
-                title="Подробный состав тарифов"
-              />
             </div>
           </div>
         </section>
