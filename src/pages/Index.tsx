@@ -14,6 +14,7 @@ import { PickSchedule } from "@/components/landing/PickSchedule";
 import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
 import { StudentsFuture } from "@/components/landing/StudentsFuture";
 import { TariffsPlans } from "@/components/landing/TariffsPlans";
+import { FamilyBudget } from "@/components/landing/FamilyBudget";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -30,7 +31,6 @@ import {
   PLATFORM_TABS,
   EXPERTS,
   REVIEWS,
-  PAYMENT_OPTIONS,
   FAQ_ITEMS,
   KNOWLEDGE_LINKS,
 } from "@/data/landing";
@@ -135,6 +135,8 @@ const Index = () => {
         <StudentsFuture />
 
         <TariffsPlans />
+
+        <FamilyBudget />
 
         <TrialBlock />
 
@@ -255,25 +257,6 @@ const Index = () => {
                   </blockquote>
                   <figcaption className="mt-4 font-semibold">{review.name}</figcaption>
                 </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Оплата */}
-        <section aria-labelledby="payment-title" className="bg-secondary/60 py-16 sm:py-20">
-          <div className="container-page">
-            <SectionTitle>
-              <span id="payment-title">
-                Оплачивайте учёбу ребёнка без вреда для семейного бюджета
-              </span>
-            </SectionTitle>
-            <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {PAYMENT_OPTIONS.map((opt) => (
-                <div key={opt.title} className="rounded-2xl bg-white p-6 shadow-card">
-                  <h3 className="text-lg font-semibold">{opt.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{opt.text}</p>
-                </div>
               ))}
             </div>
           </div>

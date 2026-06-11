@@ -491,6 +491,26 @@
       .tar2-nav{display:flex}
     }
 
+    /* ===== «Мы поможем сэкономить семейный бюджет» (3 карточки, слайдер на мобильных) ===== */
+    .fb{background:#f4f5f6;padding:56px 0}
+    .fb-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
+    .fb-track{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .fb-card{display:flex;flex-direction:column;text-align:center;background:#fff;border-radius:24px;padding:28px 24px 0;overflow:hidden}
+    .fb-card h3{font-size:clamp(20px,1.8vw,24px);font-weight:700;line-height:1.15;margin:0}
+    .fb-card p{margin:12px auto 0;max-width:300px;font-size:16px;line-height:1.32;color:var(--muted)}
+    .fb-card img{display:block;width:100%;height:auto;margin-top:auto}
+    .fb-nav{display:none;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    .fb-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,.15);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .fb-dots{display:flex;align-items:center;gap:8px}
+    .fb-dots span{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.2);transition:background .2s}
+    .fb-dots span.active{background:#1b2330}
+    @media(max-width:1023px){
+      .fb-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+      .fb-track::-webkit-scrollbar{display:none}
+      .fb-card{flex:0 0 82%;scroll-snap-align:center}
+      .fb-nav{display:flex}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -1271,6 +1291,35 @@
       </div>
     </section>
 
+    <!-- ===================== МЫ ПОМОЖЕМ СЭКОНОМИТЬ СЕМЕЙНЫЙ БЮДЖЕТ ===================== -->
+    <section class="fb" aria-labelledby="fb-title">
+      <div class="container">
+        <h2 class="fb-title" id="fb-title">Мы поможем сэкономить семейный бюджет</h2>
+        <div class="fb-track" id="fbTrack">
+          <article class="fb-card">
+            <h3>Материнский капитал</h3>
+            <p>Можно использовать частично или полностью. Поможем с оформлением документов</p>
+            <img src="https://static.tildacdn.com/tild3334-3731-4061-a330-323330633465/Frame_2087327664.png" alt="" aria-hidden="true" width="752" height="208" loading="lazy" decoding="async">
+          </article>
+          <article class="fb-card">
+            <h3>Верните 13% от стоимости любого курса</h3>
+            <p>Поможем оформить документы, чтобы получить налоговый вычет за обучение</p>
+            <img src="https://static.tildacdn.com/tild6637-3233-4137-b234-303533393061/Frame_2087327664.png" alt="" aria-hidden="true" width="752" height="248" loading="lazy" decoding="async">
+          </article>
+          <article class="fb-card">
+            <h3>Учитесь сейчас, платите потом</h3>
+            <p>Разделим стоимость курса на платежи от 10 333 ₽ / месяц</p>
+            <img src="https://static.tildacdn.com/tild3239-3437-4261-a263-306262663534/Frame_2087327664.png" alt="" aria-hidden="true" width="752" height="208" loading="lazy" decoding="async">
+          </article>
+        </div>
+        <div class="fb-nav">
+          <button type="button" id="fbPrev" aria-label="Предыдущая карточка"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="fb-dots" id="fbDots"><span></span><span class="active"></span><span></span></div>
+          <button type="button" id="fbNext" aria-label="Следующая карточка"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -1409,18 +1458,6 @@
     </section>
 
     <!-- ===================== TARIFFS ===================== -->
-    <!-- ===================== PAYMENT ===================== -->
-    <section class="section section--soft" aria-labelledby="pay-title">
-      <div class="container">
-        <h2 class="h2" id="pay-title">Оплачивайте учёбу ребёнка без вреда для семейного бюджета</h2>
-        <div class="grid g3 mt40">
-          <div class="card"><h3>Материнский капитал</h3><p class="muted mt16">Можно использовать частично или полностью. Поможем с оформлением документов.</p></div>
-          <div class="card"><h3>Налоговый вычет до 33 800 ₽</h3><p class="muted mt16">Государство вернёт 13% от стоимости любого тарифа, а мы поможем оформить заявку.</p></div>
-          <div class="card"><h3>Внутренняя и банковская рассрочка</h3><p class="muted mt16">Если в рассрочку, то без процентов — их мы берём на себя.</p></div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== CONSULT (FORM) ===================== -->
     <section class="section" aria-labelledby="con-title">
       <div class="container two">
@@ -1682,6 +1719,36 @@
       var prev = document.getElementById("tar2Prev"), next = document.getElementById("tar2Next");
       if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
       if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
+    })();
+
+    // «Мы поможем сэкономить семейный бюджет» — слайдер (по умолчанию вторая карточка)
+    (function () {
+      var track = document.getElementById("fbTrack");
+      if (!track) return;
+      var cards = track.children, dots = document.querySelectorAll("#fbDots span"), active = 1;
+      function centerTo(i) {
+        i = Math.max(0, Math.min(cards.length - 1, i));
+        var c = cards[i];
+        if (!c) return;
+        track.scrollTo({ left: c.offsetLeft - (track.clientWidth - c.clientWidth) / 2, behavior: "smooth" });
+      }
+      function syncDots() {
+        var center = track.scrollLeft + track.clientWidth / 2, nearest = 0, best = Infinity;
+        for (var i = 0; i < cards.length; i++) {
+          var mid = cards[i].offsetLeft + cards[i].clientWidth / 2, d = Math.abs(mid - center);
+          if (d < best) { best = d; nearest = i; }
+        }
+        active = nearest;
+        dots.forEach(function (s, j) { s.classList.toggle("active", j === nearest); });
+      }
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(syncDots); });
+      var prev = document.getElementById("fbPrev"), next = document.getElementById("fbNext");
+      if (prev) prev.addEventListener("click", function () { centerTo(active - 1); });
+      if (next) next.addEventListener("click", function () { centerTo(active + 1); });
+      // По умолчанию на мобильных показываем вторую карточку
+      if (window.matchMedia("(max-width:1023px)").matches) {
+        window.addEventListener("load", function () { var c = cards[1]; if (c) track.scrollLeft = c.offsetLeft - (track.clientWidth - c.clientWidth) / 2; });
+      }
     })();
 
     // Год в футере
