@@ -51,7 +51,7 @@ function TrialSelect() {
       {open && (
         <ul
           role="listbox"
-          className="absolute left-0 right-0 top-[calc(100%+8px)] z-20 overflow-hidden rounded-xl bg-white py-2 shadow-[0_10px_30px_rgba(0,0,0,0.18)]"
+          className="absolute left-0 right-0 top-[calc(100%+8px)] z-20 max-h-[264px] overflow-y-auto rounded-xl bg-white py-2 shadow-[0_10px_30px_rgba(0,0,0,0.18)]"
         >
           {GRADES.map((g) => (
             <li key={g} role="option" aria-selected={g === value}>
@@ -78,7 +78,7 @@ export function TrialBlock() {
     <section id="trial" aria-labelledby="trial-title" className="scroll-mt-24 bg-secondary/60 py-14 sm:py-16">
       <div className="container-page">
         <div
-          className="relative overflow-hidden rounded-[24px] p-6 sm:p-10 md:rounded-[32px]"
+          className="relative rounded-[24px] p-6 sm:p-10 md:rounded-[32px]"
           style={{ background: "linear-gradient(180deg,#D571FF 0%,#B400FF 74.82%)" }}
         >
           <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_minmax(0,360px)_minmax(300px,330px)]">

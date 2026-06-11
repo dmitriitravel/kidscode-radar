@@ -8,6 +8,7 @@ import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
 import { LyceumProcess } from "@/components/landing/LyceumProcess";
 import { CertificateBlock } from "@/components/landing/CertificateBlock";
 import { TrialBlock } from "@/components/landing/TrialBlock";
+import { TeachersSlider } from "@/components/landing/TeachersSlider";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -22,7 +23,6 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   STATS,
   PLATFORM_TABS,
-  TEACHERS,
   EXPERTS,
   SCHEDULE_TABS,
   REVIEWS,
@@ -121,6 +121,8 @@ const Index = () => {
 
         <CertificateBlock />
 
+        <TeachersSlider />
+
         <TrialBlock />
 
         {/* Платформа (табы) */}
@@ -156,40 +158,6 @@ const Index = () => {
                 </TabsContent>
               ))}
             </Tabs>
-          </div>
-        </section>
-
-        {/* Учителя */}
-        <section aria-labelledby="teachers-title" className="py-16 sm:py-20">
-          <div className="container-page">
-            <SectionTitle>
-              <span id="teachers-title">Кто преподаёт в лицее</span>
-            </SectionTitle>
-            <p className="mt-4 max-w-2xl text-muted-foreground">
-              Уроки проводят опытные педагоги из ведущих школ России, эксперты ЕГЭ,
-              победители всероссийских конкурсов. Только 5 из 100 кандидатов проходят
-              конкурсный отбор.
-            </p>
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {TEACHERS.map((teacher) => (
-                <div key={teacher.name} className="rounded-2xl bg-secondary p-6 shadow-card">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white"
-                    style={{ backgroundColor: "var(--brand-accent)" }}
-                    aria-hidden="true"
-                  >
-                    {teacher.name.charAt(0)}
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold">{teacher.name}</h3>
-                  {"role" in teacher && teacher.role ? (
-                    <p className="text-sm font-medium" style={{ color: "var(--brand-accent-active)" }}>
-                      {teacher.role}
-                    </p>
-                  ) : null}
-                  <p className="mt-2 text-sm text-muted-foreground">{teacher.text}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

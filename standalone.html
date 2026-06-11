@@ -283,7 +283,7 @@
 
     /* ===== «Попробуйте 7 дней бесплатно» (лид-блок, адаптив) ===== */
     .trial{background:var(--soft);padding:56px 0}
-    .trial-card{position:relative;overflow:hidden;border-radius:32px;padding:40px;background:linear-gradient(180deg,#D571FF 0%,#B400FF 74.82%)}
+    .trial-card{position:relative;border-radius:32px;padding:40px;background:linear-gradient(180deg,#D571FF 0%,#B400FF 74.82%)}
     .trial-grid{display:grid;grid-template-columns:1.05fr minmax(0,360px) minmax(300px,330px);gap:24px;align-items:center}
     .trial-h{font-size:clamp(28px,3.2vw,40px);font-weight:700;color:#fff;line-height:1.1}
     .trial-list{margin-top:24px;display:flex;flex-direction:column;gap:12px}
@@ -301,7 +301,7 @@
     .trial-select-btn{width:100%;height:48px;background:#fff;border-radius:12px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:16px;color:var(--fg);border:0;font-family:inherit}
     .trial-select-btn svg{transition:transform .2s;flex:0 0 auto}
     .trial-select.open .trial-select-btn svg{transform:rotate(180deg)}
-    .trial-select-list{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:8px 0;z-index:20;display:none;list-style:none;margin:0}
+    .trial-select-list{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:8px 0;z-index:20;display:none;list-style:none;margin:0;max-height:264px;overflow-y:auto}
     .trial-select.open .trial-select-list{display:block}
     .trial-option{padding:12px 16px;cursor:pointer;font-size:16px;color:var(--fg)}
     .trial-option:hover{background:#f4f4f4}
@@ -313,6 +313,34 @@
       .trial-card{padding:24px}
       .trial-media{order:2}
       .trial-media img{max-width:360px}
+    }
+
+    /* ===== «Кто преподаёт в лицее» — слайдер ===== */
+    .teach{background:var(--soft);padding:56px 0}
+    .teach-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
+    .teach-card{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:32px;background:#fff;min-height:430px}
+    .teach-content{padding:40px;display:flex;flex-direction:column}
+    .teach-name{font-size:clamp(24px,2.4vw,32px);font-weight:500;color:#000;line-height:1.2}
+    .teach-tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+    .teach-tag{border-radius:8px;background:#f4f4f4;color:rgba(0,0,0,.64);padding:6px 10px;font-size:14px}
+    .teach-bio{margin-top:16px;font-size:18px;color:rgba(0,0,0,.5);line-height:1.32}
+    .teach-btn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:12px;background:#04121b;color:#fff;padding:14px 24px;font-weight:600;font-size:16px;font-family:inherit;transition:background .2s}
+    .teach-btn:hover{background:#1b2a36}
+    .teach-media{position:relative;overflow:hidden;min-height:100%}
+    .teach-media>img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+    .teach-subject{position:absolute;left:16px;top:16px;z-index:2;display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#ff6ec7;color:#fff;padding:6px 12px;font-size:14px;font-weight:500}
+    .teach-subject img{width:18px;height:18px}
+    .teach-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+    .teach-counter{font-size:14px;color:var(--muted)}
+    .teach-modal{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:16px}
+    .teach-modal.open{display:flex}
+    .teach-modal-inner{position:relative;width:100%;max-width:760px}
+    .teach-modal video{width:100%;border-radius:16px;display:block}
+    .teach-modal-close{position:absolute;top:-48px;right:0;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;border:0;font-size:24px;cursor:pointer;line-height:1}
+    @media(max-width:1000px){
+      .teach-card{display:flex;flex-direction:column-reverse;grid-template-columns:1fr;border-radius:16px;min-height:0}
+      .teach-content{padding:24px}
+      .teach-media{min-height:240px}
     }
 
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
@@ -795,6 +823,39 @@
       </div>
     </section>
 
+    <!-- ===================== КТО ПРЕПОДАЁТ В ЛИЦЕЕ (слайдер) ===================== -->
+    <section class="teach" aria-labelledby="teach-title">
+      <div class="container">
+        <h2 class="teach-title" id="teach-title">Кто преподаёт в лицее</h2>
+        <div class="teach-card">
+          <div class="teach-content">
+            <h3 class="teach-name" id="teachName"></h3>
+            <div class="teach-tags"><span class="teach-tag" id="teachGrades"></span><span class="teach-tag">вебинары</span></div>
+            <p class="teach-bio" id="teachBio"></p>
+            <button class="teach-btn" type="button" id="teachWatch">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              Посмотреть урок
+            </button>
+          </div>
+          <div class="teach-media">
+            <span class="teach-subject"><img id="teachIcon" src="" alt="" /><span id="teachSubject"></span></span>
+            <img id="teachPhoto" src="" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="teach-controls">
+          <button class="choice-btn" id="teachPrev" type="button" aria-label="Предыдущий преподаватель">‹</button>
+          <span class="teach-counter" id="teachCounter"></span>
+          <button class="choice-btn" id="teachNext" type="button" aria-label="Следующий преподаватель">›</button>
+        </div>
+      </div>
+    </section>
+    <div class="teach-modal" id="teachModal" role="dialog" aria-modal="true" aria-label="Видео урока">
+      <div class="teach-modal-inner">
+        <button class="teach-modal-close" id="teachModalClose" type="button" aria-label="Закрыть">×</button>
+        <video id="teachVideo" controls playsinline><source src="https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -1170,6 +1231,40 @@
       var submit = document.getElementById("trialSubmit");
       var ok = document.getElementById("trialOk");
       if (submit && ok) submit.addEventListener("click", function () { ok.style.display = "block"; });
+    })();
+
+    // Слайдер преподавателей + поп-ап видео урока
+    (function () {
+      var card = document.getElementById("teachName");
+      if (!card) return;
+      var T = [
+        { name: "Татьяна Терещенко", subject: "физика", icon: "https://static.tildacdn.com/tild6531-3364-4335-b839-313635663465/Magnet.svg", grades: "7–11 классы", bio: "Магистр в области ИТ в образовании, преподаватель физики с опытом работы в колледжах и вузах. Ведёт научную работу и разрабатывает проекты, готовит к ОГЭ и ЕГЭ, помогает разобраться со сложными заданиями. Стаж преподавания — 8 лет", photo: "https://static.tildacdn.com/tild3533-3866-4930-b738-313730316463/Property_1_Deskyes_1.png" },
+        { name: "Алексей Мелкозеров", subject: "информатика", icon: "https://static.tildacdn.com/tild6631-3937-4461-b633-363164663732/Code.svg", grades: "5–11 классы", bio: "Научил 300+ учеников программировать, участвовал в разработке игр с использованием продвинутых технологий. Обучает языку программирования Python, алгоритмам и веб-разработке (языки HTML, CSS, JavaScript). Стаж преподавания — 5 лет", photo: "https://static.tildacdn.com/tild3861-6666-4332-b762-623034386130/Property_1_Deskyes_1.png" },
+        { name: "Екатерина Бордун", subject: "математика", icon: "https://static.tildacdn.com/tild3234-6535-4263-b332-393964656632/Calculator.svg", grades: "5–8 классы", bio: "Экономист, математик с профильным педагогическим образованием, автор нескольких сотен заданий по математике. Стаж преподавания — 12 лет", photo: "https://static.tildacdn.com/tild6434-6364-4464-a262-356432363264/Property_1_Deskyes_1.png" },
+        { name: "Константин Нестеров", subject: "биология", icon: "https://static.tildacdn.com/tild6437-3732-4562-b664-393133353833/Leaf.svg", grades: "5–11 классы", bio: "Магистр биотехнологии, выпускник ХТИ УрФУ. Автор курса «Биология с нуля», методист курса подготовки к ЕГЭ по биологии и программы Домашнего лицея. Стаж преподавания — 9 лет", photo: "https://static.tildacdn.com/tild3363-6662-4535-a639-333733653731/Property_1_Deskyes_1.png" },
+        { name: "Арина Матвеева", subject: "география", icon: "https://static.tildacdn.com/tild6535-3566-4037-a235-613630646234/Globe.svg", grades: "5–11 классы", bio: "Выпускница РГПУ им. А. И. Герцена с двумя красными дипломами, учитель первой квалификационной категории. Автор курса подготовки к ОГЭ и ЕГЭ, предметный методист и методист СПО. Более 7 лет преподаёт географию и готовит учеников к экзаменам", photo: "https://static.tildacdn.com/tild6532-6135-4532-b837-303635363066/Property_1_Deskyes_1.png" },
+        { name: "Маргарита Могилат", subject: "литература", icon: "https://static.tildacdn.com/tild3136-6664-4330-b065-373233393161/Book.svg", grades: "5–11 классы", bio: "Филолог-литературовед, выпускница Государственного института русского языка им. А. С. Пушкина. Стаж преподавания — 5 лет", photo: "https://static.tildacdn.com/tild3937-6638-4433-b431-346237646663/Property_1_Deskyes_1.png" },
+        { name: "Иван Лобов", subject: "история", icon: "https://static.tildacdn.com/tild3831-3534-4835-a364-656464303765/Column.svg", grades: "5–11 классы", bio: "Региональный эксперт проверки ОГЭ/ЕГЭ, преподаватель обществознания и истории, магистр управления образованием. Учитель первой квалификационной категории, участник конкурса «Учитель года». Стаж преподавания — 9 лет", photo: "https://static.tildacdn.com/tild6135-6464-4932-b265-626261393063/Property_1_Deskyes_1.png" },
+        { name: "Дарья Афанасьева", subject: "обществознание", icon: "https://static.tildacdn.com/tild6635-6633-4239-a466-383665643534/Social_Studies.svg", grades: "6–11 классы", bio: "Выпускница НИУ ВШЭ, юрист, педагог, автор научных работ в области юриспруденции, сдала ЕГЭ на 100 баллов и знает экзамен изнутри. Стаж преподавания и подготовки к ЕГЭ по обществознанию — 9 лет", photo: "https://static.tildacdn.com/tild6666-3931-4666-b032-323266373466/Property_1_Deskyes.png" },
+        { name: "Богдан Шмыков", subject: "химия", icon: "https://static.tildacdn.com/tild6465-3061-4138-b935-306135333835/Chemistry.svg", grades: "8–11 классы", bio: "Выпускник химфака МГУ. Стаж преподавания — 6 лет, средний балл учеников на ЕГЭ — 90", photo: "https://static.tildacdn.com/tild3435-3966-4437-b438-356437373830/Property_1_Deskyes_1.png" },
+        { name: "Эльмаз Умерова", subject: "английский язык", icon: "https://static.tildacdn.com/tild6434-3233-4730-b538-353234653331/Flag_Eng.svg", grades: "9–11 классы", bio: "Магистр филологии, владеет английским на высоком уровне (Advanced), сдала экзамен IELTS на 8 баллов. Ведёт уроки с опорой на международные стандарты преподавания, готовит учеников к ОГЭ, ЕГЭ и помогает заговорить на английском более 7 лет", photo: "https://static.tildacdn.com/tild3761-3162-4464-b762-633132613239/Property_1_Deskyes_1.png" }
+      ];
+      var i = 0;
+      var name = document.getElementById("teachName"), grades = document.getElementById("teachGrades"), bio = document.getElementById("teachBio"), icon = document.getElementById("teachIcon"), subject = document.getElementById("teachSubject"), photo = document.getElementById("teachPhoto"), counter = document.getElementById("teachCounter");
+      function render() {
+        var t = T[i];
+        name.textContent = t.name; grades.textContent = t.grades; bio.textContent = t.bio;
+        icon.src = t.icon; subject.textContent = t.subject; photo.src = t.photo; photo.alt = t.name;
+        counter.textContent = (i + 1) + " / " + T.length;
+      }
+      document.getElementById("teachPrev").addEventListener("click", function () { i = (i - 1 + T.length) % T.length; render(); });
+      document.getElementById("teachNext").addEventListener("click", function () { i = (i + 1) % T.length; render(); });
+      var modal = document.getElementById("teachModal"), video = document.getElementById("teachVideo");
+      document.getElementById("teachWatch").addEventListener("click", function () { modal.classList.add("open"); video.play && video.play(); });
+      function closeModal() { modal.classList.remove("open"); video.pause && video.pause(); }
+      document.getElementById("teachModalClose").addEventListener("click", closeModal);
+      modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+      render();
     })();
 
     // Год в футере
