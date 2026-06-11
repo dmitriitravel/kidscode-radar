@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 
 // «Кто преподаёт в лицее» — слайдер карточек преподавателей с поп-ап видео урока.
-// Видео урока в исходном коде задано якорями #teacher-N (поп-апы Tilda без прямых URL),
-// поэтому в поп-ап встроено демо-видео урока Skysmart.
+// Видео у каждого преподавателя своё; для двух преподавателей без присланной ссылки
+// используется демо-видео урока Skysmart как запасной вариант.
 const LESSON_VIDEO =
   "https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4";
 
@@ -14,6 +14,7 @@ interface Teacher {
   grades: string;
   bio: string;
   photo: string;
+  video: string;
 }
 
 const TEACHERS: Teacher[] = [
@@ -24,6 +25,7 @@ const TEACHERS: Teacher[] = [
     grades: "7–11 классы",
     bio: "Магистр в области ИТ в образовании, преподаватель физики с опытом работы в колледжах и вузах. Ведёт научную работу и разрабатывает проекты, готовит к ОГЭ и ЕГЭ, помогает разобраться со сложными заданиями. Стаж преподавания — 8 лет",
     photo: "https://static.tildacdn.com/tild3533-3866-4930-b738-313730316463/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D1%84%D0%B8%D0%B7%D0%B8%D0%BA%D0%B0.mp4",
   },
   {
     name: "Алексей Мелкозеров",
@@ -32,6 +34,7 @@ const TEACHERS: Teacher[] = [
     grades: "5–11 классы",
     bio: "Научил 300+ учеников программировать, участвовал в разработке игр с использованием продвинутых технологий. Обучает языку программирования Python, алгоритмам и веб-разработке (языки HTML, CSS, JavaScript). Стаж преподавания — 5 лет",
     photo: "https://static.tildacdn.com/tild3861-6666-4332-b762-623034386130/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D1%82%D0%B0%D0%B8%D0%BA%D0%B0.mp4",
   },
   {
     name: "Екатерина Бордун",
@@ -40,6 +43,7 @@ const TEACHERS: Teacher[] = [
     grades: "5–8 классы",
     bio: "Экономист, математик с профильным педагогическим образованием, автор нескольких сотен заданий по математике. Стаж преподавания — 12 лет",
     photo: "https://static.tildacdn.com/tild6434-6364-4464-a262-356432363264/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0.mp4",
   },
   {
     name: "Константин Нестеров",
@@ -48,6 +52,7 @@ const TEACHERS: Teacher[] = [
     grades: "5–11 классы",
     bio: "Магистр биотехнологии, выпускник ХТИ УрФУ. Автор курса «Биология с нуля», методист курса подготовки к ЕГЭ по биологии и программы Домашнего лицея. Стаж преподавания — 9 лет",
     photo: "https://static.tildacdn.com/tild3363-6662-4535-a639-333733653731/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B1%D0%B8%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F.mp4",
   },
   {
     name: "Арина Матвеева",
@@ -56,6 +61,7 @@ const TEACHERS: Teacher[] = [
     grades: "5–11 классы",
     bio: "Выпускница РГПУ им. А. И. Герцена с двумя красными дипломами, учитель первой квалификационной категории. Автор курса подготовки к ОГЭ и ЕГЭ, предметный методист и методист СПО. Более 7 лет преподаёт географию и готовит учеников к экзаменам",
     photo: "https://static.tildacdn.com/tild6532-6135-4532-b837-303635363066/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B3%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%20.mp4",
   },
   {
     name: "Маргарита Могилат",
@@ -64,6 +70,7 @@ const TEACHERS: Teacher[] = [
     grades: "5–11 классы",
     bio: "Филолог-литературовед, выпускница Государственного института русского языка им. А. С. Пушкина. Стаж преподавания — 5 лет",
     photo: "https://static.tildacdn.com/tild3937-6638-4433-b431-346237646663/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0.mp4",
   },
   {
     name: "Иван Лобов",
@@ -72,6 +79,7 @@ const TEACHERS: Teacher[] = [
     grades: "5–11 классы",
     bio: "Региональный эксперт проверки ОГЭ/ЕГЭ, преподаватель обществознания и истории, магистр управления образованием. Учитель первой квалификационной категории, участник конкурса «Учитель года». Стаж преподавания — 9 лет",
     photo: "https://static.tildacdn.com/tild6135-6464-4932-b265-626261393063/Property_1_Deskyes_1.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F.mp4",
   },
   {
     name: "Дарья Афанасьева",
@@ -80,6 +88,7 @@ const TEACHERS: Teacher[] = [
     grades: "6–11 классы",
     bio: "Выпускница НИУ ВШЭ, юрист, педагог, автор научных работ в области юриспруденции, сдала ЕГЭ на 100 баллов и знает экзамен изнутри. Стаж преподавания и подготовки к ЕГЭ по обществознанию — 9 лет",
     photo: "https://static.tildacdn.com/tild6666-3931-4666-b032-323266373466/Property_1_Deskyes.png",
+    video: "https://storage.yandexcloud.net/corp-market/study.skyeng/%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE%20.mp4",
   },
   {
     name: "Богдан Шмыков",
@@ -88,6 +97,7 @@ const TEACHERS: Teacher[] = [
     grades: "8–11 классы",
     bio: "Выпускник химфака МГУ. Стаж преподавания — 6 лет, средний балл учеников на ЕГЭ — 90",
     photo: "https://static.tildacdn.com/tild3435-3966-4437-b438-356437373830/Property_1_Deskyes_1.png",
+    video: LESSON_VIDEO,
   },
   {
     name: "Эльмаз Умерова",
@@ -96,17 +106,45 @@ const TEACHERS: Teacher[] = [
     grades: "9–11 классы",
     bio: "Магистр филологии, владеет английским на высоком уровне (Advanced), сдала экзамен IELTS на 8 баллов. Ведёт уроки с опорой на международные стандарты преподавания, готовит учеников к ОГЭ, ЕГЭ и помогает заговорить на английском более 7 лет",
     photo: "https://static.tildacdn.com/tild3761-3162-4464-b762-633132613239/Property_1_Deskyes_1.png",
+    video: LESSON_VIDEO,
   },
 ];
 
 export function TeachersSlider() {
   const [index, setIndex] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [warm, setWarm] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const count = TEACHERS.length;
   const t = TEACHERS[index];
 
+  // Предзагружаем фото всех преподавателей, когда секция попадает в зону видимости,
+  // чтобы переключение вкладок было мгновенным (без подгрузки при клике).
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setWarm(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section aria-labelledby="teachers-title" className="bg-secondary/60 py-14 sm:py-16">
+    <section ref={sectionRef} aria-labelledby="teachers-title" className="bg-secondary/60 py-14 sm:py-16">
+      {warm && (
+        <div aria-hidden="true" className="hidden">
+          {TEACHERS.map((teacher) => (
+            <img key={teacher.name} src={teacher.photo} alt="" width={1} height={1} />
+          ))}
+        </div>
+      )}
       <div className="container-page">
         <h2 id="teachers-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
           Кто преподаёт в лицее
@@ -187,8 +225,8 @@ export function TeachersSlider() {
             >
               <X className="h-6 w-6" />
             </button>
-            <video className="w-full rounded-2xl" controls autoPlay playsInline>
-              <source src={LESSON_VIDEO} type="video/mp4" />
+            <video key={t.video} className="w-full rounded-2xl" controls autoPlay playsInline>
+              <source src={t.video} type="video/mp4" />
             </video>
           </div>
         </div>
