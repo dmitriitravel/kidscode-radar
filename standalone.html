@@ -223,6 +223,43 @@
       .consult-mascot img{height:auto;width:80%;max-width:340px}
     }
 
+    /* ===== «Как проходит обучение в лицее?» — вкладки ===== */
+    .lyc{background:var(--soft);padding:56px 0}
+    .lyc-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
+    .lyc-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:32px}
+    .lyc-tab{border-radius:999px;background:#ededed;border:1px solid transparent;padding:11px 18px;font-size:16px}
+    .lyc-panel{margin-top:0;display:none;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:32px;background:#fff;min-height:520px}
+    .lyc-panel.active{display:grid}
+    .lyc-content{padding:40px;display:flex;flex-direction:column}
+    .lyc-media{position:relative;overflow:hidden;border-radius:0 0 32px 0}
+    .lyc-media img,.lyc-media video{width:100%;height:100%;object-fit:cover;display:block}
+    .lyc-h{font-size:clamp(24px,2.4vw,32px);font-weight:500;color:#000;line-height:1.2}
+    .lyc-sub{margin-top:16px;font-size:18px;color:rgba(0,0,0,.5);line-height:1.32}
+    .lyc-strong{margin-top:16px;font-size:18px;color:#000}
+    .lyc-pills{margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:8px}
+    .lyc-pill{display:flex;align-items:center;gap:8px;border-radius:16px;padding:14px 16px;color:#fff;font-size:16px}
+    .lyc-pill img{width:16px;height:16px}
+    .lyc-chips{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+    .lyc-chip{display:inline-block;border-radius:8px;background:#f4f4f4;color:rgba(0,0,0,.64);padding:6px 10px;font-size:14px}
+    .lyc-box{margin-top:24px;border-radius:16px;background:#f4f4f4;padding:16px}
+    .lyc-check{display:flex;align-items:flex-start;gap:8px;margin-top:8px;font-size:18px;color:rgba(0,0,0,.64);line-height:1.32}
+    .lyc-check img{width:24px;height:24px;flex-shrink:0}
+    .lyc-acc+.lyc-acc{margin-top:16px}
+    .lyc-acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .lyc-acc summary::-webkit-details-marker{display:none}
+    .lyc-acc .ttl{font-size:18px;color:#000}
+    .lyc-acc .prev{display:inline-block;margin-top:8px;border-radius:8px;background:#f4f4f4;color:rgba(0,0,0,.64);padding:4px 8px;font-size:14px}
+    .lyc-acc .arr{flex-shrink:0;transition:transform .3s}
+    .lyc-acc[open] .arr{transform:rotate(180deg)}
+    .lyc-acc .ans{margin-top:12px;font-size:18px;color:rgba(0,0,0,.48);line-height:1.32}
+    .lyc-guide{margin-top:24px;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;background:#de7aff;color:#fff;padding:12px 24px;font-weight:600;transition:background .2s}
+    .lyc-guide:hover{background:#e38fff}
+    @media(max-width:1000px){
+      .lyc-panel{grid-template-columns:1fr;border-radius:16px;min-height:0}
+      .lyc-content{padding:24px}
+      .lyc-media{border-radius:0 0 16px 0;min-height:240px}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -568,6 +605,107 @@
           <div class="card card--plain stat"><div class="num">12+</div><p>лет на рынке онлайн-образования</p></div>
           <div class="card card--plain stat"><div class="num">топ-100</div><p>входим в топ EdTech-компаний по версии HolonIQ за 2021 год</p></div>
           <div class="card card--plain stat"><div class="num">4,9</div><p>рейтинг по отзывам на УчисьОнлайн.ру и MOOC.ru</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== КАК ПРОХОДИТ ОБУЧЕНИЕ (вкладки) ===================== -->
+    <section class="lyc" aria-labelledby="lyc-title">
+      <div class="container">
+        <h2 class="lyc-title" id="lyc-title">Как проходит обучение в лицее?</h2>
+        <div class="tabs" data-tabs>
+          <div class="lyc-tabs" role="tablist" aria-label="Этапы обучения">
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="true" data-tab="lyc1">Уроки</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc2">Формат занятий</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc3">Личный кабинет</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc4">Отчёты об учёбе</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc5">Домашнее задание</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="lyc6">Аттестация</button>
+          </div>
+
+          <div class="tab-panel lyc-panel active" id="lyc1" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Уроки</h3>
+              <p class="lyc-sub">Преподаватель объясняет тему на виртуальной доске, а ученики закрепляют материал в интерактивных заданиях и получают баллы. Преподаватель видит статистику по каждому ребёнку и сразу понимает, кому нужно дополнительное объяснение</p>
+              <div class="lyc-pills">
+                <span class="lyc-pill" style="background:#ffb53d"><img src="https://static.tildacdn.com/tild3535-3730-4331-a331-346563626132/Union.svg" alt="" width="16" height="16" />2–5 уроков с учителями ежедневно</span>
+                <span class="lyc-pill" style="background:#ff9e00"><img src="https://static.tildacdn.com/tild6432-3937-4530-b739-313464666135/Play.svg" alt="" width="16" height="16" />Любой урок можно пересмотреть в записи</span>
+              </div>
+            </div>
+            <div class="lyc-media"><video autoplay loop muted playsinline preload="metadata"><source src="https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc2" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Формат занятий</h3>
+              <p class="lyc-strong">Вебинары с активным участием</p>
+              <p class="lyc-sub" style="margin-top:8px">Ребёнок слушает урок в прямом эфире, задаёт вопросы и общается с одноклассниками в чате, который модерируют помощники преподавателя</p>
+              <p class="lyc-strong">Групповые уроки по видеосвязи</p>
+              <p class="lyc-sub" style="margin-top:8px">Ребёнок подключается с видео и общается голосом. Если нужно, камеру можно отключить: строгих требований нет. Обычно на занятиях в группе около 8 человек, максимум — 12</p>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild3963-6562-4939-b035-646336386235/pic_6_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc3" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Личный кабинет</h3>
+              <p class="lyc-sub">Всё, что нужно для учёбы, находится в одном месте, в кабинете ученика. Там вы найдёте расписание занятий, домашки, конспекты, записи прошедших уроков, а также теорию по предмету, чтобы легко повторять её</p>
+              <div class="lyc-chips">
+                <span class="lyc-chip">доступ 24/7</span>
+                <span class="lyc-chip">с любого устройства</span>
+              </div>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild3632-3831-4130-a133-613338663635/pic_7_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc4" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Отчёты об учёбе</h3>
+              <p class="lyc-sub">Каждую неделю присылаем родителям отчёт: сколько вебинаров ребёнок посетил на этой неделе, сколько домашек сделал и какие баллы получил</p>
+              <div class="lyc-box">
+                <p style="font-size:18px;color:#000">По учебным вопросам с вами на связи классный руководитель:</p>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />отчитывается о прогрессе</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />напоминает о занятиях</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />отвечает на вопросы детей и родителей</div>
+              </div>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild6162-3330-4232-b538-323836666432/pic_5_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc5" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Домашнее задание</h3>
+              <p class="lyc-strong">Ручная проверка</p>
+              <p class="lyc-sub" style="margin-top:8px">Часть домашних заданий выполняется письменно: ученик фотографирует тетрадь, загружает работу, а учитель проверяет и даёт обратную связь</p>
+              <p class="lyc-strong">Мгновенная проверка</p>
+              <p class="lyc-sub" style="margin-top:8px">Интерактивные упражнения, где система сразу показывает ошибки и правильные ответы, фиксирует количество попыток и считает баллы, чтобы отслеживать прогресс ребёнка</p>
+            </div>
+            <div class="lyc-media"><video autoplay loop muted playsinline preload="metadata"><source src="https://static.tildacdn.com/vide6361-3735-4730-b764-343330376531/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video></div>
+          </div>
+
+          <div class="tab-panel lyc-panel" id="lyc6" role="tabpanel">
+            <div class="lyc-content">
+              <h3 class="lyc-h">Аттестация</h3>
+              <div style="margin-top:20px">
+                <details class="lyc-acc" open>
+                  <summary>
+                    <span><span class="ttl">Промежуточная аттестация</span><br><span class="prev">5–8 и 10 классы</span></span>
+                    <svg class="arr" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414z" fill="#000"/></svg>
+                  </summary>
+                  <p class="ans">На семейном обучении контрольные и ВПР желательно сдавать каждый год, чтобы контролировать знания и прогресс. В тарифах с прикреплением мы не только готовим ребёнка к аттестации, но и помогаем пройти её онлайн через школу-партнёра</p>
+                </details>
+                <details class="lyc-acc">
+                  <summary>
+                    <span><span class="ttl">Итоговая аттестация</span><br><span class="prev">9 и 11 классы</span></span>
+                    <svg class="arr" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414z" fill="#000"/></svg>
+                  </summary>
+                  <p class="ans">Это экзамены, итоговое сочинение и собеседование, которые можно сдать только офлайн. В тарифах с прикреплением мы берём на себя договорённости со школой, где ребёнок будет сдавать ОГЭ и ЕГЭ</p>
+                </details>
+              </div>
+              <a class="lyc-guide" href="https://study.skysmart.ru/how-to-switch-to-homeschooling" target="_blank" rel="noopener noreferrer">Скачать гайд по аттестации</a>
+            </div>
+            <div class="lyc-media"><img src="https://static.tildacdn.com/tild3361-6435-4361-a261-646666666466/pic_8_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+          </div>
         </div>
       </div>
     </section>

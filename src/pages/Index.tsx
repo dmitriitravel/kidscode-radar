@@ -5,6 +5,7 @@ import { ParentConcerns } from "@/components/landing/ParentConcerns";
 import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
 import { ConsultBanner } from "@/components/landing/ConsultBanner";
 import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
+import { LyceumProcess } from "@/components/landing/LyceumProcess";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -115,6 +116,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        <LyceumProcess />
 
         {/* Платформа (табы) */}
         <section
