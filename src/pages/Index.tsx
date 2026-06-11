@@ -9,6 +9,7 @@ import { LyceumProcess } from "@/components/landing/LyceumProcess";
 import { CertificateBlock } from "@/components/landing/CertificateBlock";
 import { TrialBlock } from "@/components/landing/TrialBlock";
 import { TeachersSlider } from "@/components/landing/TeachersSlider";
+import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -24,7 +25,6 @@ import {
   STATS,
   PLATFORM_TABS,
   EXPERTS,
-  SCHEDULE_TABS,
   REVIEWS,
   TARIFFS,
   PAYMENT_OPTIONS,
@@ -122,6 +122,8 @@ const Index = () => {
         <CertificateBlock />
 
         <TeachersSlider />
+
+        <ScheduleBlock />
 
         <TrialBlock />
 
@@ -221,47 +223,6 @@ const Index = () => {
               аттестации, не оставляем один на один с вопросами и помогаем, даже если
               сроки уже прошли, а с документами есть проблемы.
             </p>
-          </div>
-        </section>
-
-        {/* Расписание (табы) */}
-        <section aria-labelledby="schedule-title" className="bg-secondary/60 py-16 sm:py-20">
-          <div className="container-page">
-            <SectionTitle>
-              <span id="schedule-title">
-                Расписание устроено так, чтобы ребёнок мог всё успевать
-              </span>
-            </SectionTitle>
-            <Tabs defaultValue={SCHEDULE_TABS[0].id} className="mt-10">
-              <TabsList className="flex h-auto flex-wrap justify-start gap-2 bg-transparent p-0">
-                {SCHEDULE_TABS.map((tab) => (
-                  <TabsTrigger
-                    key={tab.id}
-                    value={tab.id}
-                    className="rounded-xl border border-border bg-white px-4 py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    {tab.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-              {SCHEDULE_TABS.map((tab) => (
-                <TabsContent key={tab.id} value={tab.id} className="mt-6">
-                  <div className="rounded-2xl bg-white p-7 shadow-card">
-                    <p className="text-sm font-semibold" style={{ color: "var(--brand-accent-active)" }}>
-                      Тариф: Профильный IT
-                    </p>
-                    <h3 className="mt-2 text-xl font-semibold">
-                      Пример расписания занятий 7-го класса
-                    </h3>
-                    <p className="mt-3 text-muted-foreground">
-                      Ринат собирается в IT и увлекается программированием —
-                      расписание подобрано так, чтобы оставалось время на любимое
-                      дело и дополнительные занятия.
-                    </p>
-                  </div>
-                </TabsContent>
-              ))}
-            </Tabs>
           </div>
         </section>
 

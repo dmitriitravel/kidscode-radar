@@ -343,6 +343,15 @@
       .teach-media{min-height:240px}
     }
 
+    /* ===== «Расписание устроено так…» — вкладки с расписаниями ===== */
+    .sch{background:var(--soft);padding:56px 0}
+    .sch-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
+    .sch-panel{background:#fff;border-radius:32px;padding:32px}
+    .sch-h{font-size:clamp(20px,2.2vw,24px);font-weight:500;color:#000;margin-bottom:20px}
+    .sch-img-wrap{overflow-x:auto;border-radius:16px}
+    .sch-img-wrap img{width:100%;height:auto;display:block;border-radius:16px}
+    @media(max-width:760px){.sch-panel{padding:20px;border-radius:16px}.sch-img-wrap img{width:970px;max-width:none}}
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -856,6 +865,37 @@
       </div>
     </div>
 
+    <!-- ===================== РАСПИСАНИЕ (вкладки) ===================== -->
+    <section class="sch" aria-labelledby="sch-title">
+      <div class="container">
+        <h2 class="sch-title" id="sch-title">Расписание устроено так, чтобы ребёнок мог всё успевать</h2>
+        <div class="tabs" data-tabs>
+          <div class="lyc-tabs" role="tablist" aria-label="Варианты расписания">
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="true" data-tab="sch1">Углублённое изучение</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="sch2">Тренировки и спорт</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="sch3">Комфортная учёба</button>
+            <button class="tab-btn lyc-tab" type="button" role="tab" aria-selected="false" data-tab="sch4">Поступление за рубеж</button>
+          </div>
+          <div class="tab-panel sch-panel active" id="sch1" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 7 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/raspisaniye-uglublennoye-izucheniye-68df7ec70aa7e259227734.png" alt="Пример расписания занятий 7-го класса" width="970" height="568" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="tab-panel sch-panel" id="sch2" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 9 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/rapisaniye-sport-68df8591ee3b6927699939.png" alt="Пример расписания занятий 9-го класса" width="970" height="625" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="tab-panel sch-panel" id="sch3" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 6 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/raspisaniye-komfortnaya-ucheba-68df8a55bf074122203197.png" alt="Пример расписания занятий 6-го класса" width="970" height="568" loading="lazy" decoding="async" /></div>
+          </div>
+          <div class="tab-panel sch-panel" id="sch4" role="tabpanel">
+            <h3 class="sch-h">Пример расписания занятий 9 класса</h3>
+            <div class="sch-img-wrap"><img src="https://cdn-user30887.skyeng.ru/uploads/raspisaniye-postupleniye-za-rubezh-68df81c0f3f9e747894057.png" alt="Пример расписания занятий 9-го класса" width="970" height="568" loading="lazy" decoding="async" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -976,25 +1016,6 @@
           <div class="card card--plain"><p class="accent-d" style="font-weight:600">Нейропсихолог</p><h3 class="mt16">Анастасия Бобровская</h3><p class="muted mt16">Консультирует и помогает, если ребёнок не усваивает материал и быстро теряет внимание.</p></div>
         </div>
         <p class="lead">Помогаем не только детям, но и родителям. Сопровождаем от зачисления до аттестации, не оставляем один на один с вопросами и помогаем, даже если сроки уже прошли, а с документами есть проблемы.</p>
-      </div>
-    </section>
-
-    <!-- ===================== SCHEDULE TABS ===================== -->
-    <section class="section section--soft" aria-labelledby="sch-title">
-      <div class="container">
-        <h2 class="h2" id="sch-title">Расписание устроено так, чтобы ребёнок мог всё успевать</h2>
-        <div class="tabs" data-tabs>
-          <div class="tabs-btns" role="tablist">
-            <button class="tab-btn" role="tab" aria-selected="true" data-tab="s1">Для углублённого изучения</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="s2">Для тренировок и спорта</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="s3">Для комфортной учёбы</button>
-            <button class="tab-btn" role="tab" aria-selected="false" data-tab="s4">Для поступления за рубеж</button>
-          </div>
-          <div class="tab-panel active" id="s1" role="tabpanel"><div class="card"><p class="accent-d" style="font-weight:600">Тариф: Профильный IT</p><h3 class="mt16">Пример расписания занятий 7-го класса</h3><p class="muted mt16">Ринат собирается в IT и увлекается программированием — расписание подобрано так, чтобы оставалось время на любимое дело и дополнительные занятия.</p></div></div>
-          <div class="tab-panel" id="s2" role="tabpanel"><div class="card"><h3>Для тренировок и спорта</h3><p class="muted mt16">Гибкое расписание позволяет совмещать учёбу с регулярными тренировками и соревнованиями.</p></div></div>
-          <div class="tab-panel" id="s3" role="tabpanel"><div class="card"><h3>Для комфортной учёбы</h3><p class="muted mt16">Равномерная нагрузка без перегрузок — ребёнок учится в комфортном темпе.</p></div></div>
-          <div class="tab-panel" id="s4" role="tabpanel"><div class="card"><h3>Для поступления за рубеж</h3><p class="muted mt16">Расписание с упором на языки и профильные предметы для поступления в зарубежные вузы.</p></div></div>
-        </div>
       </div>
     </section>
 
