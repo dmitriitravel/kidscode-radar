@@ -389,6 +389,29 @@
       .pick-back,.pick-benefits{display:none}
     }
 
+    /* ===== «Семьи по всему миру доверяют нам образование детей» (видео-отзывы) ===== */
+    .fam{background:#fff;padding:56px 0}
+    .fam-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
+    .fam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .fam-card{display:flex;flex-direction:column}
+    .fam-video{position:relative;border-radius:16px;overflow:hidden;background:#000}
+    .fam-video video{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+    .fam-play{position:absolute;top:16px;right:16px;width:48px;height:48px;border:0;cursor:pointer;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .fam-play:hover{background:rgba(0,0,0,.6)}
+    .fam-card.playing .fam-play{display:none}
+    .fam-cap{margin-top:16px;font-size:16px;line-height:1.3}
+    .fam-cap b{font-weight:600}
+    .fam-countries{display:flex;flex-direction:column;justify-content:space-between;background:#f4f4f6;border-radius:16px;padding:28px}
+    .fam-countries img{display:block;width:100%;max-width:240px;height:auto;margin:0 auto}
+    .fam-countries p{margin:20px 0 0;color:var(--muted);font-size:16px}
+    .fam-countries a{margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:16px;color:#FF6D00;text-decoration:none}
+    @media(max-width:980px){.fam-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){
+      .fam-grid{grid-template-columns:1fr;gap:28px}
+      .fam-card{flex-direction:column-reverse}
+      .fam-cap{margin:0 0 12px}
+    }
+
     /* ===== «Наша образовательная модель одобрена официально» (адаптив) ===== */
     .appr{background:#fff;padding:56px 0}
     .appr-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 auto 40px;max-width:640px}
@@ -985,6 +1008,46 @@
       </div>
     </div>
 
+    <!-- ===================== СЕМЬИ ПО ВСЕМУ МИРУ (видео-отзывы) ===================== -->
+    <section class="fam" aria-labelledby="fam-title">
+      <div class="container">
+        <h2 class="fam-title" id="fam-title">Семьи по всему миру доверяют нам образование детей</h2>
+        <div class="fam-grid">
+          <figure class="fam-card">
+            <div class="fam-video">
+              <video class="fam-vid" preload="none" playsinline poster="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/video-preview-1@2x.png" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/videos/video-1.mp4"></video>
+              <button class="fam-play" type="button" aria-label="Смотреть видео — Оксана"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            </div>
+            <figcaption class="fam-cap"><b style="color:#A93EDC">Оксана:</b> «На уроке я почувствовала себя уверенно и комфортно»</figcaption>
+          </figure>
+          <figure class="fam-card">
+            <div class="fam-video">
+              <video class="fam-vid" preload="none" playsinline poster="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/video-preview-2@2x.png" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/videos/video-2-c.mp4"></video>
+              <button class="fam-play" type="button" aria-label="Смотреть видео — Мама Евы"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            </div>
+            <figcaption class="fam-cap"><b style="color:#FF6D00">Мама Евы:</b> «Дочь увлеклась учёбой, исправила оценки»</figcaption>
+          </figure>
+          <figure class="fam-card">
+            <div class="fam-video">
+              <video class="fam-vid" preload="none" playsinline poster="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/video-preview-3@2x.png" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/videos/video-3.mp4"></video>
+              <button class="fam-play" type="button" aria-label="Смотреть видео — Даша"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+            </div>
+            <figcaption class="fam-cap"><b style="color:#FF64B0">Даша:</b> «Я полюбила русский, биологию и физику»</figcaption>
+          </figure>
+          <div class="fam-countries">
+            <picture>
+              <source type="image/webp" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/image.webp 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/image@2x.webp 2x">
+              <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/image.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/image.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/children-education/images/image@2x.png 2x" width="264" height="240" alt="Флаги стран, в которых учатся в Домашнем лицее" loading="lazy" decoding="async">
+            </picture>
+            <p>Домашний лицей выбирают родители из 30+ стран.</p>
+            <a href="#tariffs">Поступить в школу
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== БЕСПЛАТНЫЙ ПРОБНЫЙ ПЕРИОД (лид-блок) ===================== -->
     <section class="trial" id="trial" aria-labelledby="trial-title" style="scroll-margin-top:90px">
       <div class="container">
@@ -1111,7 +1174,7 @@
     <!-- ===================== REVIEWS ===================== -->
     <section class="section section--soft" aria-labelledby="rev-title">
       <div class="container">
-        <h2 class="h2" id="rev-title">Семьи по всему миру доверяют нам образование детей</h2>
+        <h2 class="h2" id="rev-title">Отзывы учеников и родителей</h2>
         <p class="lead">Тысячи учеников уже создают своё будущее с нами. 80% учеников и родителей готовы рекомендовать нас своим друзьям и близким.</p>
         <div class="grid g2 mt40">
           <figure class="card" style="margin:0"><blockquote class="muted" style="margin:0">Заметила, что сын стал отказываться от помощи с домашней работой по математике. Раньше мы каждый вечер с ним сидели, либо я, либо папа. Теперь только сам. Самое интересное, что оценки при этом не подкачали. Дневник проверяю без страха!</blockquote><figcaption class="mt16" style="font-weight:600">Наталья, мама Владимира</figcaption></figure>
@@ -1403,6 +1466,17 @@
       document.addEventListener("click", function (e) { if (!sel.contains(e.target)) sel.classList.remove("open"); });
       var ok = document.getElementById("pickOk");
       document.getElementById("pickSubmit").addEventListener("click", function () { ok.style.display = "block"; });
+    })();
+
+    // «Семьи по всему миру» — воспроизведение видео по клику на превью
+    (function () {
+      document.querySelectorAll(".fam-card").forEach(function (card) {
+        var vid = card.querySelector(".fam-vid"), btn = card.querySelector(".fam-play");
+        if (!vid || !btn) return;
+        btn.addEventListener("click", function () { vid.controls = true; card.classList.add("playing"); if (vid.play) vid.play(); });
+        vid.addEventListener("play", function () { card.classList.add("playing"); });
+        vid.addEventListener("pause", function () { card.classList.remove("playing"); });
+      });
     })();
 
     // Год в футере

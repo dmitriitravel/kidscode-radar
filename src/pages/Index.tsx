@@ -11,6 +11,7 @@ import { TrialBlock } from "@/components/landing/TrialBlock";
 import { TeachersSlider } from "@/components/landing/TeachersSlider";
 import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
 import { PickSchedule } from "@/components/landing/PickSchedule";
+import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { LeadForm } from "@/components/landing/LeadForm";
 import { LeadDialog } from "@/components/landing/LeadDialog";
@@ -128,6 +129,8 @@ const Index = () => {
 
         <PickSchedule />
 
+        <FamiliesTrust />
+
         <TrialBlock />
 
         {/* Платформа (табы) */}
@@ -233,9 +236,7 @@ const Index = () => {
         <section aria-labelledby="reviews-title" className="bg-secondary/60 py-16 sm:py-20">
           <div className="container-page">
             <SectionTitle>
-              <span id="reviews-title">
-                Семьи по всему миру доверяют нам образование детей
-              </span>
+              <span id="reviews-title">Отзывы учеников и родителей</span>
             </SectionTitle>
             <p className="mt-4 max-w-2xl text-muted-foreground">
               Тысячи учеников уже создают своё будущее с нами. 80% учеников и
