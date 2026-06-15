@@ -10,6 +10,7 @@ import { CertificateBlock } from "@/components/landing/CertificateBlock";
 import { TrialBlock } from "@/components/landing/TrialBlock";
 import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
 import { PickSchedule } from "@/components/landing/PickSchedule";
+import { SocialDevelopment } from "@/components/landing/SocialDevelopment";
 import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
 import { StudentsFuture } from "@/components/landing/StudentsFuture";
 import { TariffsPlans } from "@/components/landing/TariffsPlans";
@@ -93,6 +94,8 @@ const Index = () => {
         <ScheduleBlock />
 
         <PickSchedule />
+
+        <SocialDevelopment />
 
         <FamiliesTrust />
 

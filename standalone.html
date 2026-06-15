@@ -389,6 +389,30 @@
       .pick-back,.pick-benefits{display:none}
     }
 
+    /* ===== «Помогаем ребёнку социализироваться и гармонично развиваться» ===== */
+    .soc{background:#f4f5f6;padding:56px 0}
+    .soc-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
+    .soc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .soc-card{display:flex;flex-direction:column;background:#fff;border-radius:24px;overflow:hidden}
+    .soc-card>img{display:block;width:100%;height:auto}
+    .soc-body{display:flex;flex-direction:column;flex:1;padding:24px}
+    .soc-card h3{font-size:clamp(20px,1.8vw,24px);font-weight:700;line-height:1.16;margin:0}
+    .soc-desc{margin:12px 0 0;font-size:18px;line-height:1.32;color:rgba(0,0,0,.64)}
+    .soc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .soc-tags span{background:#f4f4f4;border-radius:8px;padding:6px 10px;font-size:16px;color:rgba(0,0,0,.64)}
+    .soc-note{display:flex;align-items:flex-start;gap:8px;margin-top:auto;padding-top:20px}
+    .soc-note img{width:24px;height:24px;flex:0 0 auto;margin-top:2px}
+    .soc-note span{font-size:18px;line-height:1.32;color:rgba(0,0,0,.64)}
+    .soc-nav{display:none;align-items:center;justify-content:center;gap:12px;margin-top:24px}
+    .soc-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,0,0,.15);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    @media(max-width:1023px){
+      .soc-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+      .soc-grid::-webkit-scrollbar{display:none}
+      .soc-card{flex:0 0 85%;scroll-snap-align:start}
+      .soc-desc,.soc-note span{font-size:16px}
+      .soc-nav{display:flex}
+    }
+
     /* ===== «Семьи по всему миру доверяют нам образование детей» (видео-отзывы) ===== */
     .fam{background:#fff;padding:56px 0}
     .fam-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
@@ -1113,6 +1137,55 @@
       </div>
     </div>
 
+    <!-- ===================== ПОМОГАЕМ СОЦИАЛИЗИРОВАТЬСЯ ===================== -->
+    <section class="soc" aria-labelledby="soc-title">
+      <div class="container">
+        <h2 class="soc-title" id="soc-title">Помогаем ребёнку социализироваться и гармонично развиваться</h2>
+        <div class="soc-grid" id="socGrid">
+          <article class="soc-card">
+            <img src="https://static.tildacdn.com/tild6364-6136-4636-a136-396238353864/Frame_2131329636_1.png" alt="" aria-hidden="true" width="1144" height="300" loading="lazy" decoding="async">
+            <div class="soc-body">
+              <h3>Проектории — практикумы по новым навыкам</h3>
+              <p class="soc-desc">Это мастер-классы с ведущими профессионалами в своей сфере. На практикуме ученики примеряют на себя разные профессии. Например, учатся работать в графическом редакторе Figma и создают дизайн-проекты</p>
+              <div class="soc-tags"><span>60–90 минут</span><span>1–4 встречи в месяц</span></div>
+              <div class="soc-note"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy"><span>Проектории проходят вне расписания школьных уроков, чтобы не перегружать учеников</span></div>
+            </div>
+          </article>
+          <article class="soc-card">
+            <img src="https://static.tildacdn.com/tild3332-6539-4666-a634-663038646534/Frame_2131329635_1.png" alt="" aria-hidden="true" width="1144" height="300" loading="lazy" decoding="async">
+            <div class="soc-body">
+              <h3>Неограниченный доступ к кружкам по школьным предметам</h3>
+              <p class="soc-desc">Кроме обычных уроков, ученик может посещать кружки — групповые занятия в сферах науки, творчества и программирования</p>
+              <div class="soc-tags"><span>физические лаборатории</span><span>ИТ</span><span>разговорные клубы</span><span>творчество</span></div>
+              <div class="soc-note"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy"><span>Кружки развивают навыки для успешного будущего: критическое мышление, логику и работу в команде</span></div>
+            </div>
+          </article>
+          <article class="soc-card">
+            <img src="https://static.tildacdn.com/tild3864-6239-4837-a534-363431643131/Frame_2131329631_1.png" alt="" aria-hidden="true" width="1144" height="300" loading="lazy" decoding="async">
+            <div class="soc-body">
+              <h3>Встречи с экспертами</h3>
+              <p class="soc-desc">Приглашаем проводить вебинары людей, которые достигли вершин в профессии. Они рассказывают ребятам, как устроена их работа изнутри, отвечают на вопросы и дают советы</p>
+              <div class="soc-tags"><span>1–2 встречи в месяц</span><span>менеджер</span><span>шеф-повар</span><span>программист</span></div>
+              <div class="soc-note"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy"><span>Такие встречи помогают понять, какая сфера интересна ребёнку и что нужно, чтобы добиться успеха</span></div>
+            </div>
+          </article>
+          <article class="soc-card">
+            <img src="https://static.tildacdn.com/tild3733-3263-4365-b465-643438303863/Frame_2131329633_1.png" alt="" aria-hidden="true" width="1144" height="300" loading="lazy" decoding="async">
+            <div class="soc-body">
+              <h3>Сообщество и общение</h3>
+              <p class="soc-desc">В чатах школьники общаются с одноклассниками и ребятами из других классов, находят друзей и единомышленников. Здесь можно играть, обмениваться опытом и просто приятно проводить время</p>
+              <div class="soc-tags"><span>помощь с домашкой</span><span>юмор</span><span>путешествия</span><span>книги и фильмы</span></div>
+              <div class="soc-note"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" aria-hidden="true" width="24" height="24" loading="lazy"><span>В сообществе проходят викторины и другие мероприятия. Обсуждения в чатах разбиты по темам. За порядком и вежливостью следят модераторы</span></div>
+            </div>
+          </article>
+        </div>
+        <div class="soc-nav">
+          <button type="button" id="socPrev" aria-label="Предыдущая карточка"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" id="socNext" aria-label="Следующая карточка"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== СЕМЬИ ПО ВСЕМУ МИРУ (видео-отзывы) ===================== -->
     <section class="fam" aria-labelledby="fam-title">
       <div class="container">
@@ -1644,6 +1717,16 @@
       document.addEventListener("click", function (e) { if (!sel.contains(e.target)) sel.classList.remove("open"); });
       var ok = document.getElementById("pickOk");
       document.getElementById("pickSubmit").addEventListener("click", function () { ok.style.display = "block"; });
+    })();
+
+    // «Помогаем социализироваться» — слайдер карточек на мобильных
+    (function () {
+      var track = document.getElementById("socGrid");
+      if (!track) return;
+      function step() { var c = track.querySelector(".soc-card"); return c ? c.offsetWidth + 16 : track.clientWidth * 0.85; }
+      var prev = document.getElementById("socPrev"), next = document.getElementById("socNext");
+      if (prev) prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
+      if (next) next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
     })();
 
     // «Семьи по всему миру» — воспроизведение видео по клику на превью
