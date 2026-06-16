@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Check, ChevronLeft, ChevronRight } from "lucide-react";
-import { LeadDialog } from "@/components/landing/LeadDialog";
+import { TariffCompare } from "@/components/landing/TariffCompare";
 
 // «Выбирайте подходящий тариф» — 4 тарифа, на ПК в ряд, на мобильных слайдер.
 type Plan = {
@@ -141,6 +141,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
 export function TariffsPlans() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const [compareOpen, setCompareOpen] = useState(false);
 
   const scrollByCard = (dir: number) => {
     const track = trackRef.current;
@@ -199,13 +200,17 @@ export function TariffsPlans() {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <LeadDialog
-            triggerLabel="Подробный состав тарифов"
-            triggerClassName="inline-flex items-center justify-center rounded-xl bg-[#d571ff] px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#e38fff]"
-            title="Подробный состав тарифов"
-          />
+          <button
+            type="button"
+            onClick={() => setCompareOpen(true)}
+            className="inline-flex items-center justify-center rounded-xl bg-[#d571ff] px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#e38fff]"
+          >
+            Подробный состав тарифов
+          </button>
         </div>
       </div>
+
+      <TariffCompare open={compareOpen} onClose={() => setCompareOpen(false)} />
     </section>
   );
 }
