@@ -69,10 +69,10 @@ const PANELS = [
       </p>
       <div className="mt-auto flex flex-col gap-2 pt-6">
         <span className="flex items-center gap-2 rounded-2xl px-4 py-3.5 text-sm text-white sm:text-base" style={{ backgroundColor: "#ffb53d" }}>
-          <img src={ICON_CHECK} alt="" width={16} height={16} /> 2–5 уроков с учителями ежедневно
+          <img src={ICON_CHECK} alt="" width={16} height={16} loading="lazy" /> 2–5 уроков с учителями ежедневно
         </span>
         <span className="flex items-center gap-2 rounded-2xl px-4 py-3.5 text-sm text-white sm:text-base" style={{ backgroundColor: "#ff9e00" }}>
-          <img src={ICON_PLAY} alt="" width={16} height={16} /> Любой урок можно пересмотреть в записи
+          <img src={ICON_PLAY} alt="" width={16} height={16} loading="lazy" /> Любой урок можно пересмотреть в записи
         </span>
       </div>
     </>
@@ -123,7 +123,7 @@ const PANELS = [
         <ul className="mt-4 space-y-2">
           {["отчитывается о прогрессе", "напоминает о занятиях", "отвечает на вопросы детей и родителей"].map((t) => (
             <li key={t} className="flex items-start gap-2 text-base text-black/64 sm:text-lg">
-              <img src={ICON_LABEL} alt="" width={24} height={24} className="shrink-0" /> {t}
+              <img src={ICON_LABEL} alt="" width={24} height={24} loading="lazy" className="shrink-0" /> {t}
             </li>
           ))}
         </ul>

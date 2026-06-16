@@ -75,7 +75,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.1fr_auto]">
             {/* Колонка 1 — логотип + основные ссылки */}
             <div>
-              <img src={LOGO} alt="Skysmart" width={176} height={50} className="h-[34px] w-auto" />
+              <img src={LOGO} alt="Skysmart" width={176} height={50} loading="lazy" decoding="async" className="h-[34px] w-auto" />
               <ul className="mt-6 space-y-2.5 text-base">
                 {COL1.map((l) => (
                   <li key={l.label}>

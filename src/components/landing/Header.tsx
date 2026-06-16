@@ -13,7 +13,7 @@ export function Header() {
       <div className="container-page">
         <div className="flex h-[72px] items-center gap-6">
           <a href="#top" className="flex items-center" aria-label="Skysmart — на главную">
-            <img src={LOGO_URL} alt="Skysmart" width={132} height={28} className="h-7 w-auto" />
+            <img src={LOGO_URL} alt="Skysmart" width={132} height={28} loading="lazy" decoding="async" className="h-7 w-auto" />
           </a>
 
           <nav aria-label="Основная навигация" className="mr-auto hidden lg:block">

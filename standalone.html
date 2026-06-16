@@ -22,10 +22,6 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
         href="https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2" />
 
-  <!-- Картинка первого экрана — приоритетная загрузка (LCP) -->
-  <link rel="preload" as="image" fetchpriority="high"
-        href="https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png" />
-
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"EducationalOrganization","name":"Домашний лицей Skysmart","description":"Онлайн-школа с аттестатом государственного образца для 5–11 классов: уроки с учителями, расписание, аттестация и сопровождение классного руководителя.","url":"https://homeschooling.skysmart.ru/"},
@@ -118,23 +114,27 @@
     @media(max-width:900px){.menu,.nav .btn{display:none}.burger{display:block}}
 
     /* ===== Hero (первый экран по макету) ===== */
-    .hero{background:#fff;padding:16px 0 48px}
-    .hero-card{position:relative;overflow:hidden;border-radius:36px;background:linear-gradient(115deg,#ffe7b0 0%,#ffd478 40%,#ffbe54 100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:520px}
-    .hero-card::before{content:"";position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,#fff3d6 0%,rgba(255,243,214,0) 62%);opacity:.75;pointer-events:none}
-    .hero-content{position:relative;z-index:2;padding:52px 48px;align-self:center}
-    .badge-promo{display:inline-block;background:linear-gradient(90deg,#b16cf0,#7c5cf5);color:#fff;font-weight:600;font-size:15px;padding:11px 20px;border-radius:14px}
-    .hero h1{margin-top:24px;font-size:clamp(34px,4.6vw,56px);line-height:1.03;color:#1b2330}
+    .hero{background:#fff;padding:28px 0 48px}
+    .hero-wrap{position:relative}
+    .badge-promo{position:absolute;top:-12px;left:0;z-index:5;display:inline-block;background:linear-gradient(90deg,#caa0ff,#a96bf2);color:#fff;font-weight:600;font-size:18px;padding:12px 24px;border-radius:16px}
+    .hero-card{position:relative;overflow:hidden;border-radius:36px;background:linear-gradient(120deg,#fdebc7 0%,#ffd886 42%,#ffc24c 100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;min-height:520px}
+    .hero-card::before{content:"";position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,#fff3d6 0%,rgba(255,243,214,0) 62%);opacity:.7;pointer-events:none}
+    .hero-skew{position:absolute;left:0;top:0;z-index:3;width:340px;max-width:70%;height:48px;background:#fff;clip-path:polygon(0 0,100% 0,0 100%)}
+    .hero-content{position:relative;z-index:4;padding:56px 48px 52px;align-self:center}
+    .hero h1{margin-top:0;font-size:clamp(34px,4.6vw,56px);line-height:1.03;color:#1b2330}
     .hero-list{margin:26px 0 32px;display:flex;flex-direction:column;gap:14px;max-width:480px}
     .hero-list li{display:flex;gap:12px;font-size:17px;font-weight:500;line-height:1.3}
-    .hcheck{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--brand-accent);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+    .hcheck{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:#ff9e00;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
     .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+    .hero-try{background:linear-gradient(90deg,#caa0ff,#a96bf2);color:#fff;transition:opacity .2s}
+    .hero-try:hover{opacity:.9;background:linear-gradient(90deg,#caa0ff,#a96bf2)}
     .hero-media{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end}
-    .hero-media img{width:100%;max-width:620px;height:auto;object-fit:contain;object-position:bottom right}
+    .hero-media img{width:100%;max-width:560px;height:auto;object-fit:contain;object-position:bottom right}
     @media(max-width:900px){
       .hero-card{grid-template-columns:1fr;min-height:0;border-radius:28px}
-      .hero-content{padding:32px 24px}
+      .hero-content{padding:44px 24px 32px}
       .hero-media{justify-content:center;padding:0 16px}
-      .hero-media img{max-width:360px}
+      .hero-media img{max-width:340px}
     }
 
     /* ===== Промо-баннер (Figma: header and subtext / horizontal / size M) ===== */
@@ -754,7 +754,7 @@
     <div class="container">
       <div class="nav">
         <a class="logo" href="#top" aria-label="Skysmart — на главную">
-          <img src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="132" height="28" />
+          <img src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="132" height="28" loading="lazy" decoding="async" />
         </a>
         <nav class="menu" aria-label="Основная навигация">
           <a href="#trial">Бесплатный период</a>
@@ -782,24 +782,30 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <div class="hero-card">
-          <div class="hero-content">
-            <span class="badge-promo">−20% для новых учеников</span>
-            <h1 id="hero-title">Домашнее обучение<br>для 5–11 классов</h1>
-            <ul class="hero-list">
-              <li><span class="hcheck" aria-hidden="true">✓</span>Полноценная альтернатива обычной школе</li>
-              <li><span class="hcheck" aria-hidden="true">✓</span>Аттестат государственного образца от школы-партнёра</li>
-              <li><span class="hcheck" aria-hidden="true">✓</span>3–4 урока в день с сильными преподавателями</li>
-            </ul>
-            <div class="hero-cta">
-              <button class="btn btn-dark" data-open>Получить консультацию</button>
-              <a class="btn btn-accent" href="#trial">Попробовать бесплатно</a>
+        <div class="hero-wrap">
+          <span class="badge-promo">−20% для новых учеников</span>
+          <div class="hero-card">
+            <span class="hero-skew" aria-hidden="true"></span>
+            <div class="hero-content">
+              <h1 id="hero-title">Домашнее обучение<br>для 5–11 классов</h1>
+              <ul class="hero-list">
+                <li><span class="hcheck" aria-hidden="true">✓</span>Полноценная альтернатива обычной школе</li>
+                <li><span class="hcheck" aria-hidden="true">✓</span>Аттестат государственного образца от школы-партнёра</li>
+                <li><span class="hcheck" aria-hidden="true">✓</span>3–4 урока в день с сильными преподавателями</li>
+              </ul>
+              <div class="hero-cta">
+                <button class="btn btn-dark" data-open>Получить консультацию</button>
+                <a class="btn hero-try" href="#trial">Попробовать бесплатно</a>
+              </div>
             </div>
-          </div>
-          <div class="hero-media">
-            <img src="https://static.tildacdn.com/tild3732-3361-4630-a532-313235373736/Image_Holder_1.png"
-                 alt="Школьница с игрушкой-талисманом Skysmart"
-                 width="620" height="563" fetchpriority="high" decoding="async" />
+            <div class="hero-media">
+              <picture>
+                <source media="(max-width:640px)" srcset="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp">
+                <img src="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp"
+                     alt="Школьница с игрушкой-талисманом Skysmart"
+                     width="548" height="498" loading="lazy" decoding="async" />
+              </picture>
+            </div>
           </div>
         </div>
       </div>
@@ -992,8 +998,8 @@
               <h3 class="lyc-h">Уроки</h3>
               <p class="lyc-sub">Преподаватель объясняет тему на виртуальной доске, а ученики закрепляют материал в интерактивных заданиях и получают баллы. Преподаватель видит статистику по каждому ребёнку и сразу понимает, кому нужно дополнительное объяснение</p>
               <div class="lyc-pills">
-                <span class="lyc-pill" style="background:#ffb53d"><img src="https://static.tildacdn.com/tild3535-3730-4331-a331-346563626132/Union.svg" alt="" width="16" height="16" />2–5 уроков с учителями ежедневно</span>
-                <span class="lyc-pill" style="background:#ff9e00"><img src="https://static.tildacdn.com/tild6432-3937-4530-b739-313464666135/Play.svg" alt="" width="16" height="16" />Любой урок можно пересмотреть в записи</span>
+                <span class="lyc-pill" style="background:#ffb53d"><img src="https://static.tildacdn.com/tild3535-3730-4331-a331-346563626132/Union.svg" alt="" width="16" height="16" loading="lazy" />2–5 уроков с учителями ежедневно</span>
+                <span class="lyc-pill" style="background:#ff9e00"><img src="https://static.tildacdn.com/tild6432-3937-4530-b739-313464666135/Play.svg" alt="" width="16" height="16" loading="lazy" />Любой урок можно пересмотреть в записи</span>
               </div>
             </div>
             <div class="lyc-media"><video autoplay loop muted playsinline preload="metadata"><source src="https://static.tildacdn.com/vide3564-6362-4635-a136-353139623361/_376_1-ezgifcom-gif-.mp4" type="video/mp4"></video></div>
@@ -1028,9 +1034,9 @@
               <p class="lyc-sub">Каждую неделю присылаем родителям отчёт: сколько вебинаров ребёнок посетил на этой неделе, сколько домашек сделал и какие баллы получил</p>
               <div class="lyc-box">
                 <p style="font-size:18px;color:#000">По учебным вопросам с вами на связи классный руководитель:</p>
-                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />отчитывается о прогрессе</div>
-                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />напоминает о занятиях</div>
-                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" />отвечает на вопросы детей и родителей</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" loading="lazy" />отчитывается о прогрессе</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" loading="lazy" />напоминает о занятиях</div>
+                <div class="lyc-check"><img src="https://static.tildacdn.com/tild6535-3734-4832-a431-643833336638/Check-Label.svg" alt="" width="24" height="24" loading="lazy" />отвечает на вопросы детей и родителей</div>
               </div>
             </div>
             <div class="lyc-media"><img src="https://static.tildacdn.com/tild6162-3330-4232-b538-323836666432/pic_5_1.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
@@ -1710,7 +1716,7 @@
       <div class="ft-card">
         <div class="ft-top">
           <div class="ft-col">
-            <img class="ft-logo" src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="176" height="50">
+            <img class="ft-logo" src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="176" height="50" loading="lazy" decoding="async">
             <ul class="ft-list -main">
               <li><a href="tel:88005554522">8 (800) 555-45-22</a></li>
               <li><a href="https://skysmart.ru/about-school">О школе</a></li>
