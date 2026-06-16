@@ -17,14 +17,9 @@ import { TariffsPlans } from "@/components/landing/TariffsPlans";
 import { FamilyBudget } from "@/components/landing/FamilyBudget";
 import { HowToSwitch } from "@/components/landing/HowToSwitch";
 import { ConsultBooking } from "@/components/landing/ConsultBooking";
+import { FaqBlock } from "@/components/landing/FaqBlock";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { SEOHead } from "@/components/SEOHead";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { FAQ_ITEMS, KNOWLEDGE_LINKS } from "@/data/landing";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
@@ -109,36 +104,9 @@ const Index = () => {
 
         <ConsultBooking />
 
-        <TrialBlock />
+        <FaqBlock />
 
-        {/* FAQ */}
-        <section
-          id="faq"
-          aria-labelledby="faq-title"
-          className="scroll-mt-24 bg-secondary/60 py-16 sm:py-20"
-        >
-          <div className="container-page max-w-3xl">
-            <SectionTitle>
-              <span id="faq-title">Частые вопросы</span>
-            </SectionTitle>
-            <Accordion type="single" collapsible className="mt-8">
-              {FAQ_ITEMS.map((item, i) => (
-                <AccordionItem key={item.question} value={`item-${i}`}>
-                  <AccordionTrigger className="text-left text-base font-semibold">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="space-y-3 text-base text-muted-foreground">
-                      {item.answer.map((p, j) => (
-                        <p key={j}>{p}</p>
-                      ))}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </section>
+        <TrialBlock />
 
         {/* База знаний */}
         <section

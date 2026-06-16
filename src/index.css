@@ -153,3 +153,85 @@
     background-color: #33405a;
   }
 }
+
+/* ===== «Частые вопросы» — аккордеон (нативный <details>, контент всегда в DOM) ===== */
+.faq-item {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.faq-sum {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+}
+.faq-sum::-webkit-details-marker {
+  display: none;
+}
+.faq-q {
+  font-size: 20px;
+  line-height: 1.33;
+  color: #000000;
+  font-weight: 400;
+}
+.faq-ic {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f4f4f4;
+  flex: 0 0 auto;
+  transition: background 0.2s;
+}
+.faq-item:hover .faq-ic {
+  background: #ededed;
+}
+.faq-ic::before,
+.faq-ic::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #81888c;
+}
+.faq-ic::before {
+  width: 12px;
+  height: 2px;
+}
+.faq-ic::after {
+  width: 2px;
+  height: 12px;
+}
+.faq-item[open] .faq-ic::after {
+  display: none;
+}
+.faq-ans {
+  padding: 0 24px 24px;
+  color: rgba(0, 0, 0, 0.48);
+  font-size: 16px;
+  line-height: 1.4;
+}
+.faq-ans p {
+  margin: 0 0 16px;
+}
+.faq-ans p:last-child {
+  margin-bottom: 0;
+}
+.faq-ans ol,
+.faq-ans ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+.faq-ans li {
+  margin-bottom: 8px;
+}
+.faq-ans a {
+  color: #d571ff;
+  border-bottom: 1px solid #d571ff;
+  text-decoration: none;
+}
