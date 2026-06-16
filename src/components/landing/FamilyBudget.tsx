@@ -36,10 +36,11 @@ export function FamilyBudget() {
   };
 
   // На мобильных по умолчанию показываем вторую карточку (по центру).
+  // requestAnimationFrame + чтение геометрии в одном кадре, чтобы избежать forced reflow.
   useEffect(() => {
-    if (typeof window !== "undefined" && window.matchMedia("(max-width:1023px)").matches) {
-      scrollToIndex(1, false);
-    }
+    if (typeof window === "undefined" || !window.matchMedia("(max-width:1023px)").matches) return;
+    const id = requestAnimationFrame(() => scrollToIndex(1, false));
+    return () => cancelAnimationFrame(id);
   }, []);
 
   const onScroll = () => {

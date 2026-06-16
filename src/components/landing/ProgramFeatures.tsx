@@ -64,6 +64,7 @@ function Card({ item }: { item: Feature }) {
           height={item.h}
           loading="lazy"
           decoding="async"
+          style={{ aspectRatio: `${item.w} / ${item.h}` }}
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = "none";
           }}
