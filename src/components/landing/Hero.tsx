@@ -72,14 +72,13 @@ export function Hero() {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3.5">
-                <a
-                  href="https://homeschooling.skysmart.ru/demo-access"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("skysmart:open-consult"))}
                   className="btn-dark inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
                 >
                   Получить консультацию
-                </a>
+                </button>
                 <a
                   href="#trial"
                   className="inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-opacity hover:opacity-90"

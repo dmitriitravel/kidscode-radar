@@ -51,7 +51,7 @@ export function HowToSwitch() {
             </a>
           </div>
 
-          <div className="flex items-stretch justify-center self-stretch">
+          <div className="flex items-center justify-center p-6 sm:p-8 lg:p-10">
             <picture>
               <source media="(min-width:1024px)" srcSet={IMG_PC} />
               <img
@@ -61,7 +61,7 @@ export function HowToSwitch() {
                 height={928}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover object-top"
+                className="h-auto w-full max-w-[560px] object-contain"
               />
             </picture>
           </div>

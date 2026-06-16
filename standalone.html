@@ -582,12 +582,13 @@
     .hsw-steps span:last-child{font-size:16px;line-height:1.32;color:rgba(255,255,255,.9)}
     .hsw-btn{margin-top:32px;display:inline-flex;align-items:center;gap:8px;justify-content:center;border-radius:12px;background:linear-gradient(180deg,#cf9bff,#a86bf0);color:#fff;padding:14px 28px;font-size:16px;font-weight:600;text-decoration:none;transition:opacity .2s}
     .hsw-btn:hover{opacity:.9}
-    .hsw-media{align-self:stretch;display:flex}
-    .hsw-media img{width:100%;height:100%;object-fit:cover;object-position:top}
+    .hsw-media{display:flex;align-items:center;justify-content:center;padding:40px}
+    .hsw-media img{width:100%;max-width:560px;height:auto;object-fit:contain}
     .hsw-media .-mob{display:none}
     @media(max-width:1023px){
       .hsw-card{grid-template-columns:1fr}
       .hsw-body{padding:32px 24px}
+      .hsw-media{padding:24px}
       .hsw-media .-pc{display:none}
       .hsw-media .-mob{display:block;width:100%;height:auto}
     }
@@ -723,12 +724,22 @@
     @media(max-width:820px){.accent-block{grid-template-columns:1fr;padding:28px}}
 
     /* ===== Knowledge ===== */
-    .knowledge{columns:3;column-gap:32px}
-    .knowledge li{break-inside:avoid;margin-bottom:8px}
-    .knowledge a{font-size:14px;color:rgba(27,35,48,.8)}
-    .knowledge a:hover{color:var(--fg);text-decoration:underline;text-decoration-color:var(--brand-accent)}
-    @media(max-width:900px){.knowledge{columns:2}}
-    @media(max-width:600px){.knowledge{columns:1}}
+    /* ===== «Полезные материалы по онлайн образованию» (база знаний) ===== */
+    .kb{padding:56px 0}
+    .kb-title{text-align:center;font-size:clamp(26px,3.4vw,44px);font-weight:700;line-height:1.1;margin:0 0 32px}
+    .kb-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
+    .kb-tag{border:1px solid var(--border);background:#fff;color:#000;border-radius:999px;padding:10px 18px;font-family:inherit;font-size:16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+    .kb-tag:hover{border-color:rgba(0,0,0,.4)}
+    .kb-tag.is-active{background:#000;color:#fff;border-color:#000}
+    .kb-cards{display:none;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none;margin:0;padding:0}
+    .kb-cards.is-active{display:grid}
+    .kb-card a{display:flex;flex-direction:column;justify-content:space-between;height:100%;min-height:180px;background:#f4f4f4;border-radius:16px;padding:20px;text-decoration:none;transition:background .2s}
+    .kb-card-title{font-size:18px;font-weight:500;line-height:1.25;color:#000}
+    .kb-arrow{margin-top:24px;width:36px;height:36px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#fff;color:#000;font-size:18px;transition:background .2s,color .2s}
+    .kb-card a:hover .kb-arrow{background:#000;color:#fff}
+    @media(max-width:1100px){.kb-cards{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){.kb-cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.kb-cards{grid-template-columns:1fr}.kb-card a{min-height:0}}
 
     /* ===== Form ===== */
     .form{display:flex;flex-direction:column;gap:12px}
@@ -847,7 +858,7 @@
                 <li><span class="hcheck" aria-hidden="true">✓</span>3–4 урока в день с сильными преподавателями</li>
               </ul>
               <div class="hero-cta">
-                <a class="btn btn-dark" href="https://homeschooling.skysmart.ru/demo-access" target="_blank" rel="noopener">Получить консультацию</a>
+                <button class="btn btn-dark" type="button" id="heroConsult">Получить консультацию</button>
                 <a class="btn hero-try" href="#trial">Попробовать бесплатно</a>
               </div>
             </div>
@@ -1783,41 +1794,77 @@
     </section>
 
     <!-- ===================== KNOWLEDGE ===================== -->
-    <section class="section" id="knowledge" aria-labelledby="kn-title" style="scroll-margin-top:90px">
+    <!-- ===================== ПОЛЕЗНЫЕ МАТЕРИАЛЫ (база знаний) ===================== -->
+    <section class="kb" id="knowledge" aria-labelledby="kb-title" style="scroll-margin-top:90px">
       <div class="container">
-        <h2 class="h2" id="kn-title">Больше информации о дистанционном обучении в онлайн-школе</h2>
-        <p class="muted mt16">Узнать подробнее о дистанционном образовании детей вы можете в следующих материалах:</p>
-        <ul class="knowledge mt40">
-          <li><a href="#knowledge">Заявление в школу об отсутствии ребёнка по семейным обстоятельствам</a></li>
-          <li><a href="#knowledge">Образцы заявлений для освобождения от занятий в школе</a></li>
-          <li><a href="#knowledge">Школьные программы для начальных классов</a></li>
-          <li><a href="#knowledge">Всё о внеклассных мероприятиях в школе</a></li>
-          <li><a href="#knowledge">Можно ли давать домашние задания на каникулы</a></li>
-          <li><a href="#knowledge">Сколько стоит домашнее обучение</a></li>
-          <li><a href="#knowledge">Типы и виды образовательных учреждений в России</a></li>
-          <li><a href="#knowledge">Углублённое изучение предметов в школе</a></li>
-          <li><a href="#knowledge">Индивидуальный план обучения в школе</a></li>
-          <li><a href="#knowledge">Домашнее обучение — что это, как перейти, плюсы и минусы</a></li>
-          <li><a href="#knowledge">Какие бывают уроки в школе</a></li>
-          <li><a href="#knowledge">Какие бывают олимпиады и зачем в них участвовать</a></li>
-          <li><a href="#knowledge">Как заставить ребёнка учиться без давления и чувства вины</a></li>
-          <li><a href="#knowledge">Как быстро выучить текст наизусть</a></li>
-          <li><a href="#knowledge">Лучший стул для школьника</a></li>
-          <li><a href="#knowledge">Как строить отношения с репетитором</a></li>
-          <li><a href="#knowledge">Типы обучающихся в образовательных организациях</a></li>
-          <li><a href="#knowledge">Заочное обучение в школе</a></li>
-          <li><a href="#knowledge">Промежуточная аттестация: что это и как подготовиться</a></li>
-          <li><a href="#knowledge">Что такое школьный буллинг</a></li>
-          <li><a href="#knowledge">Необщительный ребёнок: что делать родителям</a></li>
-          <li><a href="#knowledge">Электронный дневник школьника: регистрация и использование</a></li>
-          <li><a href="#knowledge">Что такое экстернат и как окончить школу экстерном</a></li>
-          <li><a href="#knowledge">Лучшие приложения для учёбы</a></li>
-          <li><a href="#knowledge">Всё о профориентации в школе: советы и рекомендации</a></li>
-          <li><a href="#knowledge">Как перевести ребёнка в другую школу</a></li>
-          <li><a href="#knowledge">Что такое дистанционное обучение</a></li>
-          <li><a href="#knowledge">Семейное образование в России</a></li>
-          <li><a href="#knowledge">Как выбрать профильное обучение в старших классах</a></li>
-          <li><a href="#knowledge">Что такое синдром отличника</a></li>
+        <h2 class="kb-title" id="kb-title">Полезные материалы по онлайн образованию</h2>
+        <div class="kb-tags" id="kbTags" role="tablist" aria-label="Темы материалов">
+          <button type="button" class="kb-tag is-active" data-cat="0" role="tab" aria-selected="true">📚 Формы обучения</button>
+          <button type="button" class="kb-tag" data-cat="1" role="tab" aria-selected="false">🏫 Школьная организация</button>
+          <button type="button" class="kb-tag" data-cat="2" role="tab" aria-selected="false">🎓 Переходы и адаптация</button>
+          <button type="button" class="kb-tag" data-cat="3" role="tab" aria-selected="false">📝 Учёба и домашние задания</button>
+          <button type="button" class="kb-tag" data-cat="4" role="tab" aria-selected="false">👨‍👩‍👧 Психология ребёнка</button>
+          <button type="button" class="kb-tag" data-cat="5" role="tab" aria-selected="false">🧠 Развитие способностей</button>
+        </div>
+
+        <ul class="kb-cards is-active" data-cat="0">
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/chto-takoe-domashnee-obuchenie"><span class="kb-card-title">Что такое домашнее обучение</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-pereiti-na-domashnee-obuchenie"><span class="kb-card-title">Как перейти на домашнее обучение</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/semeynoe-obrazovanie-v-rossii"><span class="kb-card-title">Семейное образование в России</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/semeynoe-obuchenie-opyt"><span class="kb-card-title">Семейное обучение: опыт</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/distancionnoe-obuchenie"><span class="kb-card-title">Дистанционное обучение</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/top-10-onlayn-shkol"><span class="kb-card-title">Топ-10 онлайн-школ</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/zaochnoe-obuchenie-v-shkole"><span class="kb-card-title">Заочное обучение в школе</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/eksternat-v-rossii"><span class="kb-card-title">Экстернат в России</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/formy-obucheniya-na-domu"><span class="kb-card-title">Формы обучения на дому</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/top-shkol-semeynogo-obucheniya-v-moskve"><span class="kb-card-title">Топ школ семейного обучения в Москве</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/stoimost-domashnego-obucheniya"><span class="kb-card-title">Стоимость домашнего обучения</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/otzyvy-o-distancionnyh-shkolah"><span class="kb-card-title">Отзывы о дистанционных школах</span><span class="kb-arrow">→</span></a></li>
+        </ul>
+
+        <ul class="kb-cards" data-cat="1">
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-vybrat-shkolu"><span class="kb-card-title">Как выбрать школу для ребёнка</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/perevod-v-druguyu-shkolu"><span class="kb-card-title">Перевод в другую школу</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/shkolnoe-raspisanie"><span class="kb-card-title">Школьное расписание</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/attestaciya-na-semeynom-obuchenii"><span class="kb-card-title">Аттестация на семейном обучении</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/prikreplenie-k-shkole"><span class="kb-card-title">Что такое прикрепление к школе</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/dokumenty-dlya-perehoda"><span class="kb-card-title">Документы для перехода</span><span class="kb-arrow">→</span></a></li>
+        </ul>
+
+        <ul class="kb-cards" data-cat="2">
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-pereiti-na-semeynoe-obuchenie"><span class="kb-card-title">Как перейти на семейное обучение</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/adaptaciya-posle-perehoda"><span class="kb-card-title">Адаптация после перехода</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/smena-formata-obucheniya"><span class="kb-card-title">Смена формата обучения</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/adaptaciya-k-onlaynu"><span class="kb-card-title">Как помочь ребёнку привыкнуть к онлайну</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/pervyy-god-na-semeynom-obuchenii"><span class="kb-card-title">Первый год на семейном обучении</span><span class="kb-arrow">→</span></a></li>
+        </ul>
+
+        <ul class="kb-cards" data-cat="3">
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/domashnie-zadaniya-na-kanikuly"><span class="kb-card-title">Домашние задания на каникулы</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-delat-domashnie-zadaniya"><span class="kb-card-title">Как делать домашние задания</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-bystro-viuchit-text-naizust"><span class="kb-card-title">Как быстро выучить текст</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-uderjat-vnimanie-rebenka"><span class="kb-card-title">Как удержать внимание ребёнка</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-otsenit-progress-v-uchebe"><span class="kb-card-title">Как оценить прогресс в учёбе</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/metodi-obucheniya-kotorie-uzhe-ne-rabotayut"><span class="kb-card-title">Методы обучения, которые уже не работают</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/top-poleznyh-prilozhenij-dlya-ucheby"><span class="kb-card-title">Приложения для учёбы</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/luchshij-stul-dlya-shkolnika"><span class="kb-card-title">Лучший стул для школьника</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-stroit-otnosheniya-s-repetitorom"><span class="kb-card-title">Отношения с репетитором</span><span class="kb-arrow">→</span></a></li>
+        </ul>
+
+        <ul class="kb-cards" data-cat="4">
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-motivirovat-rebenka-uchitsya"><span class="kb-card-title">Как мотивировать ребёнка учиться</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/shkolnaya-trevozhnost"><span class="kb-card-title">Школьная тревожность</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/vygoranie-u-shkolnikov"><span class="kb-card-title">Эмоциональное выгорание у школьников</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kontakt-s-podrostkom"><span class="kb-card-title">Как наладить контакт с подростком</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/stress-pered-ekzamenom"><span class="kb-card-title">Как справиться со стрессом перед экзаменом</span><span class="kb-arrow">→</span></a></li>
+        </ul>
+
+        <ul class="kb-cards" data-cat="5">
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-razvit-pamyat"><span class="kb-card-title">Как развить память у ребёнка</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/logicheskoe-myshlenie"><span class="kb-card-title">Как развить логическое мышление</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/kak-nayti-talant-rebenka"><span class="kb-card-title">Как найти талант ребёнка</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/razvitie-kreativnosti"><span class="kb-card-title">Развитие креативности</span><span class="kb-arrow">→</span></a></li>
+          <li class="kb-card"><a href="https://homeschooling.skysmart.ru/lyubov-k-chteniyu"><span class="kb-card-title">Как привить любовь к чтению</span><span class="kb-arrow">→</span></a></li>
         </ul>
       </div>
     </section>
@@ -2056,6 +2103,26 @@
       render();
     })();
 
+    // «Полезные материалы» — переключение категорий по тегам
+    (function () {
+      var tags = document.querySelectorAll("#kbTags .kb-tag");
+      if (!tags.length) return;
+      var panels = document.querySelectorAll(".kb-cards");
+      tags.forEach(function (tag) {
+        tag.addEventListener("click", function () {
+          var cat = tag.getAttribute("data-cat");
+          tags.forEach(function (t) {
+            var on = t === tag;
+            t.classList.toggle("is-active", on);
+            t.setAttribute("aria-selected", on ? "true" : "false");
+          });
+          panels.forEach(function (p) {
+            p.classList.toggle("is-active", p.getAttribute("data-cat") === cat);
+          });
+        });
+      });
+    })();
+
     // «Подберите расписание» — поп-ап консультации + выбор класса
     (function () {
       var openBtn = document.getElementById("pickOpen"), modal = document.getElementById("pickModal");
@@ -2065,6 +2132,8 @@
       openBtn.addEventListener("click", show);
       var bannerBtn = document.getElementById("consultBannerOpen");
       if (bannerBtn) bannerBtn.addEventListener("click", show);
+      var heroBtn = document.getElementById("heroConsult");
+      if (heroBtn) heroBtn.addEventListener("click", show);
       document.getElementById("pickClose").addEventListener("click", hide);
       document.getElementById("pickBack").addEventListener("click", hide);
       modal.addEventListener("click", function (e) { if (e.target === modal) hide(); });

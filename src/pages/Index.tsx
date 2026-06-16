@@ -19,17 +19,12 @@ import { FamilyBudget } from "@/components/landing/FamilyBudget";
 import { HowToSwitch } from "@/components/landing/HowToSwitch";
 import { ConsultBooking } from "@/components/landing/ConsultBooking";
 import { FaqBlock } from "@/components/landing/FaqBlock";
+import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
 import { Footer } from "@/components/landing/Footer";
 import { CitiesPicker } from "@/components/landing/CitiesPicker";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { SEOHead } from "@/components/SEOHead";
-import { FAQ_ITEMS, KNOWLEDGE_LINKS } from "@/data/landing";
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="text-3xl font-bold leading-tight sm:text-4xl">{children}</h2>
-  );
-}
+import { FAQ_ITEMS } from "@/data/landing";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -113,37 +108,7 @@ const Index = () => {
 
         <TrialBlock />
 
-        {/* База знаний */}
-        <section
-          id="knowledge"
-          aria-labelledby="knowledge-title"
-          className="scroll-mt-24 py-16 sm:py-20"
-        >
-          <div className="container-page">
-            <SectionTitle>
-              <span id="knowledge-title">
-                Больше информации о дистанционном обучении в онлайн-школе
-              </span>
-            </SectionTitle>
-            <p className="mt-4 text-muted-foreground">
-              Узнать подробнее о дистанционном образовании детей вы можете в
-              следующих материалах:
-            </p>
-            <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
-              {KNOWLEDGE_LINKS.map((link) => (
-                <li key={link}>
-                  <a
-                    href="#knowledge"
-                    className="text-sm text-foreground/80 transition-colors hover:text-foreground"
-                    style={{ textDecorationColor: "var(--brand-accent)" }}
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        <KnowledgeBase />
       </main>
 
       <CitiesPicker />
