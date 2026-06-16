@@ -501,7 +501,7 @@
     .tar2-price span{font-size:16px;font-weight:400;opacity:.6}
     .tar2-note{font-size:14px;opacity:.4;margin:4px 0 0}
     .tar2-card.-dark .tar2-note{opacity:.6}
-    .tar2-btn{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;width:100%;height:48px;border:0;cursor:pointer;border-radius:12px;font-family:inherit;font-size:16px;font-weight:600;color:#fff;background:#04121b;transition:background .2s}
+    .tar2-btn{margin-top:20px;display:inline-flex;align-items:center;justify-content:center;width:100%;height:48px;border:0;cursor:pointer;border-radius:12px;font-family:inherit;font-size:16px;font-weight:600;color:#fff;background:#04121b;transition:background .2s;text-decoration:none}
     .tar2-btn:hover{background:#1d3949}
     .tar2-card.-dark .tar2-btn{background:#de7aff}
     .tar2-card.-dark .tar2-btn:hover{background:#e38fff}
@@ -715,6 +715,21 @@
     .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--muted);line-height:1}
     dialog{position:relative}
 
+    /* ===== «Выберите город» ===== */
+    .cities{background:#fff;padding:24px 0 16px;text-align:center}
+    .cities-picker{display:inline-flex;align-items:center;gap:8px;background:var(--soft);border:0;cursor:pointer;border-radius:16px;padding:12px 20px;font-family:inherit;font-size:16px;font-weight:500;color:#04121b}
+    .cities-picker svg{transition:transform .2s}
+    .cities-picker.open svg{transform:rotate(180deg)}
+    .cities-grid{display:none;text-align:left;margin-top:28px;gap:28px 24px;grid-template-columns:repeat(7,1fr)}
+    .cities-grid.open{display:grid}
+    .cl-letter{font-weight:700;margin:0 0 8px}
+    .cl-item{margin:0 0 6px}
+    .cities-grid a{color:rgba(4,18,27,.48);text-decoration:none;transition:color .2s}
+    .cities-grid a:hover{color:#04121b}
+    @media(max-width:1200px){.cities-grid{grid-template-columns:repeat(6,1fr)}}
+    @media(max-width:1023px){.cities-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:600px){.cities-grid{grid-template-columns:repeat(2,1fr)}}
+
     /* ===== Футер ===== */
     .ft{background:#f4f5f6}
     .ft-card{background:#fff;border-radius:28px 28px 0 0;padding:40px 40px 40px}
@@ -759,23 +774,25 @@
           <img src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="132" height="28" loading="lazy" decoding="async" />
         </a>
         <nav class="menu" aria-label="Основная навигация">
-          <a href="#trial">Бесплатный период</a>
+          <a href="https://homeschooling.skysmart.ru/demo-access" target="_blank" rel="noopener">Бесплатный период</a>
           <a href="#approval">Лицензия</a>
           <a href="#platform">Как устроено обучение</a>
           <a href="#diploma">Аттестация</a>
           <a href="#tariffs">Тарифы</a>
           <a href="#faq">Вопросы</a>
+          <a href="https://homeschooling.skysmart.ru/wiki" target="_blank" rel="noopener">База знаний</a>
         </nav>
-        <button class="btn btn-accent btn-sm" data-open>Поступить в школу</button>
+        <a class="btn btn-accent btn-sm" href="#consult">Поступить в школу</a>
         <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">☰</button>
       </div>
       <nav id="mobile-menu" aria-label="Мобильная навигация">
-        <a href="#trial">Бесплатный период</a>
+        <a href="https://homeschooling.skysmart.ru/demo-access" target="_blank" rel="noopener">Бесплатный период</a>
         <a href="#approval">Лицензия</a>
         <a href="#platform">Как устроено обучение</a>
         <a href="#diploma">Аттестация</a>
         <a href="#tariffs">Тарифы</a>
         <a href="#faq">Вопросы</a>
+        <a href="https://homeschooling.skysmart.ru/wiki" target="_blank" rel="noopener">База знаний</a>
       </nav>
     </div>
   </header>
@@ -796,7 +813,7 @@
                 <li><span class="hcheck" aria-hidden="true">✓</span>3–4 урока в день с сильными преподавателями</li>
               </ul>
               <div class="hero-cta">
-                <button class="btn btn-dark" data-open>Получить консультацию</button>
+                <a class="btn btn-dark" href="https://homeschooling.skysmart.ru/demo-access" target="_blank" rel="noopener">Получить консультацию</a>
                 <a class="btn hero-try" href="#trial">Попробовать бесплатно</a>
               </div>
             </div>
@@ -953,7 +970,7 @@
           <div class="consult-mascot">
             <img src="https://static.tildacdn.com/tild6365-3232-4236-b461-386138353865/Frame_2131329618.png" alt="" aria-hidden="true" width="722" height="286" loading="lazy" decoding="async" />
           </div>
-          <button class="consult-btn" type="button" data-open>Получить консультацию</button>
+          <button class="consult-btn" type="button" id="consultBannerOpen">Получить консультацию</button>
         </div>
       </div>
     </section>
@@ -1365,7 +1382,7 @@
             <p class="tar2-old">10 895 ₽ / мес.</p>
             <p class="tar2-price">от 8716 ₽ <span>/ мес.</span></p>
             <p class="tar2-note">Рассрочка на 12 месяцев</p>
-            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+            <a class="tar2-btn" href="#consult">Выбрать</a>
           </article>
           <article class="tar2-card">
             <span class="tar2-ribbon" style="background:linear-gradient(0deg,#ff64b0,#ff9acc)">популярно</span>
@@ -1383,7 +1400,7 @@
             <p class="tar2-old">24 258 ₽ / мес.</p>
             <p class="tar2-price">от 19 406 ₽ <span>/ мес.</span></p>
             <p class="tar2-note">Рассрочка на 12 месяцев</p>
-            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+            <a class="tar2-btn" href="#consult">Выбрать</a>
           </article>
           <article class="tar2-card">
             <span class="tar2-ribbon" style="background:linear-gradient(0deg,#ff9e00,#ffb53d)">новинка</span>
@@ -1400,7 +1417,7 @@
             <p class="tar2-old">31 098 ₽ / мес.</p>
             <p class="tar2-price">от 24 878 ₽ <span>/ мес.</span></p>
             <p class="tar2-note">Рассрочка на 12 месяцев</p>
-            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+            <a class="tar2-btn" href="#consult">Выбрать</a>
           </article>
           <article class="tar2-card -dark">
             <span class="tar2-ribbon" style="background:linear-gradient(0deg,#d571ff,#e6a8ff)">рекомендуем</span>
@@ -1417,7 +1434,7 @@
             <p class="tar2-old">47 775 ₽ / мес.</p>
             <p class="tar2-price">от 38 220 ₽ <span>/ мес.</span></p>
             <p class="tar2-note">Рассрочка на 12 месяцев</p>
-            <button class="tar2-btn" type="button" data-open>Выбрать</button>
+            <a class="tar2-btn" href="#consult">Выбрать</a>
           </article>
         </div>
         <div class="tar2-nav">
@@ -1480,7 +1497,7 @@
     </section>
 
     <!-- ===================== УЗНАЙТЕ БОЛЬШЕ НА КОНСУЛЬТАЦИИ ===================== -->
-    <section class="cb" aria-labelledby="cb-title">
+    <section class="cb" id="consult" aria-labelledby="cb-title" style="scroll-margin-top:90px">
       <div class="container">
         <div class="cb-card">
           <div class="cb-banner">
@@ -1713,6 +1730,31 @@
     </section>
   </main>
 
+  <section class="cities" aria-label="Выбор города">
+    <div class="container">
+      <button class="cities-picker" type="button" id="citiesToggle" aria-expanded="false">
+        <span>Выберите город</span>
+        <svg fill="#04121b" width="13" height="7" viewBox="0 0 13 7" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0215 1.70313L7.07031 6.6543C6.76648 6.95812 6.27388 6.95812 5.97005 6.6543L1.01889 1.70313C0.715059 1.3993 0.715059 0.906699 1.01889 0.602871C1.32272 0.299043 1.81532 0.299043 2.11915 0.602871L6.52018 5.00391L10.9212 0.602871C11.225 0.299043 11.7177 0.299043 12.0215 0.602871C12.3253 0.906699 12.3253 1.3993 12.0215 1.70313Z"></path></svg>
+      </button>
+      <div class="cities-grid" id="citiesGrid">
+        <div><p class="cl-letter">Б</p><p class="cl-item"><a href="https://brn.skysmart.ru/" target="_blank" rel="noopener">Барнаул</a></p></div>
+        <div><p class="cl-letter">В</p><p class="cl-item"><a href="https://vng.skysmart.ru/" target="_blank" rel="noopener">Великий Новгород</a></p><p class="cl-item"><a href="https://vld.skysmart.ru/" target="_blank" rel="noopener">Владивосток</a></p><p class="cl-item"><a href="https://vgg.skysmart.ru/" target="_blank" rel="noopener">Волгоград</a></p><p class="cl-item"><a href="https://vlg.skysmart.ru/" target="_blank" rel="noopener">Вологда</a></p><p class="cl-item"><a href="https://vrn.skysmart.ru/" target="_blank" rel="noopener">Воронеж</a></p></div>
+        <div><p class="cl-letter">Е</p><p class="cl-item"><a href="https://ekb.skysmart.ru/" target="_blank" rel="noopener">Екатеринбург</a></p></div>
+        <div><p class="cl-letter">И</p><p class="cl-item"><a href="https://izh.skysmart.ru/" target="_blank" rel="noopener">Ижевск</a></p><p class="cl-item"><a href="https://irk.skysmart.ru/" target="_blank" rel="noopener">Иркутск</a></p></div>
+        <div><p class="cl-letter">К</p><p class="cl-item"><a href="https://kzn.skysmart.ru/" target="_blank" rel="noopener">Казань</a></p><p class="cl-item"><a href="https://kal.skysmart.ru/" target="_blank" rel="noopener">Калуга</a></p><p class="cl-item"><a href="https://kem.skysmart.ru/" target="_blank" rel="noopener">Кемерово</a></p><p class="cl-item"><a href="https://kir.skysmart.ru/" target="_blank" rel="noopener">Киров</a></p><p class="cl-item"><a href="https://krd.skysmart.ru/" target="_blank" rel="noopener">Краснодар</a></p><p class="cl-item"><a href="https://kry.skysmart.ru/" target="_blank" rel="noopener">Красноярск</a></p><p class="cl-item"><a href="https://krg.skysmart.ru/" target="_blank" rel="noopener">Курган</a></p></div>
+        <div><p class="cl-letter">М</p><p class="cl-item"><a href="https://msk.skysmart.ru/" target="_blank" rel="noopener">Москва</a></p><p class="cl-item"><a href="https://myt.skysmart.ru/" target="_blank" rel="noopener">Мытищи</a></p></div>
+        <div><p class="cl-letter">Н</p><p class="cl-item"><a href="https://nnv.skysmart.ru/" target="_blank" rel="noopener">Нижний Новгород</a></p><p class="cl-item"><a href="https://nvr.skysmart.ru/" target="_blank" rel="noopener">Новороссийск</a></p><p class="cl-item"><a href="https://nsk.skysmart.ru/" target="_blank" rel="noopener">Новосибирск</a></p></div>
+        <div><p class="cl-letter">О</p><p class="cl-item"><a href="https://odc.skysmart.ru/" target="_blank" rel="noopener">Одинцово</a></p><p class="cl-item"><a href="https://oms.skysmart.ru/" target="_blank" rel="noopener">Омск</a></p><p class="cl-item"><a href="https://orb.skysmart.ru/" target="_blank" rel="noopener">Оренбург</a></p></div>
+        <div><p class="cl-letter">П</p><p class="cl-item"><a href="https://prm.skysmart.ru/" target="_blank" rel="noopener">Пермь</a></p><p class="cl-item"><a href="https://pod.skysmart.ru/" target="_blank" rel="noopener">Подольск</a></p></div>
+        <div><p class="cl-letter">Р</p><p class="cl-item"><a href="https://rnd.skysmart.ru/" target="_blank" rel="noopener">Ростов-на-Дону</a></p></div>
+        <div><p class="cl-letter">С</p><p class="cl-item"><a href="https://sam.skysmart.ru/" target="_blank" rel="noopener">Самара</a></p><p class="cl-item"><a href="https://spb.skysmart.ru/" target="_blank" rel="noopener">Санкт-Петербург</a></p><p class="cl-item"><a href="https://sar.skysmart.ru/" target="_blank" rel="noopener">Саратов</a></p><p class="cl-item"><a href="https://svs.skysmart.ru/" target="_blank" rel="noopener">Севастополь</a></p></div>
+        <div><p class="cl-letter">Т</p><p class="cl-item"><a href="https://tol.skysmart.ru/" target="_blank" rel="noopener">Тольятти</a></p><p class="cl-item"><a href="https://tom.skysmart.ru/" target="_blank" rel="noopener">Томск</a></p><p class="cl-item"><a href="https://tym.skysmart.ru/" target="_blank" rel="noopener">Тюмень</a></p></div>
+        <div><p class="cl-letter">У</p><p class="cl-item"><a href="https://uly.skysmart.ru/" target="_blank" rel="noopener">Ульяновск</a></p><p class="cl-item"><a href="https://ufa.skysmart.ru/" target="_blank" rel="noopener">Уфа</a></p></div>
+        <div><p class="cl-letter">Ч</p><p class="cl-item"><a href="https://chl.skysmart.ru/" target="_blank" rel="noopener">Челябинск</a></p><p class="cl-item"><a href="https://chi.skysmart.ru/" target="_blank" rel="noopener">Чита</a></p></div>
+      </div>
+    </div>
+  </section>
+
   <footer class="ft">
     <div class="container">
       <div class="ft-card">
@@ -1928,6 +1970,8 @@
       function show() { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
       function hide() { modal.classList.remove("open"); document.body.style.overflow = ""; }
       openBtn.addEventListener("click", show);
+      var bannerBtn = document.getElementById("consultBannerOpen");
+      if (bannerBtn) bannerBtn.addEventListener("click", show);
       document.getElementById("pickClose").addEventListener("click", hide);
       document.getElementById("pickBack").addEventListener("click", hide);
       modal.addEventListener("click", function (e) { if (e.target === modal) hide(); });
@@ -2020,6 +2064,16 @@
     (function () {
       var form = document.getElementById("cbForm"), ok = document.getElementById("cbOk");
       if (form && ok) form.addEventListener("submit", function (e) { e.preventDefault(); ok.style.display = "block"; });
+    })();
+
+    // «Выберите город» — раскрытие списка
+    (function () {
+      var btn = document.getElementById("citiesToggle"), grid = document.getElementById("citiesGrid");
+      if (btn && grid) btn.addEventListener("click", function () {
+        var opened = grid.classList.toggle("open");
+        btn.classList.toggle("open", opened);
+        btn.setAttribute("aria-expanded", opened ? "true" : "false");
+      });
     })();
 
     // Год в футере

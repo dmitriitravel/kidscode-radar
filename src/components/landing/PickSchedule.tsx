@@ -72,6 +72,13 @@ export function PickSchedule() {
   const [open, setOpen] = useState(false);
   const [grade, setGrade] = useState("");
 
+  // Открытие этого же поп-апа из других блоков (например, баннера «Подойдёт ли онлайн-обучение»).
+  useEffect(() => {
+    const onOpen = () => setOpen(true);
+    window.addEventListener("skysmart:open-consult", onOpen);
+    return () => window.removeEventListener("skysmart:open-consult", onOpen);
+  }, []);
+
   return (
     <section aria-labelledby="pick-title" className="bg-white py-14 sm:py-16">
       <div className="container-page">

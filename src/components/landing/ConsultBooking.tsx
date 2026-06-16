@@ -20,7 +20,7 @@ export function ConsultBooking() {
   const [grade, setGrade] = useState("");
 
   return (
-    <section aria-labelledby="consult-title" style={{ backgroundColor: "#f4f5f6" }} className="py-14 sm:py-16">
+    <section id="consult" aria-labelledby="consult-title" style={{ backgroundColor: "#f4f5f6" }} className="scroll-mt-24 py-14 sm:py-16">
       <div className="container-page">
         <div className="overflow-hidden rounded-3xl">
           <div className="flex justify-center bg-[#f4f5f6]">

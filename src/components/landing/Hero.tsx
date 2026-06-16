@@ -1,5 +1,3 @@
-import { LeadDialog } from "./LeadDialog";
-
 const HERO_IMAGE =
   "https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp";
 const HERO_IMAGE_MOBILE =
@@ -74,10 +72,14 @@ export function Hero() {
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3.5">
-                <LeadDialog
-                  triggerLabel="Получить консультацию"
-                  triggerClassName="btn-dark inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
-                />
+                <a
+                  href="https://homeschooling.skysmart.ru/demo-access"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-dark inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
+                >
+                  Получить консультацию
+                </a>
                 <a
                   href="#trial"
                   className="inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold text-white transition-opacity hover:opacity-90"

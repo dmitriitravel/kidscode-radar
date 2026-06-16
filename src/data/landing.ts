@@ -2,12 +2,13 @@
 // Тексты вынесены отдельно, чтобы разметка оставалась лёгкой и читаемой.
 
 export const NAV_LINKS = [
-  { label: "Бесплатный период", href: "#trial" },
+  { label: "Бесплатный период", href: "https://homeschooling.skysmart.ru/demo-access" },
   { label: "Лицензия", href: "#approval" },
   { label: "Как устроено обучение", href: "#platform" },
   { label: "Аттестация", href: "#diploma" },
   { label: "Тарифы", href: "#tariffs" },
   { label: "Вопросы", href: "#faq" },
+  { label: "База знаний", href: "https://homeschooling.skysmart.ru/wiki" },
 ] as const;
 
 export const GRADE_TABS = [

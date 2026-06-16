@@ -18,16 +18,20 @@ export function Header() {
 
           <nav aria-label="Основная навигация" className="mr-auto hidden lg:block">
             <ul className="flex items-center gap-6 text-[15px] font-medium">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-foreground/80 transition-colors hover:text-foreground"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const external = link.href.startsWith("http");
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="text-foreground/80 transition-colors hover:text-foreground"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -35,7 +39,7 @@ export function Header() {
             type="button"
             className="ml-auto hidden rounded-xl px-5 py-2.5 text-sm font-semibold btn-accent lg:inline-flex"
             onClick={() =>
-              document.getElementById("tariffs")?.scrollIntoView({ behavior: "smooth" })
+              document.getElementById("consult")?.scrollIntoView({ behavior: "smooth" })
             }
           >
             Поступить в школу
@@ -55,13 +59,21 @@ export function Header() {
         {open && (
           <nav aria-label="Мобильная навигация" className="border-t border-border py-3 lg:hidden">
             <ul className="space-y-2 text-base font-medium">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="block py-1" onClick={() => setOpen(false)}>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const external = link.href.startsWith("http");
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="block py-1"
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         )}

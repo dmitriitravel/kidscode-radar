@@ -19,6 +19,7 @@ import { HowToSwitch } from "@/components/landing/HowToSwitch";
 import { ConsultBooking } from "@/components/landing/ConsultBooking";
 import { FaqBlock } from "@/components/landing/FaqBlock";
 import { Footer } from "@/components/landing/Footer";
+import { CitiesPicker } from "@/components/landing/CitiesPicker";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { SEOHead } from "@/components/SEOHead";
 import { FAQ_ITEMS, KNOWLEDGE_LINKS } from "@/data/landing";
@@ -141,6 +142,8 @@ const Index = () => {
           </div>
         </section>
       </main>
+
+      <CitiesPicker />
 
       <Footer />
     </>

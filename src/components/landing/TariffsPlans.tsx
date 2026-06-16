@@ -126,13 +126,14 @@ function PlanCard({ plan }: { plan: Plan }) {
       <p className={`mt-1 text-sm ${dark ? "text-white/60" : "text-foreground/40"}`}>{plan.note}</p>
 
       <div className="mt-5">
-        <LeadDialog
-          triggerLabel="Выбрать"
-          triggerClassName={`inline-flex h-12 w-full items-center justify-center rounded-xl text-base font-semibold transition-colors ${
+        <a
+          href="#consult"
+          className={`inline-flex h-12 w-full items-center justify-center rounded-xl text-base font-semibold transition-colors ${
             dark ? "bg-[#de7aff] text-white hover:bg-[#e38fff]" : "bg-[#04121b] text-white hover:bg-[#1d3949]"
           }`}
-          title={`Тариф «${plan.name}»`}
-        />
+        >
+          Выбрать
+        </a>
       </div>
     </article>
   );

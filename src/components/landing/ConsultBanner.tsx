@@ -1,5 +1,3 @@
-import { LeadDialog } from "./LeadDialog";
-
 const MASCOT =
   "https://static.tildacdn.com/tild6365-3232-4236-b461-386138353865/Frame_2131329618.png";
 
@@ -39,11 +37,13 @@ export function ConsultBanner() {
           </div>
 
           <div className="order-2 md:order-3">
-            <LeadDialog
-              triggerLabel="Получить консультацию"
-              triggerClassName="btn-dark inline-flex w-full items-center justify-center rounded-2xl px-7 py-4 text-base font-semibold md:w-auto"
-              title="Получить консультацию"
-            />
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("skysmart:open-consult"))}
+              className="btn-dark inline-flex w-full items-center justify-center rounded-2xl px-7 py-4 text-base font-semibold md:w-auto"
+            >
+              Получить консультацию
+            </button>
           </div>
         </div>
       </div>
