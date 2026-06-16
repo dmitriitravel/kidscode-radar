@@ -713,8 +713,36 @@
     .modal-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--muted);line-height:1}
     dialog{position:relative}
 
-    footer{border-top:1px solid var(--border);background:#fff;padding:32px 0}
-    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    /* ===== Футер ===== */
+    .ft{background:#f4f5f6}
+    .ft-card{background:#fff;border-radius:28px 28px 0 0;padding:40px 40px 40px}
+    .ft-top{display:grid;grid-template-columns:1.3fr 1fr 1.1fr auto;gap:40px}
+    .ft-logo{height:34px;width:auto;display:block}
+    .ft-col h4{font-size:16px;font-weight:500;color:#000;margin:0 0 16px}
+    .ft-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:16px}
+    .ft-list.-main{margin-top:24px}
+    .ft-list a{text-decoration:none;color:rgba(0,0,0,.5);transition:color .2s}
+    .ft-list a:hover{color:#000}
+    .ft-list.-main a{color:#000}
+    .ft-list.-main a:hover{color:rgba(0,0,0,.7)}
+    .ft-soc{display:flex;flex-direction:column;gap:28px}
+    .ft-soc h4{font-size:16px;font-weight:500;color:#000;margin:0 0 12px}
+    .ft-soc-row{display:flex;gap:12px}
+    .ft-soc-row img{width:36px;height:36px;display:block}
+    .ft-div{height:1px;background:rgba(4,18,27,.15);border:0;margin:36px 0}
+    .ft-bottom{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;font-size:15px;color:rgba(0,0,0,.5)}
+    .ft-bottom a{color:rgba(0,0,0,.5);text-decoration:none;transition:color .2s}
+    .ft-bottom a:hover{color:#000}
+    .ft-legal{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+    .ft-bottom p{margin:0 0 14px}
+    .ft-fine{font-size:13px;color:rgba(0,0,0,.4)}
+    .ft-fine a{color:rgba(0,0,0,.4);text-decoration:underline}
+    @media(max-width:980px){
+      .ft-card{padding:32px 20px}
+      .ft-top{grid-template-columns:1fr 1fr;gap:32px}
+      .ft-bottom{grid-template-columns:1fr;gap:24px}
+    }
+    @media(max-width:560px){.ft-top{grid-template-columns:1fr}}
 
     .mt40{margin-top:40px}.mt24{margin-top:24px}.mt16{margin-top:16px}
   </style>
@@ -1677,10 +1705,86 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container foot">
-      <p>© <span id="year"></span> Skysmart. Домашний лицей.</p>
-      <p>Онлайн-школа с аттестатом государственного образца, 5–11 класс.</p>
+  <footer class="ft">
+    <div class="container">
+      <div class="ft-card">
+        <div class="ft-top">
+          <div class="ft-col">
+            <img class="ft-logo" src="https://cdn-user84060.skyeng.ru/uploads/logo-skysmart-66b5fff6c9a37571301329.svg" alt="Skysmart" width="176" height="50">
+            <ul class="ft-list -main">
+              <li><a href="tel:88005554522">8 (800) 555-45-22</a></li>
+              <li><a href="https://skysmart.ru/about-school">О школе</a></li>
+              <li><a href="https://skysmart.ru/process">Процесс обучения</a></li>
+              <li><a href="https://skysmart.ru/repetitors">Репетиторы</a></li>
+              <li><a href="https://skysmart.ru/price">Цены</a></li>
+              <li><a href="https://skysmart.ru/courses">Все курсы для детей</a></li>
+              <li><a href="https://skysmart.ru/courses">Подарочные сертификаты</a></li>
+              <li><a href="https://learn.skyeng.ru/partners/">Партнёрская программа</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h4>Поучиться</h4>
+            <ul class="ft-list">
+              <li><a href="https://edu.skysmart.ru/student" target="_blank" rel="noopener">Skysmart Класс</a></li>
+              <li><a href="https://skyeng.ru/adults" target="_blank" rel="noopener">Английский для взрослых</a></li>
+              <li><a href="https://resh.skysmart.ru/" target="_blank" rel="noopener">Skysmart Решения</a></li>
+              <li><a href="https://sky.pro/" target="_blank" rel="noopener">Обучение профессиям в Skypro</a></li>
+            </ul>
+          </div>
+          <div class="ft-col">
+            <h4>Полезности</h4>
+            <ul class="ft-list">
+              <li><a href="https://skysmart.ru/articles" target="_blank" rel="noopener">Статьи</a></li>
+              <li><a href="https://skysmart.ru/lessons/angliyskiy-yazyk" target="_blank" rel="noopener">Задания по английскому</a></li>
+              <li><a href="https://skysmart.ru/vpr" target="_blank" rel="noopener">Варианты ВПР</a></li>
+              <li><a href="https://job.skyeng.ru/prepodavatelyam" target="_blank" rel="noopener">Преподавателям</a></li>
+              <li><a href="https://skytea.ch/skyeng-base" target="_blank" rel="noopener">Портал для учителей</a></li>
+              <li><a href="https://skysmart.ru/reviews" target="_blank" rel="noopener">Отзывы о Skysmart</a></li>
+              <li><a href="https://skysmart.ru/contacts" target="_blank" rel="noopener">Контакты</a></li>
+              <li><a href="https://skysmart.ru/sitemap" target="_blank" rel="noopener">Карта сайта</a></li>
+            </ul>
+          </div>
+          <div class="ft-soc">
+            <div>
+              <h4>Соцсети для родителей</h4>
+              <div class="ft-soc-row">
+                <a href="https://vk.com/skysmart_parents" target="_blank" rel="noopener" aria-label="ВКонтакте"><img src="https://static.tildacdn.com/tild3437-3866-4062-b061-666565633263/Social_icon.png" alt="ВКонтакте" width="36" height="36" loading="lazy"></a>
+                <a href="https://www.youtube.com/c/SkysmartParents/videos" target="_blank" rel="noopener" aria-label="YouTube"><img src="https://static.tildacdn.com/tild6333-3634-4439-b233-353862663932/Social_icon-1.png" alt="YouTube" width="36" height="36" loading="lazy"></a>
+                <a href="https://dzen.ru/skysmart" target="_blank" rel="noopener" aria-label="Дзен"><img src="https://static.tildacdn.com/tild3564-6333-4565-a463-633763383933/Social_icon-2.png" alt="Дзен" width="36" height="36" loading="lazy"></a>
+                <a href="https://t.me/+4ubFiHfPhbw4NjAy" target="_blank" rel="noopener" aria-label="Telegram"><img src="https://static.tildacdn.com/tild3932-6537-4336-b233-653538393463/Social_icon-3.png" alt="Telegram" width="36" height="36" loading="lazy"></a>
+              </div>
+            </div>
+            <div>
+              <h4>Соцсети для школьников</h4>
+              <div class="ft-soc-row">
+                <a href="https://vk.com/skysmart_pro_teen" target="_blank" rel="noopener" aria-label="ВКонтакте"><img src="https://static.tildacdn.com/tild3437-3866-4062-b061-666565633263/Social_icon.png" alt="ВКонтакте" width="36" height="36" loading="lazy"></a>
+                <a href="https://www.youtube.com/channel/UCASzErcyyrm_7hCB31F1oUQ/featured" target="_blank" rel="noopener" aria-label="YouTube"><img src="https://static.tildacdn.com/tild6333-3634-4439-b233-353862663932/Social_icon-1.png" alt="YouTube" width="36" height="36" loading="lazy"></a>
+                <a href="https://www.tiktok.com/@skysmart_school" target="_blank" rel="noopener" aria-label="TikTok"><img src="https://static.tildacdn.com/tild3765-6434-4436-b931-656437333065/Social_icon.png" alt="TikTok" width="36" height="36" loading="lazy"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="ft-div">
+        <div class="ft-bottom">
+          <div>
+            <p>ОАНО ДПО «СКАЕНГ», 109004, г. Москва, вн. тер. г. муниципальный округ Таганский, ул. Александра Солженицына, д. 23А, стр. 4, этаж/пом. 1/III, ком. 1</p>
+            <p><a href="https://skyengforbusiness.ru/edu-license" target="_blank" rel="noopener">Лицензия на осуществление образовательной деятельности №Л035‑01298-77/00181469 от 06.08.2019</a></p>
+          </div>
+          <ul class="ft-legal">
+            <li><a href="https://legal.skysmart.ru/doc/view/terms_of_use_SKM_ANO_rus" target="_blank" rel="noopener">Условия использования</a></li>
+            <li><a href="https://skyengforbusiness.ru/organization.html" target="_blank" rel="noopener">Сведения об образовательной организации</a></li>
+          </ul>
+          <ul class="ft-legal">
+            <li><a href="https://legal.skysmart.ru/doc/view/offerunfdkidsanorus" target="_blank" rel="noopener">Оферта</a></li>
+            <li><a href="https://legal.skyeng.ru/doc/view/privacypolicyanorus" target="_blank" rel="noopener">Политика конфиденциальности</a></li>
+            <li><a href="https://legal.skyeng.ru/doc/view/Personal_Data_Processors_ANO_June_2023" target="_blank" rel="noopener">Обработчики персональных данных</a></li>
+          </ul>
+          <div class="ft-fine">
+            <p>This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/terms?hl=ru" target="_blank" rel="noopener">Privacy Policy</a> and Terms of Service apply</p>
+            <p>Делаем развитие привлекательным<br>© <span id="year"></span> Skysmart</p>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 

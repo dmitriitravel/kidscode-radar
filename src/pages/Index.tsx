@@ -18,6 +18,7 @@ import { FamilyBudget } from "@/components/landing/FamilyBudget";
 import { HowToSwitch } from "@/components/landing/HowToSwitch";
 import { ConsultBooking } from "@/components/landing/ConsultBooking";
 import { FaqBlock } from "@/components/landing/FaqBlock";
+import { Footer } from "@/components/landing/Footer";
 import { SocialProof } from "@/components/landing/SocialProof";
 import { SEOHead } from "@/components/SEOHead";
 import { FAQ_ITEMS, KNOWLEDGE_LINKS } from "@/data/landing";
@@ -141,12 +142,7 @@ const Index = () => {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-white py-10">
-        <div className="container-page flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Skysmart. Домашний лицей.</p>
-          <p>Онлайн-школа с аттестатом государственного образца, 5–11 класс.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
