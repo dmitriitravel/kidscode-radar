@@ -209,7 +209,7 @@ export function LyceumProcess() {
     <section aria-labelledby="lyc-title" className="bg-secondary/60 py-14 sm:py-16">
       <div className="container-page">
         <h2 id="lyc-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Как проходит обучение в лицее?
+          Форматы обучения в онлайн-школе
         </h2>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3" role="tablist" aria-label="Этапы обучения">

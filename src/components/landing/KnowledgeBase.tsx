@@ -27,7 +27,6 @@ const CATEGORIES: Category[] = [
       { title: "Заочное обучение в школе", href: `${BASE}/zaochnoe-obuchenie-v-shkole` },
       { title: "Экстернат в России", href: `${BASE}/eksternat-v-rossii` },
       { title: "Формы обучения на дому", href: `${BASE}/3-zakonnye-formy-obucheniya-na-domu` },
-      { title: "Дистанционное обучение для школьников", href: `${BASE}/distancionnoe-obuchenie-dlya-shkolnikov` },
       { title: "Сравнение домашнего и надомного обучения", href: `${BASE}/sravnenie-domashnego-i-nadomnogo-obucheniya` },
       { title: "Типы обучающихся в организациях", href: `${BASE}/tipy-obuchayushihsya-v-obrazovatelnyh-organizaciyah` },
     ],
@@ -159,10 +158,10 @@ export function KnowledgeBase() {
             key={cat.label}
             role="tabpanel"
             aria-label={cat.label}
-            className={`mt-8 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 ${i === active ? "grid" : "hidden"}`}
+            className={`kb-grid mt-8 ${i === active ? "flex" : "hidden"}`}
           >
             {cat.items.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="kb-grid-item">
                 <a
                   href={item.href}
                   className="group flex h-full min-h-[180px] flex-col justify-between rounded-2xl p-5 transition-colors"

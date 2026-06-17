@@ -86,7 +86,7 @@ export function StudentsFuture() {
     <section aria-labelledby="future-title" style={{ backgroundColor: "#f4f5f6" }} className="py-14 sm:py-16">
       <div className="container-page">
         <h2 id="future-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Тысячи учеников уже создают своё будущее с нами
+          Ещё отзывы от школьников и их родителей
         </h2>
 
         <div className="mt-10 flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_376px]">

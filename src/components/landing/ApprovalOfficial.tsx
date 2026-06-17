@@ -39,7 +39,7 @@ export function ApprovalOfficial() {
           id="appr-title"
           className="mx-auto mb-10 max-w-2xl text-center text-3xl font-bold leading-tight sm:text-4xl"
         >
-          Наша образовательная модель одобрена официально
+          Онлайн-школа с официальным аттестатом от государства
         </h2>
 
         <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-center">

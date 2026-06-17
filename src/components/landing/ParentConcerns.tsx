@@ -76,7 +76,7 @@ export function ParentConcerns() {
           id="worry-title"
           className="mb-10 text-center text-2xl font-medium leading-tight sm:text-3xl lg:text-[40px]"
         >
-          Мы знаем, что волнует родителей
+          Кому подходит наша онлайн-школа с зачислением и аттестатом
         </h2>
 
         {/* Десктоп: ровные карточки 3 + 2 (нижний ряд по центру) */}

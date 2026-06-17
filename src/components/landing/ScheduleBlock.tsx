@@ -52,7 +52,7 @@ export function ScheduleBlock() {
     <section aria-labelledby="schedule-title" className="bg-secondary/60 py-14 sm:py-16">
       <div className="container-page">
         <h2 id="schedule-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Расписание устроено так, чтобы ребёнок мог всё успевать
+          Расписание в онлайн-школе для ребёнка
         </h2>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3" role="tablist" aria-label="Варианты расписания">

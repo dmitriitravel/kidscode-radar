@@ -24,9 +24,9 @@ export function PromoBanner() {
           />
 
           <div className="relative z-10 flex max-w-[687px] flex-col items-center gap-4">
-            <p className="text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-[40px]">
-              Открыт набор на 2026/27 учебный год
-            </p>
+            <h2 className="text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-[40px]">
+              Открыт набор на 2026/27 учебный год в домашнем лицее Skysmart
+            </h2>
             <p className="text-lg text-white sm:text-xl lg:text-2xl">
               Скидка 20% для новых учеников
             </p>

@@ -24,7 +24,7 @@ export function HowToSwitch() {
         >
           <div className="p-7 sm:p-10 lg:p-12">
             <h2 id="howto-title" className="text-3xl font-bold leading-tight sm:text-4xl">
-              Как перейти на семейное обучение
+              Как перейти на семейное обучение — пошаговая инструкция
             </h2>
             <ol className="mt-7 space-y-4">
               {STEPS.map((step, i) => (

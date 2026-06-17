@@ -65,7 +65,7 @@ export function FamilyBudget() {
     <section aria-labelledby="budget-title" style={{ backgroundColor: "#f4f5f6" }} className="py-14 sm:py-16">
       <div className="container-page">
         <h2 id="budget-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Мы поможем сэкономить семейный бюджет
+          Скидки и возможности сэкономить
         </h2>
 
         <div

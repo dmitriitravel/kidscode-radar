@@ -15,7 +15,7 @@ export function CertificateBlock() {
     <section id="diploma" aria-labelledby="cert-title" className="scroll-mt-24 bg-secondary/60 py-14 sm:py-16">
       <div className="container-page">
         <h2 id="cert-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Вы получите аттестат государственного образца
+          Получение аттестата при дистанционном обучении в школе
         </h2>
 
         <div className="mt-10 grid overflow-hidden rounded-[32px] bg-white md:grid-cols-2">

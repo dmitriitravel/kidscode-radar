@@ -82,7 +82,7 @@ export function FamiliesTrust() {
           id="families-title"
           className="text-center text-3xl font-bold leading-tight sm:text-4xl"
         >
-          Семьи по всему миру доверяют нам образование детей
+          Истории успеха при онлайн-обучении в школе Skysmart
         </h2>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

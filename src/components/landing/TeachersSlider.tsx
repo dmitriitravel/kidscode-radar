@@ -147,7 +147,7 @@ export function TeachersSlider() {
       )}
       <div className="container-page">
         <h2 id="teachers-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Кто преподаёт в лицее
+          Учителя онлайн-лицея Skysmart — эксперты в своих предметах
         </h2>
 
         <div className="mt-8 flex flex-col-reverse overflow-hidden rounded-[24px] bg-white md:grid md:min-h-[430px] md:grid-cols-2 md:rounded-[32px]">

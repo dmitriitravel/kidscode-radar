@@ -83,7 +83,7 @@ export function ProgramFeatures() {
           id="needs-title"
           className="mx-auto mb-10 max-w-3xl text-center text-2xl font-medium leading-tight sm:text-3xl lg:text-[40px]"
         >
-          И строим обучение вокруг потребностей ребёнка
+          Как устроено дистанционное обучение для школьников в Skysmart
         </h2>
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

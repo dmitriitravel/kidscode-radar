@@ -241,7 +241,7 @@ export function FaqBlock() {
     <section id="faq" aria-labelledby="faq-title" style={{ backgroundColor: "#f4f5f6" }} className="scroll-mt-24 py-14 sm:py-16">
       <div className="container-page">
         <h2 id="faq-title" className="text-3xl font-bold leading-tight sm:text-4xl">
-          Частые вопросы
+          Вопросы и ответы по процессу обучения в онлайн-школе с получением аттестата
         </h2>
         <div className="mt-8 space-y-3">
           {ITEMS.map((item, i) => (

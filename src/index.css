@@ -235,3 +235,32 @@
   border-bottom: 1px solid #d571ff;
   text-decoration: none;
 }
+
+/* «Полезные материалы» — сетка карточек с центрированием неполной строки */
+.kb-grid {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.kb-grid-item {
+  flex: 0 0 calc((100% - 48px) / 4);
+  max-width: calc((100% - 48px) / 4);
+}
+@media (max-width: 1100px) {
+  .kb-grid-item {
+    flex-basis: calc((100% - 32px) / 3);
+    max-width: calc((100% - 32px) / 3);
+  }
+}
+@media (max-width: 768px) {
+  .kb-grid-item {
+    flex-basis: calc((100% - 16px) / 2);
+    max-width: calc((100% - 16px) / 2);
+  }
+}
+@media (max-width: 520px) {
+  .kb-grid-item {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

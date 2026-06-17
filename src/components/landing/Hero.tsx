@@ -53,9 +53,7 @@ export function Hero() {
                 id="hero-title"
                 className="text-4xl font-bold leading-[1.03] text-[#1b2330] sm:text-5xl lg:text-6xl"
               >
-                Домашнее обучение
-                <br />
-                для 5–11 классов
+                Онлайн-школа Skysmart: дистанционное обучение с аттестатом государственного образца
               </h1>
               <ul className="mb-8 mt-7 flex max-w-md flex-col gap-3.5">
                 {HERO_POINTS.map((point) => (

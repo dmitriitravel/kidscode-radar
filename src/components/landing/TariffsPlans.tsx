@@ -155,7 +155,7 @@ export function TariffsPlans() {
     <section id="tariffs" aria-labelledby="tariffs-title" style={{ backgroundColor: "#f4f5f6" }} className="scroll-mt-24 py-14 sm:py-16">
       <div className="container-page">
         <h2 id="tariffs-title" className="text-center text-3xl font-bold leading-tight sm:text-4xl">
-          Выбирайте подходящий тариф
+          Цены и тарифы в нашей онлайн-школе
         </h2>
         <p className="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-lg sm:text-xl">
           <span>Со скидкой</span>
