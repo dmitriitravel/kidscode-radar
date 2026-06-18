@@ -486,6 +486,38 @@
       .teach-media{min-height:240px}
     }
 
+    /* ===== «За процесс обучения отвечают опытные эксперты» ===== */
+    .exp{background:#f4f5f6;padding:56px 0}
+    .exp-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
+    .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .exp-card{position:relative;overflow:hidden;border-radius:24px;background:#f0eef3;min-height:500px}
+    .exp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:bottom}
+    .exp-body{position:relative;display:flex;flex-direction:column;height:100%;min-height:500px;padding:28px 24px}
+    .exp-head{text-align:center}
+    .exp-role{font-size:24px;font-weight:700;line-height:1.15;color:#1b2330;margin:0}
+    .exp-desc{margin:12px auto 0;max-width:320px;font-size:16px;line-height:1.32;color:#3a414d}
+    .exp-foot{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+    .exp-name{font-size:18px;font-weight:500;color:#1b2330;margin:0}
+    .exp-btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;border-radius:8px;background:#04121b;color:#fff;padding:10px 18px;font-family:inherit;font-size:14px;font-weight:500;text-decoration:none;transition:background .2s}
+    .exp-btn:hover{background:#1b2a36}
+    @media(max-width:900px){.exp-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+
+    /* поп-ап эксперта */
+    .exp-modal{display:none;position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:16px}
+    .exp-modal.open{display:flex}
+    .exp-modal-in{position:relative;width:100%;max-width:520px;background:#fff;border-radius:24px;padding:32px}
+    .exp-modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:0;background:#f4f4f6;color:#1b2330;font-size:22px;line-height:1;cursor:pointer}
+    .exp-modal-head{display:flex;align-items:center;gap:16px}
+    .exp-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+    .exp-modal-name{font-size:20px;font-weight:700;color:#1b2330;margin:0}
+    .exp-tag{display:inline-block;margin-top:6px;border-radius:6px;background:#f4f4f6;color:rgba(0,0,0,.7);padding:4px 10px;font-size:14px}
+    .exp-modal-list{margin:24px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:12px}
+    .exp-modal-list li{font-size:16px;line-height:1.32;color:#3a414d}
+    .exp-modal-list li::marker{color:#ff9e00}
+    .exp-modal-link{margin-top:24px;display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:500;color:#1b2330;text-decoration:none}
+    .exp-modal-link:hover{opacity:.8}
+    @media(max-width:600px){.exp-modal-in{padding:24px}}
+
     /* ===== «Расписание устроено так…» — вкладки с расписаниями ===== */
     .sch{background:var(--soft);padding:56px 0}
     .sch-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
@@ -1371,6 +1403,71 @@
         <div class="teach-modal-inner">
           <button type="button" class="teach-modal-close" id="teachModalClose" aria-label="Закрыть">×</button>
           <video id="teachVideo" controls playsinline preload="none"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ЭКСПЕРТЫ ===================== -->
+    <section class="exp" aria-labelledby="exp-title">
+      <div class="container">
+        <h2 class="exp-title" id="exp-title">За процесс обучения отвечают опытные эксперты</h2>
+        <div class="exp-grid">
+          <article class="exp-card">
+            <img class="exp-bg" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert1-1024@2x.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert1-375@2x.png 768w, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert1-1024@2x.png 1024w" sizes="(max-width:768px) 100vw, 360px" alt="Александра Калинина" loading="lazy" decoding="async">
+            <div class="exp-body">
+              <div class="exp-head">
+                <h3 class="exp-role">Куратор учебной программы</h3>
+                <p class="exp-desc">Разрабатывает уроки, на&nbsp;которых детям интересно и&nbsp;не&nbsp;страшно пробовать новое</p>
+              </div>
+              <div class="exp-foot">
+                <p class="exp-name">Александра Калинина</p>
+                <a class="exp-btn" href="https://homeschooling.skysmart.ru/team/aleksandra" target="_blank" rel="noopener noreferrer">Квалификация <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="exp-card">
+            <img class="exp-bg" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert2-1024@2x.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert2-375@2x.png 768w, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert2-1024@2x.png 1024w" sizes="(max-width:768px) 100vw, 360px" alt="Татьяна Брейкина" loading="lazy" decoding="async">
+            <div class="exp-body">
+              <div class="exp-head">
+                <h3 class="exp-role">Классный руководитель</h3>
+                <p class="exp-desc">Следит за&nbsp;посещаемостью и&nbsp;успеваемостью, помогает с&nbsp;учёбой и&nbsp;решает вопросы с&nbsp;аттестацией</p>
+              </div>
+              <div class="exp-foot">
+                <p class="exp-name">Татьяна Брейкина</p>
+                <a class="exp-btn" href="https://homeschooling.skysmart.ru/team/tatyana-brejkina" target="_blank" rel="noopener noreferrer">Квалификация <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          <article class="exp-card">
+            <img class="exp-bg" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert3-1024@2x.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert3-375@2x.png 768w, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert3-1024@2x.png 1024w" sizes="(max-width:768px) 100vw, 360px" alt="Анастасия Бобровская" loading="lazy" decoding="async">
+            <div class="exp-body">
+              <div class="exp-head">
+                <h3 class="exp-role">Нейропсихолог</h3>
+                <p class="exp-desc">Консультирует и&nbsp;помогает, если ребёнок не&nbsp;усваивает материал и&nbsp;быстро теряет внимание</p>
+              </div>
+              <div class="exp-foot">
+                <p class="exp-name">Анастасия Бобровская</p>
+                <button class="exp-btn" type="button" id="expModalOpen" aria-haspopup="dialog">Квалификация <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="exp-modal" id="expModal" role="dialog" aria-modal="true" aria-label="Анастасия Бобровская">
+        <div class="exp-modal-in">
+          <button class="exp-modal-close" type="button" id="expModalClose" aria-label="Закрыть">×</button>
+          <div class="exp-modal-head">
+            <img class="exp-avatar" src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/experts/expert2-avatar.png" alt="Анастасия Бобровская" width="64" height="64" loading="lazy">
+            <div>
+              <p class="exp-modal-name">Анастасия Бобровская</p>
+              <span class="exp-tag">Нейропсихолог</span>
+            </div>
+          </div>
+          <ul class="exp-modal-list">
+            <li>8&nbsp;лет занимается коррекционно-развивающим обучением и&nbsp;детской реабилитацией</li>
+            <li>Работает с&nbsp;детьми от&nbsp;4&nbsp;лет по&nbsp;направлениям: нейропсихологическая диагностика и&nbsp;коррекция нарушений познавательных процессов (в&nbsp;т.ч. ЗПР, СДВГ), преодоление трудностей в&nbsp;обучении</li>
+          </ul>
+          <a class="exp-modal-link" href="https://drive.google.com/file/d/1SCnIpyzr-NCEQNu7ZIjrYZWs6-6cbRUn/view" target="_blank" rel="noopener noreferrer">Дипломы <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -2302,6 +2399,17 @@
         io.observe(section);
       }
       render();
+    })();
+
+    // «Эксперты» — поп-ап для третьего эксперта (Нейропсихолог)
+    (function () {
+      var openBtn = document.getElementById("expModalOpen"), modal = document.getElementById("expModal");
+      if (!openBtn || !modal) return;
+      function show() { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
+      function hide() { modal.classList.remove("open"); document.body.style.overflow = ""; }
+      openBtn.addEventListener("click", show);
+      document.getElementById("expModalClose").addEventListener("click", hide);
+      modal.addEventListener("click", function (e) { if (e.target === modal) hide(); });
     })();
 
     // Плашка cookies — закрытие с запоминанием в localStorage
