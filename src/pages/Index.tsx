@@ -21,6 +21,7 @@ import { HowToSwitch } from "@/components/landing/HowToSwitch";
 import { ConsultBooking } from "@/components/landing/ConsultBooking";
 import { FaqBlock } from "@/components/landing/FaqBlock";
 import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
+import { CookieConsent } from "@/components/landing/CookieConsent";
 import { Footer } from "@/components/landing/Footer";
 import { CitiesPicker } from "@/components/landing/CitiesPicker";
 import { SocialProof } from "@/components/landing/SocialProof";
@@ -216,6 +217,8 @@ const Index = () => {
       <CitiesPicker />
 
       <Footer />
+
+      <CookieConsent />
     </>
   );
 };

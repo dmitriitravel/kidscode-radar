@@ -1,4 +1,7 @@
-// «О домашнем лицее Skysmart» — вводный текстовый блок перед форматами обучения.
+// «О домашнем лицее Skysmart» — вводный текстовый блок с маскотом.
+const MASCOT = "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.png";
+const MASCOT_2X = "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot@2x.png";
+
 export function AboutLyceum() {
   return (
     <section aria-labelledby="about-lyceum-title" className="bg-white py-12 sm:py-14">
@@ -12,24 +15,40 @@ export function AboutLyceum() {
             className="pointer-events-none absolute -right-16 -top-16 hidden h-64 w-64 rounded-full lg:block"
             style={{ background: "radial-gradient(circle,rgba(0,193,255,0.16) 0%,rgba(0,193,255,0) 70%)" }}
           />
-          <div className="relative max-w-3xl">
-            <h2
-              id="about-lyceum-title"
-              className="text-3xl font-bold leading-tight text-[#1b2330] sm:text-4xl"
-            >
-              О домашнем лицее Skysmart
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#3a414d] sm:text-xl">
-              Домашний лицей Skysmart предлагает дистанционное обучение по стандартам ФГОС на
-              основании официальной лицензии, что позволяет получить{" "}
-              <span className="font-semibold text-[#1b2330]">аттестат государственного образца</span>{" "}
-              из любой точки мира, обеспечивая полноценное обучение из-за рубежа. Учебный процесс
-              организован через малые классы&nbsp;/ мини-группы, а подготовку к экзаменам ведут
-              действующие эксперты ЕГЭ/ОГЭ — это гарантирует высокие результаты ОГЭ и ЕГЭ и
-              последующее успешное поступление в вузы. При этом для родителей доступны выгодные
-              условия оплаты, включая материнский капитал и налоговый вычет, что делает качественное
-              альтернативное образование доступным и юридически защищённым.
-            </p>
+          <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_280px]">
+            <div className="max-w-3xl">
+              <h2
+                id="about-lyceum-title"
+                className="text-3xl font-bold leading-tight text-[#1b2330] sm:text-4xl"
+              >
+                О домашнем лицее Skysmart
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-[#3a414d] sm:text-xl">
+                Онлайн школа Skysmart предлагает дистанционное обучение по стандартам ФГОС на
+                основании официальной лицензии, что позволяет получить{" "}
+                <span className="font-semibold text-[#1b2330]">аттестат государственного образца</span>{" "}
+                из любой точки мира, обеспечивая полноценное обучение из-за рубежа.
+              </p>
+              <p className="mt-4 text-lg leading-relaxed text-[#3a414d] sm:text-xl">
+                Учебный процесс организован через малые классы&nbsp;/ мини-группы, а подготовку к
+                экзаменам ведут действующие эксперты ЕГЭ/ОГЭ — это гарантирует высокие результаты ОГЭ
+                и ЕГЭ и последующее успешное поступление в вузы. При этом для родителей доступны
+                выгодные условия оплаты, включая материнский капитал и налоговый вычет, что делает
+                качественное альтернативное образование доступным и юридически защищённым.
+              </p>
+            </div>
+            <div className="hidden justify-self-center lg:flex lg:justify-self-end">
+              <img
+                src={MASCOT}
+                srcSet={`${MASCOT} 1x, ${MASCOT_2X} 2x`}
+                alt="Маскот онлайн-школы Skysmart"
+                width={280}
+                height={280}
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-[240px] object-contain xl:w-[280px]"
+              />
+            </div>
           </div>
         </div>
       </div>

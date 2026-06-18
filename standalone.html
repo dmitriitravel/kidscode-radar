@@ -344,11 +344,25 @@
     .about{background:#fff;padding:48px 0}
     .about-card{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#f4f5f7 0%,#eef0f4 100%);padding:48px}
     .about-glow{pointer-events:none;position:absolute;right:-64px;top:-64px;width:256px;height:256px;border-radius:50%;background:radial-gradient(circle,rgba(0,193,255,.16) 0%,rgba(0,193,255,0) 70%)}
-    .about-inner{position:relative;max-width:760px}
+    .about-inner{position:relative;display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:center}
+    .about-text-col{max-width:760px}
     .about-title{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;color:#1b2330;margin:0}
     .about-text{margin:24px 0 0;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#3a414d}
     .about-text b{font-weight:600;color:#1b2330}
+    .about-mascot{display:flex;justify-content:flex-end}
+    .about-mascot img{width:240px;height:auto;object-fit:contain}
+    @media(min-width:1280px){.about-mascot img{width:280px}}
+    @media(max-width:1000px){.about-inner{grid-template-columns:1fr}.about-mascot{display:none}}
     @media(max-width:600px){.about-card{padding:28px 20px}}
+
+    /* ===== Плашка cookies (прижата к левому краю) ===== */
+    .cookie{position:fixed;left:16px;bottom:16px;z-index:80;display:flex;align-items:center;gap:20px;max-width:716px;background:#fff;border-radius:16px;padding:16px 20px;box-shadow:0 0 5px rgba(0,0,0,.2)}
+    .cookie.is-hidden{display:none}
+    .cookie-text{font-size:16px;line-height:1.25;color:#000}
+    .cookie-text a{color:#000;border-bottom:1px solid #000;text-decoration:none}
+    .cookie-btn{flex:0 0 auto;border:0;cursor:pointer;border-radius:5px;background:#ff9e00;color:#fff;padding:10px 20px;font-family:inherit;font-size:16px;transition:background .2s}
+    .cookie-btn:hover{background:#f08f00}
+    @media(max-width:560px){.cookie{left:12px;right:12px;bottom:12px;flex-wrap:wrap;gap:12px}.cookie-btn{width:100%}}
 
     /* ===== «Как проходит обучение в лицее?» — вкладки ===== */
     .lyc{background:var(--soft);padding:56px 0}
@@ -1175,8 +1189,16 @@
         <div class="about-card">
           <span class="about-glow" aria-hidden="true"></span>
           <div class="about-inner">
-            <h2 class="about-title" id="about-title">О домашнем лицее Skysmart</h2>
-            <p class="about-text">Домашний лицей Skysmart предлагает дистанционное обучение по стандартам ФГОС на основании официальной лицензии, что позволяет получить <b>аттестат государственного образца</b> из любой точки мира, обеспечивая полноценное обучение из-за рубежа. Учебный процесс организован через малые классы&nbsp;/ мини-группы, а подготовку к экзаменам ведут действующие эксперты ЕГЭ/ОГЭ&nbsp;— это гарантирует высокие результаты ОГЭ и ЕГЭ и последующее успешное поступление в вузы. При этом для родителей доступны выгодные условия оплаты, включая материнский капитал и налоговый вычет, что делает качественное альтернативное образование доступным и юридически защищённым.</p>
+            <div class="about-text-col">
+              <h2 class="about-title" id="about-title">О домашнем лицее Skysmart</h2>
+              <p class="about-text">Онлайн школа Skysmart предлагает дистанционное обучение по стандартам ФГОС на основании официальной лицензии, что позволяет получить <b>аттестат государственного образца</b> из любой точки мира, обеспечивая полноценное обучение из-за рубежа.</p>
+              <p class="about-text">Учебный процесс организован через малые классы&nbsp;/ мини-группы, а подготовку к экзаменам ведут действующие эксперты ЕГЭ/ОГЭ&nbsp;— это гарантирует высокие результаты ОГЭ и ЕГЭ и последующее успешное поступление в вузы. При этом для родителей доступны выгодные условия оплаты, включая материнский капитал и налоговый вычет, что делает качественное альтернативное образование доступным и юридически защищённым.</p>
+            </div>
+            <div class="about-mascot">
+              <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.png"
+                   srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot@2x.png 2x"
+                   alt="Маскот онлайн-школы Skysmart" width="280" height="280" loading="lazy" decoding="async">
+            </div>
           </div>
         </div>
       </div>
@@ -2151,6 +2173,12 @@
     </div>
   </footer>
 
+  <!-- ===================== COOKIE BAR ===================== -->
+  <div class="cookie" id="cookieBar" role="region" aria-label="Уведомление о cookies">
+    <div class="cookie-text">Пользуясь нашим сайтом, вы&nbsp;соглашаетесь с&nbsp;тем, что мы&nbsp;используем <a href="https://legal.skyeng.ru/doc/view/privacypolicyanorus" target="_blank" rel="noopener noreferrer">cookies</a></div>
+    <button class="cookie-btn" type="button" id="cookieAccept">Понятно</button>
+  </div>
+
   <!-- ===================== MODAL ===================== -->
   <dialog id="modal" aria-labelledby="modal-title">
     <div class="modal-in">
@@ -2276,10 +2304,30 @@
       render();
     })();
 
+    // Плашка cookies — закрытие с запоминанием в localStorage
+    (function () {
+      var bar = document.getElementById("cookieBar");
+      if (!bar) return;
+      var KEY = "skysmart:cookies-accepted";
+      var accepted = false;
+      try { accepted = !!localStorage.getItem(KEY); } catch (e) {}
+      if (accepted) { bar.classList.add("is-hidden"); return; }
+      var btn = document.getElementById("cookieAccept");
+      btn.addEventListener("click", function () {
+        try { localStorage.setItem(KEY, "1"); } catch (e) {}
+        bar.classList.add("is-hidden");
+      });
+    })();
+
     // «Полезные материалы» — переключение категорий по тегам
     (function () {
       var tags = document.querySelectorAll("#kbTags .kb-tag");
       if (!tags.length) return;
+      // Все ссылки материалов открываются в новой вкладке
+      document.querySelectorAll(".kb-card a").forEach(function (a) {
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener noreferrer");
+      });
       var panels = document.querySelectorAll(".kb-cards");
       tags.forEach(function (tag) {
         tag.addEventListener("click", function () {

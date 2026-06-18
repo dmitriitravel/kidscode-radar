@@ -164,6 +164,8 @@ export function KnowledgeBase() {
               <li key={item.href} className="kb-grid-item">
                 <a
                   href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex h-full min-h-[180px] flex-col justify-between rounded-2xl p-5 transition-colors"
                   style={{ backgroundColor: "#f4f4f4" }}
                 >
