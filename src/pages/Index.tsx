@@ -5,6 +5,7 @@ import { ParentConcerns } from "@/components/landing/ParentConcerns";
 import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
 import { ConsultBanner } from "@/components/landing/ConsultBanner";
 import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
+import { AboutLyceum } from "@/components/landing/AboutLyceum";
 import { LyceumProcess } from "@/components/landing/LyceumProcess";
 import { CertificateBlock } from "@/components/landing/CertificateBlock";
 import { TrialBlock } from "@/components/landing/TrialBlock";
@@ -178,6 +179,8 @@ const Index = () => {
         <ConsultBanner />
 
         <ApprovalOfficial />
+
+        <AboutLyceum />
 
         <LyceumProcess />
 

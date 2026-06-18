@@ -340,6 +340,16 @@
       .consult-mascot img{height:auto;width:80%;max-width:340px}
     }
 
+    /* ===== «О домашнем лицее Skysmart» — вводный текстовый блок ===== */
+    .about{background:#fff;padding:48px 0}
+    .about-card{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#f4f5f7 0%,#eef0f4 100%);padding:48px}
+    .about-glow{pointer-events:none;position:absolute;right:-64px;top:-64px;width:256px;height:256px;border-radius:50%;background:radial-gradient(circle,rgba(0,193,255,.16) 0%,rgba(0,193,255,0) 70%)}
+    .about-inner{position:relative;max-width:760px}
+    .about-title{font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;color:#1b2330;margin:0}
+    .about-text{margin:24px 0 0;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:#3a414d}
+    .about-text b{font-weight:600;color:#1b2330}
+    @media(max-width:600px){.about-card{padding:28px 20px}}
+
     /* ===== «Как проходит обучение в лицее?» — вкладки ===== */
     .lyc{background:var(--soft);padding:56px 0}
     .lyc-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.1;margin-bottom:32px}
@@ -967,7 +977,7 @@
           <div class="hero-card">
             <span class="hero-skew" aria-hidden="true"></span>
             <div class="hero-content">
-              <h1 id="hero-title">Онлайн-школа Skysmart: дистанционное обучение с аттестатом государственного образца</h1>
+              <h1 id="hero-title">Онлайн-школа для 5–11 классов</h1>
               <ul class="hero-list">
                 <li><span class="hcheck" aria-hidden="true">✓</span>Полноценная альтернатива обычной школе</li>
                 <li><span class="hcheck" aria-hidden="true">✓</span>Аттестат государственного образца от школы-партнёра</li>
@@ -1154,6 +1164,19 @@
             <span class="appr-pill"><img src="https://static.tildacdn.com/tild3365-3466-4339-a538-356132376435/fgos_2_1.png" alt="ВШЭ" width="61" height="28" loading="lazy" decoding="async" /></span>
             <p class="appr-text">Программа разработана НИУ ВШЭ</p>
             <a class="appr-open purple" href="https://ioe.hse.ru/skyeng/" target="_blank" rel="noopener noreferrer">Открыть <span class="arr" aria-hidden="true">›</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== О ДОМАШНЕМ ЛИЦЕЕ ===================== -->
+    <section class="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-card">
+          <span class="about-glow" aria-hidden="true"></span>
+          <div class="about-inner">
+            <h2 class="about-title" id="about-title">О домашнем лицее Skysmart</h2>
+            <p class="about-text">Домашний лицей Skysmart предлагает дистанционное обучение по стандартам ФГОС на основании официальной лицензии, что позволяет получить <b>аттестат государственного образца</b> из любой точки мира, обеспечивая полноценное обучение из-за рубежа. Учебный процесс организован через малые классы&nbsp;/ мини-группы, а подготовку к экзаменам ведут действующие эксперты ЕГЭ/ОГЭ&nbsp;— это гарантирует высокие результаты ОГЭ и ЕГЭ и последующее успешное поступление в вузы. При этом для родителей доступны выгодные условия оплаты, включая материнский капитал и налоговый вычет, что делает качественное альтернативное образование доступным и юридически защищённым.</p>
           </div>
         </div>
       </div>
