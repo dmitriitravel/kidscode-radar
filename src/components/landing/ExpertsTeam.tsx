@@ -62,7 +62,7 @@ function ExpertCard({ expert, onModal }: { expert: Expert; onModal: () => void }
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover object-bottom"
       />
-      <div className="relative flex min-h-[460px] flex-col p-6 sm:min-h-[500px]">
+      <div className="relative flex min-h-[520px] flex-col px-6 pb-6 pt-9 sm:min-h-[560px] sm:pt-11">
         <div className="text-center">
           <h3 className="text-2xl font-bold leading-tight text-[#1b2330]">{expert.role}</h3>
           <p className="mx-auto mt-3 max-w-[320px] text-base leading-snug text-[#3a414d]">{expert.description}</p>

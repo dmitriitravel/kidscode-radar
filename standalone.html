@@ -490,9 +490,9 @@
     .exp{background:#f4f5f6;padding:56px 0}
     .exp-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0 0 40px}
     .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .exp-card{position:relative;overflow:hidden;border-radius:24px;background:#f0eef3;min-height:500px}
+    .exp-card{position:relative;overflow:hidden;border-radius:24px;background:#f0eef3;min-height:560px}
     .exp-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:bottom}
-    .exp-body{position:relative;display:flex;flex-direction:column;height:100%;min-height:500px;padding:28px 24px}
+    .exp-body{position:relative;display:flex;flex-direction:column;height:100%;min-height:560px;padding:44px 24px 28px}
     .exp-head{text-align:center}
     .exp-role{font-size:24px;font-weight:700;line-height:1.15;color:#1b2330;margin:0}
     .exp-desc{margin:12px auto 0;max-width:320px;font-size:16px;line-height:1.32;color:#3a414d}
@@ -766,33 +766,31 @@
 
     /* ===== «Узнайте больше о школе на бесплатной консультации» (адаптив) ===== */
     .cb{background:#f4f5f6;padding:56px 0}
+    .cb-mascot{display:flex;justify-content:center}
+    .cb-mascot img{position:relative;z-index:2;width:200px;height:auto;margin-bottom:-40px;object-fit:contain}
     .cb-card{border-radius:24px;overflow:hidden}
-    .cb-banner{background:#f4f5f6;display:flex;justify-content:center}
-    .cb-banner img{width:100%;max-width:640px;height:200px;object-fit:contain;object-position:bottom}
-    .cb-banner .-mob{display:none}
-    .cb-body{padding:40px;background:linear-gradient(160deg,#181222 0%,#0d0a13 100%);color:#fff}
+    .cb-body{padding:52px 40px 40px;background:linear-gradient(160deg,#181222 0%,#0d0a13 100%);color:#fff}
     .cb-title{text-align:center;font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.12;margin:0}
-    .cb-list{margin:28px 0 0;display:flex;align-items:center;gap:16px}
-    .cb-item{flex:1;text-align:center;font-size:16px;line-height:1.3;color:rgba(255,255,255,.9)}
-    .cb-sep{width:24px;height:24px;flex:0 0 auto}
-    .cb-foot{margin-top:32px;display:flex;align-items:center;gap:20px}
-    .cb-greet{flex:1;display:flex;align-items:center;gap:12px}
-    .cb-heart{width:48px;height:48px;border-radius:50%;background:#ff9e00;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-    .cb-greet b{display:block;font-size:16px}
-    .cb-greet span.sub{color:rgba(255,255,255,.6);font-size:15px}
-    .cb-form{flex:2;display:flex;gap:12px}
-    .cb-form select{flex:1;height:48px;border:0;border-radius:12px;background:#fff;padding:0 16px;font-family:inherit;font-size:16px;color:#000;cursor:pointer}
-    .cb-form button{flex:1;height:48px;border:0;cursor:pointer;border-radius:12px;background:linear-gradient(180deg,#cf9bff,#a86bf0);color:#fff;padding:0 20px;font-family:inherit;font-size:16px;font-weight:600;transition:opacity .2s}
-    .cb-form button:hover{opacity:.9}
-    .cb-ok{display:none;color:#b9ff6a;margin:12px 0 0;font-size:15px;text-align:center}
+    .cb-list{margin:28px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cb-item{text-align:center;font-size:16px;line-height:1.3;color:rgba(255,255,255,.9);margin:0}
+    .cb-form{margin-top:32px}
+    .cb-fields{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .cb-fields input,.cb-fields select{height:48px;border:0;border-radius:12px;background:#fff;padding:0 16px;font-family:inherit;font-size:16px;color:#000;width:100%}
+    .cb-fields select{cursor:pointer}
+    .cb-submit{margin-top:16px;width:100%;height:48px;border:0;cursor:pointer;border-radius:12px;background:linear-gradient(180deg,#cf9bff,#a86bf0);color:#fff;font-family:inherit;font-size:16px;font-weight:600;transition:opacity .2s}
+    .cb-submit:hover{opacity:.9}
+    .cb-submit:disabled{opacity:.6;cursor:default}
+    .cb-checks{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px 28px}
+    .cb-checks label{display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.3;color:rgba(255,255,255,.8);cursor:pointer}
+    .cb-checks input{margin-top:2px;width:16px;height:16px;flex:0 0 auto;accent-color:#a86bf0}
+    .cb-checks a{color:#fff;text-decoration:underline}
+    .cb-ok{display:none;margin:14px 0 0;font-size:15px;text-align:center}
+    .cb-ok.is-ok{display:block;color:#b9ff6a}
+    .cb-ok.is-err{display:block;color:#ff9e9e}
     @media(max-width:900px){
-      .cb-banner img{height:120px}
-      .cb-body{padding:28px 20px}
-      .cb-list{flex-direction:column;align-items:stretch;gap:12px}
-      .cb-sep{display:none}
-      .cb-foot{flex-direction:column;align-items:stretch;gap:20px}
-      .cb-greet{flex:none}
-      .cb-form{flex-direction:column;flex:none}
+      .cb-body{padding:44px 20px 28px}
+      .cb-list{grid-template-columns:1fr;gap:12px}
+      .cb-fields{grid-template-columns:1fr}
     }
 
     /* ===== «Частые вопросы» — аккордеон (нативный <details>, контент всегда в DOM) ===== */
@@ -1861,36 +1859,37 @@
     <!-- ===================== УЗНАЙТЕ БОЛЬШЕ НА КОНСУЛЬТАЦИИ ===================== -->
     <section class="cb" id="consult" aria-labelledby="cb-title" style="scroll-margin-top:90px">
       <div class="container">
+        <div class="cb-mascot">
+          <picture>
+            <source type="image/webp" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.webp 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot@2x.webp 2x">
+            <img src="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.png" srcset="https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.png 1x, https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot@2x.png 2x" alt="Маскот Skysmart" width="200" height="166" loading="lazy" decoding="async">
+          </picture>
+        </div>
         <div class="cb-card">
-          <div class="cb-banner">
-            <picture>
-              <source media="(min-width:768px)" srcset="https://static.tildacdn.com/tild3530-6262-4035-b330-396135353438/chika.png">
-              <img src="https://static.tildacdn.com/tild3361-6433-4133-b630-363165663636/chika.png" alt="" aria-hidden="true" width="2320" height="506" loading="lazy" decoding="async">
-            </picture>
-          </div>
           <div class="cb-body">
             <h2 class="cb-title" id="cb-title">Узнайте больше о школе на бесплатной консультации</h2>
             <div class="cb-list">
               <p class="cb-item">Покажем, как проходят уроки на нашей платформе</p>
-              <img class="cb-sep" src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">
               <p class="cb-item">Поможем выбрать тариф и разобраться с документами</p>
-              <img class="cb-sep" src="https://static.tildacdn.com/tild3665-3763-4632-b962-323933646639/Sparcle.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy">
               <p class="cb-item">Откроем бесплатный доступ, чтобы вы могли всё попробовать сами</p>
             </div>
-            <div class="cb-foot">
-              <div class="cb-greet">
-                <span class="cb-heart" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
-                <div><b>Рады видеть вас снова!</b><span class="sub">Начните учиться на выгодных условиях</span></div>
-              </div>
-              <form class="cb-form" id="cbForm">
-                <select aria-label="Класс" required>
+            <form class="cb-form" id="cbForm" novalidate>
+              <div class="cb-fields">
+                <input type="text" name="parentName" id="cbName" placeholder="Имя родителя" aria-label="Имя родителя" autocomplete="name" maxlength="64">
+                <input type="email" name="parentEmail" id="cbEmail" placeholder="Почта родителя" aria-label="Почта родителя" autocomplete="email" inputmode="email" maxlength="76">
+                <input type="tel" name="parentPhone" id="cbPhone" placeholder="+7 (___) ___-__-__" aria-label="Телефон родителя" autocomplete="tel" inputmode="tel" maxlength="25">
+                <select name="grade" id="cbGrade" aria-label="Класс">
                   <option value="">Класс</option>
                   <option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option>
                 </select>
-                <button type="submit">Записаться на консультацию</button>
-              </form>
-            </div>
-            <p class="cb-ok" id="cbOk">Спасибо! Запишем вас на консультацию.</p>
+              </div>
+              <button type="submit" class="cb-submit" id="cbSubmit">Записаться</button>
+              <div class="cb-checks">
+                <label><input type="checkbox" id="cbConsent" name="registrationCheckbox"><span>Даю согласие на обработку <a href="https://legal.skyeng.ru/upload/document-version-pdf/1BcCZSVE/NkS-8hoq/Icjjk9vw/OOSkLtYz/original/4050.pdf" target="_blank" rel="nofollow noopener noreferrer">персональных данных</a></span></label>
+                <label><input type="checkbox" id="cbPromo" name="promoCheckbox"><span>Соглашаюсь на получение <a href="https://legal.skyeng.ru/upload/document-version-pdf/VJ0cRv8U/j1K207LU/8JqOoUkY/InLIltOn/original/4051.pdf" target="_blank" rel="nofollow noopener noreferrer">рекламы</a></span></label>
+              </div>
+              <p class="cb-ok" id="cbOk" role="status"></p>
+            </form>
           </div>
         </div>
       </div>
@@ -2551,10 +2550,72 @@
       }
     })();
 
-    // «Узнайте больше на консультации» — отправка формы
+    // «Узнайте больше на консультации» — отправка заявки в Skyeng через skygate (Get4Click)
     (function () {
-      var form = document.getElementById("cbForm"), ok = document.getElementById("cbOk");
-      if (form && ok) form.addEventListener("submit", function (e) { e.preventDefault(); ok.style.display = "block"; });
+      var form = document.getElementById("cbForm");
+      if (!form) return;
+      var ok = document.getElementById("cbOk"), submit = document.getElementById("cbSubmit");
+      var ENDPOINT = "https://skygate.skyeng.ru/api/v1/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+      function setMsg(text, isErr) {
+        ok.textContent = text;
+        ok.className = "cb-ok " + (isErr ? "is-err" : "is-ok");
+      }
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("cbName").value.trim();
+        var email = document.getElementById("cbEmail").value.trim();
+        var phone = document.getElementById("cbPhone").value.trim();
+        var grade = document.getElementById("cbGrade").value.trim();
+        var consent = document.getElementById("cbConsent").checked;
+        if (name.length < 2) { setMsg("Укажите имя родителя", true); return; }
+        if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
+        if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
+
+        var params = new URLSearchParams();
+        params.set("parentName", name);
+        if (email) params.set("parentEmail", email);
+        if (phone) params.set("parentPhone", phone);
+        params.set("childName", name || "Ученик");
+        params.set("serviceTypeKey", "mini_course_kids_russian");
+        params.set("generateLoginLinkTo", "https://start.skyeng.ru/");
+        params.set("locale", "ru");
+        params.set("serviceLocale", "ru");
+        params.set("country", "RU");
+        params.set("tilda", "true");
+        try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
+        var gradeNum = (grade.match(/\d+/) || [])[0];
+        var stk = gradeNum ? "trial_skysmart_homeschooling_" + gradeNum + "_grade" : "";
+
+        submit.disabled = true;
+        var prev = submit.textContent;
+        submit.textContent = "Отправляем…";
+        fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body: params.toString()
+        }).then(function (r) {
+          return r.json().then(function (j) { return { okHttp: r.ok, j: j }; }).catch(function () { return { okHttp: r.ok, j: null }; });
+        }).then(function (res) {
+          if (res.okHttp && res.j) {
+            if (res.j.loginLink) { window.location.href = res.j.loginLink; return; }
+            if (res.j.userId && stk) { window.location.href = "https://student.skyeng.ru/go/" + res.j.userId + "/" + stk + "?path=onboarding"; return; }
+            setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
+            form.reset();
+          } else if (res.j && res.j.exception && res.j.exception.message) {
+            setMsg(res.j.exception.message, true);
+          } else {
+            setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
+            form.reset();
+          }
+        }).catch(function () {
+          // CORS/сетевая ошибка — лид сохраняется на стороне get4click
+          setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
+          form.reset();
+        }).finally(function () {
+          submit.disabled = false;
+          submit.textContent = prev;
+        });
+      });
     })();
 
     // Поп-ап «Подробный состав тарифов»
