@@ -437,18 +437,19 @@
     .trial-welcome .wt{color:#fff}
     .trial-welcome .wt b{display:block;font-size:18px;font-weight:600}
     .trial-welcome .wt span{font-size:14px;color:rgba(255,255,255,.7)}
-    .trial-form{margin-top:16px;display:flex;flex-direction:column;gap:12px}
-    .trial-select{position:relative}
-    .trial-select-btn{width:100%;height:48px;background:#fff;border-radius:12px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:16px;color:var(--fg);border:0;font-family:inherit}
-    .trial-select-btn svg{transition:transform .2s;flex:0 0 auto}
-    .trial-select.open .trial-select-btn svg{transform:rotate(180deg)}
-    .trial-select-list{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:8px 0;z-index:20;display:none;list-style:none;margin:0;max-height:264px;overflow-y:auto}
-    .trial-select.open .trial-select-list{display:block}
-    .trial-option{padding:12px 16px;cursor:pointer;font-size:16px;color:var(--fg)}
-    .trial-option:hover{background:#f4f4f4}
+    .trial-form{display:flex;flex-direction:column;gap:12px}
+    .trial-form input[type=text],.trial-form input[type=email],.trial-form input[type=tel],.trial-form select{height:48px;border:0;border-radius:12px;background:#fff;padding:0 16px;font-family:inherit;font-size:16px;color:var(--fg);width:100%}
+    .trial-form select{cursor:pointer}
     .trial-btn{height:48px;border-radius:12px;background:#04121b;color:#fff;font-weight:600;font-size:16px;border:0;cursor:pointer;transition:background .2s;font-family:inherit}
     .trial-btn:hover{background:#1b2a36}
-    .trial-ok{display:none;color:#fff;font-size:14px;font-weight:600}
+    .trial-btn:disabled{opacity:.6;cursor:default}
+    .trial-checks{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+    .trial-checks label{display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.3;color:rgba(255,255,255,.9);cursor:pointer}
+    .trial-checks input{margin-top:2px;width:16px;height:16px;flex:0 0 auto;accent-color:#04121b}
+    .trial-checks a{color:#fff;text-decoration:underline}
+    .trial-ok{display:none;font-size:14px;font-weight:600}
+    .trial-ok.is-ok{display:block;color:#fff}
+    .trial-ok.is-err{display:block;color:#ffe08a}
     @media(max-width:1000px){
       .trial-grid{grid-template-columns:1fr}
       .trial-card{padding:24px}
@@ -2021,29 +2022,21 @@
               </picture>
             </div>
             <div>
-              <div class="trial-welcome">
-                <span class="trial-heart" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="#04121b"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg></span>
-                <div class="wt"><b>Рады видеть вас снова!</b><span>Выбирайте класс и начинайте учиться</span></div>
-              </div>
-              <div class="trial-form">
-                <div class="trial-select" id="trialSelect">
-                  <button class="trial-select-btn" type="button" id="trialSelectBtn" aria-haspopup="listbox" aria-expanded="false">
-                    <span id="trialSelectVal">Триал 9 класс</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 14.086 6.207 8.293 4.793 9.707l6.323 6.323a1.25 1.25 0 0 0 1.768 0l6.323-6.323-1.414-1.414L12 14.086Z" clip-rule="evenodd"/></svg>
-                  </button>
-                  <ul class="trial-select-list" role="listbox">
-                    <li class="trial-option" role="option">Триал 5 класс</li>
-                    <li class="trial-option" role="option">Триал 6 класс</li>
-                    <li class="trial-option" role="option">Триал 7 класс</li>
-                    <li class="trial-option" role="option">Триал 8 класс</li>
-                    <li class="trial-option" role="option">Триал 9 класс</li>
-                    <li class="trial-option" role="option">Триал 10 класс</li>
-                    <li class="trial-option" role="option">Триал 11 класс</li>
-                  </ul>
+              <form class="trial-form" id="trialForm" novalidate>
+                <input type="text" id="trName" placeholder="Имя родителя" aria-label="Имя родителя" autocomplete="name" maxlength="64">
+                <input type="email" id="trEmail" placeholder="Почта родителя" aria-label="Почта родителя" autocomplete="email" inputmode="email" maxlength="76">
+                <input type="tel" id="trPhone" placeholder="+7 (___) ___-__-__" aria-label="Телефон родителя" autocomplete="tel" inputmode="tel" maxlength="25">
+                <select id="trGrade" aria-label="Класс">
+                  <option value="">Класс</option>
+                  <option>5 класс</option><option>6 класс</option><option>7 класс</option><option>8 класс</option><option>9 класс</option><option>10 класс</option><option>11 класс</option>
+                </select>
+                <button class="trial-btn" type="submit" id="trialSubmit">Начать учиться бесплатно</button>
+                <div class="trial-checks">
+                  <label><input type="checkbox" id="trConsent"><span>Даю согласие на обработку <a href="https://legal.skyeng.ru/upload/document-version-pdf/1BcCZSVE/NkS-8hoq/Icjjk9vw/OOSkLtYz/original/4050.pdf" target="_blank" rel="nofollow noopener noreferrer">персональных данных</a></span></label>
+                  <label><input type="checkbox" id="trPromo"><span>Соглашаюсь на получение <a href="https://legal.skyeng.ru/upload/document-version-pdf/VJ0cRv8U/j1K207LU/8JqOoUkY/InLIltOn/original/4051.pdf" target="_blank" rel="nofollow noopener noreferrer">рекламы</a></span></label>
                 </div>
-                <button class="trial-btn" type="button" id="trialSubmit">Начать учиться бесплатно</button>
-                <p class="trial-ok" id="trialOk">Спасибо! Откроем доступ и свяжемся с вами.</p>
-              </div>
+                <p class="trial-ok" id="trialOk" role="status"></p>
+              </form>
             </div>
           </div>
         </div>
@@ -2329,33 +2322,66 @@
     }
     initSlider("worryTrack", "worryPrev", "worryNext", "worryDots");
 
-    // Выпадающий список «Триал N класс»
+    // «Попробуйте 7 дней бесплатно» — отправка заявки в Skyeng через skygate (stk = trial_skysmart_homeschooling)
     (function () {
-      var sel = document.getElementById("trialSelect");
-      if (!sel) return;
-      var btn = document.getElementById("trialSelectBtn");
-      var val = document.getElementById("trialSelectVal");
-      btn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        sel.classList.toggle("open");
-        btn.setAttribute("aria-expanded", sel.classList.contains("open"));
-      });
-      sel.querySelectorAll(".trial-option").forEach(function (opt) {
-        opt.addEventListener("click", function () {
-          val.textContent = opt.textContent;
-          sel.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
+      var form = document.getElementById("trialForm");
+      if (!form) return;
+      var ok = document.getElementById("trialOk"), submit = document.getElementById("trialSubmit");
+      var ENDPOINT = "https://skygate.skyeng.ru/api/v1/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+      var STK = "trial_skysmart_homeschooling";
+      function setMsg(text, isErr) { ok.textContent = text; ok.className = "trial-ok " + (isErr ? "is-err" : "is-ok"); }
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = document.getElementById("trName").value.trim();
+        var email = document.getElementById("trEmail").value.trim();
+        var phone = document.getElementById("trPhone").value.trim();
+        var consent = document.getElementById("trConsent").checked;
+        if (name.length < 2) { setMsg("Укажите имя родителя", true); return; }
+        if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
+        if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
+
+        var params = new URLSearchParams();
+        params.set("parentName", name);
+        if (email) params.set("parentEmail", email);
+        if (phone) params.set("parentPhone", phone);
+        params.set("childName", name || "Ученик");
+        params.set("serviceTypeKey", "mini_course_kids_russian");
+        params.set("generateLoginLinkTo", "https://start.skyeng.ru/");
+        params.set("locale", "ru");
+        params.set("serviceLocale", "ru");
+        params.set("country", "RU");
+        params.set("tilda", "true");
+        try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
+
+        submit.disabled = true;
+        var prev = submit.textContent;
+        submit.textContent = "Отправляем…";
+        fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+          body: params.toString()
+        }).then(function (r) {
+          return r.json().then(function (j) { return { okHttp: r.ok, j: j }; }).catch(function () { return { okHttp: r.ok, j: null }; });
+        }).then(function (res) {
+          if (res.okHttp && res.j) {
+            if (res.j.loginLink) { window.location.href = res.j.loginLink; return; }
+            if (res.j.userId && STK) { window.location.href = "https://student.skyeng.ru/go/" + res.j.userId + "/" + STK + "?path=onboarding"; return; }
+            setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
+            form.reset();
+          } else if (res.j && res.j.exception && res.j.exception.message) {
+            setMsg(res.j.exception.message, true);
+          } else {
+            setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
+            form.reset();
+          }
+        }).catch(function () {
+          setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
+          form.reset();
+        }).finally(function () {
+          submit.disabled = false;
+          submit.textContent = prev;
         });
       });
-      document.addEventListener("click", function (e) {
-        if (!sel.contains(e.target)) {
-          sel.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-        }
-      });
-      var submit = document.getElementById("trialSubmit");
-      var ok = document.getElementById("trialOk");
-      if (submit && ok) submit.addEventListener("click", function () { ok.style.display = "block"; });
     })();
 
     // Слайдер преподавателей + поп-ап видео урока
@@ -2584,7 +2610,7 @@
         params.set("tilda", "true");
         try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
         var gradeNum = (grade.match(/\d+/) || [])[0];
-        var stk = gradeNum ? "trial_skysmart_homeschooling_" + gradeNum + "_grade" : "";
+        var stk = gradeNum ? "skysmart_homeschooling_" + gradeNum + "_grade" : "";
 
         submit.disabled = true;
         var prev = submit.textContent;

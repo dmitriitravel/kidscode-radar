@@ -40,11 +40,12 @@ export function ConsultBooking() {
       return;
     }
     setPending(true);
+    const gradeNum = grade.match(/\d+/)?.[0];
     const result = await submitLead({
       parentName: name,
       parentEmail: email,
       parentPhone: phone,
-      grade,
+      stk: gradeNum ? `skysmart_homeschooling_${gradeNum}_grade` : "",
     });
     setPending(false);
     if (result.redirect) {

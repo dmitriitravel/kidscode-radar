@@ -6,7 +6,8 @@ export interface LeadData {
   parentName: string;
   parentEmail?: string;
   parentPhone?: string;
-  grade?: string; // строка вида «8 класс» или число
+  // stk используется для сборки ссылки онбординга у пользователей с кабинетом.
+  stk?: string;
 }
 
 export interface LeadResult {
@@ -36,8 +37,7 @@ export async function submitLead(data: LeadData): Promise<LeadResult> {
     /* noop */
   }
 
-  const gradeNum = (data.grade || "").match(/\d+/)?.[0];
-  const stk = gradeNum ? `trial_skysmart_homeschooling_${gradeNum}_grade` : "";
+  const stk = data.stk || "";
 
   try {
     const res = await fetch(ENDPOINT, {

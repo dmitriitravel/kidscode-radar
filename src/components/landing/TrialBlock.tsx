@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
+import { submitLead } from "@/lib/leadSubmit";
 
-// «Попробуйте 7 дней учёбы в лицее бесплатно» — адаптивный лид-блок.
+// «Попробуйте 7 дней учёбы в лицее бесплатно» — адаптивный лид-блок с формой заявки.
 const LF_BASE =
   "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/lead-form/png";
 
@@ -12,7 +12,8 @@ const FEATURES = [
   "Интерактивные задания и домашки с автопроверкой",
 ];
 
-const GRADES = [5, 6, 7, 8, 9, 10, 11].map((g) => `Триал ${g} класс`);
+const GRADES = [5, 6, 7, 8, 9, 10, 11].map((g) => `${g} класс`);
+const TRIAL_STK = "trial_skysmart_homeschooling";
 
 function CheckIcon() {
   return (
@@ -23,57 +24,56 @@ function CheckIcon() {
   );
 }
 
-function TrialSelect() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("Триал 9 класс");
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const onDoc = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("click", onDoc);
-    return () => document.removeEventListener("click", onDoc);
-  }, []);
-
-  return (
-    <div className="relative" ref={ref}>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        className="flex h-12 w-full items-center justify-between rounded-xl bg-white px-4 text-base text-foreground"
-      >
-        <span>{value}</span>
-        <ChevronDown className={`h-5 w-5 transition-transform ${open ? "rotate-180" : ""}`} />
-      </button>
-      {open && (
-        <ul
-          role="listbox"
-          className="absolute left-0 right-0 top-[calc(100%+8px)] z-20 max-h-[264px] overflow-y-auto rounded-xl bg-white py-2 shadow-[0_10px_30px_rgba(0,0,0,0.18)]"
-        >
-          {GRADES.map((g) => (
-            <li key={g} role="option" aria-selected={g === value}>
-              <button
-                type="button"
-                onClick={() => {
-                  setValue(g);
-                  setOpen(false);
-                }}
-                className="block w-full px-4 py-3 text-left text-base text-foreground hover:bg-muted"
-              >
-                {g}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
-
 export function TrialBlock() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [grade, setGrade] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [promo, setPromo] = useState(false);
+  const [pending, setPending] = useState(false);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (name.trim().length < 2) {
+      toast.error("Укажите имя родителя");
+      return;
+    }
+    if (!email.trim() && !phone.trim()) {
+      toast.error("Укажите телефон или e-mail");
+      return;
+    }
+    if (!consent) {
+      toast.error("Нужно согласие на обработку персональных данных");
+      return;
+    }
+    setPending(true);
+    const result = await submitLead({
+      parentName: name,
+      parentEmail: email,
+      parentPhone: phone,
+      stk: TRIAL_STK,
+    });
+    setPending(false);
+    if (result.redirect) {
+      window.location.href = result.redirect;
+      return;
+    }
+    if (result.ok) {
+      toast.success("Спасибо! Откроем доступ и свяжемся с вами.");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setGrade("");
+      setConsent(false);
+      setPromo(false);
+    } else {
+      toast.error(result.error || "Не удалось отправить заявку.");
+    }
+  };
+
+  const fieldClass = "h-12 w-full rounded-xl border-0 bg-white px-4 text-base text-foreground placeholder:text-muted-foreground";
+
   return (
     <section id="trial" aria-labelledby="trial-title" className="scroll-mt-24 bg-secondary/60 py-14 sm:py-16">
       <div className="container-page">
@@ -81,7 +81,7 @@ export function TrialBlock() {
           className="relative rounded-[24px] p-6 sm:p-10 md:rounded-[32px]"
           style={{ background: "linear-gradient(180deg,#D571FF 0%,#B400FF 74.82%)" }}
         >
-          <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_minmax(0,360px)_minmax(300px,330px)]">
+          <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_minmax(0,320px)_minmax(320px,360px)]">
             {/* Текст и список */}
             <div>
               <h2 id="trial-title" className="text-3xl font-bold leading-tight text-white sm:text-4xl">
@@ -113,28 +113,97 @@ export function TrialBlock() {
             </div>
 
             {/* Форма */}
-            <div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full" style={{ backgroundColor: "#ff9e00" }} aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#04121b"><path d="M12 21s-7.5-4.6-7.5-9.7C4.5 8 6.6 6 9.1 6c1.6 0 2.6.8 2.9 1.6C12.3 6.8 13.3 6 14.9 6c2.5 0 4.6 2 4.6 5.3C19.5 16.4 12 21 12 21z"/></svg>
-                </span>
-                <div className="text-white">
-                  <div className="text-lg font-semibold">Рады видеть вас снова!</div>
-                  <div className="text-sm text-white/70">Выбирайте класс и начинайте учиться</div>
-                </div>
+            <form onSubmit={onSubmit} noValidate className="space-y-3">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Имя родителя"
+                aria-label="Имя родителя"
+                autoComplete="name"
+                className={fieldClass}
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Почта родителя"
+                aria-label="Почта родителя"
+                autoComplete="email"
+                inputMode="email"
+                className={fieldClass}
+              />
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="+7 (___) ___-__-__"
+                aria-label="Телефон родителя"
+                autoComplete="tel"
+                inputMode="tel"
+                className={fieldClass}
+              />
+              <select
+                value={grade}
+                onChange={(e) => setGrade(e.target.value)}
+                aria-label="Класс"
+                className={`${fieldClass} appearance-none`}
+              >
+                <option value="" disabled>Класс</option>
+                {GRADES.map((g) => (
+                  <option key={g} value={g}>{g}</option>
+                ))}
+              </select>
+              <button
+                type="submit"
+                disabled={pending}
+                className="h-12 w-full rounded-xl text-base font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+                style={{ backgroundColor: "#04121b" }}
+              >
+                {pending ? "Отправляем…" : "Начать учиться бесплатно"}
+              </button>
+
+              <div className="space-y-2 pt-1 text-sm text-white/90">
+                <label className="flex items-start gap-2">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-[#04121b]"
+                  />
+                  <span>
+                    Даю согласие на обработку{" "}
+                    <a
+                      href="https://legal.skyeng.ru/upload/document-version-pdf/1BcCZSVE/NkS-8hoq/Icjjk9vw/OOSkLtYz/original/4050.pdf"
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      className="underline"
+                    >
+                      персональных данных
+                    </a>
+                  </span>
+                </label>
+                <label className="flex items-start gap-2">
+                  <input
+                    type="checkbox"
+                    checked={promo}
+                    onChange={(e) => setPromo(e.target.checked)}
+                    className="mt-0.5 h-4 w-4 shrink-0 accent-[#04121b]"
+                  />
+                  <span>
+                    Соглашаюсь на получение{" "}
+                    <a
+                      href="https://legal.skyeng.ru/upload/document-version-pdf/VJ0cRv8U/j1K207LU/8JqOoUkY/InLIltOn/original/4051.pdf"
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      className="underline"
+                    >
+                      рекламы
+                    </a>
+                  </span>
+                </label>
               </div>
-              <div className="mt-4 space-y-3">
-                <TrialSelect />
-                <button
-                  type="button"
-                  onClick={() => toast.success("Спасибо! Откроем доступ и свяжемся с вами.")}
-                  className="h-12 w-full rounded-xl text-base font-semibold text-white"
-                  style={{ backgroundColor: "#04121b" }}
-                >
-                  Начать учиться бесплатно
-                </button>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
