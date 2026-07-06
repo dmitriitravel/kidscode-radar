@@ -58,6 +58,8 @@ export function ConsultBooking() {
       parentPhone: phone,
       stk: gradeNum ? `skysmart_homeschooling_${gradeNum}_grade` : "",
       uuid: gradeNum ? UUID_BY_GRADE[gradeNum] : undefined,
+      productKitCode: gradeNum ? `skysmart_homeschooling_${gradeNum}_grade` : undefined,
+      promo,
     });
     setPending(false);
     if (result.redirect) {

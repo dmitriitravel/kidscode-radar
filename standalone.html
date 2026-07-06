@@ -2597,17 +2597,19 @@
         if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
+        var promo = document.getElementById("cbPromo").checked;
         var params = new URLSearchParams();
         params.set("parentName", name);
         if (email) params.set("parentEmail", email);
         if (phone) params.set("parentPhone", phone);
-        params.set("childName", name || "Ученик");
-        params.set("serviceTypeKey", "mini_course_kids_russian");
+        params.set("childName", name || "Ребенок");
         params.set("generateLoginLinkTo", "https://start.skyeng.ru/");
         params.set("locale", "ru");
         params.set("serviceLocale", "ru");
         params.set("country", "RU");
         params.set("tilda", "true");
+        params.set("registrationCheckbox", "true");
+        if (promo) params.set("promoCheckbox", "true");
         try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
         var gradeNum = (grade.match(/\d+/) || [])[0];
         var stk = gradeNum ? "skysmart_homeschooling_" + gradeNum + "_grade" : "";
@@ -2621,12 +2623,26 @@
           "11": "ec3fd476-c0f0-44e8-a6c7-14c337bcbd53"
         };
         if (stk) params.set("stk", stk);
-        if (gradeNum && UUID_BY_GRADE[gradeNum]) params.set("uuid", UUID_BY_GRADE[gradeNum]);
+        var uuid = gradeNum ? UUID_BY_GRADE[gradeNum] : "";
+        var productKitCode = gradeNum ? "skysmart_homeschooling_" + gradeNum + "_grade" : "";
+        var isPackage = !!(uuid && productKitCode);
+        var endpoint;
+        if (isPackage) {
+          // Package-режим (комплектация): tariffUuid + productKitCode, без serviceTypeKey
+          params.set("tariffUuid", uuid);
+          params.set("uuid", uuid);
+          params.set("productKitCode", productKitCode);
+          endpoint = "https://skygate.skysmart.ru/api/v1/es-kit/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+        } else {
+          params.set("serviceTypeKey", "mini_course_kids_russian");
+          if (uuid) params.set("uuid", uuid);
+          endpoint = ENDPOINT;
+        }
 
         submit.disabled = true;
         var prev = submit.textContent;
         submit.textContent = "Отправляем…";
-        fetch(ENDPOINT, {
+        fetch(endpoint, {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
           body: params.toString()
@@ -2634,6 +2650,7 @@
           return r.json().then(function (j) { return { okHttp: r.ok, j: j }; }).catch(function () { return { okHttp: r.ok, j: null }; });
         }).then(function (res) {
           if (res.okHttp && res.j) {
+            if (res.j.redirectUrl) { window.location.href = res.j.redirectUrl; return; }
             if (res.j.loginLink) { window.location.href = res.j.loginLink; return; }
             if (res.j.userId && stk) { window.location.href = "https://student.skyeng.ru/go/" + res.j.userId + "/" + stk + "?path=onboarding"; return; }
             setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
