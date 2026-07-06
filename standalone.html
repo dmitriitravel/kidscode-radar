@@ -2611,6 +2611,17 @@
         try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
         var gradeNum = (grade.match(/\d+/) || [])[0];
         var stk = gradeNum ? "skysmart_homeschooling_" + gradeNum + "_grade" : "";
+        var UUID_BY_GRADE = {
+          "5": "6e84a51e-181d-4515-b70c-4ee834120730",
+          "6": "866bec87-e956-4c26-9155-06b1566458a5",
+          "7": "2a3c7dbc-30c2-428d-82dc-4869fd640010",
+          "8": "0d57ce9b-3d43-47e6-9fa7-a81e081a4ce1",
+          "9": "e9f472bc-b86a-426f-b7f4-2dbca44b8b07",
+          "10": "a1272ff1-6129-419c-b405-bc70cc9f9021",
+          "11": "ec3fd476-c0f0-44e8-a6c7-14c337bcbd53"
+        };
+        if (stk) params.set("stk", stk);
+        if (gradeNum && UUID_BY_GRADE[gradeNum]) params.set("uuid", UUID_BY_GRADE[gradeNum]);
 
         submit.disabled = true;
         var prev = submit.textContent;

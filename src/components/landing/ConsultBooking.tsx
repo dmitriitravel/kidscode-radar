@@ -16,6 +16,17 @@ const BENEFITS = [
 
 const GRADES = [5, 6, 7, 8, 9, 10, 11].map((g) => `${g} класс`);
 
+// UUID комплектации по классу (для отправки заявки).
+const UUID_BY_GRADE: Record<string, string> = {
+  "5": "6e84a51e-181d-4515-b70c-4ee834120730",
+  "6": "866bec87-e956-4c26-9155-06b1566458a5",
+  "7": "2a3c7dbc-30c2-428d-82dc-4869fd640010",
+  "8": "0d57ce9b-3d43-47e6-9fa7-a81e081a4ce1",
+  "9": "e9f472bc-b86a-426f-b7f4-2dbca44b8b07",
+  "10": "a1272ff1-6129-419c-b405-bc70cc9f9021",
+  "11": "ec3fd476-c0f0-44e8-a6c7-14c337bcbd53",
+};
+
 export function ConsultBooking() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -46,6 +57,7 @@ export function ConsultBooking() {
       parentEmail: email,
       parentPhone: phone,
       stk: gradeNum ? `skysmart_homeschooling_${gradeNum}_grade` : "",
+      uuid: gradeNum ? UUID_BY_GRADE[gradeNum] : undefined,
     });
     setPending(false);
     if (result.redirect) {

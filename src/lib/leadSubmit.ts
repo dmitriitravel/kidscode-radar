@@ -6,8 +6,11 @@ export interface LeadData {
   parentName: string;
   parentEmail?: string;
   parentPhone?: string;
-  // stk используется для сборки ссылки онбординга у пользователей с кабинетом.
+  // stk используется для сборки ссылки онбординга у пользователей с кабинетом
+  // и передаётся в теле заявки.
   stk?: string;
+  // uuid выбранной комплектации/класса (передаётся в теле заявки).
+  uuid?: string;
 }
 
 export interface LeadResult {
@@ -38,6 +41,8 @@ export async function submitLead(data: LeadData): Promise<LeadResult> {
   }
 
   const stk = data.stk || "";
+  if (stk) params.set("stk", stk);
+  if (data.uuid) params.set("uuid", data.uuid);
 
   try {
     const res = await fetch(ENDPOINT, {
