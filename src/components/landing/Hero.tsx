@@ -72,7 +72,9 @@ export function Hero() {
               <div className="flex flex-wrap gap-3.5">
                 <button
                   type="button"
-                  onClick={() => window.dispatchEvent(new CustomEvent("skysmart:open-consult"))}
+                  onClick={() =>
+                    document.getElementById("consult")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  }
                   className="btn-dark inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-base font-semibold"
                 >
                   Получить консультацию

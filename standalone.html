@@ -2490,14 +2490,16 @@
       function show() { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
       function hide() { modal.classList.remove("open"); document.body.style.overflow = ""; }
       // «Подобрать расписание» — скролл к блоку «Узнайте больше о школе на бесплатной консультации»
-      openBtn.addEventListener("click", function () {
+      openBtn.addEventListener("click", scrollToConsult);
+      function scrollToConsult() {
         var target = document.getElementById("consult");
         if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+      }
       var bannerBtn = document.getElementById("consultBannerOpen");
       if (bannerBtn) bannerBtn.addEventListener("click", show);
+      // «Получить консультацию» в hero — скролл к форме «Узнайте больше о школе…»
       var heroBtn = document.getElementById("heroConsult");
-      if (heroBtn) heroBtn.addEventListener("click", show);
+      if (heroBtn) heroBtn.addEventListener("click", scrollToConsult);
       document.getElementById("pickClose").addEventListener("click", hide);
       document.getElementById("pickBack").addEventListener("click", hide);
       modal.addEventListener("click", function (e) { if (e.target === modal) hide(); });
