@@ -109,7 +109,9 @@ export function PickSchedule() {
           <div className="order-2 md:order-3 md:shrink-0">
             <button
               type="button"
-              onClick={() => setOpen(true)}
+              onClick={() =>
+                document.getElementById("consult")?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
               className="inline-flex w-full items-center justify-center rounded-xl px-8 py-4 text-base font-semibold text-white transition-colors hover:opacity-90 md:w-auto"
               style={{ backgroundColor: "#04121b" }}
             >

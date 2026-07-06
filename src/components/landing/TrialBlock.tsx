@@ -53,6 +53,7 @@ export function TrialBlock() {
       parentEmail: email,
       parentPhone: phone,
       stk: TRIAL_STK,
+      promo,
     });
     setPending(false);
     if (result.redirect) {

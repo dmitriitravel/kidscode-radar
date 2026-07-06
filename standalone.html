@@ -2336,21 +2336,26 @@
         var email = document.getElementById("trEmail").value.trim();
         var phone = document.getElementById("trPhone").value.trim();
         var consent = document.getElementById("trConsent").checked;
+        var promo = document.getElementById("trPromo").checked;
         if (name.length < 2) { setMsg("Укажите имя родителя", true); return; }
         if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
+        // Триал — обычный STK-режим (не комплектация): serviceTypeKey обязателен, stk фиксированный.
         var params = new URLSearchParams();
         params.set("parentName", name);
         if (email) params.set("parentEmail", email);
         if (phone) params.set("parentPhone", phone);
-        params.set("childName", name || "Ученик");
+        params.set("childName", name || "Ребенок");
         params.set("serviceTypeKey", "mini_course_kids_russian");
+        params.set("stk", STK);
         params.set("generateLoginLinkTo", "https://start.skyeng.ru/");
         params.set("locale", "ru");
         params.set("serviceLocale", "ru");
         params.set("country", "RU");
         params.set("tilda", "true");
+        params.set("registrationCheckbox", "true");
+        if (promo) params.set("promoCheckbox", "true");
         try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
 
         submit.disabled = true;
@@ -2364,6 +2369,7 @@
           return r.json().then(function (j) { return { okHttp: r.ok, j: j }; }).catch(function () { return { okHttp: r.ok, j: null }; });
         }).then(function (res) {
           if (res.okHttp && res.j) {
+            if (res.j.redirectUrl) { window.location.href = res.j.redirectUrl; return; }
             if (res.j.loginLink) { window.location.href = res.j.loginLink; return; }
             if (res.j.userId && STK) { window.location.href = "https://student.skyeng.ru/go/" + res.j.userId + "/" + STK + "?path=onboarding"; return; }
             setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
@@ -2483,7 +2489,11 @@
       if (!openBtn || !modal) return;
       function show() { modal.classList.add("open"); document.body.style.overflow = "hidden"; }
       function hide() { modal.classList.remove("open"); document.body.style.overflow = ""; }
-      openBtn.addEventListener("click", show);
+      // «Подобрать расписание» — скролл к блоку «Узнайте больше о школе на бесплатной консультации»
+      openBtn.addEventListener("click", function () {
+        var target = document.getElementById("consult");
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
       var bannerBtn = document.getElementById("consultBannerOpen");
       if (bannerBtn) bannerBtn.addEventListener("click", show);
       var heroBtn = document.getElementById("heroConsult");
