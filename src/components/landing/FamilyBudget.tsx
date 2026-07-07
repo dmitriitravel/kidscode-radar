@@ -25,40 +25,76 @@ const CARDS = [
 export function FamilyBudget() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(1);
+  // Кэш геометрии карточек, чтобы не читать offsetLeft/clientWidth на каждом кадре скролла (forced reflow).
+  const centers = useRef<number[]>([]);
+  const starts = useRef<number[]>([]);
+  const trackW = useRef(0);
+  const rafId = useRef<number | null>(null);
+
+  const measure = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const tw = track.clientWidth;
+    trackW.current = tw;
+    const c: number[] = [];
+    const s: number[] = [];
+    Array.from(track.children).forEach((el) => {
+      const card = el as HTMLElement;
+      c.push(card.offsetLeft + card.clientWidth / 2);
+      s.push(card.offsetLeft - (tw - card.clientWidth) / 2);
+    });
+    centers.current = c;
+    starts.current = s;
+  };
 
   const scrollToIndex = (i: number, smooth = true) => {
     const track = trackRef.current;
     if (!track) return;
-    const card = track.children[i] as HTMLElement | undefined;
-    if (!card) return;
-    const left = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+    if (!starts.current.length) measure();
+    const left = starts.current[i];
+    if (left == null) return;
     track.scrollTo({ left, behavior: smooth ? "smooth" : "auto" });
   };
 
-  // На мобильных по умолчанию показываем вторую карточку (по центру).
-  // requestAnimationFrame + чтение геометрии в одном кадре, чтобы избежать forced reflow.
   useEffect(() => {
-    if (typeof window === "undefined" || !window.matchMedia("(max-width:1023px)").matches) return;
-    const id = requestAnimationFrame(() => scrollToIndex(1, false));
-    return () => cancelAnimationFrame(id);
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(measure, 150);
+    };
+    // Все чтения геометрии — в одном кадре после первого рендера.
+    const id = requestAnimationFrame(() => {
+      measure();
+      if (window.matchMedia("(max-width:1023px)").matches) scrollToIndex(1, false);
+    });
+    window.addEventListener("resize", onResize);
+    return () => {
+      cancelAnimationFrame(id);
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", onResize);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onScroll = () => {
-    const track = trackRef.current;
-    if (!track) return;
-    const center = track.scrollLeft + track.clientWidth / 2;
-    let nearest = 0;
-    let best = Infinity;
-    Array.from(track.children).forEach((el, i) => {
-      const c = el as HTMLElement;
-      const mid = c.offsetLeft + c.clientWidth / 2;
-      const d = Math.abs(mid - center);
-      if (d < best) {
-        best = d;
-        nearest = i;
-      }
+    if (rafId.current) return;
+    rafId.current = requestAnimationFrame(() => {
+      rafId.current = null;
+      const track = trackRef.current;
+      if (!track || !centers.current.length) return;
+      const center = track.scrollLeft + trackW.current / 2; // единственное чтение на кадр
+      let nearest = 0;
+      let best = Infinity;
+      centers.current.forEach((mid, i) => {
+        const d = Math.abs(mid - center);
+        if (d < best) {
+          best = d;
+          nearest = i;
+        }
+      });
+      setActive(nearest);
     });
-    setActive(nearest);
   };
 
   return (

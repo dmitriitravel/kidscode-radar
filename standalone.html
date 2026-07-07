@@ -297,9 +297,11 @@
     }
   </style>
 
-  <!-- Некритичные стили (ниже первого экрана) — применяются после первой отрисовки.
-       media="print" исключает их из рендер-блокирующего пути; скрипт ниже переключает на "all". -->
-  <style media="print" id="deferred-styles">
+  <!-- Некритичные стили (ниже первого экрана): хранятся как инертный текст (type="text/css",
+       не парсится браузером при загрузке), инжектятся в <style> после первой отрисовки.
+       Так большой CSS не блокирует рендер LCP. -->
+  <style id="deferred-styles"></style>
+  <script type="text/css" id="deferred-css">
     /* ===== Промо-баннер (Figma: header and subtext / horizontal / size M) ===== */
     .promo-banner{position:relative;overflow:hidden;background:#091e2a;border-radius:24px;display:flex;align-items:center;justify-content:center;min-height:224px;padding:36px 260px}
     .promo-banner .pb-img{position:absolute;bottom:0;pointer-events:none;user-select:none;height:auto}
@@ -1025,13 +1027,15 @@
     @media(max-width:560px){.ft-top{grid-template-columns:1fr}}
 
     .mt40{margin-top:40px}.mt24{margin-top:24px}.mt16{margin-top:16px}
-  </style>
+  </script>
   <script>
-    // Применяем некритичные стили после первой отрисовки (Critical CSS pattern).
+    // Инжектим некритичные стили после первой отрисовки (Critical CSS pattern):
+    // большой CSS не парсится в критическом пути и не задерживает LCP.
     (function () {
-      var s = document.getElementById("deferred-styles");
-      if (!s) return;
-      function apply() { s.media = "all"; }
+      var target = document.getElementById("deferred-styles"), src = document.getElementById("deferred-css");
+      if (!target || !src) return;
+      var applied = false;
+      function apply() { if (applied) return; applied = true; target.textContent = src.textContent; }
       if ("requestAnimationFrame" in window) {
         requestAnimationFrame(function () { requestAnimationFrame(apply); });
       } else { apply(); }
@@ -2675,37 +2679,48 @@
       var track = document.getElementById("fbTrack");
       if (!track) return;
       var cards = track.children, dots = document.querySelectorAll("#fbDots span"), active = 1;
+      // Кэш геометрии карточек — чтобы не читать offsetLeft/clientWidth на каждом кадре скролла (forced reflow).
+      var centers = [], starts = [], trackW = 0;
+      function measure() {
+        trackW = track.clientWidth;
+        centers = []; starts = [];
+        for (var i = 0; i < cards.length; i++) {
+          var l = cards[i].offsetLeft, w = cards[i].clientWidth;
+          starts.push(l - (trackW - w) / 2);
+          centers.push(l + w / 2);
+        }
+      }
       function centerTo(i) {
         i = Math.max(0, Math.min(cards.length - 1, i));
-        var c = cards[i];
-        if (!c) return;
-        track.scrollTo({ left: c.offsetLeft - (track.clientWidth - c.clientWidth) / 2, behavior: "smooth" });
+        if (!centers.length) measure();
+        if (starts[i] == null) return;
+        track.scrollTo({ left: starts[i], behavior: "smooth" });
       }
       function syncDots() {
-        var center = track.scrollLeft + track.clientWidth / 2, nearest = 0, best = Infinity;
-        for (var i = 0; i < cards.length; i++) {
-          var mid = cards[i].offsetLeft + cards[i].clientWidth / 2, d = Math.abs(mid - center);
+        if (!centers.length) return;
+        var center = track.scrollLeft + trackW / 2, nearest = 0, best = Infinity;
+        for (var i = 0; i < centers.length; i++) {
+          var d = Math.abs(centers[i] - center);
           if (d < best) { best = d; nearest = i; }
         }
         active = nearest;
         dots.forEach(function (s, j) { s.classList.toggle("active", j === nearest); });
       }
-      track.addEventListener("scroll", function () { window.requestAnimationFrame(syncDots); });
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(syncDots); }, { passive: true });
       var prev = document.getElementById("fbPrev"), next = document.getElementById("fbNext");
       if (prev) prev.addEventListener("click", function () { centerTo(active - 1); });
       if (next) next.addEventListener("click", function () { centerTo(active + 1); });
-      // По умолчанию на мобильных показываем вторую карточку.
-      // Чтение геометрии группируем в requestAnimationFrame, чтобы избежать forced reflow.
-      if (window.matchMedia("(max-width:1023px)").matches) {
-        window.addEventListener("load", function () {
-          requestAnimationFrame(function () {
-            var c = cards[1];
-            if (!c) return;
-            var left = c.offsetLeft, cw = c.clientWidth, tw = track.clientWidth;
-            track.scrollLeft = left - (tw - cw) / 2;
-          });
+      var reMeasure;
+      window.addEventListener("resize", function () { clearTimeout(reMeasure); reMeasure = setTimeout(measure, 150); }, { passive: true });
+      // По умолчанию на мобильных показываем вторую карточку. Все чтения геометрии — в одном rAF.
+      window.addEventListener("load", function () {
+        requestAnimationFrame(function () {
+          measure();
+          if (window.matchMedia("(max-width:1023px)").matches && starts[1] != null) {
+            track.scrollLeft = starts[1];
+          }
         });
-      }
+      });
     })();
 
     // «Узнайте больше на консультации» — отправка заявки в Skyeng через skygate (Get4Click)
