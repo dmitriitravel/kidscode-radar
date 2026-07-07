@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["StratosSkyeng", "system-ui", "sans-serif"],
+        sans: ["StratosSkyeng", "Stratos Fallback", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
