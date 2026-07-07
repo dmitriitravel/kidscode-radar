@@ -1,242 +1,227 @@
-import React from 'react';
-import { SchoolCard } from '@/components/SchoolCard';
-import { ComparisonBar } from '@/components/ComparisonBar';
-import { Reviews } from '@/components/Reviews';
-import { FAQ } from '@/components/FAQ';
-import { Articles } from '@/components/Articles';
-import Footer from '@/components/Footer';
-import { schools } from '@/data/schools';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { Search, Filter, GraduationCap, Users, Code, Star, X } from 'lucide-react';
-import { useSchoolFilters } from '@/hooks/useSchoolFilters';
-import { SEOHead } from '@/components/SEOHead';
+import { Header } from "@/components/landing/Header";
+import { Hero } from "@/components/landing/Hero";
+import { PromoBanner } from "@/components/landing/PromoBanner";
+import { ParentConcerns } from "@/components/landing/ParentConcerns";
+import { ProgramFeatures } from "@/components/landing/ProgramFeatures";
+import { ConsultBanner } from "@/components/landing/ConsultBanner";
+import { ApprovalOfficial } from "@/components/landing/ApprovalOfficial";
+import { AboutLyceum } from "@/components/landing/AboutLyceum";
+import { LyceumProcess } from "@/components/landing/LyceumProcess";
+import { CertificateBlock } from "@/components/landing/CertificateBlock";
+import { TrialBlock } from "@/components/landing/TrialBlock";
+import { TeachersSlider } from "@/components/landing/TeachersSlider";
+import { ExpertsTeam } from "@/components/landing/ExpertsTeam";
+import { ScheduleBlock } from "@/components/landing/ScheduleBlock";
+import { PickSchedule } from "@/components/landing/PickSchedule";
+import { SocialDevelopment } from "@/components/landing/SocialDevelopment";
+import { FamiliesTrust } from "@/components/landing/FamiliesTrust";
+import { StudentsFuture } from "@/components/landing/StudentsFuture";
+import { TariffsPlans } from "@/components/landing/TariffsPlans";
+import { FamilyBudget } from "@/components/landing/FamilyBudget";
+import { HowToSwitch } from "@/components/landing/HowToSwitch";
+import { ConsultBooking } from "@/components/landing/ConsultBooking";
+import { FaqBlock } from "@/components/landing/FaqBlock";
+import { KnowledgeBase } from "@/components/landing/KnowledgeBase";
+import { CookieConsent } from "@/components/landing/CookieConsent";
+import { Footer } from "@/components/landing/Footer";
+import { CitiesPicker } from "@/components/landing/CitiesPicker";
+import { SocialProof } from "@/components/landing/SocialProof";
+import { SEOHead } from "@/components/SEOHead";
+import { FAQ_ITEMS } from "@/data/landing";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      name: "Домашний лицей Skysmart",
+      description:
+        "Онлайн-школа с аттестатом государственного образца для 5–11 классов: уроки с учителями, расписание, аттестация и сопровождение классного руководителя.",
+      url: "https://homeschooling.skysmart.ru/",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ_ITEMS.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer.join(" "),
+        },
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          item: {
+            "@id": "https://homeschooling.skysmart.ru/",
+            name: "Онлайн-школа Skysmart с аттестатом",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Course",
+      name: "Онлайн-школа Skysmart с аттестатом в Москве",
+      description:
+        "Хотите, чтобы ваш ребёнок получил качественное образование, не выходя из дома? Мы предлагаем дистанционное обучение для школьников 5–11 классов. Получите аттестат государственного образца, не выходя из дома!",
+      url: "https://homeschooling.skysmart.ru/",
+      inLanguage: "ru",
+      provider: {
+        "@type": "Organization",
+        name: "Онлайн-школа Skysmart",
+        sameAs: "https://skysmart.ru",
+      },
+      hasCourseInstance: {
+        "@type": "CourseInstance",
+        name: "Онлайн-школа Skysmart с аттестатом",
+        courseMode: "online",
+        courseWorkload: "P2H",
+      },
+      offers: {
+        "@type": "Offer",
+        lowPrice: "11560",
+        priceCurrency: "RUB",
+        availability: "http://schema.org/InStock",
+        category: "Онлайн образование",
+      },
+    },
+    {
+      "@type": "Product",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "5",
+      },
+      description:
+        "Хотите, чтобы ваш ребёнок получил качественное образование, не выходя из дома? Мы предлагаем дистанционное обучение для школьников 5–11 классов. Получите аттестат государственного образца, не выходя из дома!",
+      name: "Онлайн-школа для детей Skysmart в Москве",
+      sku: "",
+      url: "https://homeschooling.skysmart.ru/",
+      offers: {
+        "@type": "AggregateOffer",
+        url: "https://skysmart.ru/homeschooling",
+        availability: "https://schema.org/InStock",
+        highPrice: "50372",
+        lowPrice: "11560",
+        priceCurrency: "RUB",
+      },
+      review: [
+        {
+          "@type": "Review",
+          author: "Ольга",
+          datePublished: "2024-05-29",
+          reviewBody:
+            "Преподаватели в Домашнем лицее невероятные. Пока сын занимается, сама слушаю, настолько интересно всё объясняют.",
+          name: "Skysmart",
+          reviewRating: { "@type": "Rating", bestRating: "5", worstRating: "1", ratingValue: "5" },
+        },
+        {
+          "@type": "Review",
+          author: "Настя",
+          datePublished: "2024-01-05",
+          reviewBody:
+            "Я очень довольна обучением в Домашнем лицее. Учителя здесь настоящие профессионалы, они не просто дают знания, но и умеют заинтересовать предметом. Например, благодаря занятиям по математике я смогла подготовиться к городской олимпиаде и даже выиграла приз за второе место. Мне нравится, что я могу учиться в своём темпе и повторять непонятные моменты сколько угодно раз.",
+          name: "Skysmart",
+          reviewRating: { "@type": "Rating", bestRating: "5", worstRating: "1", ratingValue: "5" },
+        },
+        {
+          "@type": "Review",
+          author: "Женя",
+          datePublished: "2025-03-10",
+          reviewBody:
+            "Обычно мне сложно сосредоточиться на уроках, всё время кто-то отвлекает. Я или постоянно переспрашиваю, или не понимаю, что мы проходим. На семейном обучении я стал высыпаться, мне легче фокусироваться.",
+          name: "Skysmart",
+          reviewRating: { "@type": "Rating", bestRating: "5", worstRating: "1", ratingValue: "4" },
+        },
+        {
+          "@type": "Review",
+          author: "Наталья",
+          datePublished: "2025-02-21",
+          reviewBody:
+            "Заметила, что сын стал отказываться от помощи с домашней работой по математике. Раньше мы каждый вечер с ним сидели, либо я, либо папа. Теперь только сам. Самое интересное, что оценки при этом не подкачали. Дневник проверяю без страха.",
+          name: "Skysmart",
+          reviewRating: { "@type": "Rating", bestRating: "5", worstRating: "1", ratingValue: "5" },
+        },
+      ],
+    },
+  ],
+};
 
 const Index = () => {
-  const {
-    searchQuery,
-    setSearchQuery,
-    activeFilters,
-    toggleFilter,
-    clearFilters,
-    filteredSchools,
-    hasActiveFilters,
-    resultsCount
-  } = useSchoolFilters(schools);
-
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ТОП-10 онлайн-школ программирования для детей в России",
-    "description": "Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript.",
-    "url": typeof window !== 'undefined' ? window.location.origin : '',
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${typeof window !== 'undefined' ? window.location.origin : ''}/?search={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    }
-  };
-
   return (
     <>
       <SEOHead
-        title="ТОП-10 онлайн-школ программирования для детей в России | Рейтинг 2025"
-        description="Независимый рейтинг лучших онлайн-школ программирования для детей и подростков. Сравнение цен, отзывы родителей, подробные обзоры курсов Python, Scratch, JavaScript."
-        keywords="программирование для детей, онлайн школа программирования, курсы программирования дети, Python для детей, Scratch, JavaScript дети, рейтинг школ программирования"
-        canonicalUrl={typeof window !== 'undefined' ? window.location.origin : ''}
-        ogTitle="ТОП-10 онлайн-школ программирования для детей в России | Рейтинг 2025"
-        ogDescription="Независимый рейтинг лучших онлайн-школ программирования для детей. Сравнение цен, отзывы, подробные обзоры курсов."
+        title="Онлайн-школа с аттестатом в Москве [5–11 класс] Skysmart"
+        description="Мы предлагаем дистанционное обучение в онлайн школе с аттестатом для 5–11 классов в Москве. Получите аттестат государственного образца, не выходя из дома!"
+        keywords="онлайн школа, домашний лицей, семейное обучение, аттестат государственного образца, обучение на дому, Skysmart, 5-11 класс, аттестация ОГЭ ЕГЭ"
+        canonicalUrl="https://homeschooling.skysmart.ru/"
+        ogTitle="Онлайн-школа с аттестатом: обучение на дому, дистанционное обучение Skysmart"
+        ogDescription="Дистанционное семейное образование для школьников с 5 по 11 класс — домашняя школа Skysmart 🏫 Полноценная онлайн-школа с прикреплением и аттестатом государственного образца"
+        ogImage="https://cdn-user49501.skyeng.ru/assets/images/header/ogp/1200x630/share_uk.png?v=4"
         structuredData={structuredData}
       />
-      <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-primary-foreground py-16 lg:py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Лучшие онлайн-школы программирования для детей
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">Независимый рейтинг с честными отзывами и подробным сравнением школ программирования для детей и подростков</p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input placeholder="Введите название школы или язык программирования" className="pl-10 h-11 bg-background/10 border-background/20 text-primary-foreground placeholder:text-primary-foreground/70" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} />
-              </div>
-              <div className="flex gap-2">
-                <Button variant="secondary" size="lg" className="gap-2" onClick={() => {
-                const resultsSection = document.querySelector('main');
-                resultsSection?.scrollIntoView({
-                  behavior: 'smooth'
-                });
-              }}>
-                  <Search className="h-4 w-4" />
-                  Поиск
-                </Button>
-                {hasActiveFilters && <Button variant="outline" size="lg" className="gap-2 bg-background/10 border-background/20 text-primary-foreground hover:bg-background/20" onClick={clearFilters}>
-                    <X className="h-4 w-4" />
-                    Очистить
-                  </Button>}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-8 lg:py-12 bg-secondary/30">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
-                <GraduationCap className="h-6 w-6" />
-              </div>
-              <div className="text-2xl font-bold text-foreground">10</div>
-              <div className="text-sm text-muted-foreground">Школ в рейтинге</div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
-                <Users className="h-6 w-6" />
-              </div>
-              <div className="text-2xl font-bold text-foreground">75,000+</div>
-              <div className="text-sm text-muted-foreground">Учеников </div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
-                <Star className="h-6 w-6" />
-              </div>
-              <div className="text-2xl font-bold text-foreground">1,500+</div>
-              <div className="text-sm text-muted-foreground">Проверенных отзывов</div>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mx-auto mb-3">
-                <Code className="h-6 w-6" />
-              </div>
-              <div className="text-2xl font-bold text-foreground">50+</div>
-              <div className="text-sm text-muted-foreground">Языков программирования</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Header />
 
-      {/* Main Content */}
-      <section className="py-8 lg:py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-            
-            {/* Sidebar Filters */}
-            <aside className="lg:w-80 xl:w-96 space-y-6">
-                <div className="bg-card p-6 rounded-lg border border-border shadow-card">
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-semibold text-card-foreground">Быстрые фильтры</h3>
-                    {hasActiveFilters && <Button variant="ghost" size="sm" onClick={clearFilters} className="h-8 px-2 lg:px-3">
-                        <X className="h-3 w-3 mr-1" />
-                        Очистить
-                      </Button>}
-                  </div>
-                  <div className="space-y-4">
-                    {/* Возрасты */}
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-foreground">Возраст ребенка</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {['5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'].map(age => (
-                          <Badge 
-                            key={age} 
-                            variant={activeFilters.ages.includes(age) ? "default" : "outline"} 
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" 
-                            onClick={() => toggleFilter('ages', age)}
-                          >
-                            {age} лет
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Языки программирования */}
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-foreground">Языки программирования</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {['Scratch', 'Python', 'JavaScript', 'Java', 'Unity', 'Roblox', 'Minecraft', 'C++', 'Web-разработка', 'Мобильная разработка', 'Kotlin', 'Веб-дизайн', 'Робототехника'].map(language => (
-                          <Badge 
-                            key={language} 
-                            variant={activeFilters.languages.includes(language) ? "default" : "outline"} 
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" 
-                            onClick={() => toggleFilter('languages', language)}
-                          >
-                            {language}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Форматы обучения */}
-                    <div>
-                      <h4 className="text-sm font-medium mb-2 text-foreground">Формат обучения</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {[
-                          { key: 'online', label: 'Онлайн' },
-                          { key: 'offline', label: 'Офлайн' },
-                          { key: 'hybrid', label: 'Гибрид' }
-                        ].map(format => (
-                          <Badge 
-                            key={format.key} 
-                            variant={activeFilters.formats.includes(format.key) ? "default" : "outline"} 
-                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors" 
-                            onClick={() => toggleFilter('formats', format.key)}
-                          >
-                            {format.label}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </aside>
+      <main>
+        <Hero />
 
-              {/* Main Rankings */}
-              <main className="flex-1">
-                <div className="mb-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-3xl font-bold text-foreground">
-                      {hasActiveFilters ? `Найдено школ: ${resultsCount}` : 'Топ-10 школ программирования в 2025 году'}
-                    </h2>
-                  </div>
-                  <p className="text-muted-foreground">
-                    {hasActiveFilters ? 'Результаты поиска и фильтрации школ программирования' : 'Рейтинг составлен на основе отзывов родителей, качества обучения, результатов учеников и других важных критериев.'}
-                  </p>
-                </div>
+        <PromoBanner />
 
-                <div className="space-y-6">
-                  {filteredSchools.length > 0 ? filteredSchools.map(school => <SchoolCard key={school.id} school={school} />) : <div className="text-center py-12">
-                      <div className="text-muted-foreground mb-4">
-                        <Search className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                        <h3 className="text-lg font-medium mb-2">Ничего не найдено</h3>
-                        <p>Попробуйте изменить критерии поиска или очистить фильтры</p>
-                      </div>
-                      {hasActiveFilters && <Button variant="outline" onClick={clearFilters}>
-                          Очистить все фильтры
-                        </Button>}
-                    </div>}
-                </div>
+        <SocialProof />
 
-              </main>
-            </div>
-        </div>
-      </section>
+        <ParentConcerns />
 
-      <Reviews />
-      
-      <FAQ />
-      
-      <Articles />
-      
-      <ComparisonBar />
-      
+        <ProgramFeatures />
+
+        <ConsultBanner />
+
+        <ApprovalOfficial />
+
+        <AboutLyceum />
+
+        <LyceumProcess />
+
+        <CertificateBlock />
+
+        <TeachersSlider />
+
+        <ExpertsTeam />
+
+        <ScheduleBlock />
+
+        <PickSchedule />
+
+        <SocialDevelopment />
+
+        <FamiliesTrust />
+
+        <StudentsFuture />
+
+        <TariffsPlans />
+
+        <FamilyBudget />
+
+        <HowToSwitch />
+
+        <ConsultBooking />
+
+        <FaqBlock />
+
+        <TrialBlock />
+
+        <KnowledgeBase />
+      </main>
+
+      <CitiesPicker />
+
       <Footer />
-      </div>
+
+      <CookieConsent />
     </>
   );
 };
