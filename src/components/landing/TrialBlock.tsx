@@ -17,6 +17,9 @@ const FEATURES = [
 
 const GRADES = [5, 6, 7, 8, 9, 10, 11].map((g) => `${g} класс`);
 const TRIAL_STK = "trial_skysmart_homeschooling";
+// Триал — комплектация (package): tariffUuid + productKitCode.
+const TRIAL_TARIFF_UUID = "d4c6b226-513d-4b0f-8177-e565ae7b8094";
+const TRIAL_KIT = "trial_skysmart_homeschooling";
 
 function CheckIcon() {
   return (
@@ -58,8 +61,8 @@ export function TrialBlock() {
       parentEmail: email,
       parentPhone: phone,
       stk: TRIAL_STK,
-      // serviceTypeKey: mini_course_kids_russian — trial_skysmart_homeschooling не сконфигурирован в Skygate.
-      serviceTypeKey: "mini_course_kids_russian",
+      uuid: TRIAL_TARIFF_UUID,
+      productKitCode: TRIAL_KIT,
       promo,
     });
     setPending(false);

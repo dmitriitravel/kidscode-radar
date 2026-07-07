@@ -2387,8 +2387,11 @@
       var form = document.getElementById("trialForm");
       if (!form) return;
       var ok = document.getElementById("trialOk"), submit = document.getElementById("trialSubmit");
-      var ENDPOINT = "https://skygate.skyeng.ru/api/v1/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+      // Триал — комплектация (package): tariffUuid + productKitCode → es-kit endpoint.
+      var ENDPOINT = "https://skygate.skysmart.ru/api/v1/es-kit/proxy-kid/create";
       var STK = "trial_skysmart_homeschooling";
+      var TRIAL_TARIFF_UUID = "d4c6b226-513d-4b0f-8177-e565ae7b8094";
+      var TRIAL_KIT = "trial_skysmart_homeschooling";
       var FORM_ID = "trial";
       observeFormViewport(form, FORM_ID, STK);
       bindFirstInteraction(form, FORM_ID, STK);
@@ -2405,14 +2408,16 @@
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
         pushFormEvent("_orders_form_submit", FORM_ID, STK);
-        // Триал — обычный STK-режим. serviceTypeKey=mini_course_kids_russian (сконфигурирован),
+        // Триал — package-режим (комплектация): tariffUuid + productKitCode, без serviceTypeKey.
         // stk=trial_skysmart_homeschooling используется для редиректа онбординга.
         var params = new URLSearchParams();
         params.set("parentName", name);
         if (email) params.set("parentEmail", email);
         if (phone) params.set("parentPhone", phone);
         params.set("childName", name || "Ребенок");
-        params.set("serviceTypeKey", "mini_course_kids_russian");
+        params.set("tariffUuid", TRIAL_TARIFF_UUID);
+        params.set("uuid", TRIAL_TARIFF_UUID);
+        params.set("productKitCode", TRIAL_KIT);
         params.set("stk", STK);
         params.set("generateLoginLinkTo", "https://start.skyeng.ru/");
         params.set("locale", "ru");
