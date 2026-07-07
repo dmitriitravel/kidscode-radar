@@ -5,19 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MBGZXZJ');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Yandex.Metrika counter -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
-    ym(58115947, "init", {clickmap:true,trackLinks:true,accurateTrackBounce:true});
+  <!-- Аналитика (GTM, Яндекс.Метрика, хитовалка) — отложенная загрузка: window.load + 5 сек.
+       Заглушки dataLayer/ym определены сразу, чтобы ранние события не терялись, а очередь
+       обработалась после подгрузки реальных скриптов. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+    window.ym.l = 1 * new Date();
+    ym(58115947, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+    (function () {
+      var loaded = false;
+      function loadAnalytics() {
+        if (loaded) return; loaded = true;
+        // Google Tag Manager
+        (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MBGZXZJ');
+        // Яндекс.Метрика tag.js
+        var ym1 = document.createElement('script'); ym1.async = true; ym1.src = 'https://mc.yandex.ru/metrika/tag.js'; document.head.appendChild(ym1);
+        // Внутренняя хитовалка Skysmart
+        var h = document.createElement('script'); h.async = true; h.src = 'https://marketing-core.skysmart.ru/track-hits/hit.js'; document.head.appendChild(h);
+      }
+      function schedule() { setTimeout(loadAnalytics, 5000); }
+      if (document.readyState === 'complete') { schedule(); }
+      else { window.addEventListener('load', schedule); }
+    })();
   </script>
-  <!-- /Yandex.Metrika counter -->
-
-  <!-- Внутренняя хитовалка Skysmart -->
-  <script src="https://marketing-core.skysmart.ru/track-hits/hit.js" async></script>
 
   <title>Онлайн-школа с аттестатом в Москве [5–11 класс] Skysmart</title>
   <meta name="description" content="Мы предлагаем дистанционное обучение в онлайн школе с аттестатом для 5–11 классов в Москве. Получите аттестат государственного образца, не выходя из дома!" />
