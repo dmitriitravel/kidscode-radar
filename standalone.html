@@ -295,7 +295,11 @@
       .hero-media{justify-content:center;padding:0 16px}
       .hero-media img{max-width:340px}
     }
+  </style>
 
+  <!-- Некритичные стили (ниже первого экрана) — применяются после первой отрисовки.
+       media="print" исключает их из рендер-блокирующего пути; скрипт ниже переключает на "all". -->
+  <style media="print" id="deferred-styles">
     /* ===== Промо-баннер (Figma: header and subtext / horizontal / size M) ===== */
     .promo-banner{position:relative;overflow:hidden;background:#091e2a;border-radius:24px;display:flex;align-items:center;justify-content:center;min-height:224px;padding:36px 260px}
     .promo-banner .pb-img{position:absolute;bottom:0;pointer-events:none;user-select:none;height:auto}
@@ -1021,6 +1025,18 @@
 
     .mt40{margin-top:40px}.mt24{margin-top:24px}.mt16{margin-top:16px}
   </style>
+  <script>
+    // Применяем некритичные стили после первой отрисовки (Critical CSS pattern).
+    (function () {
+      var s = document.getElementById("deferred-styles");
+      if (!s) return;
+      function apply() { s.media = "all"; }
+      if ("requestAnimationFrame" in window) {
+        requestAnimationFrame(function () { requestAnimationFrame(apply); });
+      } else { apply(); }
+      window.addEventListener("load", apply);
+    })();
+  </script>
 </head>
 <body id="top">
 
@@ -1086,7 +1102,7 @@
                 <source media="(max-width:640px)" srcset="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp">
                 <img src="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp"
                      alt="Школьница с игрушкой-талисманом Skysmart"
-                     width="548" height="498" decoding="async" fetchpriority="high" />
+                     width="548" height="498" fetchpriority="high" />
               </picture>
             </div>
           </div>

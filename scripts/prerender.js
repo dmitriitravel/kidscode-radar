@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import Beasties from "beasties";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,6 +23,17 @@ let output = template.replace(
 if (head && output.includes("</head>")) {
   output = output.replace("</head>", `${head}\n  </head>`);
 }
+
+// Critical CSS: инлайним критические стили в <head>, остальной CSS грузим асинхронно (preload swap).
+const beasties = new Beasties({
+  path: path.join(root, "dist"),
+  publicPath: "/",
+  preload: "swap",
+  pruneSource: false,
+  fonts: false,
+  logLevel: "silent",
+});
+output = await beasties.process(output);
 
 fs.writeFileSync(templatePath, output);
 

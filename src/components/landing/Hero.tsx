@@ -97,7 +97,6 @@ export function Hero() {
                   alt="Школьница с игрушкой-талисманом Skysmart"
                   width={548}
                   height={498}
-                  decoding="async"
                   {...({ fetchpriority: "high" } as Record<string, string>)}
                   className="aspect-[548/498] h-auto w-full max-w-[340px] object-contain object-bottom lg:max-w-[560px]"
                 />
