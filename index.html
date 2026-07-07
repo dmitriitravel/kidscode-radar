@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Ранние соединения с CDN изображения LCP и шрифтов (в самом верху head).
+         Для изображений — без crossorigin (не-CORS), для шрифтов — с crossorigin. -->
+    <link rel="preconnect" href="https://cdn-user84060.skyeng.ru" />
+    <link rel="preconnect" href="https://cdn-user49501.skyeng.ru" crossorigin />
+    <link rel="preconnect" href="https://cdn-user84632.skyeng.ru" />
+    <link rel="preload" as="image" fetchpriority="high" media="(max-width:640px)" href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp" />
+    <link rel="preload" as="image" fetchpriority="high" media="(min-width:641px)" href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp" />
+
     <meta name="theme-color" content="#ffffff" />
     <meta name="robots" content="index, follow" />
 
@@ -25,14 +34,6 @@
         else { window.addEventListener('load', schedule); }
       })();
     </script>
-
-    <!-- Preconnect к ключевым origin'ам с медиа для ускорения загрузки -->
-    <link rel="preconnect" href="https://cdn-user84632.skyeng.ru" crossorigin />
-    <link rel="preconnect" href="https://cdn-user84060.skyeng.ru" crossorigin />
-
-    <!-- LCP: предзагрузка hero-изображения (высокий приоритет, раннее обнаружение) -->
-    <link rel="preload" as="image" fetchpriority="high" media="(max-width:640px)" href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp" />
-    <link rel="preload" as="image" fetchpriority="high" media="(min-width:641px)" href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp" />
 
     <!-- Ускорение соединения с доменами аналитики -->
     <link rel="dns-prefetch" href="https://mc.yandex.ru" />

@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Ранние соединения с CDN изображения LCP и шрифтов (в самом верху head, до аналитики).
+       Для изображений — без crossorigin (не-CORS запрос), для шрифтов — с crossorigin. -->
+  <link rel="preconnect" href="https://cdn-user84060.skyeng.ru" />
+  <link rel="preconnect" href="https://cdn-user49501.skyeng.ru" crossorigin />
+  <link rel="preconnect" href="https://cdn-user84632.skyeng.ru" />
+  <!-- LCP: предзагрузка hero-изображения (высокий приоритет) -->
+  <link rel="preload" as="image" fetchpriority="high" media="(max-width:640px)"
+        href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp" />
+  <link rel="preload" as="image" fetchpriority="high" media="(min-width:641px)"
+        href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp" />
+
   <meta name="robots" content="index, follow" />
 
   <!-- Аналитика (GTM, Яндекс.Метрика, хитовалка) — отложенная загрузка: window.load + 5 сек.
@@ -56,16 +68,6 @@
   <meta property="twitter:image" content="https://cdn-user49501.skyeng.ru/assets/images/header/ogp/1200x630/share_uk.png?v=4">
 
   <!-- Фирменный шрифт StratosSkyeng (CDN Skyeng). Единственный шрифт на странице. -->
-  <link rel="preconnect" href="https://cdn-user49501.skyeng.ru" crossorigin />
-  <link rel="preconnect" href="https://cdn-user84632.skyeng.ru" crossorigin />
-  <link rel="preconnect" href="https://cdn-user84060.skyeng.ru" crossorigin />
-
-  <!-- LCP: предзагрузка hero-изображения (высокий приоритет, раннее обнаружение) -->
-  <link rel="preload" as="image" fetchpriority="high" media="(max-width:640px)"
-        href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp" />
-  <link rel="preload" as="image" fetchpriority="high" media="(min-width:641px)"
-        href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp" />
-
   <!-- Ускорение соединения с доменами аналитики (без лишних preconnect) -->
   <link rel="dns-prefetch" href="https://mc.yandex.ru" />
   <link rel="dns-prefetch" href="https://marketing-core.skysmart.ru" />
@@ -192,13 +194,15 @@
 
   <style>
     /* ===== Фирменный шрифт ===== */
-    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
-    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
-    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
-    /* Метрически-выровненный фолбэк: при подмене шрифта высота текста не меняется (минимизирует CLS) */
-    @font-face{font-family:"Stratos Fallback";src:local("Arial");ascent-override:92%;descent-override:23%;line-gap-override:0%;size-adjust:101%}
+    /* font-display:optional — шрифт не подменяется после первой отрисовки => нет сдвига макета (CLS).
+       На быстрых соединениях (и повторных визитах) шрифт успевает загрузиться и применяется сразу. */
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:optional}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:optional}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:optional}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:optional}
+    @font-face{font-family:"StratosSkyeng";src:url("https://cdn-user49501.skyeng.ru/assets/fonts/stratos/stratosskyengweb-bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:optional}
+    /* Метрически-выровненный фолбэк (Arial/Roboto) — если шрифт не успел, высота текста близка к брендовой */
+    @font-face{font-family:"Stratos Fallback";src:local("Arial"),local("Roboto"),local("Helvetica Neue");ascent-override:92%;descent-override:23%;line-gap-override:0%;size-adjust:101%}
 
     /* ===== Переменные: фирменный акцент ===== */
     :root{

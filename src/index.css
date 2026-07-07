@@ -14,41 +14,41 @@
   src: url("/fonts/stratosskyengweb-light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "StratosSkyeng";
   src: url("/fonts/stratosskyengweb-regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "StratosSkyeng";
   src: url("/fonts/stratosskyengweb-medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "StratosSkyeng";
   src: url("/fonts/stratosskyengweb-semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: "StratosSkyeng";
   src: url("/fonts/stratosskyengweb-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 /* Метрически-выровненный фолбэк: подмена шрифта не меняет высоту текста (минимизирует CLS) */
 @font-face {
   font-family: "Stratos Fallback";
-  src: local("Arial");
+  src: local("Arial"), local("Roboto"), local("Helvetica Neue");
   ascent-override: 92%;
   descent-override: 23%;
   line-gap-override: 0%;
