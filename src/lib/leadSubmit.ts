@@ -19,6 +19,8 @@ export interface LeadData {
   productKitCode?: string;
   // маркетинговое согласие.
   promo?: boolean;
+  // переопределение serviceTypeKey (для не-package режима). По умолчанию mini_course_kids_russian.
+  serviceTypeKey?: string;
 }
 
 export interface LeadResult {
@@ -60,7 +62,7 @@ export async function submitLead(data: LeadData): Promise<LeadResult> {
     params.set("uuid", data.uuid as string);
     params.set("productKitCode", data.productKitCode as string);
   } else {
-    params.set("serviceTypeKey", "mini_course_kids_russian");
+    params.set("serviceTypeKey", data.serviceTypeKey || "mini_course_kids_russian");
     if (data.uuid) params.set("uuid", data.uuid);
   }
 

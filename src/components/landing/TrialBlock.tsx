@@ -53,6 +53,7 @@ export function TrialBlock() {
       parentEmail: email,
       parentPhone: phone,
       stk: TRIAL_STK,
+      serviceTypeKey: TRIAL_STK,
       promo,
     });
     setPending(false);
