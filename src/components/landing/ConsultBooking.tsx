@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leadSubmit";
+import { pushFormEvent, useFormAnalytics } from "@/lib/formAnalytics";
+
+const FORM_ID = "consult";
+const FORM_STK = "skysmart_homeschooling";
 
 // «Узнайте больше о школе на бесплатной консультации» — маскот + чеклист + форма заявки (тёмная гамма).
 const MASCOT = "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/consultation-form/mascot.png";
@@ -35,6 +39,7 @@ export function ConsultBooking() {
   const [consent, setConsent] = useState(false);
   const [promo, setPromo] = useState(false);
   const [pending, setPending] = useState(false);
+  const { ref, onInteract } = useFormAnalytics(FORM_ID, FORM_STK);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,6 +55,7 @@ export function ConsultBooking() {
       toast.error("Нужно согласие на обработку персональных данных");
       return;
     }
+    pushFormEvent("_orders_form_submit", FORM_ID, FORM_STK);
     setPending(true);
     const gradeNum = grade.match(/\d+/)?.[0];
     const result = await submitLead({
@@ -63,10 +69,12 @@ export function ConsultBooking() {
     });
     setPending(false);
     if (result.redirect) {
+      pushFormEvent("_orders_form_sent_success", FORM_ID, FORM_STK);
       window.location.href = result.redirect;
       return;
     }
     if (result.ok) {
+      pushFormEvent("_orders_form_sent_success", FORM_ID, FORM_STK);
       toast.success("Спасибо! Заявка отправлена, мы свяжемся с вами.");
       setName("");
       setEmail("");
@@ -75,6 +83,7 @@ export function ConsultBooking() {
       setConsent(false);
       setPromo(false);
     } else {
+      pushFormEvent("_orders_form_sent_fail", FORM_ID, FORM_STK, { reason: result.error });
       toast.error(result.error || "Не удалось отправить заявку.");
     }
   };
@@ -115,7 +124,7 @@ export function ConsultBooking() {
             ))}
           </div>
 
-          <form className="mt-8" onSubmit={onSubmit} noValidate>
+          <form ref={ref} onInput={onInteract} className="mt-8" onSubmit={onSubmit} noValidate>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <input
                 type="text"

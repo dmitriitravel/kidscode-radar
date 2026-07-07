@@ -1,10 +1,39 @@
+import { getHitId } from "./formAnalytics";
+
 // Отправка заявки в Skyeng через skygate (Get4Click интеграция Skysmart).
 // Обычный режим (по serviceTypeKey/STK):
 const ENDPOINT =
   "https://skygate.skyeng.ru/api/v1/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
-// Режим «комплектация» (package) — когда заданы и tariffUuid (uuid), и productKitCode:
+
+const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+
+// Добавляет общие для всех заявок поля: hitId, uri, user_agent, UTM, promoCode, acceptedAgreements.
+function addCommonParams(params: URLSearchParams, promo?: boolean) {
+  const hitId = getHitId();
+  if (hitId) params.set("hitId", hitId);
+  if (typeof window !== "undefined") {
+    params.set("uri", window.location.href);
+    params.set("user_agent", navigator.userAgent);
+    try {
+      const q = new URLSearchParams(window.location.search);
+      UTM_KEYS.forEach((k) => {
+        const v = q.get(k);
+        if (v) params.set(k, v);
+      });
+      const promoCode = q.get("promoCode") || q.get("promocode");
+      if (promoCode) params.set("promoCode", promoCode);
+    } catch {
+      /* noop */
+    }
+  }
+  // Согласованный fallback versionId (обязательный регистрационный + промо-документ).
+  params.append("acceptedAgreements[]", "3981");
+  if (promo) params.append("acceptedAgreements[]", "3982");
+}
+// Режим «комплектация» (package) — когда заданы и tariffUuid (uuid), и productKitCode.
+// Без query source_type/product: с ними es-kit endpoint возвращает 500.
 const ENDPOINT_PACKAGE =
-  "https://skygate.skysmart.ru/api/v1/es-kit/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+  "https://skygate.skysmart.ru/api/v1/es-kit/proxy-kid/create";
 
 export interface LeadData {
   parentName: string;
@@ -65,6 +94,8 @@ export async function submitLead(data: LeadData): Promise<LeadResult> {
     params.set("serviceTypeKey", data.serviceTypeKey || "mini_course_kids_russian");
     if (data.uuid) params.set("uuid", data.uuid);
   }
+
+  addCommonParams(params, data.promo);
 
   const endpoint = isPackage ? ENDPOINT_PACKAGE : ENDPOINT;
 

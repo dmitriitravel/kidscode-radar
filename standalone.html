@@ -2307,6 +2307,46 @@
   </dialog>
 
   <script>
+    // ===== Аналитика формы заявки: контрактные события dataLayer + общие поля payload =====
+    window.dataLayer = window.dataLayer || [];
+    function pushFormEvent(ev, formId, stk, extra) {
+      var payload = { event: ev, formId: formId, stk: stk };
+      if (extra) { for (var k in extra) { if (Object.prototype.hasOwnProperty.call(extra, k)) payload[k] = extra[k]; } }
+      window.dataLayer.push(payload);
+    }
+    function getHitId() {
+      try { return (window.skyengTrackHits && window.skyengTrackHits.get_current_hit_id && window.skyengTrackHits.get_current_hit_id()) || ""; }
+      catch (e) { return ""; }
+    }
+    // Добавляет hitId, uri, user_agent, UTM, promoCode, acceptedAgreements[] в payload заявки.
+    function addCommonLeadParams(params, promo) {
+      var hid = getHitId();
+      if (hid) params.set("hitId", hid);
+      try {
+        params.set("uri", location.href);
+        params.set("user_agent", navigator.userAgent);
+        var q = new URLSearchParams(location.search);
+        ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach(function (k) {
+          var v = q.get(k); if (v) params.set(k, v);
+        });
+        var pc = q.get("promoCode") || q.get("promocode"); if (pc) params.set("promoCode", pc);
+      } catch (e) {}
+      params.append("acceptedAgreements[]", "3981");
+      if (promo) params.append("acceptedAgreements[]", "3982");
+    }
+    function observeFormViewport(el, formId, stk) {
+      if (!el || !("IntersectionObserver" in window)) return;
+      var seen = false;
+      var io = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting && !seen) { seen = true; pushFormEvent("_orders_form_in_viewport", formId, stk); io.disconnect(); }
+      }, { threshold: 0.3 });
+      io.observe(el);
+    }
+    function bindFirstInteraction(form, formId, stk) {
+      var started = false;
+      form.addEventListener("input", function () { if (started) return; started = true; pushFormEvent("_orders_form_start_interaction", formId, stk); });
+    }
+
     // Если декоративная картинка не загрузилась — прячем её (без «битых» иконок)
     document.addEventListener("error", function (e) {
       if (e.target && e.target.tagName === "IMG" && e.target.getAttribute("aria-hidden") === "true") {
@@ -2349,6 +2389,9 @@
       var ok = document.getElementById("trialOk"), submit = document.getElementById("trialSubmit");
       var ENDPOINT = "https://skygate.skyeng.ru/api/v1/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
       var STK = "trial_skysmart_homeschooling";
+      var FORM_ID = "trial";
+      observeFormViewport(form, FORM_ID, STK);
+      bindFirstInteraction(form, FORM_ID, STK);
       function setMsg(text, isErr) { ok.textContent = text; ok.className = "trial-ok " + (isErr ? "is-err" : "is-ok"); }
       form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -2361,13 +2404,15 @@
         if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
-        // Триал — обычный STK-режим (не комплектация): serviceTypeKey обязателен, stk фиксированный.
+        pushFormEvent("_orders_form_submit", FORM_ID, STK);
+        // Триал — обычный STK-режим. serviceTypeKey=mini_course_kids_russian (сконфигурирован),
+        // stk=trial_skysmart_homeschooling используется для редиректа онбординга.
         var params = new URLSearchParams();
         params.set("parentName", name);
         if (email) params.set("parentEmail", email);
         if (phone) params.set("parentPhone", phone);
         params.set("childName", name || "Ребенок");
-        params.set("serviceTypeKey", STK);
+        params.set("serviceTypeKey", "mini_course_kids_russian");
         params.set("stk", STK);
         params.set("generateLoginLinkTo", "https://start.skyeng.ru/");
         params.set("locale", "ru");
@@ -2376,6 +2421,7 @@
         params.set("tilda", "true");
         params.set("registrationCheckbox", "true");
         if (promo) params.set("promoCheckbox", "true");
+        addCommonLeadParams(params, promo);
         try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
 
         submit.disabled = true;
@@ -2389,18 +2435,22 @@
           return r.json().then(function (j) { return { okHttp: r.ok, j: j }; }).catch(function () { return { okHttp: r.ok, j: null }; });
         }).then(function (res) {
           if (res.okHttp && res.j) {
+            pushFormEvent("_orders_form_sent_success", FORM_ID, STK);
             if (res.j.redirectUrl) { window.location.href = res.j.redirectUrl; return; }
             if (res.j.loginLink) { window.location.href = res.j.loginLink; return; }
             if (res.j.userId && STK) { window.location.href = "https://student.skyeng.ru/go/" + res.j.userId + "/" + STK + "?path=onboarding"; return; }
             setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
             form.reset();
           } else if (res.j && res.j.exception && res.j.exception.message) {
+            pushFormEvent("_orders_form_sent_fail", FORM_ID, STK, { reason: res.j.exception.message });
             setMsg(res.j.exception.message, true);
           } else {
+            pushFormEvent("_orders_form_sent_fail", FORM_ID, STK, { reason: "http" });
             setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
             form.reset();
           }
         }).catch(function () {
+          pushFormEvent("_orders_form_sent_fail", FORM_ID, STK, { reason: "network" });
           setMsg("Спасибо! Откроем доступ и свяжемся с вами.", false);
           form.reset();
         }).finally(function () {
@@ -2614,6 +2664,9 @@
       if (!form) return;
       var ok = document.getElementById("cbOk"), submit = document.getElementById("cbSubmit");
       var ENDPOINT = "https://skygate.skyeng.ru/api/v1/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+      var FORM_ID = "consult", FORM_STK = "skysmart_homeschooling";
+      observeFormViewport(form, FORM_ID, FORM_STK);
+      bindFirstInteraction(form, FORM_ID, FORM_STK);
       function setMsg(text, isErr) {
         ok.textContent = text;
         ok.className = "cb-ok " + (isErr ? "is-err" : "is-ok");
@@ -2629,6 +2682,7 @@
         if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
+        pushFormEvent("_orders_form_submit", FORM_ID, FORM_STK);
         var promo = document.getElementById("cbPromo").checked;
         var params = new URLSearchParams();
         params.set("parentName", name);
@@ -2642,6 +2696,7 @@
         params.set("tilda", "true");
         params.set("registrationCheckbox", "true");
         if (promo) params.set("promoCheckbox", "true");
+        addCommonLeadParams(params, promo);
         try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) params.set("timezone", tz); } catch (e2) {}
         var gradeNum = (grade.match(/\d+/) || [])[0];
         var stk = gradeNum ? "skysmart_homeschooling_" + gradeNum + "_grade" : "";
@@ -2664,7 +2719,7 @@
           params.set("tariffUuid", uuid);
           params.set("uuid", uuid);
           params.set("productKitCode", productKitCode);
-          endpoint = "https://skygate.skysmart.ru/api/v1/es-kit/proxy-kid/create?source_type=get4click_skysmart&product=get4click_skysmart";
+          endpoint = "https://skygate.skysmart.ru/api/v1/es-kit/proxy-kid/create";
         } else {
           params.set("serviceTypeKey", "mini_course_kids_russian");
           if (uuid) params.set("uuid", uuid);
@@ -2682,19 +2737,23 @@
           return r.json().then(function (j) { return { okHttp: r.ok, j: j }; }).catch(function () { return { okHttp: r.ok, j: null }; });
         }).then(function (res) {
           if (res.okHttp && res.j) {
+            pushFormEvent("_orders_form_sent_success", FORM_ID, FORM_STK);
             if (res.j.redirectUrl) { window.location.href = res.j.redirectUrl; return; }
             if (res.j.loginLink) { window.location.href = res.j.loginLink; return; }
             if (res.j.userId && stk) { window.location.href = "https://student.skyeng.ru/go/" + res.j.userId + "/" + stk + "?path=onboarding"; return; }
             setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
             form.reset();
           } else if (res.j && res.j.exception && res.j.exception.message) {
+            pushFormEvent("_orders_form_sent_fail", FORM_ID, FORM_STK, { reason: res.j.exception.message });
             setMsg(res.j.exception.message, true);
           } else {
+            pushFormEvent("_orders_form_sent_fail", FORM_ID, FORM_STK, { reason: "http_" + (res.j ? "body" : "nobody") });
             setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
             form.reset();
           }
         }).catch(function () {
           // CORS/сетевая ошибка — лид сохраняется на стороне get4click
+          pushFormEvent("_orders_form_sent_fail", FORM_ID, FORM_STK, { reason: "network" });
           setMsg("Спасибо! Заявка отправлена, мы свяжемся с вами.", false);
           form.reset();
         }).finally(function () {

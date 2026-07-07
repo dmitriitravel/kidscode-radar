@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leadSubmit";
+import { pushFormEvent, useFormAnalytics } from "@/lib/formAnalytics";
+
+const FORM_ID = "trial";
 
 // «Попробуйте 7 дней учёбы в лицее бесплатно» — адаптивный лид-блок с формой заявки.
 const LF_BASE =
@@ -32,6 +35,7 @@ export function TrialBlock() {
   const [consent, setConsent] = useState(false);
   const [promo, setPromo] = useState(false);
   const [pending, setPending] = useState(false);
+  const { ref, onInteract } = useFormAnalytics(FORM_ID, TRIAL_STK);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,21 +51,25 @@ export function TrialBlock() {
       toast.error("Нужно согласие на обработку персональных данных");
       return;
     }
+    pushFormEvent("_orders_form_submit", FORM_ID, TRIAL_STK);
     setPending(true);
     const result = await submitLead({
       parentName: name,
       parentEmail: email,
       parentPhone: phone,
       stk: TRIAL_STK,
-      serviceTypeKey: TRIAL_STK,
+      // serviceTypeKey: mini_course_kids_russian — trial_skysmart_homeschooling не сконфигурирован в Skygate.
+      serviceTypeKey: "mini_course_kids_russian",
       promo,
     });
     setPending(false);
     if (result.redirect) {
+      pushFormEvent("_orders_form_sent_success", FORM_ID, TRIAL_STK);
       window.location.href = result.redirect;
       return;
     }
     if (result.ok) {
+      pushFormEvent("_orders_form_sent_success", FORM_ID, TRIAL_STK);
       toast.success("Спасибо! Откроем доступ и свяжемся с вами.");
       setName("");
       setEmail("");
@@ -70,6 +78,7 @@ export function TrialBlock() {
       setConsent(false);
       setPromo(false);
     } else {
+      pushFormEvent("_orders_form_sent_fail", FORM_ID, TRIAL_STK, { reason: result.error });
       toast.error(result.error || "Не удалось отправить заявку.");
     }
   };
@@ -115,7 +124,7 @@ export function TrialBlock() {
             </div>
 
             {/* Форма */}
-            <form onSubmit={onSubmit} noValidate className="space-y-3">
+            <form ref={ref} onInput={onInteract} onSubmit={onSubmit} noValidate className="space-y-3">
               <input
                 type="text"
                 value={name}
