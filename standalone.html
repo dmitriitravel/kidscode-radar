@@ -299,6 +299,10 @@
       .hero-media{justify-content:center;padding:0 16px}
       .hero-media img{max-width:340px}
     }
+
+    /* Секции ниже первого экрана не рендерятся до приближения к viewport —
+       браузер не тратит layout/paint на них в момент отрисовки LCP. */
+    main > section ~ section{content-visibility:auto;contain-intrinsic-size:auto 700px}
   </style>
 
   <!-- Некритичные стили (ниже первого экрана): хранятся как инертный текст (type="text/css",
@@ -1033,17 +1037,32 @@
     .mt40{margin-top:40px}.mt24{margin-top:24px}.mt16{margin-top:16px}
   </script>
   <script>
-    // Инжектим некритичные стили после первой отрисовки (Critical CSS pattern):
-    // большой CSS не парсится в критическом пути и не задерживает LCP.
+    // Инжектим некритичные стили ПОСЛЕ отрисовки LCP: по window.load (в idle-паузе)
+    // или по первому действию пользователя (скролл/тап) — что наступит раньше.
+    // Так полная перерасчётка стилей (forced reflow) не попадает в окно LCP.
     (function () {
       var target = document.getElementById("deferred-styles"), src = document.getElementById("deferred-css");
       if (!target || !src) return;
       var applied = false;
-      function apply() { if (applied) return; applied = true; target.textContent = src.textContent; }
-      if ("requestAnimationFrame" in window) {
-        requestAnimationFrame(function () { requestAnimationFrame(apply); });
-      } else { apply(); }
-      window.addEventListener("load", apply);
+      function apply() {
+        if (applied) return; applied = true;
+        target.textContent = src.textContent;
+        ["scroll", "touchstart", "keydown", "pointerdown"].forEach(function (ev) {
+          window.removeEventListener(ev, apply);
+        });
+      }
+      function onLoad() {
+        if ("requestIdleCallback" in window) { requestIdleCallback(apply, { timeout: 1500 }); }
+        else { setTimeout(apply, 150); }
+      }
+      // Ранний скролл/тап до load — применяем сразу, чтобы нижние блоки не были без стилей.
+      ["scroll", "touchstart", "keydown", "pointerdown"].forEach(function (ev) {
+        window.addEventListener(ev, apply, { passive: true, once: false });
+      });
+      if (document.readyState === "complete") { onLoad(); }
+      else { window.addEventListener("load", onLoad); }
+      // Подстраховка: максимум через 3 секунды после старта стили точно применятся.
+      setTimeout(apply, 3000);
     })();
   </script>
 </head>

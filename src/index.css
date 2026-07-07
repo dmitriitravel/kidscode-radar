@@ -246,6 +246,13 @@
   text-decoration: none;
 }
 
+/* Секции ниже первого экрана не рендерятся до приближения к viewport —
+   браузер не тратит layout/paint на них в момент отрисовки LCP. */
+main > section ~ section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
 /* «Полезные материалы» — сетка карточек с центрированием неполной строки */
 .kb-grid {
   flex-wrap: wrap;
