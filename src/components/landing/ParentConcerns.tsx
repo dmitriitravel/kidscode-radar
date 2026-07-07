@@ -13,7 +13,7 @@ const PC_BASE =
   "https://cdn-user84632.skyeng.ru/shared/large-media/skysmart/product-pages/homeschooling/perfect-choice";
 
 const CONCERNS: Concern[] = [
-  { icon: `${PC_BASE}/perfect-choice-case.png`, text: "Ребёнок теряет интерес к учёбе, школа не даёт результата" },
+  { icon: "https://cdn-user84060.skyeng.ru/uploads/perfect-choice-case-6a4d06f29bd80752502461.webp", text: "Ребёнок теряет интерес к учёбе, школа не даёт результата" },
   { icon: `${PC_BASE}/perfect-choice-cup.png`, text: "Нет времени учиться из-за соревнований или концертов", textTop: true },
   { icon: `${PC_BASE}/perfect-choice-home.png`, text: "Ребёнок часто болеет, пропускает занятия, легко устаёт" },
   { icon: `${PC_BASE}/perfect-choice-planet.png`, text: "Семья много переезжает или живёт за границей", textTop: true },

@@ -2,23 +2,28 @@
 interface Feature {
   title: string;
   desc: string;
-  img: string;
+  img: string; // webp для десктопа
+  imgMobile: string; // webp mini для мобильных
   w: number;
   h: number;
 }
+
+const U = "https://cdn-user84060.skyeng.ru/uploads";
 
 const ROW_1: Feature[] = [
   {
     title: "Аттестат гособразца",
     desc: "Всё как в обычной школе, только с гибким графиком: ребёнок освоит школьную программу по ФГОС и получит российский аттестат для поступления в вуз",
-    img: "https://static.tildacdn.com/tild6639-3661-4234-b162-636137643836/Image_Container_10.png",
+    img: `${U}/image-container-10-6a4d06ada1b9d538714638.webp`,
+    imgMobile: `${U}/image-container-10-mini-6a4d0997ba282074518068.webp`,
     w: 1144,
     h: 538,
   },
   {
     title: "Сильные преподаватели",
     desc: "Учителя из ведущих школ России объясняют сложное простым языком и помогают ребёнку не терять внимание на уроке. Только 5 из 100 кандидатов проходят конкурсный отбор в лицей",
-    img: "https://static.tildacdn.com/tild3332-3233-4162-b834-376633663761/Other_teachers_1.png",
+    img: `${U}/other-teachers-1-6a4d06da9b998813760506.webp`,
+    imgMobile: `${U}/other-teachers-1-mini-6a4d09833f229279256158.webp`,
     w: 998,
     h: 230,
   },
@@ -28,21 +33,24 @@ const ROW_2: Feature[] = [
   {
     title: "Бережное общение",
     desc: "Помогаем ребёнку адаптироваться и найти друзей: организуем общение между учениками и проводим встречи с нейропсихологом",
-    img: "https://static.tildacdn.com/tild6637-3464-4433-b137-333635393534/Frame_2131329616_1.png",
+    img: `${U}/frame-2131329616-1-6a4d0684ed723841773204.webp`,
+    imgMobile: `${U}/frame-2131329616-1-mini-6a4d096fcfd1c312315055.webp`,
     w: 752,
     h: 512,
   },
   {
     title: "Вся учёба под контролем",
     desc: "Расписание, уроки, домашки, конспекты и отчёты о прогрессе — всё в одном месте",
-    img: "https://static.tildacdn.com/tild3636-3738-4133-a464-313662636363/Image_Container_11_1.png",
+    img: `${U}/image-container-11-1-6a4d06cb4bb9d491534518.webp`,
+    imgMobile: `${U}/image-container-11-1-mini-6a4d0960025d8486610049.webp`,
     w: 752,
     h: 538,
   },
   {
     title: "Навык письма сохраняется",
     desc: "Часть заданий ребёнок выполняет письменно для развития мелкой моторики",
-    img: "https://static.tildacdn.com/tild3166-6234-4437-b863-653234343938/Product_Image_Contai.png",
+    img: `${U}/product-image-contai-6a4d0705d7e52485642887.webp`,
+    imgMobile: `${U}/product-image-contai-mini-6a4d0951578e3652270432.webp`,
     w: 752,
     h: 512,
   },
@@ -56,20 +64,24 @@ function Card({ item }: { item: Feature }) {
         <p className="mt-2 text-lg leading-snug text-black/60">{item.desc}</p>
       </div>
       <div className="mt-auto flex items-end justify-center">
-        <img
-          src={item.img}
-          alt=""
-          aria-hidden="true"
-          width={item.w}
-          height={item.h}
-          loading="lazy"
-          decoding="async"
-          style={{ aspectRatio: `${item.w} / ${item.h}` }}
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).style.display = "none";
-          }}
-          className="block h-auto w-full"
-        />
+        <picture className="block w-full">
+          <source type="image/webp" media="(max-width: 768px)" srcSet={item.imgMobile} />
+          <source type="image/webp" srcSet={item.img} />
+          <img
+            src={item.img}
+            alt=""
+            aria-hidden="true"
+            width={item.w}
+            height={item.h}
+            loading="lazy"
+            decoding="async"
+            style={{ aspectRatio: `${item.w} / ${item.h}` }}
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).style.display = "none";
+            }}
+            className="block h-auto w-full"
+          />
+        </picture>
       </div>
     </div>
   );
