@@ -25,10 +25,10 @@ export function Hero() {
           </span>
 
           <div
-            className="relative grid items-stretch overflow-hidden rounded-[28px] lg:rounded-[36px] lg:grid-cols-[1.05fr_0.95fr]"
+            className="relative grid min-h-[780px] items-stretch overflow-hidden rounded-[28px] min-[421px]:min-h-[820px] lg:min-h-[520px] lg:rounded-[36px] lg:grid-cols-[1.05fr_0.95fr]"
             style={{
               background: "linear-gradient(120deg,#fdebc7 0%,#ffd886 42%,#ffc24c 100%)",
-              minHeight: "min(520px, 72vh)",
+              contain: "layout paint",
             }}
           >
             {/* Скошенный верхний край (срез в левом верхнем углу) */}
@@ -41,7 +41,7 @@ export function Hero() {
             {/* мягкий световой круг за фото */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute right-[-4%] top-1/2 hidden h-[720px] w-[720px] -translate-y-1/2 rounded-full lg:block"
+              className="pointer-events-none absolute right-[-80px] top-[-100px] hidden h-[720px] w-[720px] rounded-full lg:block"
               style={{
                 background: "radial-gradient(circle,#fff3d6 0%,rgba(255,243,214,0) 62%)",
                 opacity: 0.7,
