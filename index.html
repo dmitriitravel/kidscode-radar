@@ -3,10 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Загрузка...</title>
-  </head>
+
+    <!-- Ранние соединения с CDN изображения LCP и шрифтов (в самом верху head).
+         Для изображений — без crossorigin (не-CORS), для шрифтов — с crossorigin. -->
+    <link rel="preconnect" href="https://cdn-user84060.skyeng.ru" />
+    <link rel="preconnect" href="https://cdn-user49501.skyeng.ru" crossorigin />
+    <link rel="preconnect" href="https://cdn-user84632.skyeng.ru" />
+    <link rel="preload" as="image" fetchpriority="high" media="(max-width:640px)" href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-360-6a3122fd76bd3904355097.webp" />
+    <link rel="preload" as="image" fetchpriority="high" media="(min-width:641px)" href="https://cdn-user84060.skyeng.ru/uploads/image-holder-1-mini-webp-6a31221f887cc554627720.webp" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Аналитика (GTM, Яндекс.Метрика, хитовалка) — отложенная загрузка: window.load + 5 сек. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+      window.ym.l = 1 * new Date();
+      ym(58115947, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+      (function () {
+        var loaded = false;
+        function loadAnalytics() {
+          if (loaded) return; loaded = true;
+          (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MBGZXZJ');
+          var ym1 = document.createElement('script'); ym1.async = true; ym1.src = 'https://mc.yandex.ru/metrika/tag.js'; document.head.appendChild(ym1);
+          var h = document.createElement('script'); h.async = true; h.src = 'https://marketing-core.skysmart.ru/track-hits/hit.js'; document.head.appendChild(h);
+        }
+        function schedule() { setTimeout(loadAnalytics, 5000); }
+        if (document.readyState === 'complete') { schedule(); }
+        else { window.addEventListener('load', schedule); }
+      })();
+    </script>
+
+    <!-- Ускорение соединения с доменами аналитики -->
+    <link rel="dns-prefetch" href="https://mc.yandex.ru" />
+    <link rel="dns-prefetch" href="https://marketing-core.skysmart.ru" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+    <!-- Статичные мета-теги и иконки (title/description/canonical/og задаются через Helmet) -->
+    <meta name="yandex-verification" content="647a74c3c52fb23f" />
+    <link rel="icon" href="https://cdn-user49501.skyeng.ru/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn-user49501.skyeng.ru/assets/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-user49501.skyeng.ru/assets/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn-user49501.skyeng.ru/assets/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="https://cdn-user49501.skyeng.ru/assets/images/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta name="msapplication-config" content="https://cdn-user49501.skyeng.ru/assets/images/favicon/browserconfig.xml" />
+    <meta property="og:site_name" content="Skysmart" />
+    <meta property="og:image:secure_url" content="https://cdn-user49501.skyeng.ru/assets/images/header/ogp/1200x630/share_uk.png?v=4" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="vk:image" content="https://cdn-user49501.skyeng.ru/assets/images/header/ogp/1200х563/share_uk.png?v=4" />
+
+    <!-- Предзагрузка фирменных шрифтов для быстрого первого рендера (LCP) -->
+    <link
+      rel="preload"
+      href="/fonts/stratosskyengweb-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/stratosskyengweb-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/stratosskyengweb-semibold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/stratosskyengweb-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />  </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBGZXZJ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Yandex.Metrika (noscript) -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/58115947" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

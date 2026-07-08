@@ -1,73 +1,40 @@
-# Welcome to your Lovable project
+# Домашний лицей Skysmart — лендинг
 
-## Project info
+Копия лендинга [homeschooling.skysmart.ru](https://homeschooling.skysmart.ru/):
+онлайн-школа с аттестатом государственного образца для 5–11 классов.
 
-**URL**: https://lovable.dev/projects/cf10282b-72cb-40f8-a420-5f621a3a9f45
+## Особенности
 
-## How can I edit this code?
+- **Лёгкая загрузка / Core Web Vitals.** Контент отдаётся статическим HTML
+  (предрендер на этапе сборки), фирменные шрифты `woff2` с `preload` и
+  `font-display: swap`, нет тяжёлых изображений — декор сделан на CSS.
+- **SEO.** Полный текст всех разделов присутствует в исходном HTML и доступен
+  поисковым роботам: семантическая разметка (`header`/`main`/`section`/`footer`,
+  один `h1`), мета-теги, Open Graph и микроразметка JSON-LD
+  (`EducationalOrganization` + `FAQPage`).
+- **Фирменный стиль.** Единственный шрифт — `StratosSkyeng`. Акцентный цвет
+  `#00c1ff` (hover `#6fe4ff`, active `#009ff4`) вынесен в CSS-переменные
+  (`--brand-accent`, `--brand-accent-hover`, `--brand-accent-active`).
 
-There are several ways of editing your application.
+## Технологии
 
-**Use Lovable**
+Vite + React + TypeScript + Tailwind CSS + shadcn/ui.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cf10282b-72cb-40f8-a420-5f621a3a9f45) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Команды
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install        # установка зависимостей
+npm run dev        # дев-сервер
+npm run build      # сборка + SSR-предрендер статического HTML (dist/)
+npm run preview    # предпросмотр продакшен-сборки
+npm run lint       # проверка ESLint
 ```
 
-**Edit a file directly in GitHub**
+## Как устроен предрендер
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. `vite build` — клиентский бандл и `dist/index.html`.
+2. `vite build --ssr src/entry-server.tsx` — серверный бандл (`renderToString`).
+3. `scripts/prerender.js` — рендерит страницу в строку и встраивает её вместе с
+   `<head>` (из `react-helmet-async`) в `dist/index.html`.
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/cf10282b-72cb-40f8-a420-5f621a3a9f45) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+На клиенте приложение гидрируется поверх готовой разметки (`hydrateRoot`).
