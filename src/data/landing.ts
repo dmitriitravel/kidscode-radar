@@ -4,7 +4,7 @@
 export const NAV_LINKS = [
   { label: "Бесплатный период", href: "https://homeschooling.skysmart.ru/demo-access" },
   { label: "Лицензия", href: "#approval" },
-  { label: "Как устроено обучение", href: "#platform" },
+  { label: "Как устроено обучение", href: "#needs-title" },
   { label: "Аттестация", href: "#diploma" },
   { label: "Тарифы", href: "#tariffs" },
   { label: "Вопросы", href: "#faq" },

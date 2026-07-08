@@ -1084,7 +1084,7 @@
         <nav class="menu" aria-label="Основная навигация">
           <a href="https://homeschooling.skysmart.ru/demo-access" target="_blank" rel="noopener">Бесплатный период</a>
           <a href="#approval">Лицензия</a>
-          <a href="#platform">Как устроено обучение</a>
+          <a href="#needs-title">Как устроено обучение</a>
           <a href="#diploma">Аттестация</a>
           <a href="#tariffs">Тарифы</a>
           <a href="#faq">Вопросы</a>
@@ -1096,7 +1096,7 @@
       <nav id="mobile-menu" aria-label="Мобильная навигация">
         <a href="https://homeschooling.skysmart.ru/demo-access" target="_blank" rel="noopener">Бесплатный период</a>
         <a href="#approval">Лицензия</a>
-        <a href="#platform">Как устроено обучение</a>
+        <a href="#needs-title">Как устроено обучение</a>
         <a href="#diploma">Аттестация</a>
         <a href="#tariffs">Тарифы</a>
         <a href="#faq">Вопросы</a>
@@ -2454,6 +2454,16 @@
     }
     initSlider("worryTrack", "worryPrev", "worryNext", "worryDots");
 
+    function isValidEmail(email) {
+      var value = (email || "").trim();
+      return /^[^\s@]+@[^\s@]+$/.test(value);
+    }
+
+    function isValidRussianPhone(phone) {
+      var normalized = (phone || "").trim().replace(/[\s()-]/g, "");
+      return /^\+7\d{10}$/.test(normalized) || /^8\d{10}$/.test(normalized);
+    }
+
     // «Попробуйте 7 дней бесплатно» — отправка заявки в Skyeng через skygate (stk = trial_skysmart_homeschooling)
     (function () {
       var form = document.getElementById("trialForm");
@@ -2476,7 +2486,10 @@
         var consent = document.getElementById("trConsent").checked;
         var promo = document.getElementById("trPromo").checked;
         if (name.length < 2) { setMsg("Укажите имя родителя", true); return; }
-        if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
+        if (!email) { setMsg("Укажите e-mail родителя", true); return; }
+        if (!isValidEmail(email)) { setMsg("Проверьте e-mail: адрес должен содержать символ «@»", true); return; }
+        if (!phone) { setMsg("Укажите телефон родителя", true); return; }
+        if (!isValidRussianPhone(phone)) { setMsg("Введите корректный российский номер: +7XXXXXXXXXX или 8XXXXXXXXXX", true); return; }
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
         pushFormEvent("_orders_form_submit", FORM_ID, STK);
@@ -2767,7 +2780,10 @@
         var grade = document.getElementById("cbGrade").value.trim();
         var consent = document.getElementById("cbConsent").checked;
         if (name.length < 2) { setMsg("Укажите имя родителя", true); return; }
-        if (!email && !phone) { setMsg("Укажите телефон или e-mail", true); return; }
+        if (!email) { setMsg("Укажите e-mail родителя", true); return; }
+        if (!isValidEmail(email)) { setMsg("Проверьте e-mail: адрес должен содержать символ «@»", true); return; }
+        if (!phone) { setMsg("Укажите телефон родителя", true); return; }
+        if (!isValidRussianPhone(phone)) { setMsg("Введите корректный российский номер: +7XXXXXXXXXX или 8XXXXXXXXXX", true); return; }
         if (!consent) { setMsg("Нужно согласие на обработку персональных данных", true); return; }
 
         pushFormEvent("_orders_form_submit", FORM_ID, FORM_STK);

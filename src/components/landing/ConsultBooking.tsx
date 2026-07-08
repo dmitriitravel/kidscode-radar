@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { submitLead } from "@/lib/leadSubmit";
 import { pushFormEvent, useFormAnalytics } from "@/lib/formAnalytics";
+import { isValidEmail, isValidRussianPhone } from "@/lib/formValidation";
 
 const FORM_ID = "consult";
 const FORM_STK = "skysmart_homeschooling";
@@ -43,12 +44,27 @@ export function ConsultBooking() {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const trimmedEmail = email.trim();
+    const trimmedPhone = phone.trim();
+
     if (name.trim().length < 2) {
       toast.error("Укажите имя родителя");
       return;
     }
-    if (!email.trim() && !phone.trim()) {
-      toast.error("Укажите телефон или e-mail");
+    if (!trimmedEmail) {
+      toast.error("Укажите e-mail родителя");
+      return;
+    }
+    if (!isValidEmail(trimmedEmail)) {
+      toast.error("Проверьте e-mail: адрес должен содержать символ «@»");
+      return;
+    }
+    if (!trimmedPhone) {
+      toast.error("Укажите телефон родителя");
+      return;
+    }
+    if (!isValidRussianPhone(trimmedPhone)) {
+      toast.error("Введите корректный российский номер: +7XXXXXXXXXX или 8XXXXXXXXXX");
       return;
     }
     if (!consent) {
@@ -60,8 +76,8 @@ export function ConsultBooking() {
     const gradeNum = grade.match(/\d+/)?.[0];
     const result = await submitLead({
       parentName: name,
-      parentEmail: email,
-      parentPhone: phone,
+      parentEmail: trimmedEmail,
+      parentPhone: trimmedPhone,
       stk: gradeNum ? `skysmart_homeschooling_${gradeNum}_grade` : "",
       uuid: gradeNum ? UUID_BY_GRADE[gradeNum] : undefined,
       productKitCode: gradeNum ? `skysmart_homeschooling_${gradeNum}_grade` : undefined,
